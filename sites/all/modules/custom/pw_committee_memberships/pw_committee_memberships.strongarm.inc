@@ -21,7 +21,7 @@ function pw_committee_memberships_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'comment_cm_calendar_entry';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['comment_cm_calendar_entry'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -68,13 +68,13 @@ function pw_committee_memberships_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '-5',
+          'weight' => '5',
         ),
         'path' => array(
-          'weight' => '30',
+          'weight' => '7',
         ),
         'redirect' => array(
-          'weight' => '30',
+          'weight' => '8',
         ),
       ),
       'display' => array(),
@@ -111,7 +111,6 @@ function pw_committee_memberships_strongarm() {
   $strongarm->name = 'node_options_cm_calendar_entry';
   $strongarm->value = array(
     0 => 'status',
-    1 => 'promote',
   );
   $export['node_options_cm_calendar_entry'] = $strongarm;
 
@@ -126,7 +125,7 @@ function pw_committee_memberships_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'node_submitted_cm_calendar_entry';
-  $strongarm->value = 1;
+  $strongarm->value = 0;
   $export['node_submitted_cm_calendar_entry'] = $strongarm;
 
   return $export;
