@@ -41,21 +41,47 @@ function pw_userarchives_cron($uid=null) {
       $ratio = array();
       while ($questionRow = $questionRes->fetchAssoc()) {
         $qCount = $questionRow['count'];
-        db_update('user_archive_cache')
-                ->fields(array('number_of_questions' => $qCount))
-                ->condition('uid', $row['uid'])
-                ->condition('vid', $row['vid'])
-                ->execute();
-        db_update('field_revision_field_user_questions_get')
-                ->fields(array('field_user_questions_get_value' => $qCount))
-                ->condition('entity_id', $row['uid'])
-                ->condition('revision_id', $row['vid'])
-                ->execute();
-        db_update('field_data_field_user_questions_get')
-                ->fields(array('field_user_questions_get_value' => $qCount))
-                ->condition('entity_id', $row['uid'])
-                ->condition('revision_id', $row['vid'])
-                ->execute();
+        $archiveQuery = db_update('user_archive_cache')
+                        ->fields(array('number_of_questions' => $qCount))
+                        ->condition('uid', $row['uid'])
+                        ->condition('vid', $row['vid']);
+        $success = $archiveQuery->execute();
+//        if ($success == 0) { // @ TODO
+//
+//        }
+        $questionQuery = db_update('field_revision_field_user_questions_get')
+                          ->fields(array('field_user_questions_get_value' => $qCount))
+                          ->condition('entity_id', $row['uid'])
+                          ->condition('revision_id', $row['vid']);
+        $success = $questionQuery->execute();
+        if ($success == 0) {
+          db_merge('field_revision_field_user_questions_get')
+            ->fields(array('entity_type' => 'user',
+                           'bundle' => 'user',
+                           'deleted' => 0,
+                           'entity_id' => $row['uid'],
+                           'revision_id' => $row['vid'],
+                           'language' => 'und',
+                           'delta' => 0,
+                           'field_user_questions_get_value' => $qCount));
+        }
+        // @TODO check is that required?
+//        $questionQuery = db_update('field_data_field_user_questions_get')
+//                          ->fields(array('field_user_questions_get_value' => $qCount))
+//                          ->condition('entity_id', $row['uid'])
+//                          ->condition('revision_id', $row['vid']);
+//        $success = $questionQuery->execute();
+//        if ($success == 0) {
+//          db_merge('field_data_field_user_questions_get')
+//            ->fields(array('entity_type' => 'user',
+//                           'bundle' => 'user',
+//                           'deleted' => 0,
+//                           'entity_id' => $row['uid'],
+//                           'revision_id' => $row['vid'],
+//                           'language' => 'und',
+//                           'delta' => 0,
+//                           'field_user_questions_get_value' => $qCount));
+//        }
         $ratio[$row['uid']][$row['vid']]['q'] = $qCount;
       }
 
@@ -75,32 +101,81 @@ function pw_userarchives_cron($uid=null) {
         if (isset($ratio[$row['uid']][$row['vid']]['q']) && $ratio[$row['uid']][$row['vid']]['q'] != 0) {
           $tmpRatio = intval(($aCount / $ratio[$row['uid']][$row['vid']]['q']) * 100);
         }
-        db_update('user_archive_cache')
-                ->fields(array('number_of_answers' => $aCount,
-                               'ratio_question_answer' => $tmpRatio,))
-                ->condition('uid', $row['uid'])
-                ->condition('vid', $row['vid'])
-                ->execute();
-        db_update('field_revision_field_user_answers_give')
-                ->fields(array('field_user_answers_give_value' => $aCount))
-                ->condition('entity_id', $row['uid'])
-                ->condition('revision_id', $row['vid'])
-                ->execute();
-        db_update('field_data_field_user_answers_give')
-                ->fields(array('field_user_answers_give_value' => $aCount))
-                ->condition('entity_id', $row['uid'])
-                ->condition('revision_id', $row['vid'])
-                ->execute();
-        db_update('field_revision_field_user_ratio_question_answer')
-                ->fields(array('field_user_ratio_question_answer_value' => $tmpRatio))
-                ->condition('entity_id', $row['uid'])
-                ->condition('revision_id', $row['vid'])
-                ->execute();
-        db_update('field_data_field_user_ratio_question_answer')
-                ->fields(array('field_user_ratio_question_answer_value' => $tmpRatio))
-                ->condition('entity_id', $row['uid'])
-                ->condition('revision_id', $row['vid'])
-                ->execute();
+        $archiveQuery = db_update('user_archive_cache')
+                        ->fields(array('number_of_answers' => $aCount,
+                                       'ratio_question_answer' => $tmpRatio,))
+                        ->condition('uid', $row['uid'])
+                        ->condition('vid', $row['vid']);
+        $success = $archiveQuery->execute();
+//        if ($success == 0) { // @ TODO
+//
+//        }
+        $answerQuery = db_update('field_revision_field_user_answers_give')
+                        ->fields(array('field_user_answers_give_value' => $aCount))
+                        ->condition('entity_id', $row['uid'])
+                        ->condition('revision_id', $row['vid']);
+        $success = $answerQuery->execute();
+        if ($success == 0) {
+          db_merge('field_revision_field_user_answers_give')
+            ->fields(array('entity_type' => 'user',
+                           'bundle' => 'user',
+                           'deleted' => 0,
+                           'entity_id' => $row['uid'],
+                           'revision_id' => $row['vid'],
+                           'language' => 'und',
+                           'delta' => 0,
+                           'field_user_answers_give_value' => $aCount));
+        }
+        // @TODO check is that required?
+//        $answerQuery = db_update('field_data_field_user_answers_give')
+//                        ->fields(array('field_user_answers_give_value' => $aCount))
+//                        ->condition('entity_id', $row['uid'])
+//                        ->condition('revision_id', $row['vid']);
+//        $success = $answerQuery->execute();
+//        if ($success == 0) {
+//          db_merge('field_data_field_user_answers_give')
+//            ->fields(array('entity_type' => 'user',
+//                           'bundle' => 'user',
+//                           'deleted' => 0,
+//                           'entity_id' => $row['uid'],
+//                           'revision_id' => $row['vid'],
+//                           'language' => 'und',
+//                           'delta' => 0,
+//                           'field_user_answers_give_value' => $aCount));
+//        }
+        $ratioQuery = db_update('field_revision_field_user_ratio_question_answer')
+                        ->fields(array('field_user_ratio_question_answer_value' => $tmpRatio))
+                        ->condition('entity_id', $row['uid'])
+                        ->condition('revision_id', $row['vid']);
+        $success = $ratioQuery->execute();
+        if ($success == 0) {
+          db_merge('field_revision_field_user_ratio_question_answer')
+            ->fields(array('entity_type' => 'user',
+                           'bundle' => 'user',
+                           'deleted' => 0,
+                           'entity_id' => $row['uid'],
+                           'revision_id' => $row['vid'],
+                           'language' => 'und',
+                           'delta' => 0,
+                           'field_user_ratio_question_answer_value' => $tmpRatio));
+        }
+        // @TODO check is that required?
+//        $ratioQuery = db_update('field_data_field_user_ratio_question_answer')
+//                        ->fields(array('field_user_ratio_question_answer_value' => $tmpRatio))
+//                        ->condition('entity_id', $row['uid'])
+//                        ->condition('revision_id', $row['vid']);
+//        $success = $ratioQuery->execute();
+//        if ($success == 0) {
+//          db_merge('field_data_field_user_ratio_question_answer')
+//            ->fields(array('entity_type' => 'user',
+//                           'bundle' => 'user',
+//                           'deleted' => 0,
+//                           'entity_id' => $row['uid'],
+//                           'revision_id' => $row['vid'],
+//                           'language' => 'und',
+//                           'delta' => 0,
+//                           'field_user_ratio_question_answer_value' => $tmpRatio));
+//        }
       }
 
     }
