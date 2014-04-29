@@ -66,6 +66,17 @@ function pw_userarchives_schema() {
               'type' => 'int',
               'not null' => FALSE,
           ),
+          'user_role' => array(
+              'description' => 'Role of user: candidate or deputy.',
+              'type' => 'varchar',
+              'length' => '45',
+              'not null' => FALSE,
+          ),
+          'ratio_question_answer' => array(
+              'description' => 'Question/Answer ratio in percent.',
+              'type' => 'int',
+              'not null' => FALSE,
+          ),
       ),
       'primary key' => array('id'),
   );
@@ -78,4 +89,11 @@ function pw_userarchives_schema() {
  */
 function pw_userarchives_update_7100() {
   db_add_field('user_archive_cache', 'user_role', array('type' => 'varchar', 'length' => '45', 'not null' => FALSE, 'description' => 'Role of user: candidate or deputy.'));
+}
+
+/**
+ * Adds further column ratio_question_answer
+ */
+function pw_userarchives_update_7101() {
+  db_add_field('user_archive_cache', 'ratio_question_answer', array('type' => 'int', 'not null' => FALSE, 'description' => 'Question/Answer ratio in percent.'));
 }

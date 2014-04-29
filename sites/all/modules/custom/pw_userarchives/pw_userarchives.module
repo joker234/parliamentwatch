@@ -8,7 +8,7 @@
 // -- hooks
 
 function pw_userarchives_cron($uid=null) {
-    $query = check_user_archives_database($uid);    
+    $query = check_user_archives_database($uid);
 
     // Delete the archive entries for the chosen users first:
     $res = $query->execute();
@@ -17,17 +17,17 @@ function pw_userarchives_cron($uid=null) {
         ->condition('user_name', $row["user_name"])
         ->execute();
     }
-    
+
     // Insert new archive entries:
     $dbconnection = db_insert('user_archive_cache');
     $dbconnection->from($query)->execute(); // INSERT INTO ... FROM SELECT ...
-    
-    // Calculate number of questions and answers and insert them into:
+
+    // Calculate number of questions, answers and q/a-ratio and insert them into:
     // (1) the revision table (for showing them in the profile view)
     // (2) the userarchive table (for showing them in the sidebar)
 
     $res1 = $query->execute();
-    while ($row = $res1->fetchAssoc()) {      
+    while ($row = $res1->fetchAssoc()) {
       $questionQuery = db_select('node', 'n');
       $questionQuery->addExpression('IFNULL(COUNT(n.nid), 0)', 'count');
       $questionQuery->join('field_data_field_dialogue_recipient', 'r', 'r.entity_type = \'node\' AND r.entity_id = n.nid');
@@ -38,19 +38,22 @@ function pw_userarchives_cron($uid=null) {
       $questionQuery->condition('n.status', 1);
       $questionQuery->condition('rn.name', $row['parliament_name']);
       $questionRes = $questionQuery->execute();
+      $ratio = array();
       while ($questionRow = $questionRes->fetchAssoc()) {
+        $qCount = $questionRow['count'];
         db_update('user_archive_cache')
-                ->fields(array('number_of_questions' => $questionRow['count']))
+                ->fields(array('number_of_questions' => $qCount))
                 ->condition('uid', $row['uid'])
                 ->condition('vid', $row['vid'])
                 ->execute();
         db_update('field_revision_field_user_questions_get')
-                ->fields(array('field_user_questions_get_value' => $questionRow['count']))
+                ->fields(array('field_user_questions_get_value' => $qCount))
                 ->condition('entity_id', $row['uid'])
                 ->condition('revision_id', $row['vid'])
                 ->execute();
+        $ratio[$row['uid']][$row['vid']]['q'] = $qCount;
       }
-      
+
       $answerQuery = db_select('comment', 'c');
       $answerQuery->addExpression('COUNT(c.cid)', 'count');
       $answerQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'comment\' AND f.entity_id = c.cid');
@@ -62,34 +65,45 @@ function pw_userarchives_cron($uid=null) {
       $answerQuery->condition('rn.name', $row['parliament_name']);
       $answerRes = $answerQuery->execute();
       while ($answerRow = $answerRes->fetchAssoc()) {
+        $aCount = $answerRow['count'];
+        $tmpRatio = 0;
+        if (isset($ratio[$row['uid']][$row['vid']]['q'])) {
+          $tmpRatio = ($aCount / $ratio[$row['uid']][$row['vid']]['q']) * 100;
+        }
         db_update('user_archive_cache')
-                ->fields(array('number_of_answers' => $answerRow['count']))
+                ->fields(array('number_of_answers' => $aCount,
+                               'ratio_question_answer' => $tmpRatio,))
                 ->condition('uid', $row['uid'])
                 ->condition('vid', $row['vid'])
                 ->execute();
         db_update('field_revision_field_user_answers_give')
-                ->fields(array('field_user_answers_give_value' => $answerRow['count']))
+                ->fields(array('field_user_answers_give_value' => $aCount))
+                ->condition('entity_id', $row['uid'])
+                ->condition('revision_id', $row['vid'])
+                ->execute();
+        db_update('field_revision_field_user_ratio_question_answer')
+                ->fields(array('field_user_ratio_question_answer_value' => $tmpRatio))
                 ->condition('entity_id', $row['uid'])
                 ->condition('revision_id', $row['vid'])
                 ->execute();
       }
-      
+
     }
-    
+
     return "Done";
 }
 
 // -- functions
 
 /**
- * Creates schema for user archive if necessary, selects and returns users and 
+ * Creates schema for user archive if necessary, selects and returns users and
  * their revisions that have changed in the last 24 hours.
  * @return type
  */
 function check_user_archives_database($uid=null) {
-    
+
     $a_day_ago = time() - (2000 * 60 * 60);
-    
+
     $query = db_select('user_revision', 'ur');
     $query->addField('ur', 'uid');
     $query->addField('ur', 'name', 'user_name');
@@ -108,7 +122,7 @@ function check_user_archives_database($uid=null) {
     $query->condition('ur.timestamp', $a_day_ago, '>');
     $query->condition('rn.name', array('Deputy', 'Candidate'), 'IN');
     $query->groupBy('ur.uid, up.field_user_parliament_tid, ro.field_user_roles_for_view_mode_s_tid');
-    
+
     return $query;
 }
 
