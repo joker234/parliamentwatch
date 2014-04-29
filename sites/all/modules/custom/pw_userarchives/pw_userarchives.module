@@ -51,6 +51,11 @@ function pw_userarchives_cron($uid=null) {
                 ->condition('entity_id', $row['uid'])
                 ->condition('revision_id', $row['vid'])
                 ->execute();
+        db_update('field_data_field_user_questions_get')
+                ->fields(array('field_user_questions_get_value' => $qCount))
+                ->condition('entity_id', $row['uid'])
+                ->condition('revision_id', $row['vid'])
+                ->execute();
         $ratio[$row['uid']][$row['vid']]['q'] = $qCount;
       }
 
@@ -67,8 +72,8 @@ function pw_userarchives_cron($uid=null) {
       while ($answerRow = $answerRes->fetchAssoc()) {
         $aCount = $answerRow['count'];
         $tmpRatio = 0;
-        if (isset($ratio[$row['uid']][$row['vid']]['q'])) {
-          $tmpRatio = ($aCount / $ratio[$row['uid']][$row['vid']]['q']) * 100;
+        if (isset($ratio[$row['uid']][$row['vid']]['q']) && $ratio[$row['uid']][$row['vid']]['q'] != 0) {
+          $tmpRatio = intval(($aCount / $ratio[$row['uid']][$row['vid']]['q']) * 100);
         }
         db_update('user_archive_cache')
                 ->fields(array('number_of_answers' => $aCount,
@@ -81,7 +86,17 @@ function pw_userarchives_cron($uid=null) {
                 ->condition('entity_id', $row['uid'])
                 ->condition('revision_id', $row['vid'])
                 ->execute();
+        db_update('field_data_field_user_answers_give')
+                ->fields(array('field_user_answers_give_value' => $aCount))
+                ->condition('entity_id', $row['uid'])
+                ->condition('revision_id', $row['vid'])
+                ->execute();
         db_update('field_revision_field_user_ratio_question_answer')
+                ->fields(array('field_user_ratio_question_answer_value' => $tmpRatio))
+                ->condition('entity_id', $row['uid'])
+                ->condition('revision_id', $row['vid'])
+                ->execute();
+        db_update('field_data_field_user_ratio_question_answer')
                 ->fields(array('field_user_ratio_question_answer_value' => $tmpRatio))
                 ->condition('entity_id', $row['uid'])
                 ->condition('revision_id', $row['vid'])
