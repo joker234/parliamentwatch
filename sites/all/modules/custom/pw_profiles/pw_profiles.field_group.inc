@@ -479,6 +479,7 @@ function pw_profiles_field_group_info() {
       0 => 'field_user_answers_give',
       1 => 'field_user_questions_get',
       2 => 'field_user_qanda_ratio',
+      3 => 'field_user_ratio_question_answer',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(

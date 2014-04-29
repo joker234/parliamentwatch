@@ -4233,6 +4233,90 @@ $entity_field[0][\'value\'] = $result;',
     ),
   );
 
+  // Exported field: 'user-user-field_user_ratio_question_answer'.
+  $fields['user-user-field_user_ratio_question_answer'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_user_ratio_question_answer',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(),
+      'locked' => '0',
+      'module' => 'number',
+      'settings' => array(),
+      'translatable' => '0',
+      'type' => 'number_integer',
+    ),
+    'field_instance' => array(
+      'bundle' => 'user',
+      'default_value' => array(
+        0 => array(
+          'value' => '0',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'number',
+          'settings' => array(
+            'decimal_separator' => '.',
+            'prefix_suffix' => TRUE,
+            'scale' => 0,
+            'thousand_separator' => ' ',
+          ),
+          'type' => 'number_integer',
+          'weight' => 34,
+        ),
+        'user_deputy' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_premium' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+        'user_search' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'user',
+      'field_name' => 'field_user_ratio_question_answer',
+      'label' => 'Ratio Q/A',
+      'required' => 0,
+      'settings' => array(
+        'max' => '100',
+        'min' => '0',
+        'prefix' => '',
+        'suffix' => '%',
+        'user_register_form' => 0,
+      ),
+      'widget' => array(
+        'active' => 0,
+        'module' => 'number',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'number',
+        'weight' => '31',
+      ),
+    ),
+  );
+
   // Exported field: 'user-user-field_user_roles_for_view_mode_s'.
   $fields['user-user-field_user_roles_for_view_mode_s'] = array(
     'field_config' => array(
@@ -4738,6 +4822,7 @@ $entity_field[0][\'value\'] = $result;',
   t('Public Mail');
   t('QuestionAnswerRatio');
   t('Questions Get');
+  t('Ratio Q/A');
   t('Title');
   t('Title Text');
   t('Title text attribute (for the profile formats x and xs the copyright will overwrite this field)');
