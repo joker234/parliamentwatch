@@ -9,13 +9,17 @@
 
 function pw_userarchives_cron($uid=null) {
 
-    $query = check_user_archives_database($uid);
+    // Set the timespan user revisions should be updated:
+    $timespanHours = 24; 
+    $query = check_user_archives_database($uid, $timespanHours);
+    $a_day_ago = time() - ($timespanHours * 60 * 60);
 
     // Delete the archive entries for the chosen users first:
     $res = $query->execute();
     while ($row = $res->fetchAssoc()) {
       db_delete('user_archive_cache')
         ->condition('user_name', $row["user_name"])
+        ->condition('timestamp', $a_day_ago, '>') // that works, because we copy the timestamp from user_revision
         ->execute();
     }
     
@@ -97,9 +101,13 @@ function pw_userarchives_cron($uid=null) {
  * their revisions that have changed in the last 24 hours.
  * @return type
  */
-function check_user_archives_database($uid=null) {
+function check_user_archives_database($uid=null, $timespanHours=null) {
     
-    $a_day_ago = time() - (20000000000 * 60 * 60);
+  // If $timespanHours is set to null, all revisions will be updated:
+  if ($timespanHours == 0) {
+    $timespanHours = 20000000000;
+  }
+    $a_day_ago = time() - ($timespanHours * 60 * 60);
     
     $query = db_select('user_revision', 'ur');
     $query->addField('ur', 'uid');
