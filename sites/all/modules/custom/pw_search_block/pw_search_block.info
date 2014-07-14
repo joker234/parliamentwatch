@@ -1,0 +1,9 @@
+name = PW Search Block
+core = 7.x
+package = Features
+php = 5.2.4
+version = 7.x-1.0-20140714
+project = pw_search_block
+dependencies[] = fe_block
+features[fe_block_boxes][] = pw_search_block
+features[features_api][] = api:1
