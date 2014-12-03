@@ -141,6 +141,7 @@ function pw_kandidatencheck_importer_feeds_importer_default() {
         'use_pubsubhubbub' => FALSE,
         'designated_hub' => '',
         'request_timeout' => NULL,
+        'auto_scheme' => 'http',
       ),
     ),
     'parser' => array(
@@ -153,6 +154,7 @@ function pw_kandidatencheck_importer_feeds_importer_default() {
           'xpathparser:3' => 'parliament_uuid',
           'xpathparser:4' => 'concat(\'Thesis \', thesis_number, \' - \', substring(thesis, 0, 20), \'...\')',
           'xpathparser:5' => 'thesis_number',
+          'xpathparser:6' => 'parliament_uuid',
         ),
         'rawXML' => array(
           'xpathparser:0' => 0,
@@ -161,12 +163,11 @@ function pw_kandidatencheck_importer_feeds_importer_default() {
           'xpathparser:3' => 0,
           'xpathparser:4' => 0,
           'xpathparser:5' => 0,
+          'xpathparser:6' => 0,
         ),
         'context' => '//row',
         'exp' => array(
           'errors' => 0,
-          'tidy' => 0,
-          'tidy_encoding' => 'UTF8',
           'debug' => array(
             'context' => 0,
             'xpathparser:0' => 0,
@@ -175,6 +176,7 @@ function pw_kandidatencheck_importer_feeds_importer_default() {
             'xpathparser:3' => 0,
             'xpathparser:4' => 0,
             'xpathparser:5' => 0,
+            'xpathparser:6' => 0,
           ),
         ),
         'allow_override' => 0,
@@ -203,20 +205,20 @@ function pw_kandidatencheck_importer_feeds_importer_default() {
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'xpathparser:3',
-            'target' => 'field_pw_parmliament',
-            'term_search' => '2',
-            'autocreate' => 0,
-          ),
-          4 => array(
             'source' => 'xpathparser:4',
             'target' => 'title',
             'unique' => FALSE,
           ),
-          5 => array(
+          4 => array(
             'source' => 'xpathparser:5',
             'target' => 'weight',
             'unique' => FALSE,
+          ),
+          5 => array(
+            'source' => 'xpathparser:6',
+            'target' => 'field_parliament',
+            'term_search' => '2',
+            'autocreate' => 0,
           ),
         ),
         'update_existing' => '2',
