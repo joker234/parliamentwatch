@@ -14,7 +14,7 @@ function pw_globals_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'additional_settings__active_tab_page';
-  $strongarm->value = 'edit-page-title';
+  $strongarm->value = 'edit-nodeblock-settings';
   $export['additional_settings__active_tab_page'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -375,9 +375,31 @@ function pw_globals_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'teaser_mega_menu' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
-      'form' => array(),
+      'form' => array(
+        'metatags' => array(
+          'weight' => '8',
+        ),
+        'title' => array(
+          'weight' => '0',
+        ),
+        'path' => array(
+          'weight' => '7',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '4',
+        ),
+        'redirect' => array(
+          'weight' => '5',
+        ),
+        'xmlsitemap' => array(
+          'weight' => '6',
+        ),
+      ),
       'display' => array(
         'webform' => array(
           'default' => array(
@@ -392,9 +414,17 @@ function pw_globals_strongarm() {
             'weight' => '31',
             'visible' => FALSE,
           ),
+          'teaser_mega_menu' => array(
+            'weight' => '31',
+            'visible' => FALSE,
+          ),
         ),
         'sharethis' => array(
           'default' => array(
+            'weight' => '0',
+            'visible' => FALSE,
+          ),
+          'teaser_mega_menu' => array(
             'weight' => '0',
             'visible' => FALSE,
           ),
