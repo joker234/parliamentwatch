@@ -117,6 +117,12 @@ function pw_profiles_field_default_fields() {
           'type' => 'hidden',
           'weight' => '3',
         ),
+        'pw_file_tb_megamenu' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'above',
           'settings' => array(),
@@ -253,6 +259,12 @@ function pw_profiles_field_default_fields() {
           'settings' => array(),
           'type' => 'hidden',
           'weight' => '4',
+        ),
+        'pw_file_tb_megamenu' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
         ),
         'teaser' => array(
           'label' => 'above',
