@@ -142,6 +142,12 @@ function pw_content_authoring_layout_field_default_fields() {
           'type' => 'text_default',
           'weight' => '1',
         ),
+        'pw_file_tb_megamenu' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
         'teaser' => array(
           'label' => 'hidden',
           'module' => 'text',

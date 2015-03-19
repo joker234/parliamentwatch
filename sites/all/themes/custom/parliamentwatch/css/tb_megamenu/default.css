@@ -18,7 +18,18 @@
 .tb-megamenu .sharethis-buttons {
     display: none;
 }
-.tb-megamenu {
+.tb-megamenu-block .view-mode-pw_file_tb_megamenu .copyright {
+    min-height: 19px;
+    min-height: 1.9rem;
+}
+.tb-megamenu-block h3 p {
+    margin-bottom: 0;
+}
+.tb-megamenu-block .content p {
+    display: inline;
+}
+.tb-megamenu .tb-megamenu-block {
+	padding-top: 5px;
 }
 .tb-megamenu-menu-main-menu-de {
     border-left: 1px solid #eaeaea;
@@ -133,7 +144,6 @@
 .tb-megamenu .mega-nav > li:first-child > a, 
 .tb-megamenu .dropdown-menu .mega-nav > li:first-child > a {
   margin-top: 0;
-  padding-top: 0;
 }
 .tb-megamenu .nav > li > .dropdown-menu:before {
   display: none;

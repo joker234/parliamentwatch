@@ -71,6 +71,9 @@ function pw_content_authoring_layout_strongarm() {
       'pw_file_portrait_ms' => array(
         'custom_settings' => TRUE,
       ),
+      'pw_file_tb_megamenu' => array(
+        'custom_settings' => TRUE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(),
@@ -113,6 +116,10 @@ function pw_content_authoring_layout_strongarm() {
             'visible' => TRUE,
           ),
           'pw_file_portrait_ms' => array(
+            'weight' => '0',
+            'visible' => TRUE,
+          ),
+          'pw_file_tb_megamenu' => array(
             'weight' => '0',
             'visible' => TRUE,
           ),

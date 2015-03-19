@@ -24,7 +24,7 @@ function pw_content_authoring_layout_file_default_displays() {
   $file_display->weight = 0;
   $file_display->status = FALSE;
   $file_display->settings = array(
-    'file_view_mode' => 'default',
+    'file_view_mode' => 'pw_file_tb_megamenu',
   );
   $export['image__default__file_field_file_rendered'] = $file_display;
 
