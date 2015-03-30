@@ -35,9 +35,15 @@ jQuery(document).ready(function() {
 
 // trigger throbber on submitting forms
 
-	$("form").submit(function() {
+	$("form").submit(function(s) {
 		if($(this).valid() == true ){
 			$('body').append('<div class="ajax-progress"><div class="throbber">&nbsp;</div></div>');
+			$(document).keyup(function(e) {
+				if (e.keyCode == 27) {
+					s.preventDefault();
+					$('.ajax-progress').remove();
+				}
+			});
 		}
 	});
 
