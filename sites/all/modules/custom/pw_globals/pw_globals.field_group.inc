@@ -31,12 +31,13 @@ function pw_globals_field_group_info() {
     'format_settings' => array(
       'label' => 'Arrow Wrapper',
       'instance_settings' => array(
-        'classes' => 'arrow-item',
+        'classes' => 'arrow-item group-arrow-wrapper field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_page_search_result_group_arrow_wrapper',
       ),
       'formatter' => 'open',
     ),

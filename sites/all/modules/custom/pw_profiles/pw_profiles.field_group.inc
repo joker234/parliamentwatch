@@ -29,12 +29,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Basics ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both',
+        'classes' => 'add-sharethis clear-both group-basics field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_basics',
       ),
       'formatter' => 'open',
     ),
@@ -66,12 +67,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
@@ -99,7 +101,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-managed-content field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -125,12 +127,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Polls ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both',
+        'classes' => 'add-sharethis clear-both group-polls field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_polls',
       ),
       'formatter' => 'open',
     ),
@@ -155,7 +158,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-premium field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -183,12 +186,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Mouseover',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-profiles-mouseover field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_pw_profiles_list_compact_group_profiles_mouseover',
       ),
       'formatter' => 'collapsible',
     ),
@@ -214,12 +218,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Roles ID Wrapper',
       'instance_settings' => array(
-        'classes' => 'add-sharethis clear-both',
+        'classes' => 'add-sharethis clear-both group-roles field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_roles',
       ),
       'formatter' => 'open',
     ),
@@ -255,7 +260,7 @@ function pw_profiles_field_group_info() {
       'label' => 'Admin Settings',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-admin field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
@@ -291,7 +296,7 @@ function pw_profiles_field_group_info() {
       'label' => 'Political Affiliation',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-affiliation field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
@@ -316,7 +321,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Additional',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics-additional field-group-htab',
         'description' => 'Additional Links',
       ),
       'formatter' => 'open',
@@ -342,7 +347,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-basics-additional field-group-htab',
       ),
     ),
   );
@@ -368,7 +373,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Basics',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics-basics field-group-htab',
         'description' => 'Basic information',
       ),
       'formatter' => 'open',
@@ -396,7 +401,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-basics-data field-group-htab',
       ),
     ),
   );
@@ -422,7 +427,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics field-group-htabs',
       ),
     ),
   );
@@ -448,7 +453,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-basics field-group-htabs',
       ),
     ),
   );
@@ -474,7 +479,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Political Roles',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-commitee-tab field-group-htab',
         'description' => 'Political Roles',
       ),
       'formatter' => 'closed',
@@ -501,7 +506,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-commitee field-group-htabs',
       ),
     ),
   );
@@ -529,7 +534,7 @@ function pw_profiles_field_group_info() {
       'label' => 'Dialogue Data',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-dialogue field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
@@ -558,12 +563,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'Name',
       'instance_settings' => array(
-        'classes' => 'h2 push-bottom-xxs',
+        'classes' => 'h2 push-bottom-xxs group-user-name field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_full_group_user_name',
       ),
       'formatter' => 'open',
     ),
@@ -592,7 +598,8 @@ function pw_profiles_field_group_info() {
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
-        'classes' => '',
+        'classes' => ' group-user-name field-group-div',
+        'id' => 'user_user_premium_user_group_user_name',
       ),
     ),
   );
@@ -619,12 +626,13 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'label' => 'User name',
       'instance_settings' => array(
-        'classes' => 'h3',
+        'classes' => 'h3 group-user-name field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'user_user_user_search_group_user_name',
       ),
       'formatter' => 'open',
     ),
@@ -663,7 +671,7 @@ function pw_profiles_field_group_info() {
       'label' => 'Personal Data',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-personal-data field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsed',
@@ -689,7 +697,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-archive field-group-htab',
       ),
     ),
   );
@@ -715,7 +723,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-archive field-group-htab',
       ),
     ),
   );
@@ -741,7 +749,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-current field-group-htab',
       ),
     ),
   );
@@ -765,7 +773,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-polls-last field-group-htab',
       ),
     ),
   );
@@ -791,7 +799,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-polls field-group-htabs',
       ),
     ),
   );
@@ -817,7 +825,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-polls field-group-htabs',
       ),
     ),
   );
@@ -843,7 +851,7 @@ function pw_profiles_field_group_info() {
       'label' => 'About me',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-premium-about field-group-tab',
         'description' => '',
       ),
       'formatter' => 'closed',
@@ -871,7 +879,7 @@ function pw_profiles_field_group_info() {
       'label' => 'Premium Fields',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-user-premium-fields field-group-fieldset',
         'description' => 'Profilfoto, Social-Media, Bildergalerie, Kalender, Biografie, politische Ziele',
       ),
       'formatter' => 'collapsed',
@@ -899,7 +907,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-gallery field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -926,7 +934,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-goals field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -953,7 +961,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-links field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -978,7 +986,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-picture field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -1005,7 +1013,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-premium-twitter field-group-tab',
         'required_fields' => 1,
       ),
     ),
@@ -1035,7 +1043,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-premium field-group-tabs',
       ),
     ),
   );
@@ -1059,7 +1067,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-roles-archive field-group-htab',
       ),
     ),
   );
@@ -1086,7 +1094,7 @@ function pw_profiles_field_group_info() {
       'formatter' => 'closed',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-user-roles-current field-group-htab',
       ),
     ),
   );
@@ -1112,7 +1120,7 @@ function pw_profiles_field_group_info() {
     'format_settings' => array(
       'formatter' => '',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-user-roles field-group-htabs',
       ),
     ),
   );

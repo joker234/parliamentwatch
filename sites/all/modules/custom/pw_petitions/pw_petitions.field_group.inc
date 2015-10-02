@@ -34,12 +34,13 @@ function pw_petitions_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_pw_petition_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
@@ -71,7 +72,7 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-petition-content field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -101,7 +102,7 @@ function pw_petitions_field_group_info() {
       'label' => 'Phase 2: donations',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-petition-donation field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
@@ -129,7 +130,7 @@ function pw_petitions_field_group_info() {
       'label' => 'Phase 3: sent to parliament',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-petition-parliament field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',
@@ -157,7 +158,7 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-petition-passed field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -185,7 +186,7 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
       'instance_settings' => array(
         'description' => '',
-        'classes' => '',
+        'classes' => ' group-petition-recipient field-group-fieldset',
         'required_fields' => 1,
       ),
     ),
@@ -217,7 +218,7 @@ function pw_petitions_field_group_info() {
       'label' => 'Phase 1:  signing',
       'instance_settings' => array(
         'required_fields' => 1,
-        'classes' => '',
+        'classes' => ' group-petition-signing field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'collapsible',

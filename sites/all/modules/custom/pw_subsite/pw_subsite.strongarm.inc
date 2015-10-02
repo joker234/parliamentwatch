@@ -3337,6 +3337,15 @@ foo
       'weight' => 1,
       'fit' => 2,
     ),
+    9 => array(
+      'path' => 'comment/#',
+      'callbacks' => array(),
+      'wildcards' => array(
+        1 => 'comment:cid',
+      ),
+      'weight' => 1,
+      'fit' => 2,
+    ),
   );
   $export['themekey_paths'] = $strongarm;
 

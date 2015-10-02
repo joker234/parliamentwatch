@@ -31,7 +31,7 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
-        'classes' => 'push-bottom-m medium',
+        'classes' => 'push-bottom-m medium group-blog-author field-group-fieldset',
         'description' => '',
       ),
       'formatter' => 'open',
@@ -59,12 +59,13 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Metainformation',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-blog-metainformation field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_full_group_blog_metainformation',
       ),
       'formatter' => 'open',
     ),
@@ -88,12 +89,13 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'PW list item',
       'instance_settings' => array(
-        'classes' => 'pw-list-item',
+        'classes' => 'pw-list-item group-blog-searchitem field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_search_result_group_blog_searchitem',
       ),
       'formatter' => 'open',
     ),
@@ -119,12 +121,13 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Social Media',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-blog-social-media field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_full_group_blog_social_media',
       ),
       'formatter' => 'open',
     ),
@@ -152,8 +155,9 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
+        'id' => 'node_blogpost_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
@@ -177,12 +181,13 @@ function pw_blog_field_group_info() {
     'format_settings' => array(
       'label' => 'Body',
       'instance_settings' => array(
-        'classes' => '',
+        'classes' => ' group-search-blog-body field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_blogpost_search_result_group_search_blog_body',
       ),
       'formatter' => 'open',
     ),

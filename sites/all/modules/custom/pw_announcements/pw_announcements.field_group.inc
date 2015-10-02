@@ -31,12 +31,13 @@ function pw_announcements_field_group_info() {
     'format_settings' => array(
       'label' => '',
       'instance_settings' => array(
-        'classes' => 'pushfloat-2',
+        'classes' => 'pushfloat-2 group-announce-content field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_announcement_full_group_announce_content',
       ),
       'formatter' => 'open',
     ),

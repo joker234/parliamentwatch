@@ -30,12 +30,13 @@ function pw_newsletter_field_group_info() {
     'format_settings' => array(
       'label' => 'Metainformation',
       'instance_settings' => array(
-        'classes' => 'push-bottom-m medium',
+        'classes' => 'push-bottom-m medium group-meta field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_newsletter_full_group_meta',
       ),
       'formatter' => 'open',
     ),
@@ -63,12 +64,13 @@ function pw_newsletter_field_group_info() {
     'format_settings' => array(
       'label' => 'Wrapper',
       'instance_settings' => array(
-        'classes' => 'clearfix push-bottom-s',
+        'classes' => 'clearfix push-bottom-s group-wrapper field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_newsletter_teaser_group_wrapper',
       ),
       'formatter' => 'open',
     ),

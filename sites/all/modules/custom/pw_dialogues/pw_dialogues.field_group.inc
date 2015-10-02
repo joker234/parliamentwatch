@@ -32,12 +32,13 @@ function pw_dialogues_field_group_info() {
     'format_settings' => array(
       'label' => 'Grid 6 Wrapper',
       'instance_settings' => array(
-        'classes' => 'grid-6 omega',
+        'classes' => 'grid-6 omega group-grid-6 field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_dialogue_search_result_group_grid_6',
       ),
       'formatter' => 'open',
     ),
@@ -64,12 +65,13 @@ function pw_dialogues_field_group_info() {
     'format_settings' => array(
       'label' => 'Sender Wrapper',
       'instance_settings' => array(
-        'classes' => 'push-bottom-s',
+        'classes' => 'push-bottom-s group-sender field-group-div',
         'description' => '',
         'show_label' => '0',
         'label_element' => 'h3',
         'effect' => 'none',
         'speed' => 'fast',
+        'id' => 'node_dialogue_search_result_group_sender',
       ),
       'formatter' => 'open',
     ),
