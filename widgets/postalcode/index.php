@@ -36,11 +36,11 @@ if (isset($_GET["t"])){
         <script type="text/javascript">
           function pw_submit(){
             var query = $("#pw-search").val();
-            $("#pw-search-form").attr("action", "https://<?echo $ahost;?>.abgeordnetenwatch.de/search/site/" + query);
+            $("#pw-search-form").attr("action", "https://<?php echo $ahost;?>.abgeordnetenwatch.de/search/site/" + query);
           }
         </script>
 	</head>
-	<body id="widget-postalcodesearch" class="widget width-<?echo (isset($_GET["w"]) && $_GET["w"]==300)?"300":"160";?>">
+	<body id="widget-postalcodesearch" class="widget width-<?php echo (isset($_GET["w"]) && $_GET["w"]==300)?"300":"160";?>">
 	
         <header>
             <img src="images/logo-abgeordnentenwatch-153.png" id="logo" alt="abgeordnetenwatch.de" width="153" height="30" />
@@ -53,7 +53,7 @@ if (isset($_GET["t"])){
             <p>
              Einfach Postleitzahl eingeben und los geht's!
             </p>
-            <form id="pw-search-form" method="post" action="https://<?echo $ahost;?>.abgeordnetenwatch.de/search/site" target="<?echo $atarget;?>">
+            <form id="pw-search-form" method="post" action="https://<?php echo $ahost;?>.abgeordnetenwatch.de/search/site" target="<?php echo $atarget;?>">
                 <fieldset>
                     <input pattern="\d{4,5}" maxlength="5" id="pw-search" type="text" class="txt" placeholder="Postleitzahl" alt="Postleitzahl" name="keys" />
                     <input onclick="pw_submit()" type="image" class="form-submit image" src="images/btn_search.png" title="Suchen" value="Suche" />

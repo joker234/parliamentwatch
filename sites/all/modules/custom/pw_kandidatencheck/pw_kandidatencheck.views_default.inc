@@ -71,7 +71,7 @@ $parliament_name = strtolower($parliament->name);
 if($parliament_name != \'eu\'){
 ?>
 <div class="grid-4 alpha">
-  <a href="http://kandidatencheck.abgeordnetenwatch.de/<?=$parliament_name;?>" class="button" target="_blank"><?php print t(\'Kandidaten-Check starten\'); ?></a>
+  <a href="http://kandidatencheck.abgeordnetenwatch.de/<?php echo $parliament_name;?>" class="button" target="_blank"><?php print t(\'Kandidaten-Check starten\'); ?></a>
 </div>
 <div class="grid-4 omega">
   <a href="#" class="unslick"><?php print t(\'Alle Thesen auf einen Blick\'); ?></a>

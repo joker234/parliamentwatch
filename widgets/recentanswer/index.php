@@ -70,7 +70,7 @@ $domain = "https://$ahost.abgeordnetenwatch.de";
     	<link type="text/css" rel="stylesheet" href="css/widgets.css">
 	 
 	</head>
-	<body id="widget-recentanswers" class="widget width-<?echo $width;?>">
+	<body id="widget-recentanswers" class="widget width-<?php echo $width;?>">
 	
         <header>
         <?
@@ -84,19 +84,19 @@ $domain = "https://$ahost.abgeordnetenwatch.de";
         </header>
         
         <section id="section-content" class="clearfix">
-            <? if ($width == 300): ?>
-                <a target="<?echo $atarget;?>" href="<?echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?echo $user_picture;?>" width="75" height="100" border="0" alt="<?echo $fullname;?>" /></a>
-            <? endif; ?>
-        <h3><?echo "$fullname, $party_name";?></h3>
+            <?php if ($width == 300): ?>
+                <a target="<?php echo $atarget;?>" href="<?php echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?php echo $user_picture;?>" width="75" height="100" border="0" alt="<?php echo $fullname;?>" /></a>
+            <?php endif; ?>
+        <h3><?php echo "$fullname, $party_name";?></h3>
         <p>
-         <?echo $answer_summary;?>
+         <?php echo $answer_summary;?>
         </p>
     	<br clear="all" />
-          <? if ($width == 160): ?>
-            <a target="<?echo $atarget;?>" href="<?echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?echo $user_picture;?>" width="75" height="100" border="0" alt="<?echo $fullname;?>" /></a>
-          <? endif; ?>
+          <?php if ($width == 160): ?>
+            <a target="<?php echo $atarget;?>" href="<?php echo $domain.$dialogue_link;?>" class="float-left bordered"><img src="<?php echo $user_picture;?>" width="75" height="100" border="0" alt="<?php echo $fullname;?>" /></a>
+          <?php endif; ?>
         <div class="link-question">
-            <a target="<?echo $atarget;?>" href="<?echo $domain.$dialogue_link;?>">Ganze Frage und Antwort lesen</a>
+            <a target="<?php echo $atarget;?>" href="<?php echo $domain.$dialogue_link;?>">Ganze Frage und Antwort lesen</a>
         </div>            
         </section>
     </body>

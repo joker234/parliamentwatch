@@ -35,11 +35,11 @@ if(!empty($get_vars[\'sid\'])){
 }
 ?>
 
-<span class="st_twitter_hcount" displayText="Twitter" st_url="<?=$share_this_url?>" st_title="<?=$share_this_title?>"></span>
-<span class="st_facebook_hcount" displayText="Facebook" st_url="<?=$share_this_url?>"></span>
-<span class="st_plusone_hcount" displayText="Google +1" st_url="<?=$share_this_url?>"></span>
-<span class="st_email_hcount" displayText="E-Mail" st_url="<?=$share_this_url?>"></span>
-<span class="st_whatsapp_large" displayText="WhatsApp" st_url="<?=$share_this_url?>"></span>
+<span class="st_twitter_hcount" displayText="Twitter" st_url="<?php echo $share_this_url?>" st_title="<?php echo $share_this_title?>"></span>
+<span class="st_facebook_hcount" displayText="Facebook" st_url="<?php echo $share_this_url?>"></span>
+<span class="st_plusone_hcount" displayText="Google +1" st_url="<?php echo $share_this_url?>"></span>
+<span class="st_email_hcount" displayText="E-Mail" st_url="<?php echo $share_this_url?>"></span>
+<span class="st_whatsapp_large" displayText="WhatsApp" st_url="<?php echo $share_this_url?>"></span>
 <br /><br />';
 
   $export['sharethis_buttons'] = $fe_block_boxes;
