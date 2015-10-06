@@ -10,86 +10,86 @@
 function pw_kandidatencheck_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: create pw_kc_position content.
+  // Exported permission: 'create pw_kc_position content'.
   $permissions['create pw_kc_position content'] = array(
     'name' => 'create pw_kc_position content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: create pw_kc_thesis content.
+  // Exported permission: 'create pw_kc_thesis content'.
   $permissions['create pw_kc_thesis content'] = array(
     'name' => 'create pw_kc_thesis content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: delete any pw_kc_position content.
+  // Exported permission: 'delete any pw_kc_position content'.
   $permissions['delete any pw_kc_position content'] = array(
     'name' => 'delete any pw_kc_position content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: delete any pw_kc_thesis content.
+  // Exported permission: 'delete any pw_kc_thesis content'.
   $permissions['delete any pw_kc_thesis content'] = array(
     'name' => 'delete any pw_kc_thesis content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: delete own pw_kc_position content.
+  // Exported permission: 'delete own pw_kc_position content'.
   $permissions['delete own pw_kc_position content'] = array(
     'name' => 'delete own pw_kc_position content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: delete own pw_kc_thesis content.
+  // Exported permission: 'delete own pw_kc_thesis content'.
   $permissions['delete own pw_kc_thesis content'] = array(
     'name' => 'delete own pw_kc_thesis content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: delete terms in 34.
-  $permissions['delete terms in 34'] = array(
-    'name' => 'delete terms in 34',
+  // Exported permission: 'delete terms in pw_kc_votes'.
+  $permissions['delete terms in pw_kc_votes'] = array(
+    'name' => 'delete terms in pw_kc_votes',
     'roles' => array(),
     'module' => 'taxonomy',
   );
 
-  // Exported permission: edit any pw_kc_position content.
+  // Exported permission: 'edit any pw_kc_position content'.
   $permissions['edit any pw_kc_position content'] = array(
     'name' => 'edit any pw_kc_position content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: edit any pw_kc_thesis content.
+  // Exported permission: 'edit any pw_kc_thesis content'.
   $permissions['edit any pw_kc_thesis content'] = array(
     'name' => 'edit any pw_kc_thesis content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: edit own pw_kc_position content.
+  // Exported permission: 'edit own pw_kc_position content'.
   $permissions['edit own pw_kc_position content'] = array(
     'name' => 'edit own pw_kc_position content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: edit own pw_kc_thesis content.
+  // Exported permission: 'edit own pw_kc_thesis content'.
   $permissions['edit own pw_kc_thesis content'] = array(
     'name' => 'edit own pw_kc_thesis content',
     'roles' => array(),
     'module' => 'node',
   );
 
-  // Exported permission: edit terms in 34.
-  $permissions['edit terms in 34'] = array(
-    'name' => 'edit terms in 34',
+  // Exported permission: 'edit terms in pw_kc_votes'.
+  $permissions['edit terms in pw_kc_votes'] = array(
+    'name' => 'edit terms in pw_kc_votes',
     'roles' => array(),
     'module' => 'taxonomy',
   );

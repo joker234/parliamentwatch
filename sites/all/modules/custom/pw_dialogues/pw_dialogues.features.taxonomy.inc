@@ -13,9 +13,9 @@ function pw_dialogues_taxonomy_default_vocabularies() {
       'name' => 'Dialogue tags',
       'machine_name' => 'dialogue_tags',
       'description' => '',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -36,9 +36,9 @@ function pw_dialogues_taxonomy_default_vocabularies() {
       'name' => 'Dialogue topics',
       'machine_name' => 'dialogue_topics',
       'description' => '',
-      'hierarchy' => '0',
+      'hierarchy' => 0,
       'module' => 'taxonomy',
-      'weight' => '0',
+      'weight' => 0,
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

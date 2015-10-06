@@ -47,7 +47,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Feld: Inhalt: Beitrags-ID */
+  /* Feld: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -57,14 +57,14 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Inhalt: ShareThis Link */
+  /* Feld: Content: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['label'] = '';
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Titel */
+  /* Feld: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -76,23 +76,23 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Sortierkriterien: Inhalt: Signings (field_petition_signings) */
+  /* Sortierkriterien: Content: Signings (field_petition_signings) */
   $handler->display->display_options['sorts']['field_petition_signings_value']['id'] = 'field_petition_signings_value';
   $handler->display->display_options['sorts']['field_petition_signings_value']['table'] = 'field_data_field_petition_signings';
   $handler->display->display_options['sorts']['field_petition_signings_value']['field'] = 'field_petition_signings_value';
   $handler->display->display_options['sorts']['field_petition_signings_value']['order'] = 'DESC';
-  /* Sortierkriterien: Inhalt: Donation Amount (field_donation_amount) */
+  /* Sortierkriterien: Content: Donation Amount (field_donation_amount) */
   $handler->display->display_options['sorts']['field_donation_amount_value']['id'] = 'field_donation_amount_value';
   $handler->display->display_options['sorts']['field_donation_amount_value']['table'] = 'field_data_field_donation_amount';
   $handler->display->display_options['sorts']['field_donation_amount_value']['field'] = 'field_donation_amount_value';
   $handler->display->display_options['sorts']['field_donation_amount_value']['order'] = 'DESC';
-  /* Sortierkriterien: Inhalt: Datum */
+  /* Sortierkriterien: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['granularity'] = 'hour';
-  /* Kontextfilter: Feld: Parliament (field_parliament) */
+  /* Kontextfilter: Field: Parliament (field_parliament) */
   $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -107,14 +107,14 @@ function pw_petitions_views_default_views() {
     'parliaments' => 'parliaments',
   );
   $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['type'] = 'convert';
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
+  /* Filterkriterium: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -137,14 +137,14 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
+  /* Filterkriterium: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -173,7 +173,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Progress */
+  /* Feld: Content: Progress */
   $handler->display->display_options['fields']['field_petition_progress']['id'] = 'field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['table'] = 'field_data_field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['field'] = 'field_petition_progress';
@@ -201,7 +201,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhalt: Beitrags-ID */
+  /* Kontextfilter: Content: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -237,14 +237,14 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
-  /* Kopfbereich: Global: Textbereich */
+  /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['content'] = 'Zeichnen Sie die Petitionen von abgeordnetenwatch.de und bitten Sie über Ihre Netzwerke auch interessierte Freunde und Bekannte dies zu tun. Gemeinsam für mehr Transparenz und gegen Korruption! <a href="/petitionen" class="read-more">alle Petitionen</a>';
   $handler->display->display_options['header']['area']['format'] = 'managed_content';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Beitrags-ID */
+  /* Feld: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -256,7 +256,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Progress */
+  /* Feld: Content: Progress */
   $handler->display->display_options['fields']['field_petition_progress']['id'] = 'field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['table'] = 'field_data_field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['field'] = 'field_petition_progress';
@@ -265,7 +265,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_petition_progress']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_petition_progress']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_petition_progress']['type'] = 'computed_field_unsanitized';
-  /* Feld: Inhalt: Titel */
+  /* Feld: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -278,7 +278,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Signings */
+  /* Feld: Content: Signings */
   $handler->display->display_options['fields']['field_petition_signings']['id'] = 'field_petition_signings';
   $handler->display->display_options['fields']['field_petition_signings']['table'] = 'field_data_field_petition_signings';
   $handler->display->display_options['fields']['field_petition_signings']['field'] = 'field_petition_signings';
@@ -311,7 +311,7 @@ function pw_petitions_views_default_views() {
   print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Link */
+  /* Feld: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -325,14 +325,14 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sortierkriterien: Inhalt: Signings (field_petition_signings) */
+  /* Sortierkriterien: Content: Signings (field_petition_signings) */
   $handler->display->display_options['sorts']['field_petition_signings_value']['id'] = 'field_petition_signings_value';
   $handler->display->display_options['sorts']['field_petition_signings_value']['table'] = 'field_data_field_petition_signings';
   $handler->display->display_options['sorts']['field_petition_signings_value']['field'] = 'field_petition_signings_value';
   $handler->display->display_options['sorts']['field_petition_signings_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
+  /* Filterkriterium: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -340,14 +340,14 @@ function pw_petitions_views_default_views() {
     'pw_petition' => 'pw_petition',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Partner Organization (field_petition_partner) */
+  /* Filterkriterium: Content: Partner Organization (field_petition_partner) */
   $handler->display->display_options['filters']['field_petition_partner_value']['id'] = 'field_petition_partner_value';
   $handler->display->display_options['filters']['field_petition_partner_value']['table'] = 'field_data_field_petition_partner';
   $handler->display->display_options['filters']['field_petition_partner_value']['field'] = 'field_petition_partner_value';
@@ -357,7 +357,7 @@ function pw_petitions_views_default_views() {
   $handler = $view->new_display('block', 'Petitions Sidebar', 'sidebar');
   $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Beitrags-ID */
+  /* Feld: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -367,7 +367,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Inhalt: Progress */
+  /* Feld: Content: Progress */
   $handler->display->display_options['fields']['field_petition_progress']['id'] = 'field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['table'] = 'field_data_field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['field'] = 'field_petition_progress';
@@ -375,14 +375,14 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_petition_progress']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_petition_progress']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_petition_progress']['type'] = 'computed_field_unsanitized';
-  /* Feld: Inhalt: ShareThis Link */
+  /* Feld: Content: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['label'] = '';
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Titel */
+  /* Feld: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -394,7 +394,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Feld: Global: Feldgruppe */
+  /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -405,7 +405,7 @@ function pw_petitions_views_default_views() {
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'float-left push-bottom-s push-right-m';
-  /* Feld: Inhalt: Teaser image */
+  /* Feld: Content: Teaser image */
   $handler->display->display_options['fields']['field_teaser_image']['id'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
@@ -419,7 +419,7 @@ function pw_petitions_views_default_views() {
     'image_style' => 'pw_landscape_l__normal',
     'image_link' => 'content',
   );
-  /* Feld: Datei: copyright */
+  /* Feld: File: copyright */
   $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
   $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
   $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
@@ -429,7 +429,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'small medium';
   $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Recipient */
+  /* Feld: Content: Recipient */
   $handler->display->display_options['fields']['field_petition_recipient']['id'] = 'field_petition_recipient';
   $handler->display->display_options['fields']['field_petition_recipient']['table'] = 'field_data_field_petition_recipient';
   $handler->display->display_options['fields']['field_petition_recipient']['field'] = 'field_petition_recipient';
@@ -438,7 +438,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_petition_recipient']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['field_petition_recipient']['element_wrapper_class'] = 'medium';
   $handler->display->display_options['fields']['field_petition_recipient']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Body */
+  /* Feld: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -450,7 +450,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Feld: Global: Feldgruppe */
+  /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -480,7 +480,7 @@ function pw_petitions_views_default_views() {
   print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required Signings */
+  /* Feld: Content: Required Signings */
   $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';
@@ -496,7 +496,7 @@ function pw_petitions_views_default_views() {
     'thousand_separator' => '.',
     'prefix_suffix' => 0,
   );
-  /* Feld: Inhalt: Signings */
+  /* Feld: Content: Signings */
   $handler->display->display_options['fields']['field_petition_signings']['id'] = 'field_petition_signings';
   $handler->display->display_options['fields']['field_petition_signings']['table'] = 'field_data_field_petition_signings';
   $handler->display->display_options['fields']['field_petition_signings']['field'] = 'field_petition_signings';
@@ -509,7 +509,7 @@ function pw_petitions_views_default_views() {
     'thousand_separator' => '.',
     'prefix_suffix' => 1,
   );
-  /* Feld: Inhalt: Link */
+  /* Feld: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -522,7 +522,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Blog Kategorie */
+  /* Feld: Content: Blog Kategorie */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
@@ -532,7 +532,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_blogpost_categories']['element_wrapper_class'] = 'icon-taxonomy clearfix clear-both';
   $handler->display->display_options['fields']['field_blogpost_categories']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_blogpost_categories']['delta_offset'] = '0';
-  /* Feld: Inhalt: Anzahl an Kommentaren */
+  /* Feld: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
@@ -549,7 +549,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['format_plural'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['format_plural_singular'] = '1 comment';
   $handler->display->display_options['fields']['comment_count']['format_plural_plural'] = '@count comments';
-  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  /* Feld: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -581,7 +581,7 @@ function pw_petitions_views_default_views() {
     'expression' => 0,
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhaltsversion: Beitrags-ID */
+  /* Kontextfilter: Content revision: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node_revision';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -612,16 +612,16 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Inhalt: Teaser image (field_teaser_image:fid) */
+  /* Beziehung: Content: Teaser image (field_teaser_image:fid) */
   $handler->display->display_options['relationships']['field_teaser_image_fid']['id'] = 'field_teaser_image_fid';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['relationships']['field_teaser_image_fid']['field'] = 'field_teaser_image_fid';
-  /* Beziehung: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Beziehung: Content: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['relationships']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Inhalt: Beitrags-ID */
+  /* Feld: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -631,7 +631,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['nid']['link_to_node'] = TRUE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Inhalt: Progress */
+  /* Feld: Content: Progress */
   $handler->display->display_options['fields']['field_petition_progress']['id'] = 'field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['table'] = 'field_data_field_petition_progress';
   $handler->display->display_options['fields']['field_petition_progress']['field'] = 'field_petition_progress';
@@ -639,7 +639,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_petition_progress']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_petition_progress']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_petition_progress']['type'] = 'computed_field_unsanitized';
-  /* Feld: Global: Feldgruppe */
+  /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -650,7 +650,7 @@ function pw_petitions_views_default_views() {
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'float-left push-bottom-s push-right-m';
-  /* Feld: Inhalt: Teaser image */
+  /* Feld: Content: Teaser image */
   $handler->display->display_options['fields']['field_teaser_image']['id'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
@@ -664,7 +664,7 @@ function pw_petitions_views_default_views() {
     'image_style' => 'pw_landscape_l__normal',
     'image_link' => 'content',
   );
-  /* Feld: Datei: copyright */
+  /* Feld: File: copyright */
   $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
   $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
   $handler->display->display_options['fields']['field_image_copyright']['field'] = 'field_image_copyright';
@@ -674,7 +674,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_image_copyright']['element_wrapper_class'] = 'small medium';
   $handler->display->display_options['fields']['field_image_copyright']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Titel */
+  /* Feld: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -688,7 +688,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_rel'] = '';
-  /* Feld: Inhalt: Recipient */
+  /* Feld: Content: Recipient */
   $handler->display->display_options['fields']['field_petition_recipient']['id'] = 'field_petition_recipient';
   $handler->display->display_options['fields']['field_petition_recipient']['table'] = 'field_data_field_petition_recipient';
   $handler->display->display_options['fields']['field_petition_recipient']['field'] = 'field_petition_recipient';
@@ -697,7 +697,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_petition_recipient']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['field_petition_recipient']['element_wrapper_class'] = 'medium';
   $handler->display->display_options['fields']['field_petition_recipient']['element_default_classes'] = FALSE;
-  /* Feld: Inhalt: Body */
+  /* Feld: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -709,7 +709,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Feld: Inhalt: Link */
+  /* Feld: Content: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -722,7 +722,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
-  /* Feld: Global: Feldgruppe */
+  /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -752,7 +752,7 @@ function pw_petitions_views_default_views() {
   print $progress; ?>%;"></div></div>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Inhalt: Required Signings */
+  /* Feld: Content: Required Signings */
   $handler->display->display_options['fields']['field_petition_required']['id'] = 'field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['table'] = 'field_data_field_petition_required';
   $handler->display->display_options['fields']['field_petition_required']['field'] = 'field_petition_required';
@@ -768,7 +768,7 @@ function pw_petitions_views_default_views() {
     'thousand_separator' => '.',
     'prefix_suffix' => 0,
   );
-  /* Feld: Inhalt: Signings */
+  /* Feld: Content: Signings */
   $handler->display->display_options['fields']['field_petition_signings']['id'] = 'field_petition_signings';
   $handler->display->display_options['fields']['field_petition_signings']['table'] = 'field_data_field_petition_signings';
   $handler->display->display_options['fields']['field_petition_signings']['field'] = 'field_petition_signings';
@@ -781,7 +781,7 @@ function pw_petitions_views_default_views() {
     'thousand_separator' => '.',
     'prefix_suffix' => 1,
   );
-  /* Feld: Inhalt: Blog Kategorie */
+  /* Feld: Content: Blog Kategorie */
   $handler->display->display_options['fields']['field_blogpost_categories']['id'] = 'field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['fields']['field_blogpost_categories']['field'] = 'field_blogpost_categories';
@@ -791,7 +791,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['field_blogpost_categories']['element_wrapper_class'] = 'icon-taxonomy clearfix clear-both';
   $handler->display->display_options['fields']['field_blogpost_categories']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_blogpost_categories']['delta_offset'] = '0';
-  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  /* Feld: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
@@ -823,7 +823,7 @@ function pw_petitions_views_default_views() {
     'expression' => 0,
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Kontextfilter: Content: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -858,6 +858,7 @@ function pw_petitions_views_default_views() {
     t('letzte Seite »'),
     t('Alle'),
     t('Page'),
+    t('more'),
     t('Block'),
     t('Block Progress'),
     t('Menu Block'),
@@ -874,8 +875,8 @@ function pw_petitions_views_default_views() {
     t('edit petition'),
     t('Blog Teaser'),
     t('Unterschreiben Sie unsere Petition zum Thema [field_blogpost_categories]'),
-    t('Bild von field_teaser_image'),
-    t('Begriff aus field_blogpost_categories'),
+    t('image from field_teaser_image'),
+    t('term from field_blogpost_categories'),
     t('View panes'),
   );
   $export['pw_petitions'] = $view;
@@ -920,7 +921,7 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['style_options']['wrapper_class'] = 'clearfix push-bottom-s';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Kopfbereich: Global: Textbereich */
+  /* Kopfbereich: Global: Text area */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -931,11 +932,11 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="text-right"><a href="/taxonomy/term/6179" class="read-more">Alle Blogartikel zum Thema</a></div>';
-  /* Beziehung: Taxonomie-Begriff: Inhalt mit Begriff */
+  /* Beziehung: Taxonomy term: Content with term */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'taxonomy_index';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
-  /* Feld: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Feld: COUNT(Content revision: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node_revision';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -958,7 +959,7 @@ if ($count >10){$count = 10;}
 return $count;';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Taxonomie-Begriff: Begriff-ID */
+  /* Feld: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -966,7 +967,7 @@ return $count;';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Feld: Taxonomie-Begriff: Name */
+  /* Feld: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -979,11 +980,11 @@ return $count;';
   $handler->display->display_options['fields']['name']['element_wrapper_type'] = 'span';
   $handler->display->display_options['fields']['name']['element_wrapper_class'] = 'tagadelic level[php]';
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
-  /* Sortierkriterien: Global: Zufall */
+  /* Sortierkriterien: Global: Random */
   $handler->display->display_options['sorts']['random']['id'] = 'random';
   $handler->display->display_options['sorts']['random']['table'] = 'views';
   $handler->display->display_options['sorts']['random']['field'] = 'random';
-  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  /* Filterkriterium: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -991,7 +992,7 @@ return $count;';
     'blogtags' => 'blogtags',
     'tags' => 'tags',
   );
-  /* Filterkriterium: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Filterkriterium: COUNT(Content revision: Nid) */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node_revision';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
@@ -1005,7 +1006,7 @@ return $count;';
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Nebeneinkünfte';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Feld: COUNT(Content revision: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node_revision';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1028,7 +1029,7 @@ if ($count >10){$count = 10;}
 return $count;';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Taxonomie-Begriff: Begriff-ID */
+  /* Feld: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -1036,7 +1037,7 @@ return $count;';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Feld: Taxonomie-Begriff: Name */
+  /* Feld: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -1051,7 +1052,7 @@ return $count;';
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  /* Filterkriterium: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -1059,7 +1060,7 @@ return $count;';
     'blogtags' => 'blogtags',
     'tags' => 'tags',
   );
-  /* Filterkriterium: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Filterkriterium: COUNT(Content revision: Nid) */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node_revision';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
@@ -1067,7 +1068,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '4';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Content: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1088,7 +1089,7 @@ return $count;';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="text-right"><a href="/taxonomy/term/6178" class="read-more">Alle Blogartikel zum Thema</a></div>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Feld: COUNT(Content revision: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node_revision';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1111,7 +1112,7 @@ if ($count >10){$count = 10;}
 return $count;';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Taxonomie-Begriff: Begriff-ID */
+  /* Feld: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -1119,7 +1120,7 @@ return $count;';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Feld: Taxonomie-Begriff: Name */
+  /* Feld: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -1134,7 +1135,7 @@ return $count;';
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  /* Filterkriterium: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -1142,7 +1143,7 @@ return $count;';
     'blogtags' => 'blogtags',
     'tags' => 'tags',
   );
-  /* Filterkriterium: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Filterkriterium: COUNT(Content revision: Nid) */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node_revision';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
@@ -1150,7 +1151,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '3';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Content: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1169,7 +1170,7 @@ return $count;';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="text-right"><a href="/taxonomy/term/6167" class="read-more">Alle Blogartikel zum Thema</a></div>';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Feld: COUNT(Content revision: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node_revision';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1192,7 +1193,7 @@ if ($count >10){$count = 10;}
 return $count;';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Taxonomie-Begriff: Begriff-ID */
+  /* Feld: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -1200,7 +1201,7 @@ return $count;';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Feld: Taxonomie-Begriff: Name */
+  /* Feld: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -1215,7 +1216,7 @@ return $count;';
   $handler->display->display_options['fields']['name']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  /* Filterkriterium: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -1223,7 +1224,7 @@ return $count;';
     'blogtags' => 'blogtags',
     'tags' => 'tags',
   );
-  /* Filterkriterium: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Filterkriterium: COUNT(Content revision: Nid) */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node_revision';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
@@ -1231,7 +1232,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '2';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Content: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1248,7 +1249,7 @@ return $count;';
   $handler->display->display_options['defaults']['header'] = FALSE;
   $handler->display->display_options['defaults']['footer'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Feld: COUNT(Content revision: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node_revision';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1271,7 +1272,7 @@ if ($count >10){$count = 10;}
 return $count;';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Taxonomie-Begriff: Begriff-ID */
+  /* Feld: Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -1279,7 +1280,7 @@ return $count;';
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Feld: Taxonomie-Begriff: Name */
+  /* Feld: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -1295,7 +1296,7 @@ return $count;';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
+  /* Filterkriterium: Taxonomy vocabulary: Machine name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -1303,7 +1304,7 @@ return $count;';
     'blogcategories' => 'blogcategories',
     'tags' => 'tags',
   );
-  /* Filterkriterium: COUNT(Inhaltsversion: Beitrags-ID) */
+  /* Filterkriterium: COUNT(Content revision: Nid) */
   $handler->display->display_options['filters']['nid']['id'] = 'nid';
   $handler->display->display_options['filters']['nid']['table'] = 'node_revision';
   $handler->display->display_options['filters']['nid']['field'] = 'nid';
@@ -1311,7 +1312,7 @@ return $count;';
   $handler->display->display_options['filters']['nid']['group_type'] = 'count';
   $handler->display->display_options['filters']['nid']['operator'] = '>=';
   $handler->display->display_options['filters']['nid']['value']['value'] = '3';
-  /* Filterkriterium: Inhalt: Blog Kategorie (field_blogpost_categories) */
+  /* Filterkriterium: Content: Blog Kategorie (field_blogpost_categories) */
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['id'] = 'field_blogpost_categories_tid';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['table'] = 'field_data_field_blogpost_categories';
   $handler->display->display_options['filters']['field_blogpost_categories_tid']['field'] = 'field_blogpost_categories_tid';
@@ -1338,9 +1339,10 @@ return $count;';
     t('letzte Seite »'),
     t('<div class="push-bottom-s medium">Diese Schlagworte werden in unserem Blog zu dem Thema häufig verwendet:</div>'),
     t('<div class="text-right"><a href="/taxonomy/term/6179" class="read-more">Alle Blogartikel zum Thema</a></div>'),
-    t('Beitrag'),
+    t('node'),
     t('.'),
     t('Nebeneinkünfte'),
+    t('more'),
     t('Lobbyismus'),
     t('<div class="text-right"><a href="/taxonomy/term/6178" class="read-more">Alle Blogartikel zum Thema</a></div>'),
     t('<div class="text-right"><a href="/taxonomy/term/6167" class="read-more">Alle Blogartikel zum Thema</a></div>'),

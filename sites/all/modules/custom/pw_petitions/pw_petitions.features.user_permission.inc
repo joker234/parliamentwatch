@@ -10,89 +10,90 @@
 function pw_petitions_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: administer rh_node.
+  // Exported permission: 'administer rh_node'.
   $permissions['administer rh_node'] = array(
     'name' => 'administer rh_node',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'rabbit_hole',
   );
 
-  // Exported permission: bypass rh_node.
+  // Exported permission: 'bypass rh_node'.
   $permissions['bypass rh_node'] = array(
     'name' => 'bypass rh_node',
     'roles' => array(
-      0 => 'administrator',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'rabbit_hole',
   );
 
-  // Exported permission: create pw_petition content.
+  // Exported permission: 'create pw_petition content'.
   $permissions['create pw_petition content'] = array(
     'name' => 'create pw_petition content',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: delete any pw_petition content.
+  // Exported permission: 'delete any pw_petition content'.
   $permissions['delete any pw_petition content'] = array(
     'name' => 'delete any pw_petition content',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: delete own pw_petition content.
+  // Exported permission: 'delete own pw_petition content'.
   $permissions['delete own pw_petition content'] = array(
     'name' => 'delete own pw_petition content',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: edit any pw_petition content.
+  // Exported permission: 'edit any pw_petition content'.
   $permissions['edit any pw_petition content'] = array(
     'name' => 'edit any pw_petition content',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: edit own pw_petition content.
+  // Exported permission: 'edit own pw_petition content'.
   $permissions['edit own pw_petition content'] = array(
     'name' => 'edit own pw_petition content',
     'roles' => array(
-      0 => 'Content Manager',
-      1 => 'administrator',
+      'Content Manager' => 'Content Manager',
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: moderate spam in nodes of type Petition.
+  // Exported permission: 'moderate spam in nodes of type Petition'.
   $permissions['moderate spam in nodes of type Petition'] = array(
     'name' => 'moderate spam in nodes of type Petition',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'antispam',
   );
 
-  // Exported permission: php redirect rh_node.
+  // Exported permission: 'php redirect rh_node'.
   $permissions['php redirect rh_node'] = array(
     'name' => 'php redirect rh_node',
     'roles' => array(
-      0 => 'administrator',
+      'administrator' => 'administrator',
     ),
     'module' => 'rabbit_hole',
   );

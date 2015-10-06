@@ -40,7 +40,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Beziehung: Inhalt: PDF download (field_pdf_download:fid) */
+  /* Beziehung: Content: PDF download (field_pdf_download:fid) */
   $handler->display->display_options['relationships']['field_pdf_download_fid']['id'] = 'field_pdf_download_fid';
   $handler->display->display_options['relationships']['field_pdf_download_fid']['table'] = 'field_data_field_pdf_download';
   $handler->display->display_options['relationships']['field_pdf_download_fid']['field'] = 'field_pdf_download_fid';
@@ -54,7 +54,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['field_election_programme_open_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_election_programme_open_1']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_election_programme_open_1']['type'] = 'link_plain';
-  /* Feld: Inhalt: Titel */
+  /* Feld: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -67,7 +67,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
-  /* Feld: Global: Feldgruppe */
+  /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -78,7 +78,7 @@ function pw_election_programmes_views_default_views() {
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'clearfix push-bottom-s';
-  /* Feld: Inhalt: Teaser image */
+  /* Feld: Content: Teaser image */
   $handler->display->display_options['fields']['field_teaser_image']['id'] = 'field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['fields']['field_teaser_image']['field'] = 'field_teaser_image';
@@ -97,13 +97,13 @@ function pw_election_programmes_views_default_views() {
     'image_style' => 'pw_landscape_l__normal',
     'image_link' => '',
   );
-  /* Feld: Inhalt: Body */
+  /* Feld: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Feld: Global: Feldgruppe */
+  /* Feld: Global: Fieldset */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -114,7 +114,7 @@ function pw_election_programmes_views_default_views() {
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'clear text-right';
-  /* Feld: Inhalt: Link */
+  /* Feld: Content: Link */
   $handler->display->display_options['fields']['field_election_programme_open']['id'] = 'field_election_programme_open';
   $handler->display->display_options['fields']['field_election_programme_open']['table'] = 'field_data_field_election_programme_open';
   $handler->display->display_options['fields']['field_election_programme_open']['field'] = 'field_election_programme_open';
@@ -124,7 +124,7 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['field_election_programme_open']['element_wrapper_class'] = 'read-more';
   $handler->display->display_options['fields']['field_election_programme_open']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_election_programme_open']['click_sort_column'] = 'url';
-  /* Feld: Datei: Pfad */
+  /* Feld: File: Path */
   $handler->display->display_options['fields']['uri']['id'] = 'uri';
   $handler->display->display_options['fields']['uri']['table'] = 'file_managed';
   $handler->display->display_options['fields']['uri']['field'] = 'uri';
@@ -140,14 +140,14 @@ function pw_election_programmes_views_default_views() {
   $handler->display->display_options['fields']['uri']['element_wrapper_class'] = 'link-download';
   $handler->display->display_options['fields']['uri']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uri']['file_download_path'] = TRUE;
-  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  /* Feld: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Feld: Inhalt: Link löschen */
+  /* Feld: Content: Delete link */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -170,15 +170,15 @@ function pw_election_programmes_views_default_views() {
     'field_election_programme_open' => 0,
     'field_pdf_download' => 0,
   );
-  /* Sortierkriterien: Gewichtung: Gewichtung */
+  /* Sortierkriterien: Weight: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  /* Sortierkriterien: Inhalt: Titel */
+  /* Sortierkriterien: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
   $handler->display->display_options['sorts']['title']['field'] = 'title';
-  /* Kontextfilter: Inhalt: Besitzt eine Taxonomiebegriff-TID. */
+  /* Kontextfilter: Content: Has taxonomy term ID */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -195,14 +195,14 @@ function pw_election_programmes_views_default_views() {
   );
   $handler->display->display_options['arguments']['tid']['validate_options']['type'] = 'convert';
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'access denied';
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
+  /* Filterkriterium: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -222,13 +222,13 @@ function pw_election_programmes_views_default_views() {
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('Datei von field_pdf_download'),
-    t('Feldgruppe'),
+    t('file from field_pdf_download'),
+    t('Fieldset'),
     t('Wahlprogramm durchblättern'),
     t('Wahlprogramm runterladen'),
     t('Alle'),
     t('Page'),
-    t('mehr'),
+    t('more'),
   );
   $export['election_programme'] = $view;
 

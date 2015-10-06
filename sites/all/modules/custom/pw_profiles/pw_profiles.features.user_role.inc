@@ -13,28 +13,28 @@ function pw_profiles_user_default_roles() {
   // Exported role: Candidate.
   $roles['Candidate'] = array(
     'name' => 'Candidate',
-    'weight' => '6',
+    'weight' => 6,
     'machine_name' => 'candidate',
   );
 
   // Exported role: Deputy.
   $roles['Deputy'] = array(
     'name' => 'Deputy',
-    'weight' => '5',
+    'weight' => 5,
     'machine_name' => 'deputy',
   );
 
   // Exported role: Politician.
   $roles['Politician'] = array(
     'name' => 'Politician',
-    'weight' => '3',
+    'weight' => 3,
     'machine_name' => 'politician',
   );
 
   // Exported role: Premium User.
   $roles['Premium User'] = array(
     'name' => 'Premium User',
-    'weight' => '7',
+    'weight' => 7,
     'machine_name' => 'user_premium',
   );
 

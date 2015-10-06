@@ -39,7 +39,7 @@ function pw_trustees_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Feld: Inhalt: Profile image */
+  /* Feld: Content: Profile image */
   $handler->display->display_options['fields']['field_trustee_image']['id'] = 'field_trustee_image';
   $handler->display->display_options['fields']['field_trustee_image']['table'] = 'field_data_field_trustee_image';
   $handler->display->display_options['fields']['field_trustee_image']['field'] = 'field_trustee_image';
@@ -53,7 +53,7 @@ function pw_trustees_views_default_views() {
   $handler->display->display_options['fields']['field_trustee_image']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_l',
   );
-  /* Feld: Inhalt: Titel */
+  /* Feld: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -64,7 +64,7 @@ function pw_trustees_views_default_views() {
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Feld: Inhalt: Body */
+  /* Feld: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -74,14 +74,14 @@ function pw_trustees_views_default_views() {
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
+  /* Feld: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['label'] = '';
   $handler->display->display_options['fields']['edit_node']['exclude'] = TRUE;
   $handler->display->display_options['fields']['edit_node']['element_label_colon'] = FALSE;
-  /* Feld: Inhalt: Link löschen */
+  /* Feld: Content: Delete link */
   $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
   $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
@@ -101,25 +101,25 @@ function pw_trustees_views_default_views() {
     'title' => 0,
     'body' => 0,
   );
-  /* Sortierkriterien: Gewichtung: Gewichtung */
+  /* Sortierkriterien: Weight: Weight */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  /* Filterkriterium: Inhalt: Veröffentlicht */
+  /* Filterkriterium: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Inhalt: Typ */
+  /* Filterkriterium: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'trustee' => 'trustee',
   );
-  /* Filterkriterium: Inhalt: Sprache */
+  /* Filterkriterium: Content: Language */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -141,6 +141,7 @@ function pw_trustees_views_default_views() {
     t('aufsteigend'),
     t('absteigend'),
     t('Block'),
+    t('more'),
     t('Board of Trustees'),
   );
   $export['Trustees'] = $view;
