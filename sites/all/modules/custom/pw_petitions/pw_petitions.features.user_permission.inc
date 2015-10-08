@@ -10,27 +10,7 @@
 function pw_petitions_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'administer rh_node'.
-  $permissions['administer rh_node'] = array(
-    'name' => 'administer rh_node',
-    'roles' => array(
-      'Content Manager' => 'Content Manager',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'rabbit_hole',
-  );
-
-  // Exported permission: 'bypass rh_node'.
-  $permissions['bypass rh_node'] = array(
-    'name' => 'bypass rh_node',
-    'roles' => array(
-      'Content Manager' => 'Content Manager',
-      'administrator' => 'administrator',
-    ),
-    'module' => 'rabbit_hole',
-  );
-
-  // Exported permission: 'create pw_petition content'.
+  // Exported permission: create pw_petition content.
   $permissions['create pw_petition content'] = array(
     'name' => 'create pw_petition content',
     'roles' => array(
@@ -87,15 +67,6 @@ function pw_petitions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'antispam',
-  );
-
-  // Exported permission: 'php redirect rh_node'.
-  $permissions['php redirect rh_node'] = array(
-    'name' => 'php redirect rh_node',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
-    'module' => 'rabbit_hole',
   );
 
   return $permissions;

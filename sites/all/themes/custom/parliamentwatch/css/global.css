@@ -608,6 +608,10 @@ a.external:hover {
     font-weight: normal;
     font-size: 11px;
     font-size: 1.1rem;
+    line-height: 1.2em;
+}
+div.copyright {
+  padding-top: 4px;
 }
 .normal-weight,
 .normal-weight > a {
@@ -1939,23 +1943,6 @@ ul.tabs li a:active {
 
 /* /////////////////////////// views /////////////////// */
 
-
-#region-content .view-filters {
-    float: right;
-    clear: both;
-}
-#region-content .view-filters + .view-content {
-    clear: both;
-}
-#region-content .views-exposed-form .views-exposed-widget {
-    margin: 0.8em 0 0;
-    padding: 0 0 0.8em;
-    color: #333;
-    display: inline-block;
-}
-#region-content .views-exposed-form .views-exposed-widget:not(.views-submit-button) {
-    margin-left: 10px;
-}
 .views-exposed-form .views-exposed-widget label.option {
     color: #666;
 }
@@ -2011,6 +1998,22 @@ ul.tabs li a:active {
 
 /* blog */
 
+#region-content .view-blog .view-filters {
+    float: right;
+    clear: both;
+}
+#region-content .view-blog .view-filters + .view-content {
+    clear: both;
+}
+#region-content .view-blog .views-exposed-form .views-exposed-widget {
+    margin: 0.8em 0 0;
+    padding: 0 0 0.8em;
+    color: #333;
+    display: inline-block;
+}
+#region-content .view-blog .views-exposed-form .views-exposed-widget:not(.views-submit-button) {
+    margin-left: 10px;
+}
 #edit-field-blogpost-categories-wrapper {
     margin-right: 20px;
 }
@@ -3315,6 +3318,9 @@ form .webform-component-checkboxes .description {
   position: relative;
   top: -0.2em;
 }
+#webform-client-form-57286 .form-radio:before {
+  content: "" !important;
+}
 #webform-client-form-57286 .form-radios label,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label:focus,
 #webform-client-form-57286 .form-radios input[type="radio"]:checked + label:active {
@@ -3347,7 +3353,7 @@ form .webform-component-checkboxes .description {
 }
 #webform-client-form-57286 .form-actions {
   text-align: right;
-  padding-top: 1em;
+  padding-top: 2em;
 }
 
 /* /////////////////////////// Share this /////////////////// */
@@ -3414,7 +3420,7 @@ form .webform-component-checkboxes .description {
 .sharethis-buttons + h3,
 .view-mode-user_deputy h1,
 .view-mode-user_premium h1 {
-    margin-right: 55px;
+    margin-right: 72px;
 }
 
 
