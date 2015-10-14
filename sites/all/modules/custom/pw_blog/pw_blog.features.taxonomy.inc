@@ -13,9 +13,9 @@ function pw_blog_taxonomy_default_vocabularies() {
       'name' => 'Blogcategories',
       'machine_name' => 'blogcategories',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => '0',
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => '0',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -36,9 +36,9 @@ function pw_blog_taxonomy_default_vocabularies() {
       'name' => 'Blogtags',
       'machine_name' => 'blogtags',
       'description' => 'Tags in the Blog',
-      'hierarchy' => 0,
+      'hierarchy' => '0',
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => '0',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
