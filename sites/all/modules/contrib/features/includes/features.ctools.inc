@@ -83,9 +83,10 @@ function ctools_features_export_render($module, $data) {
       // For background on why we change the output for hook_views_api()
       // see http://drupal.org/node/1459120.
       if ($info['module'] == 'views') {
-        $code[] = '  return array("api" => "3.0");';
+        $code[] = '  return array("version" => "3.0");';
       }
       else {
+        $code[] = '  list($module, $api) = func_get_args();';
         $code[] = '  if ($module == "'. $info['module'] .'" && $api == "'. $info['api'] .'") {';
         $code[] = '    return array("version" => "'. $info['current_version'] .'");';
         $code[] = '  }';
@@ -95,13 +96,10 @@ function ctools_features_export_render($module, $data) {
     $plugin_api_hook_name = ctools_plugin_api_get_hook($info['module'], $info['api']);
 
     if (key_exists($plugin_api_hook_name, $component_exports)) {
-      $component_exports[$plugin_api_hook_name]['code'] .= "\n" . implode("\n", $code);
+        $component_exports[$plugin_api_hook_name] .= "\n" . implode("\n", $code);
     }
     else {
-      $component_exports[$plugin_api_hook_name] = array(
-        'code' => implode("\n", $code),
-        'args' => '$module = NULL, $api = NULL',
-      );
+        $component_exports[$plugin_api_hook_name] = implode("\n", $code);
     }
   }
 

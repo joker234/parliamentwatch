@@ -10,20 +10,19 @@ dependencies[] = taxonomy
 dependencies[] = views
 features[ctools][] = strongarm:strongarm:1
 features[ctools][] = views:views_default:3.0
-features[features_api][] = api:2
-features[field_base][] = field_features_test
-features[field_instance][] = node-features_test-field_features_test
+features[features_api][] = api:1
+features[field][] = node-features_test-field_features_test
 features[filter][] = features_test
 features[image][] = features_test
 features[node][] = features_test
 features[taxonomy][] = taxonomy_features_test
 features[user_permission][] = create features_test content
 features[views_view][] = features_test
-hidden = 1
+hidden = TRUE
 
-; Information added by Drupal.org packaging script on 2015-06-24
-version = "7.x-2.6"
+; Information added by drupal.org packaging script on 2013-09-30
+version = "7.x-1.1-alpha2+1-dev"
 core = "7.x"
 project = "features"
-datestamp = "1435165997"
+datestamp = "1380578130"
 

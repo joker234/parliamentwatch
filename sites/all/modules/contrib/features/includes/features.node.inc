@@ -9,7 +9,6 @@ function node_features_api() {
       'name' => t('Content types'),
       'feature_source' => TRUE,
       'default_hook' => 'node_info',
-      'alter_type' => FEATURES_ALTER_TYPE_INLINE,
     ),
   );
 }
@@ -44,7 +43,7 @@ function node_features_export($data, &$export, $module_name = '') {
 
       $fields = field_info_instances('node', $type);
       foreach ($fields as $name => $field) {
-        $pipe['field_instance'][] = "node-{$field['bundle']}-{$field['field_name']}";
+        $pipe['field'][] = "node-{$field['bundle']}-{$field['field_name']}";
       }
     }
   }
@@ -87,7 +86,6 @@ function node_features_export_render($module, $data, $export = NULL) {
     }
   }
   $output[] = '  );';
-  $output[] = '  drupal_alter(\'node_info\', $items);';
   $output[] = '  return $items;';
   $output = implode("\n", $output);
   return array('node_info' => $output);
@@ -117,7 +115,7 @@ function node_features_revert($module = NULL) {
 }
 
 /**
- * Implements hook_features_disable_feature().
+ * Implements hook_features_disable().
  *
  * When a features module is disabled, modify any node types it provides so
  * they can be deleted manually through the content types UI.
@@ -125,7 +123,7 @@ function node_features_revert($module = NULL) {
  * @param $module
  *   Name of module that has been disabled.
  */
-function node_features_disable_feature($module) {
+function node_features_disable($module) {
   if ($default_types = features_get_default('node', $module)) {
     foreach ($default_types as $type_name => $type_info) {
       $type_info = node_type_load($type_name);
@@ -133,14 +131,13 @@ function node_features_disable_feature($module) {
       $type_info->custom = 1;
       $type_info->modified = 1;
       $type_info->locked = 0;
-      $type_info->disabled = 0;
       node_type_save($type_info);
     }
   }
 }
 
 /**
- * Implements hook_features_enable_feature().
+ * Implements hook_features_enable().
  *
  * When a features module is enabled, modify any node types it provides so
  * they can no longer be deleted manually through the content types UI.
@@ -148,7 +145,7 @@ function node_features_disable_feature($module) {
  * @param $module
  *   Name of module that has been enabled.
  */
-function node_features_enable_feature($module) {
+function node_features_enable($module) {
   if ($default_types = features_get_default('node', $module)) {
     foreach ($default_types as $type_name => $type_info) {
       // Ensure the type exists.
@@ -157,7 +154,6 @@ function node_features_enable_feature($module) {
         $type_info->custom = 0;
         $type_info->modified = 0;
         $type_info->locked = 1;
-        $type_info->disabled = 0;
         node_type_save($type_info);
       }
     }
