@@ -107,3 +107,10 @@ function pw_userarchives_update_7103() {
   db_add_field('user_archive_cache', 'actual_profile', array('type' => 'int', 'not null' => TRUE, 'default' => 0, 'size' => 'tiny', 'description' => 'Boolean if profile is newest.'));
   db_add_index('user_archive_cache', 'actual_profile', array('actual_profile'));
 }
+
+/**
+ * Changes the user_archives_cache ID to BIGINT
+ */
+function pw_userarchives_update_7104() {
+    db_query("ALTER TABLE user_archive_cache CHANGE id id BIGINT NOT NULL AUTO_INCREMENT");
+}
