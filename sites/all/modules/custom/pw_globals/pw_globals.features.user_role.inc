@@ -13,14 +13,14 @@ function pw_globals_user_default_roles() {
   // Exported role: API User.
   $roles['API User'] = array(
     'name' => 'API User',
-    'weight' => 9,
+    'weight' => '9',
     'machine_name' => 'api_user',
   );
 
   // Exported role: Content Manager.
   $roles['Content Manager'] = array(
     'name' => 'Content Manager',
-    'weight' => 3,
+    'weight' => '3',
     'machine_name' => 'content_manager',
   );
 

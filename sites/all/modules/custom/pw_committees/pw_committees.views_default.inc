@@ -68,7 +68,7 @@ print i18n_taxonomy_term_name($data->_field_data[\'tid\'][\'entity\']);
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Taxonomy term: Name */
+  /* Feld: Taxonomie-Begriff: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -79,7 +79,7 @@ print i18n_taxonomy_term_name($data->_field_data[\'tid\'][\'entity\']);
   $handler->display->display_options['fields']['name']['element_type'] = 'h3';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_taxonomy'] = TRUE;
-  /* Feld: Taxonomy term: Picture */
+  /* Feld: Taxonomie-Begriff: Picture */
   $handler->display->display_options['fields']['field_committee_picture']['id'] = 'field_committee_picture';
   $handler->display->display_options['fields']['field_committee_picture']['table'] = 'field_data_field_committee_picture';
   $handler->display->display_options['fields']['field_committee_picture']['field'] = 'field_committee_picture';
@@ -109,7 +109,7 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
-  /* Feld: Taxonomy term: Term description */
+  /* Feld: Taxonomie-Begriff: Begriffsbeschreibung */
   $handler->display->display_options['fields']['description']['id'] = 'description';
   $handler->display->display_options['fields']['description']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['description']['field'] = 'description';
@@ -118,7 +118,7 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
   $handler->display->display_options['fields']['description']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['description']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['description']['element_default_classes'] = FALSE;
-  /* Feld: Taxonomy term: Term ID */
+  /* Feld: Taxonomie-Begriff: Begriff-ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
   $handler->display->display_options['fields']['tid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['tid']['field'] = 'tid';
@@ -126,7 +126,7 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
   $handler->display->display_options['fields']['tid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -139,7 +139,7 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
   $handler->display->display_options['fields']['nothing']['element_class'] = 'float-right link-committees';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Kontextfilter: Field: Parliament (field_parliament) */
+  /* Kontextfilter: Feld: Parliament (field_parliament) */
   $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -155,7 +155,7 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
     'parliaments' => 'parliaments',
   );
   $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['type'] = 'convert';
-  /* Filterkriterium: Taxonomy vocabulary: Machine name */
+  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -187,7 +187,6 @@ print i18n_string("taxonomy:term:".$data->_field_data[\'tid\'][\'entity\']->tid.
     t('committee details'),
     t('Alle'),
     t('Page'),
-    t('more'),
   );
   $export['pw_commitee_terms'] = $view;
 

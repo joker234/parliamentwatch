@@ -7,13 +7,16 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function pw_election_programmes_ctools_plugin_api($module = NULL, $api = NULL) {
+function pw_election_programmes_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
   if ($module == "ds" && $api == "ds") {
     return array("version" => "1");
   }
+  list($module, $api) = func_get_args();
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -22,8 +25,8 @@ function pw_election_programmes_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function pw_election_programmes_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
+function pw_election_programmes_views_api() {
+  return array("version" => "3.0");
 }
 
 /**
@@ -40,6 +43,5 @@ function pw_election_programmes_node_info() {
       'help' => '',
     ),
   );
-  drupal_alter('node_info', $items);
   return $items;
 }

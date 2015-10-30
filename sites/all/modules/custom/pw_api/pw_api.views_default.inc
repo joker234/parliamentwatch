@@ -38,23 +38,23 @@ function pw_api_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Beziehung: User (historical data): Profile picture (field_user_picture:fid) */
+  /* Beziehung: Benutzer (Historische Daten): Profile picture (field_user_picture:fid) */
   $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
   $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): List Position (field_user_list_position) */
+  /* Beziehung: Benutzer (Historische Daten): List Position (field_user_list_position) */
   $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
-  /* Beziehung: User (historical data): List (field_user_list) */
+  /* Beziehung: Benutzer (Historische Daten): List (field_user_list) */
   $handler->display->display_options['relationships']['field_user_list_tid']['id'] = 'field_user_list_tid';
   $handler->display->display_options['relationships']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
   $handler->display->display_options['relationships']['field_user_list_tid']['field'] = 'field_user_list_tid';
@@ -66,32 +66,32 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Gender */
+  /* Feld: Benutzer (Historische Daten): Gender */
   $handler->display->display_options['fields']['field_user_gender-revision_id']['id'] = 'field_user_gender-revision_id';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['table'] = 'field_revision_field_user_gender';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['field'] = 'field_user_gender-revision_id';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['label'] = 'gender';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_gender-revision_id']['type'] = 'list_key';
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -99,7 +99,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: User (historical data): Parliament */
+  /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -108,7 +108,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['separator'] = '||';
-  /* Feld: User (historical data): Committee */
+  /* Feld: Benutzer (Historische Daten): Committee */
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['id'] = 'field_user_commitee-revision_id';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['table'] = 'field_revision_field_user_commitee';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['field'] = 'field_user_commitee-revision_id';
@@ -117,7 +117,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['separator'] = '||';
-  /* Feld: User (historical data): Education */
+  /* Feld: Benutzer (Historische Daten): Education */
   $handler->display->display_options['fields']['field_user_education-revision_id']['id'] = 'field_user_education-revision_id';
   $handler->display->display_options['fields']['field_user_education-revision_id']['table'] = 'field_revision_field_user_education';
   $handler->display->display_options['fields']['field_user_education-revision_id']['field'] = 'field_user_education-revision_id';
@@ -149,7 +149,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_election_result-revision_id']['label'] = 'constituency_result';
   $handler->display->display_options['fields']['field_user_election_result-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_election_result-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -181,7 +181,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_list_position-revision_id']['settings'] = array(
     'linked' => 0,
   );
-  /* Feld: User (historical data): List */
+  /* Feld: Benutzer (Historische Daten): List */
   $handler->display->display_options['fields']['field_user_list-revision_id']['id'] = 'field_user_list-revision_id';
   $handler->display->display_options['fields']['field_user_list-revision_id']['table'] = 'field_revision_field_user_list';
   $handler->display->display_options['fields']['field_user_list-revision_id']['field'] = 'field_user_list-revision_id';
@@ -190,7 +190,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['text'] = 'uuid**[uuid_2]}{name**[field_user_list-revision_id]}{list_position**[field_user_list_position-revision_id]';
   $handler->display->display_options['fields']['field_user_list-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_list-revision_id']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: User (historical data): Political Roles */
+  /* Feld: Benutzer (Historische Daten): Political Roles */
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['id'] = 'field_user_political_roles-revision_id';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['table'] = 'field_revision_field_user_political_roles';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['field'] = 'field_user_political_roles-revision_id';
@@ -206,7 +206,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['ui_name'] = 'Excluded Profile Picture Copyright';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -216,7 +216,7 @@ function pw_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_url_plain';
-  /* Feld: User (historical data): Questions Get */
+  /* Feld: Benutzer (Historische Daten): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['id'] = 'field_user_questions_get-revision_id';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['table'] = 'field_revision_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['field'] = 'field_user_questions_get-revision_id';
@@ -227,7 +227,7 @@ function pw_api_views_default_views() {
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
-  /* Feld: User (historical data): Answers Give */
+  /* Feld: Benutzer (Historische Daten): Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
@@ -271,7 +271,7 @@ echo $base_url;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: User (historical data): External URL */
+  /* Feld: Benutzer (Historische Daten): External URL */
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['id'] = 'field_user_external_url-revision_id';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['table'] = 'field_revision_field_user_external_url';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['field'] = 'field_user_external_url-revision_id';
@@ -279,7 +279,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['type'] = 'link_plain';
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -287,20 +287,20 @@ echo $base_url;
   $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[php]/user/[uid]/revisions/[vid]/view';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Feld: User: E-mail */
+  /* Feld: Benutzer: E-Mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
   $handler->display->display_options['fields']['mail']['label'] = 'email';
   $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
-  /* Feld: User (historical data): Marriage status */
+  /* Feld: Benutzer (Historische Daten): Marriage status */
   $handler->display->display_options['fields']['field_user_marriage_status-revision_id']['id'] = 'field_user_marriage_status-revision_id';
   $handler->display->display_options['fields']['field_user_marriage_status-revision_id']['table'] = 'field_revision_field_user_marriage_status';
   $handler->display->display_options['fields']['field_user_marriage_status-revision_id']['field'] = 'field_user_marriage_status-revision_id';
   $handler->display->display_options['fields']['field_user_marriage_status-revision_id']['label'] = 'marriage_status';
   $handler->display->display_options['fields']['field_user_marriage_status-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Children */
+  /* Feld: Benutzer (Historische Daten): Children */
   $handler->display->display_options['fields']['field_user_childs-revision_id']['id'] = 'field_user_childs-revision_id';
   $handler->display->display_options['fields']['field_user_childs-revision_id']['table'] = 'field_revision_field_user_childs';
   $handler->display->display_options['fields']['field_user_childs-revision_id']['field'] = 'field_user_childs-revision_id';
@@ -310,7 +310,7 @@ echo $base_url;
     'thousand_separator' => '',
     'prefix_suffix' => 0,
   );
-  /* Feld: User (historical data): Address */
+  /* Feld: Benutzer (Historische Daten): Address */
   $handler->display->display_options['fields']['field_user_address-revision_id']['id'] = 'field_user_address-revision_id';
   $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
   $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
@@ -329,7 +329,7 @@ echo $base_url;
     ),
     'separator' => ', ',
   );
-  /* Feld: User (historical data): Roles (revisionable) */
+  /* Feld: Benutzer (Historische Daten): Roles (revisionable) */
   $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['id'] = 'field_user_roles_for_view_mode_s-revision_id';
   $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
   $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['field'] = 'field_user_roles_for_view_mode_s-revision_id';
@@ -349,14 +349,14 @@ echo $base_url;
     'textformatter_term_plain' => 0,
   );
   $handler->display->display_options['fields']['field_user_roles_for_view_mode_s-revision_id']['delta_offset'] = '0';
-  /* Feld: User (historical data): Title */
+  /* Feld: Benutzer (Historische Daten): Title */
   $handler->display->display_options['fields']['field_user_title-revision_id']['id'] = 'field_user_title-revision_id';
   $handler->display->display_options['fields']['field_user_title-revision_id']['table'] = 'field_revision_field_user_title';
   $handler->display->display_options['fields']['field_user_title-revision_id']['field'] = 'field_user_title-revision_id';
-  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'title';
+  $handler->display->display_options['fields']['field_user_title-revision_id']['label'] = 'Titel';
   $handler->display->display_options['fields']['field_user_title-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_title-revision_id']['type'] = 'text_plain';
-  /* Feld: User (historical data): Birthday */
+  /* Feld: Benutzer (Historische Daten): Birthday */
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['id'] = 'field_user_birthday-revision_id';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['table'] = 'field_revision_field_user_birthday';
   $handler->display->display_options['fields']['field_user_birthday-revision_id']['field'] = 'field_user_birthday-revision_id';
@@ -370,13 +370,13 @@ echo $base_url;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: User (historical data): Professional Qualification */
+  /* Feld: Benutzer (Historische Daten): Professional Qualification */
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['id'] = 'field_user_job_skills-revision_id';
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['table'] = 'field_revision_field_user_job_skills';
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['field'] = 'field_user_job_skills-revision_id';
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['label'] = 'profession';
   $handler->display->display_options['fields']['field_user_job_skills-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Valid */
+  /* Feld: Benutzer (Historische Daten): Valid */
   $handler->display->display_options['fields']['field_user_valid-revision_id']['id'] = 'field_user_valid-revision_id';
   $handler->display->display_options['fields']['field_user_valid-revision_id']['table'] = 'field_revision_field_user_valid';
   $handler->display->display_options['fields']['field_user_valid-revision_id']['field'] = 'field_user_valid-revision_id';
@@ -390,11 +390,10 @@ echo $base_url;
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: User (historical data): Twitter */
+  /* Feld: Benutzer (Historische Daten): Twitter */
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['id'] = 'field_user_twitter_account-revision_id';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['table'] = 'field_revision_field_user_twitter_account';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['field'] = 'field_user_twitter_account-revision_id';
-  $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['label'] = 'twitter';
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_twitter_account-revision_id']['type'] = 'text_plain';
   /* Sortierkriterien: User revision: Vid */
@@ -414,7 +413,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -491,7 +490,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -516,7 +515,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -541,7 +540,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User (historical data): Parliament (field_user_parliament) */
+  /* Kontextfilter: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -587,7 +586,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User (historical data): Parliament (field_user_parliament) */
+  /* Kontextfilter: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -629,7 +628,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -642,7 +641,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -671,7 +670,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -684,7 +683,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -754,7 +753,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -789,7 +788,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -837,7 +836,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -850,7 +849,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -871,11 +870,11 @@ echo $base_url;
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('image from field_user_picture'),
-    t('term from field_user_constituency'),
-    t('term from field_user_parliament'),
-    t('term from field_user_list_position'),
-    t('term from field_user_list'),
+    t('Bild von field_user_picture'),
+    t('Begriff aus field_user_constituency'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_list_position'),
+    t('Begriff aus field_user_list'),
     t('name'),
     t('uuid'),
     t('gender'),
@@ -909,14 +908,13 @@ echo $base_url;
     t('children'),
     t('location'),
     t('roles'),
-    t('title'),
+    t('Titel'),
     t('birthday'),
     t('profession'),
     t('valid'),
-    t('twitter'),
+    t('Twitter'),
     t('Alle'),
     t('XML-by-name'),
-    t('more'),
     t('CSV-by-name'),
     t('CSV-by-uuid'),
     t('XML-by-uuid'),
@@ -959,22 +957,22 @@ echo $base_url;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
-  /* Feld: Taxonomy term: Taxonomy term UUID */
+  /* Feld: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['relationship'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: Taxonomy term: Area Codes */
+  /* Feld: Taxonomie-Begriff: Area Codes */
   $handler->display->display_options['fields']['field_constituency_area_codes']['id'] = 'field_constituency_area_codes';
   $handler->display->display_options['fields']['field_constituency_area_codes']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['fields']['field_constituency_area_codes']['field'] = 'field_constituency_area_codes';
@@ -983,7 +981,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_constituency_area_codes']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_constituency_area_codes']['group_rows'] = FALSE;
   $handler->display->display_options['fields']['field_constituency_area_codes']['delta_offset'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -996,7 +994,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Filterkriterium: Taxonomy vocabulary: Machine name */
+  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -1044,7 +1042,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1069,7 +1067,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1127,7 +1125,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1149,13 +1147,12 @@ echo $base_url;
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('term from field_parliament'),
-    t('term from field_constituency_area_codes'),
+    t('Begriff aus field_parliament'),
+    t('Begriff aus field_constituency_area_codes'),
     t('uuid'),
     t('name'),
     t('Alle'),
     t('CSV-by-name'),
-    t('more'),
     t('XML-by-name'),
     t('CSV-by-uuid'),
     t('XML-by-uuid'),
@@ -1191,17 +1188,17 @@ echo $base_url;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Feld: Taxonomy term: Taxonomy term UUID */
+  /* Feld: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: Taxonomy term: Name */
+  /* Feld: Taxonomie-Begriff: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -1209,13 +1206,13 @@ echo $base_url;
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Feld: Taxonomy term: Number */
+  /* Feld: Taxonomie-Begriff: Number */
   $handler->display->display_options['fields']['field_constituency_nr']['id'] = 'field_constituency_nr';
   $handler->display->display_options['fields']['field_constituency_nr']['table'] = 'field_data_field_constituency_nr';
   $handler->display->display_options['fields']['field_constituency_nr']['field'] = 'field_constituency_nr';
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'number';
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: Taxonomy term: Area Codes */
+  /* Feld: Taxonomie-Begriff: Area Codes */
   $handler->display->display_options['fields']['field_constituency_area_codes']['id'] = 'field_constituency_area_codes';
   $handler->display->display_options['fields']['field_constituency_area_codes']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['fields']['field_constituency_area_codes']['field'] = 'field_constituency_area_codes';
@@ -1235,14 +1232,14 @@ echo $base_url;
     'textformatter_term_plain' => 0,
   );
   $handler->display->display_options['fields']['field_constituency_area_codes']['delta_offset'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['uuid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
-  /* Filterkriterium: Taxonomy vocabulary: Machine name */
+  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -1264,7 +1261,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -1289,7 +1286,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -1314,13 +1311,13 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['label'] = 'term_from_field_parliament';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1349,13 +1346,13 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['label'] = 'term_from_field_parliament';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1384,16 +1381,16 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -1406,7 +1403,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -1431,16 +1428,16 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -1453,7 +1450,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -1482,16 +1479,16 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1504,7 +1501,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -1529,16 +1526,16 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1551,7 +1548,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -1587,7 +1584,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -1623,7 +1620,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1659,16 +1656,16 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -1681,7 +1678,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -1717,16 +1714,16 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Field: Parliament (field_parliament) */
+  /* Beziehung: Feld: Parliament (field_parliament) */
   $handler->display->display_options['relationships']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['relationships']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['relationships']['field_parliament_tid']['field'] = 'field_parliament_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -1739,7 +1736,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -1761,20 +1758,19 @@ echo $base_url;
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('term from field_parliament'),
+    t('Begriff aus field_parliament'),
     t('uuid'),
     t('name'),
     t('number'),
     t('areacodes'),
     t('Alle'),
     t('CSV-by-name'),
-    t('more'),
     t('XML-by-name'),
     t('XML-by-uuid'),
     t('term_from_field_parliament'),
     t('CSV-by-uuid'),
     t('CSV-Areacode-by-name'),
-    t('term from field_constituency_area_codes'),
+    t('Begriff aus field_constituency_area_codes'),
     t('XML-Areacode-by-name'),
     t('CSV-Areacode-by-uuid'),
     t('XML-Areacode-by-uuid'),
@@ -1869,15 +1865,15 @@ echo $base_url;
       'empty_column' => 0,
     ),
   );
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -1889,25 +1885,25 @@ echo $base_url;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -1915,21 +1911,21 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Taxonomy term: Taxonomy term UUID */
+  /* Feld: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['fields']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['fields']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['uuid_1']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid_1']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['fields']['uuid_1']['label'] = 'constituency_uuid';
   $handler->display->display_options['fields']['uuid_1']['element_label_colon'] = FALSE;
-  /* Feld: Taxonomy term: Number */
+  /* Feld: Taxonomie-Begriff: Number */
   $handler->display->display_options['fields']['field_constituency_nr']['id'] = 'field_constituency_nr';
   $handler->display->display_options['fields']['field_constituency_nr']['table'] = 'field_data_field_constituency_nr';
   $handler->display->display_options['fields']['field_constituency_nr']['field'] = 'field_constituency_nr';
   $handler->display->display_options['fields']['field_constituency_nr']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -1938,7 +1934,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
-  /* Sortierkriterien: User: User UUID */
+  /* Sortierkriterien: Benutzer: Benutzer UUID */
   $handler->display->display_options['sorts']['uuid']['id'] = 'uuid';
   $handler->display->display_options['sorts']['uuid']['table'] = 'users';
   $handler->display->display_options['sorts']['uuid']['field'] = 'uuid';
@@ -1947,7 +1943,7 @@ echo $base_url;
   $handler->display->display_options['sorts']['vid']['table'] = 'user_revision';
   $handler->display->display_options['sorts']['vid']['field'] = 'vid';
   $handler->display->display_options['sorts']['vid']['order'] = 'DESC';
-  /* Kontextfilter: User (historical data): Parliament (field_user_parliament) */
+  /* Kontextfilter: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -1967,7 +1963,7 @@ if (isset($static) && $row->uuid == $static) {
 }
 return FALSE; // default: output the result
 ';
-  /* Filterkriterium: User: Roles */
+  /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -1986,15 +1982,15 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -2007,25 +2003,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -2051,7 +2047,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -2063,7 +2059,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -2097,25 +2093,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -2141,7 +2137,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -2153,7 +2149,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -2182,20 +2178,20 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -2224,7 +2220,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -2253,25 +2249,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -2284,7 +2280,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -2309,19 +2305,19 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
@@ -2335,25 +2331,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -2379,7 +2375,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -2391,7 +2387,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -2404,7 +2400,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -2433,25 +2429,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -2464,7 +2460,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -2489,19 +2485,19 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
@@ -2515,25 +2511,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -2559,7 +2555,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -2571,7 +2567,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -2584,7 +2580,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -2613,20 +2609,20 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -2639,7 +2635,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -2664,15 +2660,15 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -2685,25 +2681,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -2729,7 +2725,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -2741,7 +2737,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -2754,7 +2750,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -2783,20 +2779,20 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -2809,7 +2805,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -2834,15 +2830,15 @@ return FALSE; // default: output the result
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
@@ -2855,25 +2851,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -2899,7 +2895,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -2911,7 +2907,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['separator'] = '||';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -2924,7 +2920,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -2960,7 +2956,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -2996,7 +2992,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -3032,25 +3028,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -3063,7 +3059,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -3099,25 +3095,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -3130,7 +3126,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -3166,25 +3162,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -3197,7 +3193,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -3233,25 +3229,25 @@ return FALSE; // default: output the result
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: User revision: User */
+  /* Beziehung: User revision: Benutzer */
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'user_revision';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: Taxonomy term: Area Codes (field_constituency_area_codes) */
+  /* Beziehung: Taxonomie-Begriff: Area Codes (field_constituency_area_codes) */
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['id'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['table'] = 'field_data_field_constituency_area_codes';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['field'] = 'field_constituency_area_codes_tid';
   $handler->display->display_options['relationships']['field_constituency_area_codes_tid']['relationship'] = 'field_user_constituency_tid';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -3264,7 +3260,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -3287,8 +3283,8 @@ return FALSE; // default: output the result
     t('Aufsteigend'),
     t('Absteigend'),
     t('Get all revisions from an user.'),
-    t('term from field_user_parliament'),
-    t('term from field_user_constituency'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_constituency'),
     t('name'),
     t('uuid'),
     t('first_name'),
@@ -3299,13 +3295,12 @@ return FALSE; // default: output the result
     t('constituency'),
     t('Alle'),
     t('XML-by-name'),
-    t('more'),
     t('uuid**[uuid_1]}{name**[field_user_constituency-revision_id]}{number**[field_constituency_nr]'),
     t('XML-by-uuid'),
     t('CSV-by-name'),
     t('CSV-by-uuid'),
     t('CSV-Areacode-by-name'),
-    t('term from field_constituency_area_codes'),
+    t('Begriff aus field_constituency_area_codes'),
     t('XML-Areacode-by-name'),
     t('CSV-Areacode-by-uuid'),
     t('XML-Areacode-by-uuid'),
@@ -3349,13 +3344,13 @@ return FALSE; // default: output the result
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Feld: Taxonomy term: Taxonomy term UUID */
+  /* Feld: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: Taxonomy term: Name */
+  /* Feld: Taxonomie-Begriff: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['name']['field'] = 'name';
@@ -3363,7 +3358,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
-  /* Feld: Taxonomy term: Valid Date */
+  /* Feld: Taxonomie-Begriff: Valid Date */
   $handler->display->display_options['fields']['field_parliament_valid']['id'] = 'field_parliament_valid';
   $handler->display->display_options['fields']['field_parliament_valid']['table'] = 'field_data_field_parliament_valid';
   $handler->display->display_options['fields']['field_parliament_valid']['field'] = 'field_parliament_valid';
@@ -3378,7 +3373,7 @@ return FALSE; // default: output the result
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Feld: Taxonomy term: Valid Date */
+  /* Feld: Taxonomie-Begriff: Valid Date */
   $handler->display->display_options['fields']['field_parliament_valid_1']['id'] = 'field_parliament_valid_1';
   $handler->display->display_options['fields']['field_parliament_valid_1']['table'] = 'field_data_field_parliament_valid';
   $handler->display->display_options['fields']['field_parliament_valid_1']['field'] = 'field_parliament_valid';
@@ -3392,7 +3387,7 @@ return FALSE; // default: output the result
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Filterkriterium: Taxonomy vocabulary: Machine name */
+  /* Filterkriterium: Taxonomie-Vokabular: Maschinenlesbarer Name */
   $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
   $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
@@ -3460,7 +3455,6 @@ return FALSE; // default: output the result
     t('valid_date_start'),
     t('valid_date_end'),
     t('XML'),
-    t('more'),
     t('CSV'),
     t('JSON'),
   );
@@ -3493,23 +3487,23 @@ return FALSE; // default: output the result
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Beziehung: User (historical data): Profile picture (field_user_picture:fid) */
+  /* Beziehung: Benutzer (Historische Daten): Profile picture (field_user_picture:fid) */
   $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
   $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
-  /* Beziehung: User (historical data): Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
-  /* Beziehung: User (historical data): Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
-  /* Beziehung: User (historical data): List (field_user_list) */
+  /* Beziehung: Benutzer (Historische Daten): List (field_user_list) */
   $handler->display->display_options['relationships']['field_user_list_tid']['id'] = 'field_user_list_tid';
   $handler->display->display_options['relationships']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
   $handler->display->display_options['relationships']['field_user_list_tid']['field'] = 'field_user_list_tid';
-  /* Beziehung: User (historical data): List Position (field_user_list_position) */
+  /* Beziehung: Benutzer (Historische Daten): List Position (field_user_list_position) */
   $handler->display->display_options['relationships']['field_user_list_position_tid']['id'] = 'field_user_list_position_tid';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['table'] = 'field_revision_field_user_list_position';
   $handler->display->display_options['relationships']['field_user_list_position_tid']['field'] = 'field_user_list_position_tid';
@@ -3521,32 +3515,32 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_user_revision'] = 0;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'users';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Gender */
+  /* Feld: Benutzer (Historische Daten): Gender */
   $handler->display->display_options['fields']['field_user_gender-revision_id']['id'] = 'field_user_gender-revision_id';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['table'] = 'field_revision_field_user_gender';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['field'] = 'field_user_gender-revision_id';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['label'] = 'gender';
   $handler->display->display_options['fields']['field_user_gender-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_gender-revision_id']['type'] = 'list_key';
-  /* Feld: User (historical data): First Name */
+  /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['field'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['label'] = 'first_name';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Last name */
+  /* Feld: Benutzer (Historische Daten): Last name */
   $handler->display->display_options['fields']['field_user_lname-revision_id']['id'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['table'] = 'field_revision_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['field'] = 'field_user_lname-revision_id';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['label'] = 'last_name';
   $handler->display->display_options['fields']['field_user_lname-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Party */
+  /* Feld: Benutzer (Historische Daten): Party */
   $handler->display->display_options['fields']['field_user_party-revision_id']['id'] = 'field_user_party-revision_id';
   $handler->display->display_options['fields']['field_user_party-revision_id']['table'] = 'field_revision_field_user_party';
   $handler->display->display_options['fields']['field_user_party-revision_id']['field'] = 'field_user_party-revision_id';
@@ -3554,7 +3548,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: User (historical data): Parliament */
+  /* Feld: Benutzer (Historische Daten): Parliament */
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['id'] = 'field_user_parliament-revision_id';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['field'] = 'field_user_parliament-revision_id';
@@ -3563,7 +3557,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_parliament-revision_id']['separator'] = '||';
-  /* Feld: User (historical data): Committee */
+  /* Feld: Benutzer (Historische Daten): Committee */
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['id'] = 'field_user_commitee-revision_id';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['table'] = 'field_revision_field_user_commitee';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['field'] = 'field_user_commitee-revision_id';
@@ -3572,13 +3566,13 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_user_commitee-revision_id']['separator'] = '||';
-  /* Feld: User (historical data): Education */
+  /* Feld: Benutzer (Historische Daten): Education */
   $handler->display->display_options['fields']['field_user_education-revision_id']['id'] = 'field_user_education-revision_id';
   $handler->display->display_options['fields']['field_user_education-revision_id']['table'] = 'field_revision_field_user_education';
   $handler->display->display_options['fields']['field_user_education-revision_id']['field'] = 'field_user_education-revision_id';
   $handler->display->display_options['fields']['field_user_education-revision_id']['label'] = 'education';
   $handler->display->display_options['fields']['field_user_education-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Address */
+  /* Feld: Benutzer (Historische Daten): Address */
   $handler->display->display_options['fields']['field_user_address-revision_id']['id'] = 'field_user_address-revision_id';
   $handler->display->display_options['fields']['field_user_address-revision_id']['table'] = 'field_revision_field_user_address';
   $handler->display->display_options['fields']['field_user_address-revision_id']['field'] = 'field_user_address-revision_id';
@@ -3614,7 +3608,7 @@ return FALSE; // default: output the result
   $handler->display->display_options['fields']['field_constituency_nr']['label'] = 'constituency_number';
   $handler->display->display_options['fields']['field_constituency_nr']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_constituency_nr']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Constituency */
+  /* Feld: Benutzer (Historische Daten): Constituency */
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['id'] = 'field_user_constituency-revision_id';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['table'] = 'field_revision_field_user_constituency';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['field'] = 'field_user_constituency-revision_id';
@@ -3673,7 +3667,7 @@ $query = db_select(\'user_revision\', \'ur\');
   $handler->display->display_options['fields']['field_user_list_position-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_list_position-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_list_position-revision_id']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: User (historical data): List */
+  /* Feld: Benutzer (Historische Daten): List */
   $handler->display->display_options['fields']['field_user_list-revision_id']['id'] = 'field_user_list-revision_id';
   $handler->display->display_options['fields']['field_user_list-revision_id']['table'] = 'field_revision_field_user_list';
   $handler->display->display_options['fields']['field_user_list-revision_id']['field'] = 'field_user_list-revision_id';
@@ -3682,7 +3676,7 @@ $query = db_select(\'user_revision\', \'ur\');
   $handler->display->display_options['fields']['field_user_list-revision_id']['alter']['text'] = 'uuid**[uuid_2]}{name**[field_user_list-revision_id]}{list_position**[field_user_list_position-revision_id]';
   $handler->display->display_options['fields']['field_user_list-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_list-revision_id']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: User (historical data): Political Roles */
+  /* Feld: Benutzer (Historische Daten): Political Roles */
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['id'] = 'field_user_political_roles-revision_id';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['table'] = 'field_revision_field_user_political_roles';
   $handler->display->display_options['fields']['field_user_political_roles-revision_id']['field'] = 'field_user_political_roles-revision_id';
@@ -3698,7 +3692,7 @@ $query = db_select(\'user_revision\', \'ur\');
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['ui_name'] = 'Excluded Profile Picture Copyright';
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture_copyright-revision_id']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): Profile picture */
+  /* Feld: Benutzer (Historische Daten): Profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
@@ -3708,7 +3702,7 @@ $query = db_select(\'user_revision\', \'ur\');
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['type'] = 'file_url_plain';
-  /* Feld: User (historical data): Questions Get */
+  /* Feld: Benutzer (Historische Daten): Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['id'] = 'field_user_questions_get-revision_id';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['table'] = 'field_revision_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id']['field'] = 'field_user_questions_get-revision_id';
@@ -3719,7 +3713,7 @@ $query = db_select(\'user_revision\', \'ur\');
     'thousand_separator' => '',
     'prefix_suffix' => 1,
   );
-  /* Feld: User (historical data): Answers Give */
+  /* Feld: Benutzer (Historische Daten): Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['id'] = 'field_user_answers_give-revision_id';
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['table'] = 'field_revision_field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give-revision_id']['field'] = 'field_user_answers_give-revision_id';
@@ -3763,14 +3757,14 @@ echo $base_url;
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = 'url_profile';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '[php]/profile/[name]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Feld: User (historical data): External URL */
+  /* Feld: Benutzer (Historische Daten): External URL */
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['id'] = 'field_user_external_url-revision_id';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['table'] = 'field_revision_field_user_external_url';
   $handler->display->display_options['fields']['field_user_external_url-revision_id']['field'] = 'field_user_external_url-revision_id';
@@ -3796,14 +3790,14 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['uuid']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
-  /* Filterkriterium: User (historical data): Roles (revisionable) (field_user_roles_for_view_mode_s) */
+  /* Filterkriterium: Benutzer (Historische Daten): Roles (revisionable) (field_user_roles_for_view_mode_s) */
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['id'] = 'field_user_roles_for_view_mode_s_tid';
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['table'] = 'field_revision_field_user_roles_for_view_mode_s';
   $handler->display->display_options['filters']['field_user_roles_for_view_mode_s_tid']['field'] = 'field_user_roles_for_view_mode_s_tid';
@@ -3882,7 +3876,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -3907,7 +3901,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -3932,7 +3926,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User (historical data): Parliament (field_user_parliament) */
+  /* Kontextfilter: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -3978,7 +3972,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User (historical data): Parliament (field_user_parliament) */
+  /* Kontextfilter: Benutzer (Historische Daten): Parliament (field_user_parliament) */
   $handler->display->display_options['arguments']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['table'] = 'field_revision_field_user_parliament';
   $handler->display->display_options['arguments']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -4020,7 +4014,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4033,7 +4027,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -4062,7 +4056,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4075,7 +4069,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -4145,7 +4139,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4180,7 +4174,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -4228,7 +4222,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4241,7 +4235,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -4262,11 +4256,11 @@ echo $base_url;
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('image from field_user_picture'),
-    t('term from field_user_constituency'),
-    t('term from field_user_parliament'),
-    t('term from field_user_list'),
-    t('term from field_user_list_position'),
+    t('Bild von field_user_picture'),
+    t('Begriff aus field_user_constituency'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_list'),
+    t('Begriff aus field_user_list_position'),
     t('name'),
     t('uuid'),
     t('gender'),
@@ -4297,7 +4291,6 @@ echo $base_url;
     t('[php]/profile/[name]'),
     t('Alle'),
     t('XML-by-name'),
-    t('more'),
     t('CSV-by-name'),
     t('CSV-by-uuid'),
     t('XML-by-uuid'),
@@ -4339,72 +4332,72 @@ echo $base_url;
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
   $handler->display->display_options['relationships']['cid']['required'] = TRUE;
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: Comment: Content */
+  /* Beziehung: Kommentar: Inhalt */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['relationship'] = 'cid';
-  /* Feld: Content: Content UUID */
+  /* Feld: Inhalt: Inhalt UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'node';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['fields']['uuid_1']['table'] = 'users';
   $handler->display->display_options['fields']['uuid_1']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid_1']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['uuid_1']['label'] = 'recipient_user_uuid';
   $handler->display->display_options['fields']['uuid_1']['element_label_colon'] = FALSE;
-  /* Feld: Field: Tags */
+  /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags']['id'] = 'field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['table'] = 'field_data_field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['field'] = 'field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['label'] = 'tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_tags']['delta_offset'] = '0';
-  /* Feld: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'post_date';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Feld: Field: Topic */
+  /* Feld: Feld: Topic */
   $handler->display->display_options['fields']['field_dialogue_topic']['id'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['field'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['label'] = 'topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = ' Frage';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
-  /* Feld: Comment: Post date */
+  /* Feld: Kommentar: Datum */
   $handler->display->display_options['fields']['created_1']['id'] = 'created_1';
   $handler->display->display_options['fields']['created_1']['table'] = 'comment';
   $handler->display->display_options['fields']['created_1']['field'] = 'created';
@@ -4412,15 +4405,15 @@ echo $base_url;
   $handler->display->display_options['fields']['created_1']['label'] = 'answer_post_date';
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'long';
-  /* Feld: Comment: Comment */
+  /* Feld: Kommentar: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['relationship'] = 'cid';
-  $handler->display->display_options['fields']['comment_body']['label'] = 'answer';
+  $handler->display->display_options['fields']['comment_body']['label'] = ' Antwort';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['type'] = 'text_plain';
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['id'] = 'field_dialogue_annotation_1';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['field'] = 'field_dialogue_annotation';
@@ -4428,7 +4421,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['label'] = 'answer_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['type'] = 'text_plain';
-  /* Feld: Comment: Comment Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -4439,7 +4432,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Feld: Content: Link */
+  /* Feld: Inhalt: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -4448,18 +4441,18 @@ echo $base_url;
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['view_node']['node_in_colorbox_rel'] = '';
-  /* Sortierkriterien: Comment: Post date */
+  /* Sortierkriterien: Kommentar: Datum */
   $handler->display->display_options['sorts']['created_1']['id'] = 'created_1';
   $handler->display->display_options['sorts']['created_1']['table'] = 'comment';
   $handler->display->display_options['sorts']['created_1']['field'] = 'created';
   $handler->display->display_options['sorts']['created_1']['relationship'] = 'cid';
   $handler->display->display_options['sorts']['created_1']['order'] = 'DESC';
-  /* Sortierkriterien: Content: Post date */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Kontextfilter: User: User UUID */
+  /* Kontextfilter: Benutzer: Benutzer UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'users';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4472,14 +4465,14 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -4497,7 +4490,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: Name */
+  /* Kontextfilter: Benutzer: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'users';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -4552,7 +4545,7 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: Name */
+  /* Kontextfilter: Benutzer: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'users';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -4577,26 +4570,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -4609,7 +4602,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -4638,26 +4631,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -4670,7 +4663,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -4695,26 +4688,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4727,7 +4720,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -4756,26 +4749,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4788,7 +4781,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -4813,26 +4806,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -4861,26 +4854,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -4905,26 +4898,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['style_options']['transform'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -4953,26 +4946,26 @@ echo $base_url;
   $handler->display->display_options['style_options']['replace_newlines'] = 0;
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -5030,7 +5023,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: Name */
+  /* Kontextfilter: Benutzer: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'users';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -5066,7 +5059,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -5079,7 +5072,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['name']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['name']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name_1']['id'] = 'name_1';
   $handler->display->display_options['arguments']['name_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name_1']['field'] = 'name';
@@ -5115,7 +5108,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -5128,7 +5121,7 @@ echo $base_url;
   $handler->display->display_options['arguments']['uuid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uuid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uuid']['limit'] = '0';
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['arguments']['uuid_1']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid_1']['field'] = 'uuid';
@@ -5164,7 +5157,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -5200,7 +5193,7 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Taxonomy term UUID */
+  /* Kontextfilter: Taxonomie-Begriff: Taxonomie-Begriff UUID */
   $handler->display->display_options['arguments']['uuid']['id'] = 'uuid';
   $handler->display->display_options['arguments']['uuid']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['uuid']['field'] = 'uuid';
@@ -5236,33 +5229,33 @@ echo $base_url;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
   $handler->display->display_options['relationships']['cid']['required'] = TRUE;
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Parliament (field_user_parliament) */
+  /* Beziehung: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['relationships']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
   $handler->display->display_options['relationships']['field_user_parliament_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: User: Constituency (field_user_constituency) */
+  /* Beziehung: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
   $handler->display->display_options['relationships']['field_user_constituency_tid']['relationship'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: Comment: Content */
+  /* Beziehung: Kommentar: Inhalt */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['relationship'] = 'cid';
   $handler->display->display_options['relationships']['nid']['required'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Content: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -5272,62 +5265,62 @@ echo $base_url;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_rel'] = '';
-  /* Feld: Content: Content UUID */
+  /* Feld: Inhalt: Inhalt UUID */
   $handler->display->display_options['fields']['uuid']['id'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['table'] = 'node';
   $handler->display->display_options['fields']['uuid']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['label'] = 'uuid';
   $handler->display->display_options['fields']['uuid']['element_label_colon'] = FALSE;
-  /* Feld: User: User UUID */
+  /* Feld: Benutzer: Benutzer UUID */
   $handler->display->display_options['fields']['uuid_1']['id'] = 'uuid_1';
   $handler->display->display_options['fields']['uuid_1']['table'] = 'users';
   $handler->display->display_options['fields']['uuid_1']['field'] = 'uuid';
   $handler->display->display_options['fields']['uuid_1']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['uuid_1']['label'] = 'recipient_user_uuid';
   $handler->display->display_options['fields']['uuid_1']['element_label_colon'] = FALSE;
-  /* Feld: User: First Name */
+  /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['field_user_fname']['label'] = 'recipient_user_first_name';
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['field_user_lname']['label'] = 'recipient_user_last_name';
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
-  /* Feld: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['label'] = 'post_date';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Feld: Field: Tags */
+  /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags']['id'] = 'field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['table'] = 'field_data_field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['field'] = 'field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['label'] = 'tags';
   $handler->display->display_options['fields']['field_dialogue_tags']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_tags']['delta_offset'] = '0';
-  /* Feld: Field: Topic */
+  /* Feld: Feld: Topic */
   $handler->display->display_options['fields']['field_dialogue_topic']['id'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['field'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['label'] = 'topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = ' Frage';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['type'] = 'text_plain';
-  /* Feld: Comment: Post date */
+  /* Feld: Kommentar: Datum */
   $handler->display->display_options['fields']['created_1']['id'] = 'created_1';
   $handler->display->display_options['fields']['created_1']['table'] = 'comment';
   $handler->display->display_options['fields']['created_1']['field'] = 'created';
@@ -5335,15 +5328,15 @@ echo $base_url;
   $handler->display->display_options['fields']['created_1']['label'] = 'answer_post_date';
   $handler->display->display_options['fields']['created_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'long';
-  /* Feld: Comment: Comment */
+  /* Feld: Kommentar: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['relationship'] = 'cid';
-  $handler->display->display_options['fields']['comment_body']['label'] = 'answer';
+  $handler->display->display_options['fields']['comment_body']['label'] = ' Antwort';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['comment_body']['type'] = 'text_plain';
-  /* Feld: Comment: Comment Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -5354,7 +5347,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['id'] = 'field_dialogue_annotation_1';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['field'] = 'field_dialogue_annotation';
@@ -5362,21 +5355,21 @@ echo $base_url;
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['label'] = 'answer_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['type'] = 'text_plain';
-  /* Feld: Content: Path */
+  /* Feld: Inhalt: Pfad */
   $handler->display->display_options['fields']['path']['id'] = 'path';
   $handler->display->display_options['fields']['path']['table'] = 'node';
   $handler->display->display_options['fields']['path']['field'] = 'path';
   $handler->display->display_options['fields']['path']['relationship'] = 'nid';
   $handler->display->display_options['fields']['path']['label'] = 'dialogue_path';
   $handler->display->display_options['fields']['path']['element_label_colon'] = FALSE;
-  /* Feld: User: Title */
+  /* Feld: Benutzer: Title */
   $handler->display->display_options['fields']['field_user_title']['id'] = 'field_user_title';
   $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
   $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
   $handler->display->display_options['fields']['field_user_title']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['fields']['field_user_title']['label'] = 'recipient_user_title';
   $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
-  /* Feld: User: Party */
+  /* Feld: Benutzer: Party */
   $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
@@ -5385,7 +5378,7 @@ echo $base_url;
   $handler->display->display_options['fields']['field_user_party']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: User: Profile picture */
+  /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -5398,7 +5391,7 @@ echo $base_url;
     'image_link' => '',
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Taxonomy term: Name */
+  /* Kontextfilter: Taxonomie-Begriff: Name */
   $handler->display->display_options['arguments']['name']['id'] = 'name';
   $handler->display->display_options['arguments']['name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['arguments']['name']['field'] = 'name';
@@ -5413,21 +5406,21 @@ echo $base_url;
   $handler->display->display_options['arguments']['name']['limit'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
     'dialogue' => 'dialogue',
   );
-  /* Filterkriterium: Comment: Comment Body (field_dialogue_comment_body:summary) */
+  /* Filterkriterium: Kommentar: Comment Body (field_dialogue_comment_body:summary) */
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['id'] = 'field_dialogue_comment_body_summary';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['field'] = 'field_dialogue_comment_body_summary';
@@ -5442,11 +5435,11 @@ echo $base_url;
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('Comments'),
-    t('User entity referenced from field_dialogue_recipient'),
-    t('term from field_user_parliament'),
-    t('term from field_user_constituency'),
-    t('Content'),
+    t('Kommentare'),
+    t('Benutzer entity referenced from field_dialogue_recipient'),
+    t('Begriff aus field_user_parliament'),
+    t('Begriff aus field_user_constituency'),
+    t('Inhalt'),
     t('uuid'),
     t('recipient_user_uuid'),
     t('tags'),
@@ -5454,13 +5447,12 @@ echo $base_url;
     t('topic'),
     t(' Frage'),
     t('answer_post_date'),
-    t('answer'),
+    t(' Antwort'),
     t('answer_annotation'),
     t('answer_summary'),
     t('dialogue_link'),
     t('Alle'),
     t('XML-by-name'),
-    t('more'),
     t('XML-by-uuid'),
     t('CSV-by-uuid'),
     t('CSV-by-name'),

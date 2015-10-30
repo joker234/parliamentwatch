@@ -91,7 +91,7 @@ function pw_slider_views_default_views() {
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartype'] = 0;
   $handler->display->display_options['style_options']['views_slideshow_cycle']['cleartypenobg'] = 0;
   $handler->display->display_options['row_plugin'] = 'fields';
-  /* Kopfbereich: Global: Text area */
+  /* Kopfbereich: Global: Textbereich */
   $handler->display->display_options['header']['area']['id'] = 'area';
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
@@ -100,7 +100,7 @@ drupal_add_css(\'sites/all/themes/custom/parliamentwatch/css/slider.css\', array
 drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
 ?>';
   $handler->display->display_options['header']['area']['format'] = 'php_code';
-  /* Feld: Content: Beschreibung mit LInk */
+  /* Feld: Inhalt: Beschreibung mit LInk */
   $handler->display->display_options['fields']['field_slider_url']['id'] = 'field_slider_url';
   $handler->display->display_options['fields']['field_slider_url']['table'] = 'field_data_field_slider_url';
   $handler->display->display_options['fields']['field_slider_url']['field'] = 'field_slider_url';
@@ -110,7 +110,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['field_slider_url']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['field_slider_url']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_slider_url']['group_column'] = 'url';
-  /* Feld: Content: Teaser Body */
+  /* Feld: Inhalt: Teaser Body */
   $handler->display->display_options['fields']['field_slider_teaserbody']['id'] = 'field_slider_teaserbody';
   $handler->display->display_options['fields']['field_slider_teaserbody']['table'] = 'field_data_field_slider_teaserbody';
   $handler->display->display_options['fields']['field_slider_teaserbody']['field'] = 'field_slider_teaserbody';
@@ -120,7 +120,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['field_slider_teaserbody']['alter']['text'] = '[field_slider_teaserbody]<div class="item"></div>';
   $handler->display->display_options['fields']['field_slider_teaserbody']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_slider_teaserbody']['hide_alter_empty'] = FALSE;
-  /* Feld: Content: Title */
+  /* Feld: Inhalt: Titel */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
@@ -131,7 +131,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['hide_alter_empty'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -145,25 +145,25 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
   $handler->display->display_options['fields']['webform_form_body']['field'] = 'webform_form_body';
   $handler->display->display_options['fields']['webform_form_body']['label'] = '';
   $handler->display->display_options['fields']['webform_form_body']['element_label_colon'] = FALSE;
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<span class="close">close</span>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Sortierkriterien: Weight: Weight */
+  /* Sortierkriterien: Gewichtung: Gewichtung */
   $handler->display->display_options['sorts']['weight']['id'] = 'weight';
   $handler->display->display_options['sorts']['weight']['table'] = 'weight_weights';
   $handler->display->display_options['sorts']['weight']['field'] = 'weight';
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -171,7 +171,7 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
     'pw_slider' => 'pw_slider',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterium: Content: Language */
+  /* Filterkriterium: Inhalt: Sprache */
   $handler->display->display_options['filters']['language']['id'] = 'language';
   $handler->display->display_options['filters']['language']['table'] = 'node';
   $handler->display->display_options['filters']['language']['field'] = 'language';
@@ -197,7 +197,6 @@ drupal_add_js(\'sites/all/themes/custom/parliamentwatch/js/slider.js\');
     t('[field_slider_teaserbody]<div class="item"></div>'),
     t('<span class="close">close</span>'),
     t('Block'),
-    t('more'),
   );
   $export['slider'] = $view;
 

@@ -13,9 +13,9 @@ function pw_profiles_taxonomy_default_vocabularies() {
       'name' => 'List Position',
       'machine_name' => 'list_position',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => '0',
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => '0',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',
@@ -36,9 +36,9 @@ function pw_profiles_taxonomy_default_vocabularies() {
       'name' => 'PW Profile Roles for View Mode Switch',
       'machine_name' => 'pw_profile_roles_for_view_mode_switch',
       'description' => '',
-      'hierarchy' => 0,
+      'hierarchy' => '0',
       'module' => 'taxonomy',
-      'weight' => 0,
+      'weight' => '0',
       'rdf_mapping' => array(
         'rdftype' => array(
           0 => 'skos:ConceptScheme',

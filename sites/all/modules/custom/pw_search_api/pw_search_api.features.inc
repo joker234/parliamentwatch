@@ -7,7 +7,8 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function pw_search_api_ctools_plugin_api($module = NULL, $api = NULL) {
+function pw_search_api_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
   if ($module == "facetapi" && $api == "facetapi_defaults") {
     return array("version" => "1");
   }
@@ -16,8 +17,8 @@ function pw_search_api_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function pw_search_api_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
+function pw_search_api_views_api() {
+  return array("version" => "3.0");
 }
 
 /**
@@ -288,8 +289,6 @@ function pw_search_api_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
-        "author:field_user_fname" : { "type" : "text" },
-        "author:field_user_lname" : { "type" : "text" },
         "author:field_user_party" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "author:name" : { "type" : "text" },
         "changed" : { "type" : "date" },
@@ -512,7 +511,6 @@ function pw_search_api_default_search_api_index() {
         "field_sidejob_organization" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_taxonomy_party" : { "type" : "integer", "entity_type" : "taxonomy_term" },
         "field_vote" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
-        "field_vote:description" : { "type" : "list\\u003Ctext\\u003E" },
         "field_vote:field_constituency_ac_descriptor" : { "type" : "list\\u003Ctext\\u003E" },
         "field_vote:field_constituency_area_codes" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",

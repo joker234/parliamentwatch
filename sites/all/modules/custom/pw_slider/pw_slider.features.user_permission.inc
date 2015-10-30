@@ -10,65 +10,65 @@
 function pw_slider_user_default_permissions() {
   $permissions = array();
 
-  // Exported permission: 'create pw_slider content'.
+  // Exported permission: create pw_slider content.
   $permissions['create pw_slider content'] = array(
     'name' => 'create pw_slider content',
     'roles' => array(
-      'Content Manager' => 'Content Manager',
+      0 => 'Content Manager',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: 'delete any pw_slider content'.
+  // Exported permission: delete any pw_slider content.
   $permissions['delete any pw_slider content'] = array(
     'name' => 'delete any pw_slider content',
     'roles' => array(
-      'Content Manager' => 'Content Manager',
+      0 => 'Content Manager',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: 'delete own pw_slider content'.
+  // Exported permission: delete own pw_slider content.
   $permissions['delete own pw_slider content'] = array(
     'name' => 'delete own pw_slider content',
     'roles' => array(
-      'Content Manager' => 'Content Manager',
+      0 => 'Content Manager',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: 'ds_switch pw_slider'.
+  // Exported permission: ds_switch pw_slider.
   $permissions['ds_switch pw_slider'] = array(
     'name' => 'ds_switch pw_slider',
     'roles' => array(
-      'administrator' => 'administrator',
+      0 => 'administrator',
     ),
     'module' => 'ds_extras',
   );
 
-  // Exported permission: 'edit any pw_slider content'.
+  // Exported permission: edit any pw_slider content.
   $permissions['edit any pw_slider content'] = array(
     'name' => 'edit any pw_slider content',
     'roles' => array(
-      'Content Manager' => 'Content Manager',
+      0 => 'Content Manager',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: 'edit own pw_slider content'.
+  // Exported permission: edit own pw_slider content.
   $permissions['edit own pw_slider content'] = array(
     'name' => 'edit own pw_slider content',
     'roles' => array(
-      'Content Manager' => 'Content Manager',
+      0 => 'Content Manager',
     ),
     'module' => 'node',
   );
 
-  // Exported permission: 'moderate spam in nodes of type Slider item'.
+  // Exported permission: moderate spam in nodes of type Slider item.
   $permissions['moderate spam in nodes of type Slider item'] = array(
     'name' => 'moderate spam in nodes of type Slider item',
     'roles' => array(
-      'administrator' => 'administrator',
+      0 => 'administrator',
     ),
     'module' => 'antispam',
   );

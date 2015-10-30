@@ -70,7 +70,7 @@ function pw_dialogues_views_default_views() {
 drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
 ?>
 ';
-  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Text area */
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -79,26 +79,26 @@ drupal_add_js("/sites/all/themes/custom/parliamentwatch/js/shortlink.js");
 Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie eine neue Auswahl über einen der angebotenen Filter.
 </div>';
   $handler->display->display_options['empty']['area']['format'] = 'managed_content';
-  /* Beziehung: Comment: Comments of the node */
+  /* Beziehung: Kommentar: Kommentare des Beitrags */
   $handler->display->display_options['relationships']['cid']['id'] = 'cid';
   $handler->display->display_options['relationships']['cid']['table'] = 'node';
   $handler->display->display_options['relationships']['cid']['field'] = 'cid';
-  /* Beziehung: Content: Author */
+  /* Beziehung: Inhalt: Autor */
   $handler->display->display_options['relationships']['uid_1']['id'] = 'uid_1';
   $handler->display->display_options['relationships']['uid_1']['table'] = 'node';
   $handler->display->display_options['relationships']['uid_1']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid_1']['label'] = 'content author';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
-  /* Beziehung: File Usage: File */
+  /* Beziehung: Dateiverwendung: Datei */
   $handler->display->display_options['relationships']['user_to_file']['id'] = 'user_to_file';
   $handler->display->display_options['relationships']['user_to_file']['table'] = 'file_usage';
   $handler->display->display_options['relationships']['user_to_file']['field'] = 'user_to_file';
   $handler->display->display_options['relationships']['user_to_file']['relationship'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['user_to_file']['label'] = 'Profilfoto';
-  /* Feld: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -107,7 +107,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: User: First Name */
+  /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
@@ -116,7 +116,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
@@ -125,7 +125,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Content: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -134,14 +134,14 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Content: ShareThis Link */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['label'] = '';
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -157,7 +157,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'question';
-  /* Feld: Field: Topic */
+  /* Feld: Feld: Topic */
   $handler->display->display_options['fields']['field_dialogue_topic']['id'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['field'] = 'field_dialogue_topic';
@@ -167,7 +167,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_dialogue_topic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -176,7 +176,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'date_only_short';
-  /* Feld: Content: Sender Name */
+  /* Feld: Inhalt: Sender Name */
   $handler->display->display_options['fields']['field_dialogue_sender_name']['id'] = 'field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['table'] = 'field_data_field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['field'] = 'field_dialogue_sender_name';
@@ -215,7 +215,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
 ?>';
   $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -225,7 +225,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['fields']['body']['element_class'] = 'content push-bottom-s';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['id'] = 'field_dialogue_annotation_1';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['field'] = 'field_dialogue_annotation';
@@ -236,7 +236,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_wrapper_class'] = 'small annotation push-bottom-m clear';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_default_classes'] = FALSE;
-  /* Feld: Global: View */
+  /* Feld: Global: Ansicht */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
@@ -290,12 +290,12 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
     'php' => 0,
     'php_2' => 0,
   );
-  /* Sortierkriterien: Content: Post date */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Kontextfilter: Content: Nid */
+  /* Kontextfilter: Inhalt: Beitrags-ID */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -310,14 +310,14 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['arguments']['nid']['validate_options']['types'] = array(
     'dialogue' => 'dialogue',
   );
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -448,7 +448,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
 ?>
 ';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -457,7 +457,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: User: Title */
+  /* Feld: Benutzer: Title */
   $handler->display->display_options['fields']['field_user_title']['id'] = 'field_user_title';
   $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
   $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
@@ -465,7 +465,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['field_user_title']['label'] = '';
   $handler->display->display_options['fields']['field_user_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
-  /* Feld: User: First Name */
+  /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
@@ -474,7 +474,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
@@ -483,7 +483,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Content: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -492,14 +492,14 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Content: ShareThis Link */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['label'] = '';
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -517,7 +517,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'question';
-  /* Feld: Field: Topic */
+  /* Feld: Feld: Topic */
   $handler->display->display_options['fields']['field_dialogue_topic']['id'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['field'] = 'field_dialogue_topic';
@@ -527,7 +527,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['field_dialogue_topic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -536,7 +536,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/shortlink.js\
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'date_only_short';
-  /* Feld: Content: Sender Name */
+  /* Feld: Inhalt: Sender Name */
   $handler->display->display_options['fields']['field_dialogue_sender_name']['id'] = 'field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['table'] = 'field_data_field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['field'] = 'field_dialogue_sender_name';
@@ -575,7 +575,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
 ?>';
   $handler->display->display_options['fields']['php_3']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_3']['php_click_sortable'] = '';
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -584,7 +584,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body_1']['id'] = 'body_1';
   $handler->display->display_options['fields']['body_1']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body_1']['field'] = 'body';
@@ -593,7 +593,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['fields']['body_1']['element_class'] = 'content push-bottom-s';
   $handler->display->display_options['fields']['body_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body_1']['element_default_classes'] = FALSE;
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['id'] = 'field_dialogue_annotation_1';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['field'] = 'field_dialogue_annotation';
@@ -604,11 +604,11 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_wrapper_class'] = 'small annotation push-bottom-m clear';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_default_classes'] = FALSE;
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation']['id'] = 'field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['field'] = 'field_dialogue_annotation';
-  /* Feld: Global: View */
+  /* Feld: Global: Ansicht */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
@@ -663,20 +663,20 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
     'php_2' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sortierkriterien: Content: Post date */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date Question';
-  /* Sortierkriterien: Content: Post date */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created_1']['id'] = 'created_1';
   $handler->display->display_options['sorts']['created_1']['table'] = 'node';
   $handler->display->display_options['sorts']['created_1']['field'] = 'created';
   $handler->display->display_options['sorts']['created_1']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_1']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created_1']['expose']['label'] = 'Datum der Frage';
-  /* Sortierkriterien: Comment: Post date */
+  /* Sortierkriterien: Kommentar: Datum */
   $handler->display->display_options['sorts']['created_2']['id'] = 'created_2';
   $handler->display->display_options['sorts']['created_2']['table'] = 'comment';
   $handler->display->display_options['sorts']['created_2']['field'] = 'created';
@@ -684,7 +684,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['sorts']['created_2']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created_2']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['created_2']['expose']['label'] = 'Datum der Antwort';
-  /* Sortierkriterien: Content: Comment count */
+  /* Sortierkriterien: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['sorts']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['sorts']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['sorts']['comment_count']['field'] = 'comment_count';
@@ -692,7 +692,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['sorts']['comment_count']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['comment_count']['expose']['label'] = 'Anzahl der Antworten';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Field: Recipient (field_dialogue_recipient) */
+  /* Kontextfilter: Feld: Recipient (field_dialogue_recipient) */
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
@@ -707,7 +707,7 @@ if($data->field_field_dialogue_before_election[0][\'raw\'][\'value\'] == 1 && $p
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate']['type'] = 'user';
   $handler->display->display_options['arguments']['field_dialogue_recipient_target_id']['validate_options']['type'] = 'either';
-  /* Kontextfilter: Content: Has taxonomy term ID */
+  /* Kontextfilter: Inhalt: Besitzt eine Taxonomiebegriff-TID. */
   $handler->display->display_options['arguments']['tid']['id'] = 'tid';
   $handler->display->display_options['arguments']['tid']['table'] = 'taxonomy_index';
   $handler->display->display_options['arguments']['tid']['field'] = 'tid';
@@ -743,20 +743,20 @@ else {
   $handler->display->display_options['arguments']['tid']['validate']['fail'] = 'empty';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Body (body) */
+  /* Filterkriterium: Inhalt: Body (body) */
   $handler->display->display_options['filters']['body_value']['id'] = 'body_value';
   $handler->display->display_options['filters']['body_value']['table'] = 'field_data_body';
   $handler->display->display_options['filters']['body_value']['field'] = 'body_value';
   $handler->display->display_options['filters']['body_value']['operator'] = 'not empty';
   $handler->display->display_options['filters']['body_value']['group'] = 1;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -764,7 +764,7 @@ else {
     'dialogue' => 'dialogue',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterium: Field: Topic (field_dialogue_topic) */
+  /* Filterkriterium: Feld: Topic (field_dialogue_topic) */
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['id'] = 'field_dialogue_topic_tid';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['field'] = 'field_dialogue_topic_tid';
@@ -787,7 +787,7 @@ else {
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_dialogue_topic_tid']['vocabulary'] = 'dialogue_topics';
-  /* Filterkriterium: Content: Comment count */
+  /* Filterkriterium: Inhalt: Anzahl an Kommentaren */
   $handler->display->display_options['filters']['comment_count']['id'] = 'comment_count';
   $handler->display->display_options['filters']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['filters']['comment_count']['field'] = 'comment_count';
@@ -944,7 +944,7 @@ else {
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -953,7 +953,7 @@ else {
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Content: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -962,14 +962,14 @@ else {
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Content: ShareThis Link */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['label'] = '';
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -983,7 +983,7 @@ else {
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'question';
-  /* Feld: Field: Topic */
+  /* Feld: Feld: Topic */
   $handler->display->display_options['fields']['field_dialogue_topic']['id'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['field'] = 'field_dialogue_topic';
@@ -992,7 +992,7 @@ else {
   $handler->display->display_options['fields']['field_dialogue_topic']['element_wrapper_class'] = 'topic float-right';
   $handler->display->display_options['fields']['field_dialogue_topic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -1001,7 +1001,7 @@ else {
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'date_only_short';
-  /* Feld: Content: Sender Name */
+  /* Feld: Inhalt: Sender Name */
   $handler->display->display_options['fields']['field_dialogue_sender_name']['id'] = 'field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['table'] = 'field_data_field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['field'] = 'field_dialogue_sender_name';
@@ -1014,7 +1014,7 @@ else {
   $handler->display->display_options['fields']['field_dialogue_sender_name']['element_wrapper_class'] = 'bubble';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_sender_name']['empty'] = 'anonymous<br/><span class="subline">[created]</span>';
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1023,7 +1023,7 @@ else {
   $handler->display->display_options['fields']['body']['element_class'] = 'content push-bottom-s';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['id'] = 'field_dialogue_annotation_1';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['field'] = 'field_dialogue_annotation';
@@ -1034,7 +1034,7 @@ else {
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_wrapper_class'] = 'small annotation push-bottom-m clear';
   $handler->display->display_options['fields']['field_dialogue_annotation_1']['element_default_classes'] = FALSE;
-  /* Feld: Global: View */
+  /* Feld: Global: Ansicht */
   $handler->display->display_options['fields']['view']['id'] = 'view';
   $handler->display->display_options['fields']['view']['table'] = 'views';
   $handler->display->display_options['fields']['view']['field'] = 'view';
@@ -1044,7 +1044,7 @@ else {
   $handler->display->display_options['fields']['view']['display'] = 'panel_pane_2';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Content: Nid */
+  /* Kontextfilter: Inhalt: Beitrags-ID */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'node';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -1061,13 +1061,13 @@ else {
   );
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1222,17 +1222,17 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
 ';
   $handler->display->display_options['defaults']['empty'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Beziehung: Content: Author */
+  /* Beziehung: Inhalt: Autor */
   $handler->display->display_options['relationships']['uid_1']['id'] = 'uid_1';
   $handler->display->display_options['relationships']['uid_1']['table'] = 'node';
   $handler->display->display_options['relationships']['uid_1']['field'] = 'uid';
   $handler->display->display_options['relationships']['uid_1']['label'] = 'content author';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: Content: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1241,7 +1241,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Content: ShareThis Link */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
@@ -1296,7 +1296,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['view_user']['alter']['text'] = '[field_user_title] [field_user_fname] [field_user_lname]';
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -1310,7 +1310,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'question';
-  /* Feld: Field: Topic */
+  /* Feld: Feld: Topic */
   $handler->display->display_options['fields']['field_dialogue_topic']['id'] = 'field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['table'] = 'field_data_field_dialogue_topic';
   $handler->display->display_options['fields']['field_dialogue_topic']['field'] = 'field_dialogue_topic';
@@ -1320,7 +1320,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_topic']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_topic']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_topic']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -1329,7 +1329,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'date_only_short';
-  /* Feld: Content: Sender Name */
+  /* Feld: Inhalt: Sender Name */
   $handler->display->display_options['fields']['field_dialogue_sender_name']['id'] = 'field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['table'] = 'field_data_field_dialogue_sender_name';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['field'] = 'field_dialogue_sender_name';
@@ -1342,7 +1342,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_sender_name']['element_wrapper_class'] = 'bubble';
   $handler->display->display_options['fields']['field_dialogue_sender_name']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_sender_name']['empty'] = 'anonymous<br/><span class="subline">[created]</span>';
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -1356,7 +1356,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Feld: Global: Custom text */
+  /* Feld: Global: Benutzerdefinierter Text */
   $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
@@ -1371,7 +1371,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nothing']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['nothing']['element_wrapper_class'] = 'clear';
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Feld: Content: Edit link */
+  /* Feld: Inhalt: ‚Bearbeiten‘-Link */
   $handler->display->display_options['fields']['edit_node_1']['id'] = 'edit_node_1';
   $handler->display->display_options['fields']['edit_node_1']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['edit_node_1']['field'] = 'edit_node';
@@ -1414,14 +1414,14 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
     'php_2' => 0,
   );
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sortierkriterien: Content: Post date */
+  /* Sortierkriterien: Inhalt: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   $handler->display->display_options['sorts']['created']['expose']['label'] = 'Post date Question';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Content: Has taxonomy term ID (with depth) */
+  /* Kontextfilter: Inhalt: Has taxonomy term ID (with depth) */
   $handler->display->display_options['arguments']['term_node_tid_depth']['id'] = 'term_node_tid_depth';
   $handler->display->display_options['arguments']['term_node_tid_depth']['table'] = 'node';
   $handler->display->display_options['arguments']['term_node_tid_depth']['field'] = 'term_node_tid_depth';
@@ -1440,14 +1440,14 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['arguments']['term_node_tid_depth']['depth'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -1455,7 +1455,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
     'dialogue' => 'dialogue',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterium: Content: Body (body:summary) */
+  /* Filterkriterium: Inhalt: Body (body:summary) */
   $handler->display->display_options['filters']['body_summary']['id'] = 'body_summary';
   $handler->display->display_options['filters']['body_summary']['table'] = 'field_data_body';
   $handler->display->display_options['filters']['body_summary']['field'] = 'body_summary';
@@ -1473,7 +1473,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   /* Display: Answers pane */
   $handler = $view->new_display('panel_pane', 'Answers pane', 'panel_pane_1');
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -1482,7 +1482,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Content: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1491,7 +1491,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
@@ -1503,7 +1503,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['classes'] = 'comment answer clearfix';
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['id'] = 'answer-[cid]';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_3']['id'] = 'fieldset_3';
   $handler->display->display_options['fields']['fieldset_3']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
@@ -1521,7 +1521,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
-  /* Feld: User: Profile picture */
+  /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -1538,7 +1538,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_s',
   );
-  /* Feld: User: Title */
+  /* Feld: Benutzer: Title */
   $handler->display->display_options['fields']['field_user_title']['id'] = 'field_user_title';
   $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
   $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
@@ -1546,7 +1546,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_user_title']['label'] = '';
   $handler->display->display_options['fields']['field_user_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
-  /* Feld: User: First Name */
+  /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
@@ -1555,7 +1555,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
@@ -1564,7 +1564,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Comment: Post date */
+  /* Feld: Kommentar: Datum */
   $handler->display->display_options['fields']['created_1']['id'] = 'created_1';
   $handler->display->display_options['fields']['created_1']['table'] = 'comment';
   $handler->display->display_options['fields']['created_1']['field'] = 'created';
@@ -1579,7 +1579,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['created_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'date_only_short';
   $handler->display->display_options['fields']['created_1']['second_date_format'] = 'long';
-  /* Feld: Comment: Standard reply */
+  /* Feld: Kommentar: Standard reply */
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['id'] = 'field_dialogue_is_standard_reply';
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['table'] = 'field_data_field_dialogue_is_standard_reply';
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['field'] = 'field_dialogue_is_standard_reply';
@@ -1593,7 +1593,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['empty_zero'] = TRUE;
-  /* Feld: Comment: Comment Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -1604,7 +1604,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['empty'] = '<strong>Bisher ist noch keine Antwort eingetroffen</strong>';
-  /* Feld: Field: Documents */
+  /* Feld: Feld: Documents */
   $handler->display->display_options['fields']['field_dialogue_documents']['id'] = 'field_dialogue_documents';
   $handler->display->display_options['fields']['field_dialogue_documents']['table'] = 'field_data_field_dialogue_documents';
   $handler->display->display_options['fields']['field_dialogue_documents']['field'] = 'field_dialogue_documents';
@@ -1619,7 +1619,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_documents']['type'] = 'link_url';
   $handler->display->display_options['fields']['field_dialogue_documents']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_dialogue_documents']['multi_type'] = 'ul';
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation']['id'] = 'field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['field'] = 'field_dialogue_annotation';
@@ -1631,7 +1631,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_annotation']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_annotation']['element_wrapper_class'] = 'small annotation clear';
   $handler->display->display_options['fields']['field_dialogue_annotation']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -1647,7 +1647,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['fieldset']['fieldset']['id'] = 'pw-question-[nid]';
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsed'] = 1;
-  /* Feld: Comment: Response time */
+  /* Feld: Kommentar: Response time */
   $handler->display->display_options['fields']['field_dialogue_response_time']['id'] = 'field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['table'] = 'field_data_field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['field'] = 'field_dialogue_response_time';
@@ -1658,7 +1658,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_class'] = 'pw-response-time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_response_time']['hide_empty'] = TRUE;
-  /* Feld: Field: Tags */
+  /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags_1']['id'] = 'field_dialogue_tags_1';
   $handler->display->display_options['fields']['field_dialogue_tags_1']['table'] = 'field_data_field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags_1']['field'] = 'field_dialogue_tags';
@@ -1683,7 +1683,7 @@ drupal_add_js(drupal_get_path(\'theme\',\'parliamentwatch\').\'/js/hidefilter.js
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['path_1']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_4']['id'] = 'fieldset_4';
   $handler->display->display_options['fields']['fieldset_4']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_4']['field'] = 'fieldset';
@@ -1775,7 +1775,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   /* Display: Answers pane full content */
   $handler = $view->new_display('panel_pane', 'Answers pane full content', 'panel_pane_2');
   $handler->display->display_options['defaults']['empty'] = FALSE;
-  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Text area */
+  /* Verhalten, wenn keine Ergebnisse vorliegen: Global: Textbereich */
   $handler->display->display_options['empty']['area']['id'] = 'area';
   $handler->display->display_options['empty']['area']['table'] = 'views';
   $handler->display->display_options['empty']['area']['field'] = 'area';
@@ -1787,7 +1787,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
 </div>';
   $handler->display->display_options['empty']['area']['format'] = 'php_code';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Feld: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
@@ -1796,7 +1796,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['uid']['exclude'] = TRUE;
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Content: Nid */
+  /* Feld: Inhalt: Beitrags-ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
@@ -1805,7 +1805,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nid']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['nid']['node_in_colorbox_height'] = '600';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_2']['id'] = 'fieldset_2';
   $handler->display->display_options['fields']['fieldset_2']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_2']['field'] = 'fieldset';
@@ -1817,7 +1817,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['classes'] = 'comment answer clearfix';
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['id'] = 'answer-[cid]';
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_3']['id'] = 'fieldset_3';
   $handler->display->display_options['fields']['fieldset_3']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
@@ -1835,7 +1835,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   );
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'content-inner clearfix';
-  /* Feld: User: Profile picture */
+  /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -1852,7 +1852,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_s',
   );
-  /* Feld: User: Title */
+  /* Feld: Benutzer: Title */
   $handler->display->display_options['fields']['field_user_title']['id'] = 'field_user_title';
   $handler->display->display_options['fields']['field_user_title']['table'] = 'field_data_field_user_title';
   $handler->display->display_options['fields']['field_user_title']['field'] = 'field_user_title';
@@ -1860,7 +1860,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_user_title']['label'] = '';
   $handler->display->display_options['fields']['field_user_title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_title']['element_label_colon'] = FALSE;
-  /* Feld: User: First Name */
+  /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
@@ -1869,7 +1869,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
@@ -1878,7 +1878,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_user_lname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Comment: Post date */
+  /* Feld: Kommentar: Datum */
   $handler->display->display_options['fields']['created_1']['id'] = 'created_1';
   $handler->display->display_options['fields']['created_1']['table'] = 'comment';
   $handler->display->display_options['fields']['created_1']['field'] = 'created';
@@ -1893,7 +1893,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['created_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['created_1']['date_format'] = 'date_only_short';
   $handler->display->display_options['fields']['created_1']['second_date_format'] = 'long';
-  /* Feld: Comment: Standard reply */
+  /* Feld: Kommentar: Standard reply */
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['id'] = 'field_dialogue_is_standard_reply';
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['table'] = 'field_data_field_dialogue_is_standard_reply';
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['field'] = 'field_dialogue_is_standard_reply';
@@ -1907,7 +1907,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_dialogue_is_standard_reply']['empty_zero'] = TRUE;
-  /* Feld: Comment: Comment Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -1918,7 +1918,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_comment_body']['empty'] = '<strong>Bisher ist noch keine Antwort eingetroffen</strong>';
-  /* Feld: Field: Documents */
+  /* Feld: Feld: Documents */
   $handler->display->display_options['fields']['field_dialogue_documents']['id'] = 'field_dialogue_documents';
   $handler->display->display_options['fields']['field_dialogue_documents']['table'] = 'field_data_field_dialogue_documents';
   $handler->display->display_options['fields']['field_dialogue_documents']['field'] = 'field_dialogue_documents';
@@ -1932,7 +1932,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_dialogue_documents']['click_sort_column'] = 'url';
   $handler->display->display_options['fields']['field_dialogue_documents']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_dialogue_documents']['multi_type'] = 'ul';
-  /* Feld: Field: Annotation */
+  /* Feld: Feld: Annotation */
   $handler->display->display_options['fields']['field_dialogue_annotation']['id'] = 'field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['table'] = 'field_data_field_dialogue_annotation';
   $handler->display->display_options['fields']['field_dialogue_annotation']['field'] = 'field_dialogue_annotation';
@@ -1944,7 +1944,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_dialogue_annotation']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_dialogue_annotation']['element_wrapper_class'] = 'small annotation clear';
   $handler->display->display_options['fields']['field_dialogue_annotation']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -1959,7 +1959,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'more-info content-inner clearfix';
   $handler->display->display_options['fields']['fieldset']['fieldset']['id'] = 'pw-question-[nid]';
   $handler->display->display_options['fields']['fieldset']['fieldset']['collapsible'] = 1;
-  /* Feld: Comment: Response time */
+  /* Feld: Kommentar: Response time */
   $handler->display->display_options['fields']['field_dialogue_response_time']['id'] = 'field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['table'] = 'field_data_field_dialogue_response_time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['field'] = 'field_dialogue_response_time';
@@ -1970,7 +1970,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['field_dialogue_response_time']['element_wrapper_class'] = 'pw-response-time';
   $handler->display->display_options['fields']['field_dialogue_response_time']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_dialogue_response_time']['hide_empty'] = TRUE;
-  /* Feld: Field: Tags */
+  /* Feld: Feld: Tags */
   $handler->display->display_options['fields']['field_dialogue_tags_1']['id'] = 'field_dialogue_tags_1';
   $handler->display->display_options['fields']['field_dialogue_tags_1']['table'] = 'field_data_field_dialogue_tags';
   $handler->display->display_options['fields']['field_dialogue_tags_1']['field'] = 'field_dialogue_tags';
@@ -1995,7 +1995,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
   $handler->display->display_options['fields']['path_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['path_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['path_1']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_4']['id'] = 'fieldset_4';
   $handler->display->display_options['fields']['fieldset_4']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_4']['field'] = 'fieldset';
@@ -2084,7 +2084,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
     'php_2' => 0,
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: Comment: Nid */
+  /* Kontextfilter: Kommentar: Beitrags-ID */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'comment';
   $handler->display->display_options['arguments']['nid']['field'] = 'nid';
@@ -2105,7 +2105,7 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('Select any filter and click on Apply to see results'),
+    t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
     t('Elemente pro Seite'),
     t('- Alle -'),
     t('Offset'),
@@ -2116,9 +2116,9 @@ print \'<input type="text" value="\'.$path.\'" readonly />\';
     t('<div class="pw-messages warning">
 Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie eine neue Auswahl über einen der angebotenen Filter.
 </div>'),
-    t('Comments'),
+    t('Kommentare'),
     t('content author'),
-    t('User entity referenced from field_dialogue_recipient'),
+    t('Benutzer entity referenced from field_dialogue_recipient'),
     t('Profilfoto'),
     t('Fieldset Question'),
     t('Thema'),
@@ -2132,7 +2132,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('Profile'),
     t('Fragen an [field_user_title] [field_user_fname] [field_user_lname]'),
     t('A content pane used on the profile pages'),
-    t('more'),
+    t('mehr'),
     t('Älteste zuerst'),
     t('Neueste zuerst'),
     t('Annotation'),
@@ -2149,7 +2149,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('A content pane used on the full content of the question'),
     t('Landingpage Parliament'),
     t('A content pane used on the election landingpage'),
-    t('Load more'),
+    t('Mehr laden'),
     t('[field_user_title] [field_user_fname] [field_user_lname]'),
     t(' [field_dialogue_sender_name]<br/><span class="subline">an [view_user] am [created]</span>
 '),
@@ -2225,18 +2225,18 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
   $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
-  /* Beziehung: Comment: Content */
+  /* Beziehung: Kommentar: Inhalt */
   $handler->display->display_options['relationships']['nid']['id'] = 'nid';
   $handler->display->display_options['relationships']['nid']['table'] = 'comment';
   $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   $handler->display->display_options['relationships']['nid']['required'] = TRUE;
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['id'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['table'] = 'field_data_field_dialogue_recipient';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['field'] = 'field_dialogue_recipient_target_id';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['relationship'] = 'nid';
   $handler->display->display_options['relationships']['field_dialogue_recipient_target_id']['required'] = TRUE;
-  /* Beziehung: User: Profile picture (field_user_picture:fid) */
+  /* Beziehung: Benutzer: Profile picture (field_user_picture:fid) */
   $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
   $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
@@ -2252,7 +2252,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['uid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['uid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['uid']['link_to_user'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -2274,7 +2274,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   );
   $handler->display->display_options['fields']['fieldset']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset']['fieldset']['classes'] = 'content-inner';
-  /* Feld: Content: ShareThis Link */
+  /* Feld: Inhalt: ShareThis Link */
   $handler->display->display_options['fields']['sharethis']['id'] = 'sharethis';
   $handler->display->display_options['fields']['sharethis']['table'] = 'node';
   $handler->display->display_options['fields']['sharethis']['field'] = 'sharethis';
@@ -2283,7 +2283,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['sharethis']['exclude'] = TRUE;
   $handler->display->display_options['fields']['sharethis']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['sharethis']['element_default_classes'] = FALSE;
-  /* Feld: User: Profile picture */
+  /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -2311,7 +2311,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<h3>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing']['element_default_classes'] = FALSE;
-  /* Feld: User: First Name */
+  /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
@@ -2319,7 +2319,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_fname']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_fname']['element_default_classes'] = FALSE;
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
@@ -2329,7 +2329,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_lname']['alter']['text'] = '[field_user_lname],';
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: User: Party */
+  /* Feld: Benutzer: Party */
   $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
@@ -2340,7 +2340,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_user_party']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_user_party']['type'] = 'i18n_taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: Content: Post date */
+  /* Feld: Inhalt: Datum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'node';
   $handler->display->display_options['fields']['created']['field'] = 'created';
@@ -2360,7 +2360,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['nothing_1']['label'] = '';
   $handler->display->display_options['fields']['nothing_1']['alter']['text'] = '</h3>';
   $handler->display->display_options['fields']['nothing_1']['element_label_colon'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_1']['id'] = 'fieldset_1';
   $handler->display->display_options['fields']['fieldset_1']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
@@ -2371,7 +2371,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'small light push-bottom-m';
-  /* Feld: User: Questions Get */
+  /* Feld: Benutzer: Questions Get */
   $handler->display->display_options['fields']['field_user_questions_get']['id'] = 'field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['table'] = 'field_data_field_user_questions_get';
   $handler->display->display_options['fields']['field_user_questions_get']['field'] = 'field_user_questions_get';
@@ -2385,7 +2385,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     'thousand_separator' => '.',
     'prefix_suffix' => 1,
   );
-  /* Feld: User: Answers Give */
+  /* Feld: Benutzer: Answers Give */
   $handler->display->display_options['fields']['field_user_answers_give']['id'] = 'field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give']['table'] = 'field_data_field_user_answers_give';
   $handler->display->display_options['fields']['field_user_answers_give']['field'] = 'field_user_answers_give';
@@ -2397,7 +2397,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     'thousand_separator' => '.',
     'prefix_suffix' => 1,
   );
-  /* Feld: User: Link */
+  /* Feld: Benutzer: Link */
   $handler->display->display_options['fields']['view_user']['id'] = 'view_user';
   $handler->display->display_options['fields']['view_user']['table'] = 'users';
   $handler->display->display_options['fields']['view_user']['field'] = 'view_user';
@@ -2408,7 +2408,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['view_user']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['view_user']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['view_user']['text'] = 'Profil besuchen';
-  /* Feld: Comment: Comment Body */
+  /* Feld: Kommentar: Comment Body */
   $handler->display->display_options['fields']['field_dialogue_comment_body']['id'] = 'field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['fields']['field_dialogue_comment_body']['field'] = 'field_dialogue_comment_body';
@@ -2421,7 +2421,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['fields']['field_dialogue_comment_body']['settings'] = array(
     'trim_length' => '600',
   );
-  /* Feld: Content: Link */
+  /* Feld: Inhalt: Link */
   $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
   $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
   $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
@@ -2493,12 +2493,12 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     'field_dialogue_comment_body' => 0,
     'view_node' => 0,
   );
-  /* Sortierkriterien: Comment: Post date */
+  /* Sortierkriterien: Kommentar: Datum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Kontextfilter: Field: Parliament (field_parliament) */
+  /* Kontextfilter: Feld: Parliament (field_parliament) */
   $handler->display->display_options['arguments']['field_parliament_tid']['id'] = 'field_parliament_tid';
   $handler->display->display_options['arguments']['field_parliament_tid']['table'] = 'field_data_field_parliament';
   $handler->display->display_options['arguments']['field_parliament_tid']['field'] = 'field_parliament_tid';
@@ -2514,14 +2514,14 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
-  /* Filterkriterium: Comment: Approved */
+  /* Filterkriterium: Kommentar: Bestätigt */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'comment';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status_node']['id'] = 'status_node';
   $handler->display->display_options['filters']['status_node']['table'] = 'node';
   $handler->display->display_options['filters']['status_node']['field'] = 'status';
@@ -2529,7 +2529,7 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['filters']['status_node']['value'] = 1;
   $handler->display->display_options['filters']['status_node']['group'] = 1;
   $handler->display->display_options['filters']['status_node']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -2537,12 +2537,12 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['filters']['type']['value'] = array(
     'dialogue' => 'dialogue',
   );
-  /* Filterkriterium: Comment: Comment Body (field_dialogue_comment_body:summary) */
+  /* Filterkriterium: Kommentar: Comment Body (field_dialogue_comment_body:summary) */
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['id'] = 'field_dialogue_comment_body_summary';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['table'] = 'field_data_field_dialogue_comment_body';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['field'] = 'field_dialogue_comment_body_summary';
   $handler->display->display_options['filters']['field_dialogue_comment_body_summary']['operator'] = 'not empty';
-  /* Filterkriterium: Comment: Standard reply (field_dialogue_is_standard_reply) */
+  /* Filterkriterium: Kommentar: Standard reply (field_dialogue_is_standard_reply) */
   $handler->display->display_options['filters']['field_dialogue_is_standard_reply_value']['id'] = 'field_dialogue_is_standard_reply_value';
   $handler->display->display_options['filters']['field_dialogue_is_standard_reply_value']['table'] = 'field_data_field_dialogue_is_standard_reply';
   $handler->display->display_options['filters']['field_dialogue_is_standard_reply_value']['field'] = 'field_dialogue_is_standard_reply_value';
@@ -2568,11 +2568,11 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('‹ vorherige Seite'),
     t('weiter'),
     t('letzte Seite »'),
-    t('Load more'),
-    t('Content'),
-    t('User entity referenced from field_dialogue_recipient'),
-    t('image from field_user_picture'),
-    t('Fieldset'),
+    t('Mehr laden'),
+    t('Inhalt'),
+    t('Benutzer entity referenced from field_dialogue_recipient'),
+    t('Bild von field_user_picture'),
+    t('Feldgruppe'),
     t('<h3>'),
     t('[field_user_lname],'),
     t('[field_user_fname] [field_user_lname], [field_user_party]'),
@@ -2586,7 +2586,6 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('edit question'),
     t('Alle'),
     t('Content pane'),
-    t('more'),
     t('View panes'),
   );
   $export['pw_dialogue_answers'] = $view;

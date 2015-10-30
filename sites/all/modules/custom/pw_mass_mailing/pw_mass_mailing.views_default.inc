@@ -24,13 +24,17 @@ function pw_mass_mailing_views_default_views() {
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'PW Mass Mail';
   $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['access']['perm'] = 'mass mailing with views_send';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['submit_button'] = 'Anwenden';
   $handler->display->display_options['exposed_form']['options']['reset_button_label'] = 'Zurücksetzen';
   $handler->display->display_options['exposed_form']['options']['exposed_sorts_label'] = 'Sortieren nach';
+  $handler->display->display_options['exposed_form']['options']['sort_asc_label'] = 'Aufsteigend';
+  $handler->display->display_options['exposed_form']['options']['sort_desc_label'] = 'Absteigend';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'table';
@@ -105,64 +109,65 @@ function pw_mass_mailing_views_default_views() {
       'empty_column' => 0,
     ),
   );
-  /* Feld: Global: Send e-mail */
+  /* Feld: Global: E-Mail senden */
   $handler->display->display_options['fields']['views_send']['id'] = 'views_send';
   $handler->display->display_options['fields']['views_send']['table'] = 'views';
   $handler->display->display_options['fields']['views_send']['field'] = 'views_send';
-  /* Feld: User: Uid */
+  /* Feld: Benutzer: Uid */
   $handler->display->display_options['fields']['uid']['id'] = 'uid';
   $handler->display->display_options['fields']['uid']['table'] = 'users';
   $handler->display->display_options['fields']['uid']['field'] = 'uid';
-  /* Feld: User: Name */
+  /* Feld: Benutzer: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
-  /* Feld: User: E-mail */
+  /* Feld: Benutzer: E-Mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
   $handler->display->display_options['fields']['mail']['table'] = 'users';
   $handler->display->display_options['fields']['mail']['field'] = 'mail';
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
-  /* Feld: User: First Name */
+  $handler->display->display_options['fields']['field_user_lname']['label'] = 'Nachname';
+  /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['field'] = 'field_user_fname';
-  /* Feld: User: Party */
+  /* Feld: Benutzer: Party */
   $handler->display->display_options['fields']['field_user_party']['id'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['fields']['field_user_party']['field'] = 'field_user_party';
   $handler->display->display_options['fields']['field_user_party']['delta_offset'] = '0';
-  /* Feld: User: Parliament */
+  /* Feld: Benutzer: Parliament */
   $handler->display->display_options['fields']['field_user_parliament']['id'] = 'field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['field'] = 'field_user_parliament';
   $handler->display->display_options['fields']['field_user_parliament']['delta_offset'] = '0';
-  /* Feld: User: Roles */
+  /* Feld: Benutzer: Rollen */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
-  /* Feld: User: Created date */
+  /* Feld: Benutzer: Erstellungsdatum */
   $handler->display->display_options['fields']['created']['id'] = 'created';
   $handler->display->display_options['fields']['created']['table'] = 'users';
   $handler->display->display_options['fields']['created']['field'] = 'created';
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
-  /* Sortierkriterien: User: Created date */
+  /* Sortierkriterien: Benutzer: Erstellungsdatum */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  /* Filterkriterium: User: Active */
+  /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = '1';
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: User: Parliament (field_user_parliament) */
+  /* Filterkriterium: Benutzer: Parliament (field_user_parliament) */
   $handler->display->display_options['filters']['field_user_parliament_tid']['id'] = 'field_user_parliament_tid';
   $handler->display->display_options['filters']['field_user_parliament_tid']['table'] = 'field_data_field_user_parliament';
   $handler->display->display_options['filters']['field_user_parliament_tid']['field'] = 'field_user_parliament_tid';
@@ -186,7 +191,7 @@ function pw_mass_mailing_views_default_views() {
   $handler->display->display_options['filters']['field_user_parliament_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_parliament_tid']['vocabulary'] = 'parliaments';
   $handler->display->display_options['filters']['field_user_parliament_tid']['hierarchy'] = 1;
-  /* Filterkriterium: User: Party (field_user_party) */
+  /* Filterkriterium: Benutzer: Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_data_field_user_party';
   $handler->display->display_options['filters']['field_user_party_tid']['field'] = 'field_user_party_tid';
@@ -210,7 +215,7 @@ function pw_mass_mailing_views_default_views() {
   $handler->display->display_options['filters']['field_user_party_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_user_party_tid']['vocabulary'] = 'party';
   $handler->display->display_options['filters']['field_user_party_tid']['hierarchy'] = 1;
-  /* Filterkriterium: User: Roles */
+  /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
@@ -251,25 +256,24 @@ function pw_mass_mailing_views_default_views() {
   $translatables['pw_mass_mail'] = array(
     t('Master'),
     t('PW Mass Mail'),
-    t('more'),
-    t('Apply'),
+    t('mehr'),
+    t('Anwenden'),
     t('Zurücksetzen'),
     t('Sortieren nach'),
-    t('Asc'),
-    t('Desc'),
-    t('Send e-mail'),
+    t('Aufsteigend'),
+    t('Absteigend'),
+    t('E-Mail senden'),
     t('Uid'),
     t('Name'),
-    t('E-mail'),
-    t('Last name'),
+    t('E-Mail'),
+    t('Nachname'),
     t('First Name'),
     t('Party'),
     t('Parliament'),
-    t('Roles'),
-    t('Created date'),
+    t('Rollen'),
+    t('Erstellungsdatum'),
     t('Filter this view by parliament.'),
     t('Filter this view by party.'),
-    t('Rollen'),
     t('Page'),
   );
   $export['pw_mass_mail'] = $view;

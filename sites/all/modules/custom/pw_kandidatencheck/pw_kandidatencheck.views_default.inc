@@ -79,17 +79,17 @@ if($parliament_name != \'eu\'){
 <?php
 }
 ?>';
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['id'] = 'field_pw_kc_thesis_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['table'] = 'field_data_field_pw_kc_thesis_reference';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['field'] = 'field_pw_kc_thesis_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_thesis_reference_target_id']['required'] = TRUE;
-  /* Beziehung: Entity Reference: Referenced Entity */
+  /* Beziehung: Entity Reference: Entität, auf die verwiesen wird */
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['id'] = 'field_pw_kc_user_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['table'] = 'field_data_field_pw_kc_user_reference';
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['field'] = 'field_pw_kc_user_reference_target_id';
   $handler->display->display_options['relationships']['field_pw_kc_user_reference_target_id']['required'] = TRUE;
-  /* Beziehung: Content: Vote (field_pw_kc_vote_reference) */
+  /* Beziehung: Inhalt: Vote (field_pw_kc_vote_reference) */
   $handler->display->display_options['relationships']['field_pw_kc_vote_reference_tid']['id'] = 'field_pw_kc_vote_reference_tid';
   $handler->display->display_options['relationships']['field_pw_kc_vote_reference_tid']['table'] = 'field_data_field_pw_kc_vote_reference';
   $handler->display->display_options['relationships']['field_pw_kc_vote_reference_tid']['field'] = 'field_pw_kc_vote_reference_tid';
@@ -128,7 +128,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_pw_kc_votes_classname']['type'] = 'text_plain';
-  /* Feld: Global: View result counter */
+  /* Feld: Global: Ergebniszähler einer Ansicht */
   $handler->display->display_options['fields']['counter']['id'] = 'counter';
   $handler->display->display_options['fields']['counter']['table'] = 'views';
   $handler->display->display_options['fields']['counter']['field'] = 'counter';
@@ -139,7 +139,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['counter']['element_wrapper_type'] = 'strong';
   $handler->display->display_options['fields']['counter']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['counter']['counter_start'] = '1';
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body_1']['id'] = 'body_1';
   $handler->display->display_options['fields']['body_1']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body_1']['field'] = 'body';
@@ -149,7 +149,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['body_1']['element_wrapper_type'] = 'h4';
   $handler->display->display_options['fields']['body_1']['element_wrapper_class'] = 'push-bottom-xs';
   $handler->display->display_options['fields']['body_1']['element_default_classes'] = FALSE;
-  /* Feld: Global: Fieldset */
+  /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset']['id'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
@@ -170,7 +170,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_user_fname']['label'] = '';
   $handler->display->display_options['fields']['field_user_fname']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_fname']['element_label_colon'] = FALSE;
-  /* Feld: User: Last name */
+  /* Feld: Benutzer: Last name */
   $handler->display->display_options['fields']['field_user_lname']['id'] = 'field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['table'] = 'field_data_field_user_lname';
   $handler->display->display_options['fields']['field_user_lname']['field'] = 'field_user_lname';
@@ -182,7 +182,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_user_lname']['element_class'] = 'medium';
   $handler->display->display_options['fields']['field_user_lname']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_lname']['element_default_classes'] = FALSE;
-  /* Feld: Content: Vote */
+  /* Feld: Inhalt: Vote */
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['id'] = 'field_pw_kc_vote_reference';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['table'] = 'field_data_field_pw_kc_vote_reference';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['field'] = 'field_pw_kc_vote_reference';
@@ -194,7 +194,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_wrapper_class'] = 'pw-voting';
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['field_pw_kc_vote_reference']['type'] = 'taxonomy_term_reference_plain';
-  /* Feld: User: Profile picture */
+  /* Feld: Benutzer: Profile picture */
   $handler->display->display_options['fields']['field_user_picture']['id'] = 'field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['table'] = 'field_data_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture']['field'] = 'field_user_picture';
@@ -209,7 +209,7 @@ if($parliament_name != \'eu\'){
   $handler->display->display_options['fields']['field_user_picture']['settings'] = array(
     'file_view_mode' => 'pw_file_portrait_ms',
   );
-  /* Feld: Content: Body */
+  /* Feld: Inhalt: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -238,18 +238,18 @@ if($parliament_name != \'eu\'){
     'field_user_picture' => 0,
     'body' => 0,
   );
-  /* Sortierkriterien: Content: Nid */
+  /* Sortierkriterien: Inhalt: Beitrags-ID */
   $handler->display->display_options['sorts']['nid']['id'] = 'nid';
   $handler->display->display_options['sorts']['nid']['table'] = 'node';
   $handler->display->display_options['sorts']['nid']['field'] = 'nid';
-  /* Filterkriterium: Content: Published */
+  /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
   $handler->display->display_options['filters']['status']['field'] = 'status';
   $handler->display->display_options['filters']['status']['value'] = 1;
   $handler->display->display_options['filters']['status']['group'] = 1;
   $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
-  /* Filterkriterium: Content: Type */
+  /* Filterkriterium: Inhalt: Typ */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
   $handler->display->display_options['filters']['type']['field'] = 'type';
@@ -261,7 +261,7 @@ if($parliament_name != \'eu\'){
   $handler = $view->new_display('panel_pane', 'Slideshow', 'profile_slideshow');
   $handler->display->display_options['display_description'] = 'Slideshow for profiles';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
-  /* Kontextfilter: User: Uid */
+  /* Kontextfilter: Benutzer: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'users';
   $handler->display->display_options['arguments']['uid']['field'] = 'uid';
@@ -290,19 +290,19 @@ return $user->uid; ';
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
-    t('Content entity referenced from field_pw_kc_thesis_reference'),
-    t('User entity referenced from field_pw_kc_user_reference'),
-    t('term from field_pw_kc_vote_reference'),
+    t('Inhalt entity referenced from field_pw_kc_thesis_reference'),
+    t('Benutzer entity referenced from field_pw_kc_user_reference'),
+    t('Begriff aus field_pw_kc_vote_reference'),
     t('edit KC Position'),
     t('These'),
     t('[counter] von [php]:'),
-    t('Fieldset'),
+    t('Feldgruppe'),
     t('Position von'),
     t(' [field_user_fname] [field_user_lname]:'),
     t('<blockquote>[body]</blockquote>'),
     t('Slideshow'),
     t('Slideshow for profiles'),
-    t('more'),
+    t('mehr'),
     t('Alle'),
     t('View panes'),
   );
