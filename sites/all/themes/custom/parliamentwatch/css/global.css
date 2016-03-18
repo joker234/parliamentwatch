@@ -2272,7 +2272,7 @@ ul.icon-list:after {
 }
 .node-newsletter .entity-paragraphs-item .social-media + h3,
 .node-newsletter .node-testimonial blockquote  {
-  margin-right: 60px;
+  margin-right: 75px;
 }
 
 /* Embedded Media-Players */
@@ -3966,3 +3966,77 @@ a.external,
     margin-top:0;
     margin-bottom:0;
 }
+Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* IE10+ */
+    background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
+    display: block;
+}
+
+ul.progress-icons {
+	float: left;
+	margin-top: -.19em;
+}
+ul.progress-icons [class^="icon-"]:before,
+ul.progress-icons [class*=" icon-"]:before {
+	margin: 0 8px 0 0;
+}
+ul.progress-icons li {
+	float: left;
+}
+
+/* petitions */
+
+.pw-petition-progress-signings,
+.pw-petition-progress-donations {
+    float: left;
+    margin-bottom: 2px;
+    border-right: 1px solid #d3d3d3;
+    -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
+    -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
+    box-shadow: inset 0px 0px 2px 2px #ececec;
+    text-indent: -5000em;
+    background: #fff;
+}
+.pw-petition-progress-signings {
+	width: 80%;
+	border-right: 0;
+}
+.pw-petition-progress-donations {
+	width: 20%;
+}
+#petition-block-description li {
+	width: 33.3%;
+	white-space: nowrap;
+	padding: 0 35px;
+	box-sizing: border-box;
+	position: relative;
+}
+#petition-block-description li .aw-brand span {
+	position: absolute;
+	top: 7px;
+	left: 25%;
+}
+.pw-voting #pw-voting-parties .grid-6 > ul {
+  opacity: 0.99; /* helper for z-index */
+  position: relative;
+  z-index: 100;
+}
+.pw-voting #pw-voting-parties .list_voting_behavior > li {
+  float: left;
+  z-index: 1;
+}
+
+@media (max-width: 479px) {
+	.responsive-list-image-wrapper img:not(.lazyloader-icon) {
+		width: 100%;
+		height: auto;
+	}
+	.pw-responsive-list-contents {
+		padding-bottom: 4em;
+	}
+}
+@media (min-width: 480px) {
+	.re
