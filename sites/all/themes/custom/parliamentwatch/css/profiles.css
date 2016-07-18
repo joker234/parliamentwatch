@@ -80,6 +80,7 @@ html>/**/body .view-id-profile_list_rev .view-content li {
 }
 .view-id-profile_list_rev .profile-list-compact-info .profile-list-compact-info-text {
     float: left;
+    width: 195px;
 }
 
 .block-views-profile-questions-answers-block .link-report {
