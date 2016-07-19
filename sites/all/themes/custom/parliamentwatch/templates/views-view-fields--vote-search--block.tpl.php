@@ -38,12 +38,12 @@ $user_full_name .= $user_fname." ".$user_lname;
   </div>
 </div>
 <div class="statement">
-  <?php if (strlen($row->_entity_properties['body:value']) > 0): ?>
+  <?php if (strlen($row->_entity_properties['body:value'][0]) > 0): ?>
     <blockquote>
-      <div class="pw-expander"><div><?php print check_markup($row->_entity_properties['body:value']); ?></div></div>
+      <div class="pw-expander"><div><?php print check_markup($row->_entity_properties['body:value'][0]); ?></div></div>
     </blockquote>
   <?php endif ?>
 </div>
 <div class="text-right">
-  <a href="/profile/<?php print $row->_entity_properties['field_vote_user:name'][0];?>?question_form" class="icon-politician">jetzt zur Position befragen</a>
+  <a href="/profile/<?php print $row->_entity_properties['field_vote_user:name'][0];?>#pw_block_user_questionform" class="icon-politician">jetzt zur Position befragen</a>
 </div>

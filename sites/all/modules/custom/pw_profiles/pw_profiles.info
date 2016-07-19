@@ -3,7 +3,11 @@ description = profile display
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-20160106
+<<<<<<< HEAD
+version = 7.x-1.0-20160713
+=======
+version = 7.x-1.0-20160523
+>>>>>>> 62b87a2... AW-3347: Fixed floating issues after bootstrap-udate
 project = pw_profiles
 dependencies[] = addressfield
 dependencies[] = addressfield_tokens
@@ -52,7 +56,6 @@ dependencies[] = twitter
 dependencies[] = uuid
 dependencies[] = viewfield
 dependencies[] = views
-dependencies[] = views_autocomplete_filters
 dependencies[] = views_between_dates_filter
 dependencies[] = views_bulk_operations
 dependencies[] = views_content
@@ -261,9 +264,7 @@ features[user_permission][] = create field_user_valid
 features[user_permission][] = create files
 features[user_permission][] = delete any calendar_entry content
 features[user_permission][] = delete own calendar_entry content
-features[user_permission][] = delete own files
 features[user_permission][] = edit any calendar_entry content
-features[user_permission][] = edit any files
 features[user_permission][] = edit field_user_about
 features[user_permission][] = edit field_user_address
 features[user_permission][] = edit field_user_age
@@ -349,7 +350,6 @@ features[user_permission][] = edit own field_user_roles_for_view_mode_s
 features[user_permission][] = edit own field_user_title
 features[user_permission][] = edit own field_user_twitter_account
 features[user_permission][] = edit own field_user_valid
-features[user_permission][] = edit own files
 features[user_permission][] = use text format copyright
 features[user_permission][] = use text format filtered_html
 features[user_permission][] = use text format managed_content
@@ -461,6 +461,8 @@ features[variable][] = node_options_calendar_entry
 features[variable][] = node_preview_calendar_entry
 features[variable][] = node_submitted_calendar_entry
 features[variable][] = pathauto_node_calendar_entry_pattern
+features[variable][] = pathauto_taxonomy_term_list_position_pattern
+features[variable][] = pathauto_taxonomy_term_pw_profile_roles_for_view_mode_switch_pattern
 features[variable][] = pathauto_user_pattern
 features[variable][] = pw_profileswitch_assignment
 features[variable][] = pw_profileswitch_display_mode1
@@ -472,6 +474,7 @@ features[variable][] = pw_profileswitch_role2
 features[variable][] = pw_profileswitch_role3
 features[variable][] = pw_profileswitch_role4
 features[variable][] = user_pictures
+features[variable][] = xmlsitemap_settings_node_calendar_entry
 features[views_view][] = calendar
 features[views_view][] = constituency_for_the_profile
 features[views_view][] = politicians
@@ -479,4 +482,8 @@ features[views_view][] = polls_profile
 features[views_view][] = profile_list_rev
 features[views_view][] = pw_user_blocks
 features[views_view][] = user_tweets
-mtime = 1451510373
+<<<<<<< HEAD
+mtime = 1468412335
+=======
+mtime = 1464005062
+>>>>>>> 62b87a2... AW-3347: Fixed floating issues after bootstrap-udate

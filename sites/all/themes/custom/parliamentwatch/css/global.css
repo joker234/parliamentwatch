@@ -6,7 +6,7 @@
 @import url("pw_kandidatencheck.css");
 @import url("slick.css");
 @import url("jquery.mmenu.all.css");
-@import url("icons/css/awfont20150517.css");
+@import url("icons/css/awfont.css");
 
 /*
 	LAYOUT
@@ -181,14 +181,7 @@ h2,
     margin-bottom: 18px;
     margin-bottom: 1.8rem;
 }
-.region-sidebar-second .block-title {
-    font-size: 16px;
-    font-size: 1.6rem;
-    margin-bottom: 2px;
-    margin-bottom: 0.2rem;
-    letter-spacing: 0.01ex;
-    color: #f63;
-}
+
 h3 {
     font-family: 'Times New Roman', Georgia, serif;
     font-size: 22px;
@@ -280,6 +273,12 @@ img {
 .responsive-layout-mobile .pw-landscape-l img {
     height: auto;
 }
+.svg-container svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 blockquote {
     padding: 12px 0 20px 1px;
     quotes:"\201D" "\201C";
@@ -485,12 +484,6 @@ blockquote .pw-expander div {
 }
 .inline-block {
   display: inline-block;
-}
-
-/* scroll_to_top */
-
-#back-top {
-  bottom: 55px;
 }
 
 /* icons */
@@ -1098,6 +1091,16 @@ li.pw-list-item:last-child {
 .node.view-mode-full {
     border-bottom: 0;
 }
+
+/* Second Sidebar */
+.region-sidebar-second .block-title {
+    font-size: 16px;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.01ex;
+    color: #f63;
+}
 .region-sidebar-second .block {
     margin-bottom: 35px;
     margin-bottom: 3.5rem;
@@ -1114,6 +1117,13 @@ li.pw-list-item:last-child {
 #region-sidebar-second .block .more-link {
     float: right;
 }
+
+/* Second Sidebar: Medienpartner */
+
+.block-medienpartner .row {
+    margin-bottom: 10px;
+}
+
 
 
 /* slick slider */
@@ -1281,7 +1291,7 @@ li.pw-list-item:last-child {
   margin-bottom: 1em;
 }
 #block-views-exp-pw-search-api-main-page .block-title:after {
-  font-family: "awfont20150517";
+  font-family: "awfont";
   content: "\e83a";
   padding-left: 1ex;
 }
@@ -1617,6 +1627,7 @@ ul.tabs li a:active {
 .quicktabs-style-nostyle .quicktabs-tabs li.last {
     padding-right: 0;
 }
+#quicktabs-frontpage .quicktabs-tabs a span,
 #quicktabs-politicians_answer .quicktabs-tabs a span {
     display: inline-block;
     line-height: 35px;
@@ -1624,12 +1635,24 @@ ul.tabs li a:active {
     padding-left: 30px;
     margin-left: -15px;
 }
+@media (max-width: 639px) {
+    #quicktabs-frontpage .quicktabs-tabs a span {
+        margin-left: 0;
+        background: none;
+        padding: 0;
+        font-size: 90%;
+    }
+
+}
+#quicktabs-tab-frontpage-0 span,
 #quicktabs-tab-politicians_answer-0 span {
     background-position: -407px -3085px;
 }
+#quicktabs-tab-frontpage-1 span,
 #quicktabs-tab-politicians_answer-1 span {
     background-position: -446px -3044px;
 }
+#quicktabs-tab-frontpage-2 span,
 #quicktabs-tab-politicians_answer-2 span {
     background-position: -369px -3121px;
 }
@@ -1667,7 +1690,9 @@ ul.tabs li a:active {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f1f1', endColorstr='#dadada',GradientType=0 ); /* IE6-9 */
 }
 
-/* frontpage */
+
+
+/* /////////////////////////// frontpage /////////////////////////// */
 
 #quicktabs-homepage_tabs a span {
     padding-left: 29px;
@@ -1683,6 +1708,101 @@ ul.tabs li a:active {
 #quicktabs-tab-homepage_tabs-2 span {
     background-position: -368px -3120px;
 }
+/* Hide headline on Frontpage */
+.front #page-title {
+    height: 0;
+    margin: 0;
+    visibility: hidden;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* frontpage: Blog-Teaser */
+.block-blog-block-2 {
+    padding-bottom: 30px;
+}
+.block-blog-block-2 .clearfix {
+    padding-top: 10px;
+}
+.block-blog-block-2 .clearfix .read-more {
+    margin-right: 20px;
+}
+
+/* Intro: Bundestag */
+
+.aw-intro-bundestag {
+    padding-bottom: 40px;
+}
+@media (min-width: 640px) {
+    .aw-intro-bundestag .col-sm-4 {
+        padding-right: 15px;
+    }
+    .aw-intro-bundestag .col-sm-8 {
+        padding-left: 15px;
+    }
+}
+.aw-intro-bundestag .row h3 {
+    color: #f63;
+}
+.aw-intro-bundestag .txt {
+    padding-left: 8px;
+    height: 3.1em;
+}
+.aw-intro-bundestag form .row {
+    margin-bottom: 15px;
+}
+.aw-intro-bundestag svg path {
+    fill: #bdd183;
+    stroke: #fff;
+    stroke-width: 1.5;
+}
+/*
+.aw-intro-bundestag svg path:hover {
+    fill: #1b92ff;
+    cursor: pointer;
+}
+*/
+
+/* Quick-Tabs: Frontpage */
+
+.block-quicktabs-frontpage .block-inner h2 {
+    margin-right: 0;
+}
+
+/* Teaser: Spenden Landesparlamente */
+
+.spenden-teaser-list {
+    list-style: none;
+}
+.spenden-teaser-list li {
+    padding-left: 20%;
+    margin-bottom: 10px;
+    background-repeat: no-repeat;
+    background-position: left center;
+    position: relative;
+}
+.spenden-teaser-status-bar {
+    padding: 1px;
+    border: 1px solid #D5DAD8;
+}
+.spenden-teaser-status-bar-process {
+    height: 10px;
+    background-color: #bdd183;
+}
+.spenden-teaser-list .icon-state {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 27px;
+}
+.spenden-teaser-list .icon-state:before {
+    background: -webkit-linear-gradient(#C9C9C9,#A1A1A1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 10px;
+    width: 1.3em;
+}
+
 
 /* /////////////////////////// region-user-second /////////////////////////// */
 
@@ -2041,7 +2161,7 @@ ul.tabs li a:active {
   padding-left: 0;
 }
 .view-pw-testimonials-header .more-link a:after {
-  font-family: "awfont20150517";
+  font-family: "awfont";
   content: "\e841";
   font-size: 1.4em;
   font-weight: normal;
@@ -2092,17 +2212,23 @@ ul.tabs li a:active {
     padding-right: 35px;
 }
 .file-image.float-left,
-.media-image-left {
-    margin-right: 14px;
-    float: left;
-}
-.media-image-left {
-    margin-bottom: 7px;
-}
 .file-image.float-right {
-    margin-left: 14px;
-    margin-bottom: 7px;
+    float: none;
 }
+@media (min-width: 480px) {
+    .file-image.float-left,
+    .media-image-left {
+        margin-right: 14px;
+        margin-bottom: 7px;
+        float: left;
+    }
+    .file-image.float-right {
+        margin-left: 14px;
+        margin-bottom: 7px;
+        float: right;
+    }
+}
+
 .portrait-s.file-image.float-left + blockquote
 .portrait-s.file-image.float-left + .statement {
     margin-left: 84px;
@@ -2152,6 +2278,21 @@ ul.icon-list:after {
 .node-blogpost .comment-count,
 .node-blogpost .field-type-taxonomy-term-reference {
     clear: both;
+}
+.cke_editable ul,
+.node-blogpost ul {
+  margin-left: 0 !important;
+  margin-bottom: 1em;
+  padding: 0 !important;
+  list-style: none !important;
+}
+.cke_editable ul li,
+.node-blogpost ul li {
+  background-image: url("../images/sprite.png");
+  background-repeat: no-repeat;
+  padding-left: 15px;
+  background-position: -770px -1896px;
+  margin-bottom: 0.3em;
 }
 .pane-blog .field-type-taxonomy-term-reference {
     position: relative;
@@ -2272,7 +2413,7 @@ ul.icon-list:after {
 }
 .node-newsletter .entity-paragraphs-item .social-media + h3,
 .node-newsletter .node-testimonial blockquote  {
-  margin-right: 75px;
+  margin-right: 70px;
 }
 
 /* Embedded Media-Players */
@@ -2505,11 +2646,9 @@ table.pw-voting .views-field-nothing {
 .pw-voting .item-politician .statement {
     max-height: 200px;
     overflow-y: auto;
-}
-.pw-voting .item-politician .statement {
     margin-bottom: 3.5em;
     margin-left: 84px;
-    width: 516px;
+    width: 470px;
 }
 .view-pw-vote-search .statement,
 .view-pw-vote-positions .statement {
@@ -2736,6 +2875,8 @@ ul.progress-icons li {
 		margin-left: 4.5em;
 	}
 }
+
+
 /* tribute to IE8 */
 .responsive-list-image-wrapper {
   float: left\9;
@@ -2758,6 +2899,82 @@ ul.progress-icons li {
   margin-left: 4.5em\9;
 }
 /* // tribute to IE8 */
+
+/* Vote - Petition search block */
+
+#views-exposed-form-vote-search-block {
+background: #f4f4f4 none repeat scroll 0 0;
+border: 1px solid #dedede;
+border-radius: 3px;
+box-shadow: 0 0 4px 1px #ebebeb;
+color: #666;
+margin-bottom: 7em;
+padding: 12px 10px 10px;
+position: relative;
+margin-bottom: 2em !important;
+}
+#edit-search-api-views-fulltext-wrapper {
+float: left;
+padding-right: 10px;
+float: left;
+width: 41%;
+}
+#edit-field-vote-user-field-user-party-wrapper,
+#edit-field-vote-user-field-user-fraction-wrapper,
+#edit-field-vote-wrapper {
+float: left;
+width: 25%;
+box-sizing: border-box;
+padding-right: 10px;
+}
+
+#edit-search-api-views-fulltext-wrapper input,
+#edit-field-vote-user-field-user-party-wrapper select,
+#edit-field-vote-user-field-user-fraction-wrapper select,
+#edit-field-vote-wrapper select {
+width: 100%;
+height: 40px;
+margin-bottom: 0;
+}
+#views-exposed-form-vote-search-block .views-submit-button {
+float: right;
+margin-top: 1.5em;
+}
+#views-exposed-form-vote-search-block .form-submit {
+width: 40px;
+height: 40px;
+text-indent: -5000em;
+background: url('../images/ic_search_fff.png') no-repeat;
+}
+
+@media (max-width: 639px) {
+  #edit-keyword-wrapper {
+    float: none;
+    width: 100%;
+    padding-right: 0;
+  }
+  #edit-ss-vote-user-party-wrapper,
+  #edit-ss-vote-user-fraction-wrapper,
+  #edit-ss-vote-user-vote-text-wrapper {
+    float: left;
+    width: 50%;
+  }
+  #edit-ss-vote-user-party-wrapper,
+  #edit-ss-vote-user-fraction-wrapper {
+    padding-right: 5px;
+  }
+  #edit-ss-vote-user-vote-text-wrapper {
+    padding-left: 5px;
+    padding-right: 0;
+  }
+  #views-exposed-form-vote-search-block .views-submit-button {
+    clear: left;
+  }
+  #views-exposed-form-vote-search-block .views-exposed-widget {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
 
 /* /////////////////////////// forms /////////////////// */
 
@@ -2806,7 +3023,7 @@ form .messages.error:not(.messages-inline):before {
 }
 form .error:before {
     color: #fe0002;
-    font-family: "awfont20150517";
+    font-family: "awfont";
     content: "\e823";
     font-size: 1.2em;
     margin-right: 4px;
@@ -2880,6 +3097,12 @@ input[type="button"],
     margin-bottom: 0.8rem;
     font-size: 13px;
     font-size: 1.3rem;
+}
+input[type="image"].form-submit {
+    padding: 0;
+    height: auto;
+    width: auto;
+    margin: 0;
 }
 .views-exposed-widget.views-reset-button input[type="submit"] {
     border: 0;
@@ -3210,17 +3433,21 @@ form .webform-component-checkboxes .description {
     margin-left: 15px;
 }
 .comment.answer .bg-white {
-    margin-left: -24px;
     padding: 2px 24px;
     width: 100%;
+}
+@media (min-width: 640px) {
+    .comment.answer .bg-white {
+        margin-left: -24px;
+    }
 }
 .view-profile-questions-answers .views-row {
     position: relative;
 }
 
-.view-profile-questions-answers .sharethis-wrapper,
 #quicktabs-tabpage-politicians_answer-1 .sharethis-wrapper,
-.node-type-dialogue .sharethis-wrapper {
+.node-type-dialogue .sharethis-wrapper,
+.node-dialogue .sharethis-wrapper {
     top: 2em;
 }
 .view-answers .comment.answer .sharethis-wrapper {
@@ -3380,12 +3607,13 @@ form .webform-component-checkboxes .description {
 .announcement.slideshow .wrapper {
     background-size: cover;
     background-position: center;
-    position: relative;
     height: 100%;
     min-height: 168px;
     min-height: 16.8rem;
     padding: 38px 0 34px 0;
     padding: 3.8rem 0 3.2rem 0;
+
+    position: relative;
 }
 .announcement.slideshow .wrapper-inner,
 .announcement.slideshow .views-slideshow-controls-top {
@@ -3406,14 +3634,23 @@ form .webform-component-checkboxes .description {
     margin-bottom: 1px;
     position: absolute;
     width: 93%;
-    top: 18px;
+    top: 20px;
     z-index: 9;
 }
 .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
     color: #999;
     cursor: pointer;
-    margin-right: 20px;
+    margin-right: 15px;
 }
+@media (min-width: 640px) {
+    .announcement.slideshow .views-slideshow-controls-top {
+        top: 18px;
+    }
+    .announcement.slideshow .views-slideshow-controls-top .views-content-field-announce-tab-title {
+        margin-right: 20px;
+    }
+}
+
 .announcement.slideshow .views-slideshow-controls-top .active .views-content-field-announce-tab-title {
     color: #333;
 }
@@ -3519,9 +3756,8 @@ form .webform-component-checkboxes .description {
     width: 70px;
     text-align: right;
 }
-.st_plusone_hcount,
 .st_twitter_hcount,
-.st_fbrec_hcount {
+.st_facebook_hcount {
     display: inline-block;
     margin-right: 1em;
 }
@@ -3561,6 +3797,7 @@ form .webform-component-checkboxes .description {
     background: transparent !important;
     border: 0 !important;
 }
+.node-type-page h2,
 .sharethis-wrapper + h1,
 .sharethis-wrapper + h2,
 .sharethis-wrapper + h3,
@@ -3572,6 +3809,22 @@ form .webform-component-checkboxes .description {
     margin-right: 72px;
 }
 
+.sharebuttons{
+  margin-bottom: 20px;
+}
+
+.sharebuttons .stButton .stFb,
+.sharebuttons .stButton .stTwbutton,
+.sharebuttons .stButton .stMainServices {
+    height: 22px;
+}
+
+/* Mobile Share-This Widget*/
+
+#stToolPop {
+    right: 11px !important;
+    bottom: 140px !important;
+}
 
 /* /////////////////////////// RSS /////////////////// */
 
@@ -3638,6 +3891,15 @@ form .webform-component-checkboxes .description {
 .comment .submitted .author {
     float: left;
     margin-bottom: 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 100%;
+}
+@media(min-width:640px) {
+    .comment .submitted .author {
+        width: auto;
+    }
 }
 .comment-reply {
     background-position: -610px -2896px;
@@ -3650,6 +3912,9 @@ form .webform-component-checkboxes .description {
 }
 .comment .field-name-comment-body {
     padding: 0 10px 10px 10px;
+}
+.comment .field-name-comment-body a {
+    word-wrap: break-word;
 }
 .comment ul.links {
     border-top: 1px solid #fff;
@@ -3680,6 +3945,10 @@ form .webform-component-checkboxes .description {
 }
 #zone-postscript-wrapper p:last-child {
   margin-bottom: 20px;
+}
+.socialmedia {
+    display: inline-block;
+    width: 50px;
 }
 .socialmedia a {
   width: 50px;
@@ -3821,6 +4090,7 @@ a.external,
 .js .responsive-layout-mobile .pw-expandable-mobile h3,
 .item-list ul.pager.pager-load-more a span,
 #quicktabs-politicians_answer .quicktabs-tabs a span,
+#quicktabs-frontpage .quicktabs-tabs a span,
 #quicktabs-homepage_tabs a span,
 #section-content .block.newsletter-subscribe .content-wrapper,
 .views-exposed-widget.views-reset-button input[type="submit"],
@@ -3931,10 +4201,6 @@ a.external,
 #colorbox ul {
     unicode-bidi: embed;
 }
-.managed-content li,
-#colorbox li {
-    display:list-itrem;
-}
 .managed-content ul,
 .managed-content ol,
 #colorbox ul,
@@ -3966,77 +4232,3 @@ a.external,
     margin-top:0;
     margin-bottom:0;
 }
-Chrome,Safari4+ */
-    background: -webkit-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(left,  #78b70c 0%,#a8e63c 100%); /* IE10+ */
-    background: linear-gradient(to right,  #78b70c 0%,#a8e63c 100%); /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b70c', endColorstr='#a8e63c',GradientType=1 ); /* IE6-8 */
-    display: block;
-}
-
-ul.progress-icons {
-	float: left;
-	margin-top: -.19em;
-}
-ul.progress-icons [class^="icon-"]:before,
-ul.progress-icons [class*=" icon-"]:before {
-	margin: 0 8px 0 0;
-}
-ul.progress-icons li {
-	float: left;
-}
-
-/* petitions */
-
-.pw-petition-progress-signings,
-.pw-petition-progress-donations {
-    float: left;
-    margin-bottom: 2px;
-    border-right: 1px solid #d3d3d3;
-    -webkit-box-shadow: inset 0px 0px 2px 2px #ececec;
-    -moz-box-shadow: inset 0px 0px 2px 2px #ececec;
-    box-shadow: inset 0px 0px 2px 2px #ececec;
-    text-indent: -5000em;
-    background: #fff;
-}
-.pw-petition-progress-signings {
-	width: 80%;
-	border-right: 0;
-}
-.pw-petition-progress-donations {
-	width: 20%;
-}
-#petition-block-description li {
-	width: 33.3%;
-	white-space: nowrap;
-	padding: 0 35px;
-	box-sizing: border-box;
-	position: relative;
-}
-#petition-block-description li .aw-brand span {
-	position: absolute;
-	top: 7px;
-	left: 25%;
-}
-.pw-voting #pw-voting-parties .grid-6 > ul {
-  opacity: 0.99; /* helper for z-index */
-  position: relative;
-  z-index: 100;
-}
-.pw-voting #pw-voting-parties .list_voting_behavior > li {
-  float: left;
-  z-index: 1;
-}
-
-@media (max-width: 479px) {
-	.responsive-list-image-wrapper img:not(.lazyloader-icon) {
-		width: 100%;
-		height: auto;
-	}
-	.pw-responsive-list-contents {
-		padding-bottom: 4em;
-	}
-}
-@media (min-width: 480px) {
-	.re

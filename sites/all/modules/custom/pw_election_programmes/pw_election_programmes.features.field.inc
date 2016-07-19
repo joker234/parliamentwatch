@@ -66,6 +66,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -148,6 +149,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'link',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -167,6 +169,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'link',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -188,8 +191,9 @@ function pw_election_programmes_field_default_fields() {
       'exclude_cv' => 0,
       'field_name' => 'field_election_programme_open',
       'label' => 'Link',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
+        'absolute_url' => 1,
         'attributes' => array(
           'class' => 'read-more',
           'configurable_title' => 1,
@@ -201,13 +205,14 @@ function pw_election_programmes_field_default_fields() {
           'url_cutoff' => '80',
         ),
         'enable_tokens' => 1,
-        'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'rel_remove' => 'default',
         'title' => 'value',
+        'title_label_use_field_label' => FALSE,
         'title_maxlength' => '128',
         'title_value' => 'Wahlprogramm durchblättern',
         'url' => 0,
@@ -275,6 +280,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -357,6 +363,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'mediafield',
           'settings' => array(
+            'field_delimiter' => '',
             'file_view_mode' => 'default',
             'linked_field' => array(
               'advanced' => array(
@@ -377,6 +384,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'mediafield',
           'settings' => array(
+            'field_delimiter' => '',
             'file_view_mode' => 'default',
             'linked_field' => array(
               'advanced' => array(
@@ -494,7 +502,6 @@ function pw_election_programmes_field_default_fields() {
       'label' => 'Party',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
@@ -549,6 +556,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => '',
             'image_style' => 'pw_landscape_l__normal',
             'linked_field' => array(
@@ -570,6 +578,7 @@ function pw_election_programmes_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => '',
             'image_style' => 'pw_landscape_m',
             'linked_field' => array(

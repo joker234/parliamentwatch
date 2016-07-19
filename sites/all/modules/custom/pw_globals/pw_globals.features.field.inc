@@ -52,6 +52,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -130,6 +131,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -210,6 +212,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -229,6 +232,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -254,6 +258,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -353,6 +358,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'file_entity',
           'settings' => array(
+            'field_delimiter' => '',
             'file_view_mode' => 'pw_file_landscape_l',
             'linked_field' => array(
               'advanced' => array(
@@ -462,6 +468,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -481,6 +488,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -544,8 +552,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -606,6 +615,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -622,6 +632,7 @@ function pw_globals_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => 3,
@@ -706,6 +717,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => 'content',
             'image_style' => 'pw_thumbnail_70',
             'linked_field' => array(
@@ -727,6 +739,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => '',
             'image_style' => 'pw_thumbnail_70',
             'linked_field' => array(
@@ -835,6 +848,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -854,6 +868,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -917,8 +932,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -989,6 +1005,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1008,6 +1025,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1091,6 +1109,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1110,6 +1129,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1174,8 +1194,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 1,
-          'insert_plugin' => 'html_link',
+          'profile' => 'managed_content',
         ),
         'text_processing' => '1',
         'user_register_form' => FALSE,
@@ -1235,6 +1256,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1316,6 +1338,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1393,6 +1416,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1451,8 +1475,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -1517,6 +1542,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1603,6 +1629,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1685,6 +1712,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1771,6 +1799,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1857,6 +1886,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1937,6 +1967,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'list',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2021,6 +2052,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2082,8 +2114,9 @@ function pw_globals_field_default_fields() {
           ),
         ),
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -2144,6 +2177,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2207,8 +2241,9 @@ function pw_globals_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -2269,6 +2304,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -2285,6 +2321,7 @@ function pw_globals_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => '2',
@@ -2344,6 +2381,7 @@ function pw_globals_field_default_fields() {
       'settings' => array(
         'allowed_values' => array(
           'field_user_address_administrative_area' => 'administrative area',
+          'field_electoral_region_tid' => 'electoral region',
           'field_user_list_tid' => 'list',
           'field_user_list_position_tid' => 'list position',
           'field_user_constituency_tid' => 'constituency',
@@ -2359,6 +2397,9 @@ function pw_globals_field_default_fields() {
         0 => array(
           'value' => 'field_user_address_administrative_area',
         ),
+        1 => array(
+          'value' => 'field_electoral_region_tid',
+        ),
       ),
       'deleted' => '0',
       'description' => '',
@@ -2367,6 +2408,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'list',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2448,6 +2490,7 @@ function pw_globals_field_default_fields() {
           'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -2464,6 +2507,7 @@ function pw_globals_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => '1',
@@ -2472,6 +2516,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -2488,6 +2533,7 @@ function pw_globals_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
             'show_repeat_rule' => 'show',
           ),
           'type' => 'date_default',
@@ -2560,6 +2606,7 @@ function pw_globals_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -2604,6 +2651,88 @@ function pw_globals_field_default_fields() {
     ),
   );
 
+  // Exported field: 'taxonomy_term-parliaments-field_shown_metrics'.
+  $fields['taxonomy_term-parliaments-field_shown_metrics'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '-1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_shown_metrics',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          'questions' => 'Fragen und Antworten',
+          'sidejobs' => 'Nebentätigkeiten',
+          'speeches' => 'Gehaltene Reden',
+          'voting_behavior' => 'Abstimmungsverhalten',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_text',
+    ),
+    'field_instance' => array(
+      'bundle' => 'parliaments',
+      'default_value' => array(
+        0 => array(
+          'value' => 'questions',
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 9,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_shown_metrics',
+      'label' => 'Dargestellte Metriken',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+        ),
+        'type' => 'options_buttons',
+        'weight' => '43',
+      ),
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('AC Descriptor');
@@ -2614,6 +2743,7 @@ function pw_globals_field_default_fields() {
   t('Candidate-Check activated');
   t('Comment');
   t('Constituency Rename');
+  t('Dargestellte Metriken');
   t('Election');
   t('Electoral Region');
   t('Filter Disabled');

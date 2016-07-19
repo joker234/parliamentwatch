@@ -104,26 +104,29 @@ function pw_newsletter_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'pw_newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
         'metatags' => array(
-          'weight' => '10',
+          'weight' => '12',
         ),
         'title' => array(
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '9',
+          'weight' => '11',
         ),
         'rabbit_hole' => array(
-          'weight' => '6',
+          'weight' => '8',
         ),
         'redirect' => array(
-          'weight' => '7',
+          'weight' => '9',
         ),
         'xmlsitemap' => array(
-          'weight' => '8',
+          'weight' => '10',
         ),
       ),
       'display' => array(
@@ -345,6 +348,16 @@ function pw_newsletter_strongarm() {
   $strongarm->name = 'rh_node_redirect_response_newsletter';
   $strongarm->value = '301';
   $export['rh_node_redirect_response_newsletter'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_newsletter';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_newsletter'] = $strongarm;
 
   return $export;
 }

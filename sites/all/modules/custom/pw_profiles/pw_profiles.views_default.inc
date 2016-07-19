@@ -1430,62 +1430,12 @@ else
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::user_block_user_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::pathauto_user_update_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::1399' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
-    'action::system_send_email_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
     'action::views_bulk_operations_delete_item' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
-    ),
-    'action::views_bulk_operations_modify_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'show_all_tokens' => 0,
-        'display_values' => array(
-          '_all_' => '_all_',
-        ),
-      ),
     ),
     'action::views_bulk_operations_user_roles_action' => array(
       'selected' => 1,
@@ -1496,13 +1446,6 @@ else
     ),
     'action::pw_login_once_send_mail_action' => array(
       'selected' => 1,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -2025,62 +1968,12 @@ else
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
-    'action::user_block_user_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::pathauto_user_update_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::1399' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_argument_selector_action' => array(
-      'selected' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'url' => '',
-      ),
-    ),
-    'action::system_send_email_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
     'action::views_bulk_operations_delete_item' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
-    ),
-    'action::views_bulk_operations_modify_action' => array(
-      'selected' => 0,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-      'settings' => array(
-        'show_all_tokens' => 0,
-        'display_values' => array(
-          '_all_' => '_all_',
-        ),
-      ),
     ),
     'action::views_bulk_operations_user_roles_action' => array(
       'selected' => 1,
@@ -2091,13 +1984,6 @@ else
     ),
     'action::pw_login_once_send_mail_action' => array(
       'selected' => 1,
-      'postpone_processing' => 0,
-      'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
-    ),
-    'action::views_bulk_operations_script_action' => array(
-      'selected' => 0,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
@@ -3159,6 +3045,12 @@ if($record->value == 0){
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Erweiterte Optionen',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_user_first_letter_lname_value' => array(
       'bef_format' => 'default',
@@ -3169,12 +3061,44 @@ if($record->value == 0){
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_user_constituency_tid' => array(
       'bef_format' => 'default',
@@ -3187,12 +3111,44 @@ if($record->value == 0){
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_user_address_administrative_area' => array(
       'bef_format' => 'default',
@@ -3203,12 +3159,44 @@ if($record->value == 0){
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_user_party_tid' => array(
       'bef_format' => 'bef',
@@ -3221,12 +3209,44 @@ if($record->value == 0){
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_user_qanda_ratio_value' => array(
       'bef_format' => 'bef_slider',
@@ -3236,6 +3256,13 @@ if($record->value == 0){
         'bef_slider_step' => '1',
         'bef_slider_animate' => '',
         'bef_slider_orientation' => 'horizontal',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
       'more_options' => array(
         'is_secondary' => 0,
@@ -3244,12 +3271,44 @@ if($record->value == 0){
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_user_age_value' => array(
       'bef_format' => 'bef_slider',
@@ -3259,6 +3318,13 @@ if($record->value == 0){
         'bef_slider_step' => '1',
         'bef_slider_animate' => '',
         'bef_slider_orientation' => 'horizontal',
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'bef_filter_description' => NULL,
+        'any_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
       'more_options' => array(
         'is_secondary' => 0,
@@ -3267,12 +3333,44 @@ if($record->value == 0){
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_user_gender_value' => array(
       'bef_format' => 'bef',
@@ -3285,13 +3383,52 @@ if($record->value == 0){
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
@@ -3339,6 +3476,26 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
   $handler->display->display_options['relationships']['field_user_picture_fid']['id'] = 'field_user_picture_fid';
   $handler->display->display_options['relationships']['field_user_picture_fid']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['relationships']['field_user_picture_fid']['field'] = 'field_user_picture_fid';
+  /* Beziehung: Benutzer (Historische Daten): List (field_user_list) */
+  $handler->display->display_options['relationships']['field_user_list_tid']['id'] = 'field_user_list_tid';
+  $handler->display->display_options['relationships']['field_user_list_tid']['table'] = 'field_revision_field_user_list';
+  $handler->display->display_options['relationships']['field_user_list_tid']['field'] = 'field_user_list_tid';
+  /* Beziehung: Benutzer (Historische Daten): Constituency (field_user_constituency) */
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['table'] = 'field_revision_field_user_constituency';
+  $handler->display->display_options['relationships']['field_user_constituency_tid']['field'] = 'field_user_constituency_tid';
+  /* Beziehung: Taxonomie-Begriff: Taxonomie-Begriff die Electoral Region benutzt */
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['id'] = 'reverse_field_electoral_region_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['field'] = 'reverse_field_electoral_region_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['relationship'] = 'field_user_constituency_tid';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term']['label'] = 'field_electoral_region_constituency';
+  /* Beziehung: Taxonomie-Begriff: Taxonomie-Begriff die Electoral Region benutzt */
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['id'] = 'reverse_field_electoral_region_taxonomy_term_1';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['field'] = 'reverse_field_electoral_region_taxonomy_term';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['relationship'] = 'field_user_list_tid';
+  $handler->display->display_options['relationships']['reverse_field_electoral_region_taxonomy_term_1']['label'] = 'field_electoral_region_list';
   /* Feld: Benutzer: First Name */
   $handler->display->display_options['fields']['field_user_fname']['id'] = 'field_user_fname';
   $handler->display->display_options['fields']['field_user_fname']['table'] = 'field_data_field_user_fname';
@@ -4541,15 +4698,8 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset_1']['children'] = array(
     0 => 'field_user_picture-revision_id',
-    1 => 'field_user_fname-revision_id',
-    2 => 'field_user_lname-revision_id',
-    3 => 'field_user_party-revision_id_1',
-    4 => 'field_user_parliament-revision_id',
-    5 => 'field_user_constituency-revision_id',
-    6 => 'nothing',
-    7 => 'nothing_1',
-    8 => 'field_user_qanda_ratio-revision_id',
-    9 => 'vid',
+    1 => 'fieldset_3',
+    2 => 'vid',
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'element-hidden profile-list-compact-info';
@@ -4571,6 +4721,22 @@ return FALSE;';
     'image_style' => 'pw_portrait_l__normal',
     'image_link' => '',
   );
+  /* Feld: Global: Feldgruppe */
+  $handler->display->display_options['fields']['fieldset_3']['id'] = 'fieldset_3';
+  $handler->display->display_options['fields']['fieldset_3']['table'] = 'views';
+  $handler->display->display_options['fields']['fieldset_3']['field'] = 'fieldset';
+  $handler->display->display_options['fields']['fieldset_3']['children'] = array(
+    0 => 'field_user_fname-revision_id',
+    1 => 'field_user_lname-revision_id',
+    2 => 'field_user_party-revision_id_1',
+    3 => 'field_user_parliament-revision_id',
+    4 => 'field_user_constituency-revision_id',
+    5 => 'nothing',
+    6 => 'nothing_1',
+    7 => 'field_user_qanda_ratio-revision_id',
+  );
+  $handler->display->display_options['fields']['fieldset_3']['fieldset']['type'] = 'div';
+  $handler->display->display_options['fields']['fieldset_3']['fieldset']['classes'] = 'profile-list-compact-info-text';
   /* Feld: Benutzer (Historische Daten): First Name */
   $handler->display->display_options['fields']['field_user_fname-revision_id']['id'] = 'field_user_fname-revision_id';
   $handler->display->display_options['fields']['field_user_fname-revision_id']['table'] = 'field_revision_field_user_fname';
@@ -4678,6 +4844,10 @@ return FALSE;';
   $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
   $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filterkriterium: Benutzer: Aktiv */
   $handler->display->display_options['filters']['status']['id'] = 'status';
@@ -4942,6 +5112,38 @@ return FALSE;';
       'value' => 'TH',
     ),
   );
+  /* Filterkriterium: Taxonomie-Begriff: Electoral Region (field_electoral_region) */
+  $handler->display->display_options['filters']['field_electoral_region_tid']['id'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['table'] = 'field_data_field_electoral_region';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['field'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['relationship'] = 'field_user_constituency_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group'] = 2;
+  $handler->display->display_options['filters']['field_electoral_region_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['operator_id'] = 'field_electoral_region_tid_op';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['label'] = 'Nach Gebiet filtern';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['operator'] = 'field_electoral_region_tid_op';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['identifier'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    51622513 => 0,
+    181527986 => 0,
+    140336230 => 0,
+    185431326 => 0,
+    178386088 => 0,
+    29859578 => 0,
+  );
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['label'] = 'Electoral Region (field_electoral_region)';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['identifier'] = 'field_electoral_region_tid';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['remember'] = FALSE;
+  $handler->display->display_options['filters']['field_electoral_region_tid']['group_info']['group_items'] = array(
+    1 => array(),
+    2 => array(),
+    3 => array(),
+  );
+  $handler->display->display_options['filters']['field_electoral_region_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_electoral_region_tid']['vocabulary'] = 'electoral_region';
   /* Filterkriterium: Benutzer: Constituency (field_user_constituency) */
   $handler->display->display_options['filters']['field_user_constituency_tid']['id'] = 'field_user_constituency_tid';
   $handler->display->display_options['filters']['field_user_constituency_tid']['table'] = 'field_data_field_user_constituency';
@@ -5733,6 +5935,7 @@ return FALSE;';
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
+    t('Erweiterte Optionen'),
     t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
     t('Profile pro Seite'),
     t('- Alle -'),
@@ -5747,6 +5950,10 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('Begriff aus field_user_parliament'),
     t('Get all revisions from an user.'),
     t('Bild von field_user_picture'),
+    t('Begriff aus field_user_list'),
+    t('Begriff aus field_user_constituency'),
+    t('field_electoral_region_constituency'),
+    t('field_electoral_region_list'),
     t('Feldgruppe'),
     t('[field_user_picture-revision_id_1]'),
     t('<strong>[field_user_fname-revision_id_1]'),
@@ -5787,10 +5994,13 @@ Mit Ihrer Auswahl wurden leider keine Ergebnisse gefunden.<br/>Bitte treffen Sie
     t('[field_user_qanda_ratio-revision_id-value] % Antwortquote'),
     t('Bundesland'),
     t('Bundesland auswählen'),
+    t('Nach Gebiet filtern'),
+    t('Electoral Region (field_electoral_region)'),
     t('Wahlkreis'),
     t('Liste'),
     t('Listenplatz'),
     t('Listenansicht'),
+    t('<div class="ic-info"><div class="info-title"></div><div class="info-content element-hidden">Über den Schieber können Sie sich die Politikerinnen und Politiker auf dieser Seite entsprechend ihrer Antwortquote auf abgeordnetenwatch.de anzeigen lassen.</div></div>'),
   );
   $export['profile_list_rev'] = $view;
 

@@ -42,7 +42,6 @@ function pw_announcements_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'slideshow';
   $handler->display->display_options['style_options']['default_row_class'] = FALSE;
   $handler->display->display_options['style_options']['row_class_special'] = FALSE;
-  $handler->display->display_options['style_options']['wrapper_class'] = '';
   $handler->display->display_options['style_options']['slideshow_type'] = 'views_slideshow_cycle';
   $handler->display->display_options['style_options']['slideshow_skin'] = 'default';
   $handler->display->display_options['style_options']['skin_info'] = array(
@@ -208,6 +207,7 @@ return $term->tid;';
   $handler->display->display_options['arguments']['field_parliament_tid']['validate_options']['vocabularies'] = array(
     'parliaments' => 'parliaments',
   );
+  $handler->display->display_options['arguments']['field_parliament_tid']['validate']['fail'] = 'ignore';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

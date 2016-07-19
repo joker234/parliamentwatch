@@ -89,6 +89,11 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'newsletter';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'sharethis' => array(
+      'weight' => '0',
+      'label' => 'hidden',
+      'format' => 'default',
+    ),
     'sharebuttons' => array(
       'weight' => '2',
       'label' => 'hidden',
@@ -116,13 +121,8 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
-    'sharethis' => array(
-      'weight' => '0',
-      'label' => 'hidden',
-      'format' => 'default',
-    ),
     'title' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -212,6 +212,11 @@ function pw_newsletter_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
+      ),
+    ),
+    'field_piwik_campaign' => array(
+      'formatter_settings' => array(
+        'ft' => array(),
       ),
     ),
   );
@@ -387,16 +392,10 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'paragraphs_pw_content';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'field_pg_content_title' => array(
+    'field_pg_content_body' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'h3',
-          'ow-cl' => '',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -413,14 +412,27 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_pg_content_body' => array(
+    'field_pg_content_link' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
-    'field_pg_content_link' => array(
+    'field_pg_content_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+          'ow' => TRUE,
+          'ow-el' => 'h3',
+          'ow-cl' => '',
+          'ow-def-cl' => FALSE,
+          'ow-at' => '',
+          'ow-def-at' => FALSE,
+        ),
+      ),
+    ),
+    'field_pg_donate_targetgroup' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
@@ -437,13 +449,6 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'paragraphs_pw_donate';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'field_pg_content_title' => array(
-      'formatter_settings' => array(
-        'ft' => array(
-          'func' => 'theme_ds_field_reset',
-        ),
-      ),
-    ),
     'field_pg_content_body' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -451,8 +456,53 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_pg_content_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_pg_donate_targetgroup' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_pg_content_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_expert',
+        ),
+      ),
+    ),
   );
   $export['paragraphs_item|paragraphs_pw_donate|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'paragraphs_item|paragraphs_pw_testmonial|default';
+  $ds_fieldsetting->entity_type = 'paragraphs_item';
+  $ds_fieldsetting->bundle = 'paragraphs_pw_testmonial';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
+    'field_pg_donate_targetgroup' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_pg_content_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+  );
+  $export['paragraphs_item|paragraphs_pw_testmonial|default'] = $ds_fieldsetting;
 
   return $export;
 }
@@ -513,25 +563,29 @@ function pw_newsletter_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'sharethis',
         1 => 'post_date',
-        2 => 'field_blogpost_categories',
+        2 => 'sharebuttons',
         3 => 'group_meta',
-        4 => 'field_politician',
-        5 => 'body',
-        7 => 'field_newsletter_paragraph',
+        4 => 'field_blogpost_categories',
+        5 => 'field_piwik_campaign',
+        6 => 'field_politician',
+        7 => 'body',
+        8 => 'field_newsletter_paragraph',
       ),
       'ds_hidden' => array(
-        7 => 'title',
+        9 => 'title',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
       'post_date' => 'ds_content',
-      'field_blogpost_categories' => 'ds_content',
+      'sharebuttons' => 'ds_content',
       'group_meta' => 'ds_content',
+      'field_blogpost_categories' => 'ds_content',
+      'field_piwik_campaign' => 'ds_content',
       'field_politician' => 'ds_content',
       'body' => 'ds_content',
-      'title' => 'ds_hidden',
       'field_newsletter_paragraph' => 'ds_content',
+      'title' => 'ds_hidden',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -647,6 +701,7 @@ function pw_newsletter_ds_layout_settings_info() {
         1 => 'field_pg_content_img',
         2 => 'field_pg_content_body',
         3 => 'field_pg_content_link',
+        4 => 'field_pg_donate_targetgroup',
       ),
     ),
     'fields' => array(
@@ -654,6 +709,7 @@ function pw_newsletter_ds_layout_settings_info() {
       'field_pg_content_img' => 'ds_content',
       'field_pg_content_body' => 'ds_content',
       'field_pg_content_link' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -681,11 +737,15 @@ function pw_newsletter_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'field_pg_content_title',
         1 => 'field_pg_content_body',
+        2 => 'field_pg_donate_targetgroup',
+        3 => 'field_pg_content_link',
       ),
     ),
     'fields' => array(
       'field_pg_content_title' => 'ds_content',
       'field_pg_content_body' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
+      'field_pg_content_link' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -700,6 +760,40 @@ function pw_newsletter_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['paragraphs_item|paragraphs_pw_donate|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'paragraphs_item|paragraphs_pw_testmonial|default';
+  $ds_layout->entity_type = 'paragraphs_item';
+  $ds_layout->bundle = 'paragraphs_pw_testmonial';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_pg_testimonial_er',
+        1 => 'field_pg_donate_targetgroup',
+        2 => 'field_pg_content_link',
+      ),
+    ),
+    'fields' => array(
+      'field_pg_testimonial_er' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
+      'field_pg_content_link' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['paragraphs_item|paragraphs_pw_testmonial|default'] = $ds_layout;
 
   return $export;
 }

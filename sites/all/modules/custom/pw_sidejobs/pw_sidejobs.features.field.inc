@@ -54,6 +54,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -73,6 +74,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'hidden',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -160,6 +162,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -254,6 +257,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -351,6 +355,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -446,6 +451,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -512,17 +518,7 @@ function pw_sidejobs_field_default_fields() {
     ),
     'field_instance' => array(
       'bundle' => 'sidejob',
-      'default_value' => array(
-        0 => array(
-          'element_key' => 'node|sidejob|field_sidejob_address|und|0',
-          'thoroughfare' => '',
-          'premise' => '',
-          'postal_code' => '',
-          'locality' => '',
-          'administrative_area' => '',
-          'country' => 'DE',
-        ),
-      ),
+      'default_value' => NULL,
       'deleted' => '0',
       'description' => '',
       'display' => array(
@@ -530,6 +526,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'addressfield',
           'settings' => array(
+            'field_delimiter' => '',
             'format_handlers' => array(
               0 => 'address',
             ),
@@ -572,6 +569,7 @@ function pw_sidejobs_field_default_fields() {
           'available_countries' => array(
             'DE' => 'DE',
           ),
+          'default_country' => '',
           'format_handlers' => array(
             'address' => 'address',
             'address-hide-country' => 'address-hide-country',
@@ -629,6 +627,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'text',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -693,8 +692,9 @@ function pw_sidejobs_field_default_fields() {
         ),
         'exclude_cv' => FALSE,
         'linkit' => array(
+          'button_text' => 'Search',
           'enable' => 0,
-          'insert_plugin' => '',
+          'profile' => '',
         ),
         'text_processing' => '0',
         'user_register_form' => FALSE,
@@ -755,6 +755,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -771,6 +772,7 @@ function pw_sidejobs_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => 24,
@@ -855,6 +857,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'date',
           'settings' => array(
+            'field_delimiter' => '',
             'format_type' => 'long',
             'fromto' => 'both',
             'linked_field' => array(
@@ -871,6 +874,7 @@ function pw_sidejobs_field_default_fields() {
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
+            'show_remaining_days' => FALSE,
           ),
           'type' => 'date_default',
           'weight' => 23,
@@ -957,6 +961,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'list',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1031,6 +1036,7 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1112,6 +1118,7 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1193,6 +1200,7 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1274,6 +1282,7 @@ function pw_sidejobs_field_default_fields() {
           'module' => 'number',
           'settings' => array(
             'decimal_separator' => '.',
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -1371,6 +1380,7 @@ function pw_sidejobs_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',

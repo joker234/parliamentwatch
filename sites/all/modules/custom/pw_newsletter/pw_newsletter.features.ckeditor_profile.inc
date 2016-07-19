@@ -13,20 +13,29 @@ function pw_newsletter_ckeditor_profile_defaults() {
       'name' => 'Newsletter',
       'settings' => array(
         'ss' => '2',
+        'toolbar' => '[
+    [\'Source\'],
+    [\'RemoveFormat\',\'SpellChecker\',\'Scayt\'],
+    [\'Undo\',\'Redo\',\'Find\',\'Replace\'],
+    [\'Media\',\'linkit\',\'Link\',\'Unlink\'],
+    [\'Maximize\'],
+    \'/\',
+    [\'Templates\',\'Format\',\'Styles\'],
+    [\'Bold\',\'Subscript\',\'Superscript\'],
+    [\'NumberedList\',\'BulletedList\'],
+    [\'Blockquote\',\'SpecialChar\']
+]',
+        'expand' => 't',
         'default' => 't',
         'show_toggle' => 't',
         'uicolor' => 'default',
         'uicolor_user' => 'default',
-        'toolbar' => '[
-    [\'Source\',\'Cut\',\'Copy\',\'SpellChecker\',\'Undo\',\'Redo\',\'Find\',\'Replace\',\'RemoveFormat\',\'linkit\',\'Link\',\'Unlink\',\'Maximize\'],
-    \'/\',
-    [\'Format\',\'Bold\',\'Subscript\',\'Superscript\',\'NumberedList\',\'BulletedList\',\'Blockquote\',\'SpecialChar\']
-]',
-        'expand' => 't',
         'width' => '100%',
         'lang' => 'en',
         'auto_lang' => 't',
         'language_direction' => 'default',
+        'allowed_content' => 't',
+        'extraAllowedContent' => '',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;div;h2;h3;h4',
@@ -50,18 +59,17 @@ function pw_newsletter_ckeditor_profile_defaults() {
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
         'UserFilesAbsolutePath' => '%d%b%f/',
-        'ckeditor_load_method' => 'ckeditor.js',
-        'ckeditor_load_time_out' => '0',
         'forcePasteAsPlainText' => 't',
         'html_entities' => 'f',
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
-        'js_conf' => '',
+        'js_conf' => 'config.templates_replaceContent = false;
+config.allowedContent = true;',
         'loadPlugins' => array(
-          'autogrow' => array(
-            'name' => 'autogrow',
-            'desc' => 'Erweiterungsmodul für automatische Größenanpassung',
-            'path' => '%editor_path%plugins/autogrow/',
+          'counter' => array(
+            'name' => 'counter',
+            'desc' => 'Plugin to count symbols, symbols without blanks and words',
+            'path' => '%plugin_dir%counter/',
             'buttons' => FALSE,
             'default' => 'f',
           ),
@@ -72,9 +80,33 @@ function pw_newsletter_ckeditor_profile_defaults() {
             'buttons' => array(
               'linkit' => array(
                 'label' => 'Linkit',
-                'icon' => 'linkit.png',
+                'icon' => 'icons/linkit.png',
               ),
             ),
+          ),
+          'media' => array(
+            'name' => 'media',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/contrib/media_ckeditor/js/plugins/media/',
+            'buttons' => array(
+              'Media' => array(
+                'icon' => 'images/icon.gif',
+                'label' => 'Add media',
+              ),
+            ),
+            'default' => 'f',
+          ),
+          'mediaembed' => array(
+            'name' => 'mediaembed',
+            'desc' => 'Plugin for embedding HTML snippets',
+            'path' => '%plugin_dir%mediaembed/',
+            'buttons' => array(
+              'MediaEmbed' => array(
+                'label' => 'MediaEmbed',
+                'icon' => 'images/icon.png',
+              ),
+            ),
+            'default' => 'f',
           ),
         ),
       ),

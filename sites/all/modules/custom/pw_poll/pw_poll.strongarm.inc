@@ -106,6 +106,9 @@ function pw_poll_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'pw_newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -233,6 +236,16 @@ function pw_poll_strongarm() {
   $strongarm->name = 'rh_node_redirect_response_poll';
   $strongarm->value = '301';
   $export['rh_node_redirect_response_poll'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_poll';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_poll'] = $strongarm;
 
   return $export;
 }

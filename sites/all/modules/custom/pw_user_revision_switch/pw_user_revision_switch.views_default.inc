@@ -1803,7 +1803,7 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '<div class="pw-dialogues-link">[nothing]</div>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. Ggfs. werden auf dieser Profilseite auch ältere Fragen und Antworten angezeigt.</div></div>';
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. </div></div>';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
@@ -1814,6 +1814,17 @@ if(_pw_is_premium_user($profile_user)){
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
   );
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   /* Kontextfilter: User revision: Vid */
@@ -2203,10 +2214,11 @@ return $result;
   $handler->display->display_options['fields']['field_user_party-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_party-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_party-revision_id']['delta_offset'] = '0';
-  /* Feld: Benutzer (Historische Daten): Constituency Won */
+  /* Feld: Excluded | Constituency Won */
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['id'] = 'field_user_constituency_won-revision_id';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['table'] = 'field_revision_field_user_constituency_won';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['field'] = 'field_user_constituency_won-revision_id';
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['ui_name'] = 'Excluded | Constituency Won';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['alter']['alter_text'] = TRUE;
@@ -2214,10 +2226,25 @@ return $result;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['empty_zero'] = TRUE;
-  /* Feld: Benutzer (Historische Daten): List Won */
+  $handler->display->display_options['fields']['field_user_constituency_won-revision_id']['settings'] = array(
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Excluded | List Won */
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['id'] = 'field_user_list_won-revision_id';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['table'] = 'field_revision_field_user_list_won';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['field'] = 'field_user_list_won-revision_id';
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['ui_name'] = 'Excluded | List Won';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['label'] = '';
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['alter']['alter_text'] = TRUE;
@@ -2225,6 +2252,82 @@ return $result;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_user_list_won-revision_id']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_list_won-revision_id']['settings'] = array(
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Excluded | Joined Parliament */
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['id'] = 'field_user_joined-revision_id';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['table'] = 'field_revision_field_user_joined';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['field'] = 'field_user_joined-revision_id';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['ui_name'] = 'Excluded | Joined Parliament';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['alter']['text'] = ', nachgerückt am [field_user_joined-revision_id]';
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_joined-revision_id']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Excluded | Retired Parliament */
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['id'] = 'field_user_retired-revision_id';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['table'] = 'field_revision_field_user_retired';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['field'] = 'field_user_retired-revision_id';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['ui_name'] = 'Excluded | Retired Parliament';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['label'] = '';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['alter']['text'] = ', ausgeschieden am [field_user_retired-revision_id]';
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['field_user_retired-revision_id']['settings'] = array(
+    'format_type' => 'date_only_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
   /* Feld: Excluded | Taxonomie: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
@@ -2282,7 +2385,7 @@ return $result;
   $handler->display->display_options['fields']['nothing_3']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing_3']['ui_name'] = 'Custom: Parliament Information';
   $handler->display->display_options['fields']['nothing_3']['label'] = '';
-  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id]';
+  $handler->display->display_options['fields']['nothing_3']['alter']['text'] = '[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id][field_user_joined-revision_id][field_user_retired-revision_id]';
   $handler->display->display_options['fields']['nothing_3']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_type'] = 'p';
   $handler->display->display_options['fields']['nothing_3']['element_wrapper_class'] = 'push-bottom-xs';
@@ -2345,7 +2448,7 @@ return $result;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['label'] = '';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['alter']['text'] = '<div class="pw-dialogues-link">[nothing]</div>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. Ggfs. werden auf dieser Profilseite auch ältere Fragen und Antworten angezeigt.</div></div>';
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. </div></div>';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['element_wrapper_class'] = 'float-left bubble tiny';
@@ -2356,6 +2459,17 @@ return $result;
   $handler->display->display_options['fields']['field_user_questions_get-revision_id_1']['settings'] = array(
     'thousand_separator' => '',
     'prefix_suffix' => 0,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
   );
 
   /* Display: Short Profile Deputy Subpage */
@@ -2883,7 +2997,7 @@ return $term->tid;';
     t('Frage stellen'),
     t('Zu den Fragen und Antworten'),
     t('<div class="pw-dialogues-link">[nothing]</div>
-[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. Ggfs. werden auf dieser Profilseite auch ältere Fragen und Antworten angezeigt.</div></div>'),
+[field_user_questions_get-revision_id] / [field_user_answers_give-revision_id] <div class="ic-info inline"><div class="info-title"></div><div class="info-content element-hidden">Die Anzahl der Fragen und Antworten bezieht sich auf die aktuelle Legislaturperiode bzw. den aktuellen Wahlkampf. </div></div>'),
     t('<div class="pw-dialogues-link">An [field_user_fname-revision_id] [field_user_lname-revision_id]  wurden bisher noch keine Fragen gestellt</div>
 [field_user_questions_get-revision_id] / [field_user_answers_give-revision_id]'),
     t('Short Profile Premium Subpage'),
@@ -2891,6 +3005,9 @@ return $term->tid;';
     t('Short Profile Deputy Mainpage'),
     t('User Profile Fields'),
     t('<div class="add-sharethis" vid="[vid]" title="[field_user_fname-revision_id] [field_user_lname-revision_id] , [field_user_party-revision_id]"></div>'),
+    t(', nachgerückt am [field_user_joined-revision_id]'),
+    t(', ausgeschieden am [field_user_retired-revision_id]'),
+    t('[name][field_user_constituency_won-revision_id][field_user_list_won-revision_id][field_user_joined-revision_id][field_user_retired-revision_id]'),
     t('Short Profile Deputy Subpage'),
     t('Durch die Verwendung einer Profilerweiterung unterstützt der Kandidat abgeordnetenwatch einmalig mit 179 Euro (149 Euro als Frühbucherrabatt).'),
     t('Short Profile Dialogue'),
@@ -3137,6 +3254,11 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['sorts']['timestamp']['table'] = 'user_archive_cache';
   $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
+  /* Sortierkriterien: User archive cache: User role */
+  $handler->display->display_options['sorts']['user_role']['id'] = 'user_role';
+  $handler->display->display_options['sorts']['user_role']['table'] = 'user_archive_cache';
+  $handler->display->display_options['sorts']['user_role']['field'] = 'user_role';
+  $handler->display->display_options['sorts']['user_role']['order'] = 'DESC';
   /* Sortierkriterien: User archive cache: Vid */
   $handler->display->display_options['sorts']['vid']['id'] = 'vid';
   $handler->display->display_options['sorts']['vid']['table'] = 'user_archive_cache';
@@ -3253,7 +3375,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['number_of_questions']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['number_of_questions']['separator'] = '';
   $handler->display->display_options['fields']['number_of_questions']['format_plural'] = TRUE;
-  $handler->display->display_options['fields']['number_of_questions']['format_plural_singular'] = '1 question';
+  $handler->display->display_options['fields']['number_of_questions']['format_plural_singular'] = '1 Frage';
   $handler->display->display_options['fields']['number_of_questions']['format_plural_plural'] = '@count questions';
   /* Feld: Overwritten | Questions + Answers */
   $handler->display->display_options['fields']['number_of_answers']['id'] = 'number_of_answers';
@@ -3261,7 +3383,6 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['number_of_answers']['field'] = 'number_of_answers';
   $handler->display->display_options['fields']['number_of_answers']['ui_name'] = 'Overwritten | Questions + Answers';
   $handler->display->display_options['fields']['number_of_answers']['label'] = '';
-  $handler->display->display_options['fields']['number_of_answers']['exclude'] = TRUE;
   $handler->display->display_options['fields']['number_of_answers']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['number_of_answers']['alter']['text'] = '[number_of_questions] / [number_of_answers]';
   $handler->display->display_options['fields']['number_of_answers']['element_label_colon'] = FALSE;
@@ -3270,14 +3391,13 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['number_of_answers']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['number_of_answers']['separator'] = '';
   $handler->display->display_options['fields']['number_of_answers']['format_plural'] = TRUE;
-  $handler->display->display_options['fields']['number_of_answers']['format_plural_singular'] = '1 answer';
+  $handler->display->display_options['fields']['number_of_answers']['format_plural_singular'] = '1 Antwort';
   $handler->display->display_options['fields']['number_of_answers']['format_plural_plural'] = '@count answers';
   /* Feld: User archive cache: Number of sideline jobs */
   $handler->display->display_options['fields']['number_of_sideline_jobs']['id'] = 'number_of_sideline_jobs';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['table'] = 'user_archive_cache';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['field'] = 'number_of_sideline_jobs';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['label'] = '';
-  $handler->display->display_options['fields']['number_of_sideline_jobs']['exclude'] = TRUE;
   $handler->display->display_options['fields']['number_of_sideline_jobs']['alter']['text'] = '[number_of_sideline_jobs] Nebentätigkeiten';
   $handler->display->display_options['fields']['number_of_sideline_jobs']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['number_of_sideline_jobs']['element_wrapper_type'] = 'div';
@@ -3292,7 +3412,6 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['number_of_speeches']['table'] = 'user_archive_cache';
   $handler->display->display_options['fields']['number_of_speeches']['field'] = 'number_of_speeches';
   $handler->display->display_options['fields']['number_of_speeches']['label'] = '';
-  $handler->display->display_options['fields']['number_of_speeches']['exclude'] = TRUE;
   $handler->display->display_options['fields']['number_of_speeches']['alter']['text'] = '[number_of_speeches] Gehaltene Reden';
   $handler->display->display_options['fields']['number_of_speeches']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['number_of_speeches']['element_wrapper_type'] = 'div';
@@ -3307,7 +3426,6 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['number_of_missed_votings']['table'] = 'user_archive_cache';
   $handler->display->display_options['fields']['number_of_missed_votings']['field'] = 'number_of_missed_votings';
   $handler->display->display_options['fields']['number_of_missed_votings']['label'] = '';
-  $handler->display->display_options['fields']['number_of_missed_votings']['exclude'] = TRUE;
   $handler->display->display_options['fields']['number_of_missed_votings']['alter']['text'] = '[number_of_missed_votings] Verpasste Abstimmungen';
   $handler->display->display_options['fields']['number_of_missed_votings']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['number_of_missed_votings']['element_wrapper_class'] = 'medium';

@@ -275,7 +275,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_date_and_time';
-  $strongarm->value = 'm/d/Y \\a\\t H:i';
+  $strongarm->value = 'd.m.Y \\u\\m H:i';
   $export['date_format_date_and_time'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -289,7 +289,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_long';
-  $strongarm->value = 'l, j F, Y - H:i';
+  $strongarm->value = 'l, j. F Y - G:i';
   $export['date_format_long'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -303,7 +303,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'date_format_short';
-  $strongarm->value = 'm/d/Y - H:i';
+  $strongarm->value = 'd.m.Y - H:i';
   $export['date_format_short'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -777,7 +777,7 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lazyloader_exclude_option';
-  $strongarm->value = 'exclude';
+  $strongarm->value = 'include';
   $export['lazyloader_exclude_option'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -791,10 +791,11 @@ node/*/edit';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'lazyloader_paths';
-  $strongarm->value = 'media/*/format-form
-admin/*
-node/add/*
-node/*/edit';
+  $strongarm->value = 'petitionen/*
+petitions/*
+*/petitionen/*
+*/petitions/*
+*/abstimmungen/*';
   $export['lazyloader_paths'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -1127,6 +1128,69 @@ node/*/edit';
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_area_codex_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_area_codex_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_constituency_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_constituency_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_election_list_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_election_list_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_electoral_region_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_electoral_region_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_fraction_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_fraction_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_parliaments_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_parliaments_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_party_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_party_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_political_roles_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_political_roles_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_tags_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_tags_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'pathauto_transliterate';
   $strongarm->value = 1;
   $export['pathauto_transliterate'] = $strongarm;
@@ -1443,6 +1507,11 @@ node/*/edit';
       'pages_block' => '1',
       'confirmation_block' => '0',
     ),
+    'client-block-111889' => array(
+      'display' => 'form',
+      'pages_block' => '1',
+      'confirmation_block' => '0',
+    ),
   );
   $export['webform_blocks'] = $strongarm;
 
@@ -1609,6 +1678,66 @@ node/*/edit';
   $strongarm->name = 'weight_range_webform';
   $strongarm->value = '20';
   $export['weight_range_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_page';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_page'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_webform';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_webform'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_election_list';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_election_list'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_electoral_region';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_electoral_region'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_parliaments';
+  $strongarm->value = array(
+    'status' => '1',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_parliaments'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_political_roles';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_political_roles'] = $strongarm;
 
   return $export;
 }

@@ -46,7 +46,7 @@ function pw_subsite_default_fe_block_settings() {
   );
 
   $export['block-pw_footer_abstract'] = array(
-    'cache' => -1,
+    'cache' => '1',
     'css_class' => 'medium',
     'custom' => '0',
     'machine_name' => 'pw_footer_abstract',
@@ -740,8 +740,8 @@ profile/*/deputies',
   );
 
   $export['views-pw_testimonials_header-block'] = array(
-    'cache' => -1,
-    'css_class' => '',
+    'cache' => '-1',
+    'css_class' => 'desktop-only',
     'custom' => '0',
     'delta' => 'pw_testimonials_header-block',
     'module' => 'views',
