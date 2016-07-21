@@ -928,7 +928,6 @@ function pw_profiles_field_default_fields() {
       'label' => 'Address',
       'required' => 0,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => 0,
       ),
       'widget' => array(
@@ -941,12 +940,14 @@ function pw_profiles_field_default_fields() {
           'default_country' => '',
           'format_handlers' => array(
             'address' => 'address',
+            'address-optional' => 'address-optional',
+            'address-hide-postal-code' => 0,
+            'address-hide-street' => 0,
             'address-hide-country' => 0,
             'organisation' => 0,
             'name-oneline' => 0,
             'name-full' => 0,
           ),
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'addressfield_standard',
         'weight' => '45',

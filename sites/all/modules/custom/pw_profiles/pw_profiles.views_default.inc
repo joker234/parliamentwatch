@@ -1565,13 +1565,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_field'] = 'field_user_fname';
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Last name (field_user_lname) */
   $handler->display->display_options['filters']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['filters']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
@@ -1593,13 +1586,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_field'] = 'field_user_lname';
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -1629,13 +1615,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_field'] = 'mail';
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_data_field_user_party';
@@ -1752,13 +1731,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_field'] = 'field_user_address_locality';
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Dynamic Field Politicians View */
   $handler->display->display_options['filters']['dynamic-field']['id'] = 'dynamic-field';
   $handler->display->display_options['filters']['dynamic-field']['table'] = 'users';
@@ -2105,13 +2077,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_field'] = 'field_user_fname';
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_user_fname_value']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Last name (field_user_lname) */
   $handler->display->display_options['filters']['field_user_lname_value']['id'] = 'field_user_lname_value';
   $handler->display->display_options['filters']['field_user_lname_value']['table'] = 'field_data_field_user_lname';
@@ -2133,13 +2098,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_field'] = 'field_user_lname';
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_user_lname_value']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Rollen */
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
@@ -2169,13 +2127,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_field'] = 'mail';
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['mail']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Party (field_user_party) */
   $handler->display->display_options['filters']['field_user_party_tid']['id'] = 'field_user_party_tid';
   $handler->display->display_options['filters']['field_user_party_tid']['table'] = 'field_data_field_user_party';
@@ -2292,13 +2243,6 @@ else
     185431326 => 0,
     178386088 => 0,
   );
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_filter'] = 1;
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_items'] = '10';
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_min_chars'] = '0';
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_field'] = 'field_user_address_locality';
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_suggestion'] = 1;
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_raw_dropdown'] = 1;
-  $handler->display->display_options['filters']['field_user_address_locality']['expose']['autocomplete_dependent'] = 0;
   /* Filterkriterium: Benutzer: Dynamic Field Politicians View */
   $handler->display->display_options['filters']['dynamic-field']['id'] = 'dynamic-field';
   $handler->display->display_options['filters']['dynamic-field']['table'] = 'users';
