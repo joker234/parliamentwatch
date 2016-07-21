@@ -261,8 +261,10 @@ return $result;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['alter']['text'] = '[field_user_constituency-revision_id][field_user_election_result-revision_id]';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_constituency-revision_id']['empty'] = '-';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_user_constituency-revision_id']['settings'] = array(
+    'field_delimiter' => '',
     'linked_field' => array(
       'linked' => 0,
       'destination' => '',

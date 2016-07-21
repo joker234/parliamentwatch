@@ -46,6 +46,9 @@ class FacetapiFilterRewriteItems1 extends FacetapiFilter {
       }
      
     }
+    if (empty($build)){
+        return "";
+    }
     $build[0]["#html"] = TRUE;
     $build[0]["#markup"] = "</a><div class='facet-notice'>Ihre Postleitzahlensuche ergab mehr als einen Treffer, bitte wählen Sie aus der Liste bitte Ihre(n) Stadt/Stadtteil bzw. Ihren Ort/Ortsteil heraus, um in Ihren Wahlkreis zu springen.</div>";
     return $build;
