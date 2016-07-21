@@ -2341,6 +2341,23 @@ ul.icon-list:after {
     padding-right: 14px;
     background-position: -764px -1890px;
 }
+
+.view-blog .pw-landscape-l {
+    max-width: none;
+    margin: 0 0 10px !important;
+}
+@media (min-width: 480px) {
+    .view-blog .pw-landscape-l {
+        max-width: 140px;
+        margin: 0 14px 0 0 !important;
+    }
+}
+@media (min-width: 640px) {
+    .view-blog .pw-landscape-l {
+        max-width: 280px;
+    }
+}
+
 /* content of old wordpress blog */
 
 .alignright {
