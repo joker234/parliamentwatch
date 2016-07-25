@@ -22,8 +22,7 @@ function pw_profileswitch_user_custom_view() {
   if($user->uid == 0 && !empty($account->field_user_external_url['und'][0]['url'])){
 
     $parliament = _pw_get_current_parliament_term();
-    //if(!empty($parliament) && $parliament->name == 'Bundestag'){
-    if(false){
+    if(!empty($parliament) && ($parliament->name == 'Bundestag' || ereg('Berlin', $parliament->name))){
       $request_uri = parse_url(request_uri());
       $redirect_url = $account->field_user_external_url['und'][0]['url'];
       drupal_goto($redirect_url, array(), 307);
