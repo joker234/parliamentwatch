@@ -60,7 +60,10 @@ class FacetapiFilterRewriteParliaments extends FacetapiFilter {
     $settings = $this->settings;
     if ($settings->facet == "field_user_parliament") {
       foreach ($build as $key => $item) {
-        if ($build[$key]['#active'] == 0){
+        if (!(_pw_is_parliament_active($item['#markup']))){
+              unset($build[$key]);
+        }
+        elseif ($build[$key]['#active'] == 0){
           // Remove active parliament from link so it will show XOR behavior
           $build[$key]["#path"] = preg_replace("/\/parlament\/[\w-]+-(?!".$key.")\d+/", "", $build[$key]["#path"]);
         }
@@ -72,4 +75,3 @@ class FacetapiFilterRewriteParliaments extends FacetapiFilter {
     return $build;
   }
 }
-

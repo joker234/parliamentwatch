@@ -194,7 +194,7 @@ function _pw_is_parliament_active($parliament=FALSE) {
   }
 
   // run against all dates stored in parliament term
-  foreach ($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid) {
+  foreach (reset($parliament)->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid) {
     if (_pw_is_between_dates($date_parliament_valid)) {
       return TRUE;
     }
