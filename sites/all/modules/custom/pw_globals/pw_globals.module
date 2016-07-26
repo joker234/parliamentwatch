@@ -185,9 +185,8 @@ function _pw_is_parliament_active($parliament=FALSE) {
   }
   // if parliament was given as string, try to load full term
   elseif (is_string($parliament)) {
-    $parliament = taxonomy_get_term_by_name($parliament, 'parliaments');
+    $parliament = reset(taxonomy_get_term_by_name($parliament, 'parliaments'));
   }
-
   // something went wrong
   if (!$parliament) {
     return FALSE;
