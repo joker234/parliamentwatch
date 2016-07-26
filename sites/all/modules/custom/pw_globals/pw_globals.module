@@ -180,21 +180,20 @@ function _pw_get_current_parliament_term() {
 function _pw_is_parliament_active($parliament=FALSE) {
 
   // if parliament was not set, try to retrieve it from current context
-  if (!$parliament) {
+  if (true || !$parliament) {
     $parliament = _pw_get_current_parliament_term();
   }
   // if parliament was given as string, try to load full term
   elseif (is_string($parliament)) {
-    $parliament = taxonomy_get_term_by_name($parliament, 'parliaments');
+    $parliament = reset(taxonomy_get_term_by_name($parliament, 'parliaments'));
   }
-
   // something went wrong
   if (!$parliament) {
     return FALSE;
   }
 
   // run against all dates stored in parliament term
-  foreach (reset($parliament)->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid) {
+  foreach ($parliament->field_parliament_valid[LANGUAGE_NONE] as $date_parliament_valid) {
     if (_pw_is_between_dates($date_parliament_valid)) {
       return TRUE;
     }
