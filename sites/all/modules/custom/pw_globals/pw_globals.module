@@ -180,7 +180,7 @@ function _pw_get_current_parliament_term() {
 function _pw_is_parliament_active($parliament=FALSE) {
 
   // if parliament was not set, try to retrieve it from current context
-  if (true || !$parliament) {
+  if (!$parliament) {
     $parliament = _pw_get_current_parliament_term();
   }
   // if parliament was given as string, try to load full term
