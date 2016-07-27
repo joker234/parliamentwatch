@@ -31,8 +31,9 @@ function pw_api_constituencies($parliament) {
   $query->entityCondition('entity_type', 'taxonomy_term')
   ->propertyCondition('vid', $constituency_voc->vid)
   ->fieldCondition('field_parliament', 'tid', key($parliament_term))
-  ->fieldOrderBy('field_constituency_nr', 'value', 'ASC')
   ->propertyOrderBy('name', 'ASC');
+  # ->fieldOrderBy('field_constituency_nr', 'value', 'ASC') bug? if field_constituency_nr is empty, EFQ is empty too.
+
   $result = $query->execute();
   if($result['taxonomy_term']){
 
