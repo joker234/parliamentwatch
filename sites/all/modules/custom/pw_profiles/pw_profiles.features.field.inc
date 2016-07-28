@@ -937,7 +937,7 @@ function pw_profiles_field_default_fields() {
           'available_countries' => array(
             'DE' => 'DE',
           ),
-          'default_country' => '',
+          'default_country' => 'DE',
           'format_handlers' => array(
             'address' => 'address',
             'address-optional' => 'address-optional',
