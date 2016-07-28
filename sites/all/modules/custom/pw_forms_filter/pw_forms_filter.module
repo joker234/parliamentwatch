@@ -24,6 +24,7 @@ function pw_forms_filter_cron() {
     INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
     INNER JOIN field_revision_field_user_party AS uparty ON uparty.entity_type = 'user' AND u.uid = uparty.entity_id AND urev.vid = uparty.revision_id
     INNER JOIN taxonomy_term_data AS tparty ON uparty.field_user_party_tid = tparty.tid
+    INNER JOIN user_archive_cache AS uac ON urev.vid = uac.vid
     WHERE u.status<>0");
 
   // constituencies
@@ -37,6 +38,7 @@ function pw_forms_filter_cron() {
   INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
   INNER JOIN field_revision_field_user_constituency AS uconstituency ON uconstituency.entity_type = 'user' AND u.uid = uconstituency.entity_id AND urev.vid = uconstituency.revision_id
   INNER JOIN taxonomy_term_data AS tconstituency ON uconstituency.field_user_constituency_tid = tconstituency.tid
+  INNER JOIN user_archive_cache AS uac ON urev.vid = uac.vid
   WHERE u.status<>0");
 
   // lists
@@ -50,6 +52,7 @@ function pw_forms_filter_cron() {
   INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
   INNER JOIN field_revision_field_user_list AS ulist ON ulist.entity_type = 'user' AND u.uid = ulist.entity_id AND urev.vid = ulist.revision_id
   INNER JOIN taxonomy_term_data AS tlist ON ulist.field_user_list_tid = tlist.tid
+  INNER JOIN user_archive_cache AS uac ON urev.vid = uac.vid
   WHERE u.status<>0");
 
   // list positions
@@ -63,6 +66,7 @@ function pw_forms_filter_cron() {
   INNER JOIN taxonomy_term_data AS tparl ON uparl.field_user_parliament_tid = tparl.tid
   INNER JOIN field_revision_field_user_list_position AS ulistposition ON ulistposition.entity_type = 'user' AND u.uid = ulistposition.entity_id AND urev.vid = ulistposition.revision_id
   INNER JOIN taxonomy_term_data AS tlistposition ON ulistposition.field_user_list_position_tid = tlistposition.tid
+  INNER JOIN user_archive_cache AS uac ON urev.vid = uac.vid
   WHERE u.status<>0");
 
   // electoral regions
