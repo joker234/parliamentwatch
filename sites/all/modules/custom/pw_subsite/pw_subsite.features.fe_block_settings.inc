@@ -736,7 +736,7 @@ profile/*/deputies',
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   $export['views-pw_testimonials_header-block'] = array(

@@ -94,23 +94,17 @@ function pw_subsite_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '80',
         ),
-        'block-31' => array(
-          'module' => 'block',
-          'delta' => '31',
-          'region' => 'sidebar_second',
-          'weight' => '96',
-        ),
         'block-29' => array(
           'module' => 'block',
           'delta' => '29',
           'region' => 'sidebar_second',
           'weight' => '82',
         ),
-        'views-pw_donations_recent-recent' => array(
-          'module' => 'views',
-          'delta' => 'pw_donations_recent-recent',
+        'block-47' => array(
+          'module' => 'block',
+          'delta' => '47',
           'region' => 'sidebar_second',
-          'weight' => '86',
+          'weight' => '84',
         ),
         'views-pw_donation_state-block' => array(
           'module' => 'views',
@@ -118,11 +112,11 @@ function pw_subsite_context_default_contexts() {
           'region' => 'sidebar_second',
           'weight' => '88',
         ),
-        'block-47' => array(
+        'block-31' => array(
           'module' => 'block',
-          'delta' => '47',
+          'delta' => '31',
           'region' => 'sidebar_second',
-          'weight' => '84',
+          'weight' => '96',
         ),
       ),
     ),
