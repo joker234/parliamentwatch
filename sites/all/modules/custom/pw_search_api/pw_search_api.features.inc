@@ -985,7 +985,7 @@ function pw_search_api_default_search_api_index() {
     "server" : "solr",
     "item_type" : "user",
     "options" : {
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
         "field_user_age" : { "type" : "integer" },
@@ -1019,6 +1019,7 @@ function pw_search_api_default_search_api_index() {
         "field_user_party" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_user_qanda_ratio" : { "type" : "integer" },
         "field_user_questions_get" : { "type" : "integer" },
+        "field_user_retired" : { "type" : "date" },
         "field_user_title" : { "type" : "text" },
         "last_access" : { "type" : "date" },
         "last_login" : { "type" : "date" },

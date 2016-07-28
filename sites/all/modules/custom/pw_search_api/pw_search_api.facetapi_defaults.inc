@@ -58,12 +58,14 @@ function pw_search_api_facetapi_default_facet_settings() {
     'facet_missing' => '0',
     'flatten' => '1',
     'query_type' => 'term',
-    'default_true' => TRUE,
+    'default_true' => '1',
     'facet_search_ids' => array(),
     'exclude' => 0,
     'pretty_paths_alias' => 'parlament',
     'pretty_paths_taxonomy_pathauto' => 0,
     'pretty_paths_taxonomy_pathauto_vocabulary' => 'parliaments',
+    'individual_parent' => '0',
+    'limit_active_items' => 0,
   );
   $export['search_api@politician_index::field_user_parliament'] = $facet;
 
@@ -271,6 +273,8 @@ function pw_search_api_facetapi_default_facet_settings() {
     'show_minimum_items' => 2,
     'default_option_label' => '',
     'submit_page' => '',
+    'facet_more_text' => 'Show more',
+    'facet_fewer_text' => 'Show fewer',
   );
   $export['search_api@politician_index:block:field_user_parliament'] = $facet;
 

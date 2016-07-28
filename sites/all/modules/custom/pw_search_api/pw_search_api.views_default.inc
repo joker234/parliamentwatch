@@ -99,6 +99,46 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_first_letter_lname']['id'] = 'field_user_first_letter_lname';
   $handler->display->display_options['fields']['field_user_first_letter_lname']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['fields']['field_user_first_letter_lname']['field'] = 'field_user_first_letter_lname';
+  /* Feld: Indexed Benutzer: Retired Parliament */
+  $handler->display->display_options['fields']['field_user_retired']['id'] = 'field_user_retired';
+  $handler->display->display_options['fields']['field_user_retired']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['field_user_retired']['field'] = 'field_user_retired';
+  $handler->display->display_options['fields']['field_user_retired']['label'] = '';
+  $handler->display->display_options['fields']['field_user_retired']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_retired']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Sortierkriterien: Indexed Benutzer: Answers Give */
+  $handler->display->display_options['sorts']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give']['order'] = 'DESC';
+  /* Sortierkriterien: Indexed Benutzer: Questions Get */
+  $handler->display->display_options['sorts']['field_user_questions_get']['id'] = 'field_user_questions_get';
+  $handler->display->display_options['sorts']['field_user_questions_get']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_user_questions_get']['field'] = 'field_user_questions_get';
+  $handler->display->display_options['sorts']['field_user_questions_get']['order'] = 'DESC';
+  /* Sortierkriterien: Suche: Relevance */
+  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
   /* Kontextfilter: Indexed Benutzer: Benutzerrollen */
   $handler->display->display_options['arguments']['roles']['id'] = 'roles';
   $handler->display->display_options['arguments']['roles']['table'] = 'search_api_index_politician_index';
@@ -134,6 +174,11 @@ function pw_search_api_views_default_views() {
     'field_user_fname' => 'field_user_fname',
     'field_user_lname' => 'field_user_lname',
   );
+  /* Filterkriterium: Indexed Benutzer: Retired Parliament */
+  $handler->display->display_options['filters']['field_user_retired']['id'] = 'field_user_retired';
+  $handler->display->display_options['filters']['field_user_retired']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['filters']['field_user_retired']['field'] = 'field_user_retired';
+  $handler->display->display_options['filters']['field_user_retired']['operator'] = 'empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
