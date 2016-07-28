@@ -414,7 +414,7 @@ function pw_dialogues_feeds_importer_default() {
           ),
         ),
         'author' => 0,
-        'skip_hash_check' => 0,
+        'skip_hash_check' => 1,
         'bundle' => 'comment_node_dialogue',
         'insert_new' => '1',
         'update_non_existent' => 'skip',
