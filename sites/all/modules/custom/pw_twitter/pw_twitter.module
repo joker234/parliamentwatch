@@ -32,7 +32,7 @@ function pw_twitter_save($new_value, $account) {
     return false;
   }
 
-  $twitter = twitter_connect();
+  $twitter = twitter_connect(NULL, TRUE, TRUE);
   if (!$twitter) {
     // Gdata import fails on empty $twitter objects, #AW-1553.
     // @TODO beautify: maybe set a warning message?
@@ -95,7 +95,10 @@ function pw_twitter_user_presave(&$edit, $account, $category) {
     if ($old_value == '' && $new_value != '') { // a new twitter account is initially set. Save it:
       $saved = pw_twitter_save($new_value, $account);
     }
-    else if ($old_value != '' && $new_value != '' && $old_value != $new_value) {
+    elseif($old_value == $new_value){
+      $saved = TRUE;
+    }
+    else if ($old_value != '' && $new_value != '') {
       pw_twitter_delete($account);
       $saved = pw_twitter_save($new_value, $account);
     }
