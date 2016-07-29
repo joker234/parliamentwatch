@@ -32,7 +32,7 @@ function pw_twitter_save($new_value, $account) {
     return false;
   }
 
-  $twitter = twitter_connect();
+  $twitter = twitter_connect(NULL, TRUE, TRUE);
   if (!$twitter) {
     // Gdata import fails on empty $twitter objects, #AW-1553.
     // @TODO beautify: maybe set a warning message?
