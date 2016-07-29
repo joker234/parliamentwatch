@@ -276,7 +276,7 @@ function pw_api_user_to_array($user, $activities = array()) {
     }
 
     // add data from user_archive_cache meta table
-    if(in_array('questions', $activities)){
+    if(in_array('dialogues', $activities)){
       $result = db_query("SELECT number_of_questions, number_of_answers FROM user_archive_cache WHERE vid = :vid", array(':vid' => $w_user->vid->value()))->fetchAssoc();
       $profile['questions'] = array();
 
