@@ -103,6 +103,16 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
     );
     $form['#validate'][] = 'my_user_register_validate';
     $form['account']['name']['#description'] = t('Only lowercase letters (a-z), numbers and dash are allowed.');
+
+    // sort fields by parliament
+    if(isset($form['field_user_parliament'][LANGUAGE_NONE]['#default_value'][0])){
+      $parliament_tid = $form['field_user_parliament'][LANGUAGE_NONE]['#default_value'][0];
+      foreach(array('field_user_constituency', 'field_user_list') as $field_name){
+        if(isset($form[$field_name]['und']['#options'])){
+          $form[$field_name]['und']['#options'] = _pw_sort_by_parliament($form[$field_name]['und']['#options'], $parliament_tid);
+        }
+      }
+    }
   }
   elseif ($form_id == "user_revision_edit_form") {
     unset($form["field_user_external_url"]);
