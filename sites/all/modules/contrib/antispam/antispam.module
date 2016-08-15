@@ -212,7 +212,7 @@ function antispam_permission() {
 */
 function antispam_cron() {
   module_load_include('inc', 'antispam', 'antispam.cron');
-  module_load_include('inc', 'comment', 'comment.admin'); 
+  module_load_include('inc', 'comment', 'comment.admin');
   antispam_cron_shutdown();
 }
 
@@ -399,7 +399,7 @@ function antispam_set_counter($counter_type, $count) { // for today
 	    'provider' => $provider,
 	    $field => $count,
       ))
-      ->execute();  
+      ->execute();
   }
 }
 
@@ -753,7 +753,7 @@ function antispam_callback_set_spam_status($content_type, $object, $op) {
 /******************************************************************************************
 *
 * Node operations
-* 
+*
 ******************************************************************************************/
 
 /**
@@ -837,7 +837,7 @@ function _antispam_node_save(&$node) {
     // Since users won't see their content published, show them a polite explanation on why.
     $content_type_name = node_type_get_name($node);
     drupal_set_message(t('Your %content-type-name has been queued for moderation by site administrators and will be published after approval.', array('%content-type-name' => $content_type_name)));
-    
+
     // Record the event to watchdog.
     if ($api_result[0] == ANTISPAM_API_RESULT_ERROR) {
       watchdog('content', 'AntiSpam service seems to be down, %content-type-name queued for manual approval: %title', array('%content-type-name' => $content_type_name, '%title' => $node->title), WATCHDOG_WARNING, l(t('view'), 'node/'. $node->nid));
@@ -939,7 +939,7 @@ function antispam_node_view($node, $view_mode, $langcode) {
 	    $links['antispam_node_spam'] = array('title' => (variable_get('antispam_connection_enabled', 1) ? t('Submit spam') : t('Mark as spam')), 'href' => 'antispam/node/'. $node->nid .'/submit-spam');
       }
     }
-    $node->content['links']['node']['#links'] = 
+    $node->content['links']['node']['#links'] =
       array_merge($node->content['links']['node']['#links'], $links);
   }
 }
@@ -947,7 +947,7 @@ function antispam_node_view($node, $view_mode, $langcode) {
 /******************************************************************************************
 *
 * Comment operations
-* 
+*
 *******************************************************************************************/
 
 /**
@@ -967,7 +967,7 @@ function antispam_comment_load($comments) {
       $comment->spaminess = 0.0;
     }
     if ($comment->uid == 0) {
-      $comment->name = variable_get('anonymous', t('Anonymous'));
+      // $comment->name = variable_get('anonymous', t('Anonymous'));
     }
   }
 }
@@ -1135,7 +1135,7 @@ function antispam_comment_view($comment, $view_mode, $langcode) {
 	    $links['antispam_comment_spam'] = array('title' => (variable_get('antispam_connection_enabled', 1) ? t('Submit spam') : t('Mark as spam')), 'href' => 'antispam/comment/'. $comment->cid .'/submit-spam');
       }
     }
-    $comment->content['links']['comment']['#links'] 
+    $comment->content['links']['comment']['#links']
       = array_merge($comment->content['links']['comment']['#links'], $links);
   }
 }
@@ -1378,8 +1378,8 @@ function antispam_notify_moderators($content_type, $content, $is_published, $is_
   $moderators = array();
   foreach ($result as $u) {
     // if a moderator submit a new node/comment, then exclude him/her from the list
-    if ($u->uid != $user->uid) { 
-       
+    if ($u->uid != $user->uid) {
+
       $moderators[$u->uid] = array(
         'name' => $u->name,
         'email_to' => $u->mail,
@@ -1395,7 +1395,7 @@ function antispam_notify_moderators($content_type, $content, $is_published, $is_
   $u = db_query($sql)->fetchObject();
   if ($u) {
     // if the admin submit a new node/comment, then exclude from the list
-    if ($u->uid != $user->uid) { 
+    if ($u->uid != $user->uid) {
       $moderators[$u->uid] = array(
         'name' => $u->name,
         'email_to' => $u->mail,
@@ -1498,7 +1498,7 @@ function antispam_mail($key, &$message, $params) {
 /******************************************************************************************
 *
 * User operations
-* 
+*
 *******************************************************************************************/
 /**
  * Returns the array of fields for AntiSpam block configuration
@@ -1735,7 +1735,7 @@ function antispam_block_view($delta = '') {
 
     $target = ($block_settings['newwin'] ? ' target="_blank"' : '');
     $sitename = ($block_settings['sitename'] ? variable_get('site_name', 'drupal') : t('This site'));
-     
+
     $block_args['text'] = array(
       'plain' => t('@site_name is proudly protected by AntiSpam, !spams caught since @since.', array('@site_name' => $sitename, '!spams' => format_plural($block_args['counter'], '1 spam', '@count spams'), '@since' => $block_args['since'])
       ),
@@ -1832,7 +1832,7 @@ function antispam_content_load($content_type, $content_id) {
  * @return boolean TRUE if specified was there; FALSE otherwise.
  */
 function antispam_content_delete($content_type, $content_id) {
-  module_load_include('inc', 'comment', 'comment.admin'); 
+  module_load_include('inc', 'comment', 'comment.admin');
 
   if ($content_type == 'node') {
     node_delete($content_id);
@@ -1961,7 +1961,7 @@ function antispam_content_spam_operation($content_type, $content, $op, $log_acti
  * @param boolean TRUE to log action (default); FALSE otherwise (ie. the caller logs the action).
  */
 function antispam_content_publish_operation($content_type, $content, $op, $log_action = TRUE) {
-  module_load_include('inc', 'comment', 'comment.admin'); 
+  module_load_include('inc', 'comment', 'comment.admin');
 
   if ($content_type == 'node') {
     // This code snippet is based on node.module::node_admin_nodes_submit()
@@ -2147,7 +2147,7 @@ function _antispam_parse_yaml_response($response, $field = '') {
 \************************************************************/
 
 /**
- * AntiSpam API: Key Verification 
+ * AntiSpam API: Key Verification
  *
  * @param string API Key.
  * @return integer See constants ANTISPAM_API_RESULT_xxx.
@@ -2182,7 +2182,7 @@ function antispam_api_cmd_verify_key($key, $provider) {
 
 
 /**
- * AntiSpam API: Generic Data Check 
+ * AntiSpam API: Generic Data Check
  *
  * return: -1  Error
  *          0  Ham
@@ -2214,12 +2214,12 @@ function antispam_api_cmd_spam_check($body, $name = NULL, $mail = NULL, $homepag
 }
 
 /**
- * AntiSpam API: Comment Check 
+ * AntiSpam API: Comment Check
  *
  * @param $content_type: string 'node' or 'comment' or 'other'
  * @param $content: object $node or $comment
  *
- * @return array 
+ * @return array
  *           result[0] - return status (int) See constants ANTISPAM_API_RESULT_xxx.
  *           result[1] - signature (string) - DEFENSIO only
  *           result[2] - spaminess (float) value between 0 to 1 - DEFENSIO only
@@ -2280,7 +2280,7 @@ function antispam_api_cmd_comment_check($content_type, $content) {
 }
 
 /**
- * AntiSpam API: Submit Spam 
+ * AntiSpam API: Submit Spam
  *
  * @param $content_type: string 'node' or 'comment'
  * @param $content: object $node or $comment
@@ -2325,7 +2325,7 @@ function antispam_api_cmd_submit_spam($content_type, $content) {
 }
 
 /**
- * AntiSpam API: Submit Ham 
+ * AntiSpam API: Submit Ham
  *
  * @param $content_type: string 'node' or 'comment'
  * @param $content: object $node or $comment
