@@ -899,6 +899,7 @@ function pw_globals_field_default_fields() {
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
             'managed_content' => 'managed_content',
+            'newsletter' => 0,
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
           ),
@@ -921,6 +922,9 @@ function pw_globals_field_default_fields() {
               'managed_content' => array(
                 'weight' => '-10',
               ),
+              'newsletter' => array(
+                'weight' => '0',
+              ),
               'php_code' => array(
                 'weight' => '-6',
               ),
@@ -930,7 +934,6 @@ function pw_globals_field_default_fields() {
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -943,7 +946,7 @@ function pw_globals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => '200',
+          'maxlength_js' => '320',
           'maxlength_js_enforce' => 1,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'maxlength_js_truncate_html' => 0,
