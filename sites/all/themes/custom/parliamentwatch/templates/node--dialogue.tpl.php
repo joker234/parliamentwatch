@@ -96,7 +96,7 @@
   <?php print render($title_suffix); ?>
   <?php
     $field_election = field_get_items('taxonomy_term', _pw_get_current_parliament_term(), 'field_parliament_election');
-    if(!empty($field_election) && $field_election[0]['value'] > date()){
+    if(!empty($field_election) && $field_election[0]['value'] < date()){
       print render($content['field_dialogue_before_election']);
     }
 
