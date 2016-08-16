@@ -314,7 +314,7 @@ function pw_dialogues_feeds_importer_default() {
       'plugin_key' => 'FeedsCommentProcessor',
       'config' => array(
         'input_format' => 'filtered_html',
-        'update_existing' => '1',
+        'update_existing' => '2',
         'expire' => '-1',
         'mappings' => array(
           0 => array(
