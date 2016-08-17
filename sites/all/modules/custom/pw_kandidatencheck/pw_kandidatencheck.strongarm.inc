@@ -224,16 +224,22 @@ function pw_kandidatencheck_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'title' => array(
-          'weight' => '0',
+          'weight' => '1',
         ),
         'path' => array(
-          'weight' => '5',
+          'weight' => '6',
         ),
         'redirect' => array(
-          'weight' => '4',
+          'weight' => '5',
         ),
         'xmlsitemap' => array(
-          'weight' => '6',
+          'weight' => '7',
+        ),
+        'metatags' => array(
+          'weight' => '8',
+        ),
+        'rabbit_hole' => array(
+          'weight' => '0',
         ),
       ),
       'display' => array(),
@@ -382,6 +388,27 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->name = 'node_submitted_pw_kc_thesis';
   $strongarm->value = 0;
   $export['node_submitted_pw_kc_thesis'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_kc_position_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_pw_kc_position_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_pw_kc_thesis_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_pw_kc_thesis_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_pw_kc_votes_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_pw_kc_votes_pattern'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
@@ -683,6 +710,36 @@ function pw_kandidatencheck_strongarm() {
   $strongarm->name = 'weight_range_pw_kc_thesis';
   $strongarm->value = '50';
   $export['weight_range_pw_kc_thesis'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_pw_kc_position';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_pw_kc_position'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_pw_kc_thesis';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_pw_kc_thesis'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_taxonomy_term_pw_kc_votes';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_taxonomy_term_pw_kc_votes'] = $strongarm;
 
   return $export;
 }
