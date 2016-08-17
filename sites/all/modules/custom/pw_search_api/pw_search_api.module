@@ -69,3 +69,28 @@ function pw_search_api_set_sort_date() {
     node_save($current_node);
   }
 }
+
+/**
+ * Implements hook_search_api_index_items_alter().
+ */
+function pw_search_api_search_api_index_items_alter(array &$items, SearchApiIndex $index) {
+  if ($index->machine_name == "politician_index"){
+    foreach ($items as $id => $item){
+      if (in_array("Candidate",$item->roles)){
+        $role = "candidate";
+      }
+      else{
+        $role = "deputy";
+      }
+      $parliament = taxonomy_term_load($item->field_user_parliament['und'][0]['tid'])->name;
+      $result = db_query('SELECT `vid` FROM `user_archive_cache` WHERE `uid` = :uid AND `parliament_name` = :parliament AND `user_role` = :role',array(
+        ':uid' => $item->uid,
+        ':parliament' => $parliament,
+        ':role' => $role
+      ))->fetchCol();
+      $user_revision = user_revision_load($uid,$result[0]);
+      $item->field_user_questions_get['und'][0]['value'] = $user_revision->field_user_questions_get['und'][0]['value'];
+      $item->field_user_answers_give['und'][0]['value'] = $user_revision->field_user_answers_give['und'][0]['value'];
+    }
+  }
+}
