@@ -4,7 +4,7 @@
  * Parliamentwatch theme implementation for user search results.
  *
  */
-$profile_link = $row->_entity_properties['url'];
+$profile_link = parse_url($row->_entity_properties['url'], PHP_URL_PATH);
 if (!empty($row->_entity_properties['entity object']->field_user_picture)){
   $image_url = theme('image_style', array(
     'style_name' => 'pw_portrait_m', //Configure style here!
