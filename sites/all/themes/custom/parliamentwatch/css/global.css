@@ -2279,14 +2279,14 @@ ul.icon-list:after {
 .node-blogpost .field-type-taxonomy-term-reference {
     clear: both;
 }
-.cke_editable ul,
+.cke_editable ul.arrow-item-list,
 .node-blogpost ul {
   margin-left: 0 !important;
   margin-bottom: 1em;
   padding: 0 !important;
   list-style: none !important;
 }
-.cke_editable ul li,
+.cke_editable ul.arrow-item-list li,
 .node-blogpost ul li {
   background-image: url("../images/sprite.png");
   background-repeat: no-repeat;
