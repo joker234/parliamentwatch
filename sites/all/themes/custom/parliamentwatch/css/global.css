@@ -4232,3 +4232,61 @@ a.external,
     margin-top:0;
     margin-bottom:0;
 }
+
+/* /////////////////////////// Newsletter /////////////////// */
+
+.node-newsletter a:link,
+.node-newsletter a:visited {
+    font-weight: normal;
+}
+.node-newsletter #body_style {
+    padding: 0 !important;
+    min-height: 0;
+    color: #000;
+}
+.node-newsletter table {
+    margin: auto;
+}
+.node-newsletter td,
+.node-newsletter tr {
+    margin: auto;
+    padding: 0;
+}
+.node-newsletter blockquote {
+    padding: 0;
+    quotes: none;
+}
+.node-newsletter blockquote:before,
+.node-newsletter blockquote:after {
+    content: none;
+}
+.node-newsletter img {
+    vertical-align: middle;
+}
+
+.node-newsletter .file-image img,
+.node-newsletter img.file-image,
+.node-newsletter .img-outline img {
+    outline: 0;
+}
+.node-newsletter td .file-image.float-left,
+.node-newsletter td .media-image-left,
+.node-newsletter td .file-image.float-right,
+.node-newsletter td .media-image-right {
+    float: none;
+    margin: 0;
+}
+.node-newsletter td p + .file-image.float-left img,
+.node-newsletter td p + .media-image-left img {
+    margin-right: 15px;
+}
+.node-newsletter td p + .file-image.float-right img,
+.node-newsletter td p + .media-image-right img {
+    margin-left: 15px;
+}
+
+/* /////////////////////////// Admin /////////////////// */
+
+#overlay-container, .overlay-modal-background, .overlay-element {
+    z-index: 999;
+}

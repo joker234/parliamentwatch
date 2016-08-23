@@ -75,7 +75,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'text_default',
-          'weight' => '4',
+          'weight' => '3',
         ),
         'teaser' => array(
           'label' => 'hidden',
@@ -104,7 +104,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'exclude_cv' => 0,
       'field_name' => 'body',
       'label' => 'Body',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
@@ -112,7 +112,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             'filtered_html' => 0,
             'full_html' => 0,
             'html_mail' => 0,
-            'managed_content' => 'managed_content',
+            'managed_content' => 0,
             'newsletter' => 'newsletter',
             'php_code' => 0,
             'plain_text' => 0,
@@ -149,6 +149,11 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           ),
         ),
         'display_summary' => 1,
+        'linkit' => array(
+          'button_text' => 'Suche',
+          'enable' => 0,
+          'profile' => '',
+        ),
         'text_processing' => '1',
         'user_register_form' => FALSE,
       ),
@@ -159,6 +164,8 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js' => '',
           'maxlength_js_enforce' => 0,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_label_summary' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
+          'maxlength_js_summary' => '',
           'maxlength_js_truncate_html' => 0,
           'rows' => '50',
           'summary_rows' => 5,
@@ -324,7 +331,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             'view_mode' => 'full',
           ),
           'type' => 'paragraphs_view',
-          'weight' => '5',
+          'weight' => '4',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -345,12 +352,14 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'paragraphs_pw_blog' => 'paragraphs_pw_blog',
           'paragraphs_pw_content' => 'paragraphs_pw_content',
           'paragraphs_pw_donate' => 'paragraphs_pw_donate',
+          'paragraphs_pw_list' => 'paragraphs_pw_list',
           'paragraphs_pw_testmonial' => 'paragraphs_pw_testmonial',
         ),
         'bundle_weights' => array(
           'paragraphs_pw_blog' => '-5',
           'paragraphs_pw_content' => '-6',
           'paragraphs_pw_donate' => '8',
+          'paragraphs_pw_list' => '-10',
           'paragraphs_pw_testmonial' => '4',
         ),
         'default_edit_mode' => 'preview',
@@ -361,9 +370,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'widget' => array(
         'active' => 0,
         'module' => 'paragraphs',
-        'settings' => array(
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
+        'settings' => array(),
         'type' => 'paragraphs_embed',
         'weight' => '5',
       ),
@@ -426,7 +433,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'text_default',
-          'weight' => '3',
+          'weight' => '2',
         ),
         'teaser' => array(
           'label' => 'above',
@@ -991,7 +998,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '1',
+        'weight' => '0',
       ),
     ),
   );
@@ -1244,7 +1251,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
-        'weight' => '3',
+        'weight' => '2',
       ),
     ),
   );
@@ -1442,7 +1449,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'entity_type' => 'paragraphs_item',
       'field_name' => 'field_pg_content_title',
       'label' => 'Titel',
-      'required' => 1,
+      'required' => 0,
       'settings' => array(
         'better_formats' => array(
           'allowed_formats' => array(
@@ -1503,7 +1510,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '2',
+        'weight' => '1',
       ),
     ),
   );
@@ -1585,7 +1592,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '7',
+        'weight' => '6',
       ),
     ),
   );
@@ -1791,7 +1798,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
               'linked' => 0,
             ),
           ),
-          'type' => 'link_default',
+          'type' => 'link_absolute',
           'weight' => '3',
         ),
         'paragraphs_editor_preview' => array(
@@ -2145,6 +2152,26 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'type' => 'hidden',
           'weight' => 0,
         ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'module' => 'link',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'link_plain',
+          'weight' => '1',
+        ),
       ),
       'ds_extras_field_template' => '',
       'entity_type' => 'paragraphs_item',
@@ -2250,6 +2277,26 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'settings' => array(),
           'type' => 'hidden',
           'weight' => 0,
+        ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'module' => 'list',
+          'settings' => array(
+            'field_delimiter' => ' ',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_key',
+          'weight' => '0',
         ),
       ),
       'ds_extras_field_template' => '',
@@ -2370,6 +2417,28 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           ),
           'type' => 'entityreference_label',
           'weight' => '0',
+        ),
+        'pw_newsletter' => array(
+          'label' => 'hidden',
+          'module' => 'entityreference',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+            'links' => 0,
+            'view_mode' => 'pw_newsletter',
+          ),
+          'type' => 'entityreference_entity_view',
+          'weight' => '2',
         ),
       ),
       'ds_extras_field_template' => '',

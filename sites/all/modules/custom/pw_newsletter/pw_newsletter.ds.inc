@@ -153,14 +153,16 @@ function pw_newsletter_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'lb' => 'Newsletter vom ',
+          'lb-el' => 'span',
           'lb-col' => TRUE,
           'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'medium push-bottom-s',
+          'ow-el' => 'p',
+          'ow-cl' => '',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 11px; margin: 0 0 10px;"',
           'ow-def-at' => FALSE,
         ),
+        'field_delimiter' => '',
         'linked_field' => array(
           'linked' => 0,
           'destination' => '',
@@ -212,11 +214,6 @@ function pw_newsletter_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
-      ),
-    ),
-    'field_piwik_campaign' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
       ),
     ),
   );
@@ -423,12 +420,6 @@ function pw_newsletter_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'h3',
-          'ow-cl' => '',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -473,7 +464,7 @@ function pw_newsletter_ds_field_settings_info() {
     'field_pg_content_link' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
+          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -487,14 +478,14 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'paragraphs_pw_testmonial';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
-    'field_pg_donate_targetgroup' => array(
+    'field_pg_content_link' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
-    'field_pg_content_link' => array(
+    'field_pg_donate_targetgroup' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
@@ -563,28 +554,28 @@ function pw_newsletter_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'sharethis',
         1 => 'post_date',
-        2 => 'sharebuttons',
-        3 => 'group_meta',
-        4 => 'field_blogpost_categories',
-        5 => 'field_piwik_campaign',
-        6 => 'field_politician',
-        7 => 'body',
-        8 => 'field_newsletter_paragraph',
+        2 => 'field_piwik_campaign',
+        4 => 'body',
+        7 => 'field_newsletter_paragraph',
       ),
       'ds_hidden' => array(
+        3 => 'sharebuttons',
+        5 => 'field_blogpost_categories',
+        6 => 'field_politician',
+        8 => 'group_meta',
         9 => 'title',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
       'post_date' => 'ds_content',
-      'sharebuttons' => 'ds_content',
-      'group_meta' => 'ds_content',
-      'field_blogpost_categories' => 'ds_content',
       'field_piwik_campaign' => 'ds_content',
-      'field_politician' => 'ds_content',
+      'sharebuttons' => 'ds_hidden',
       'body' => 'ds_content',
+      'field_blogpost_categories' => 'ds_hidden',
+      'field_politician' => 'ds_hidden',
       'field_newsletter_paragraph' => 'ds_content',
+      'group_meta' => 'ds_hidden',
       'title' => 'ds_hidden',
     ),
     'classes' => array(),
@@ -657,23 +648,29 @@ function pw_newsletter_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'pw_testimonial';
   $ds_layout->view_mode = 'pw_newsletter';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_3col';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'left' => array(
         0 => 'field_testimonial_portrait',
+      ),
+      'middle' => array(
         1 => 'field_testimonial_quote',
+      ),
+      'right' => array(
         2 => 'field_testimonial_fullname',
       ),
     ),
     'fields' => array(
-      'field_testimonial_portrait' => 'ds_content',
-      'field_testimonial_quote' => 'ds_content',
-      'field_testimonial_fullname' => 'ds_content',
+      'field_testimonial_portrait' => 'left',
+      'field_testimonial_quote' => 'middle',
+      'field_testimonial_fullname' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'middle' => 'div',
+      'right' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',

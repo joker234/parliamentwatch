@@ -251,7 +251,7 @@ function pw_blog_field_default_fields() {
         ),
         'pw_newsletter' => array(
           'label' => 'hidden',
-          'module' => 'text',
+          'module' => 'smart_trim',
           'settings' => array(
             'field_delimiter' => '',
             'linked_field' => array(
@@ -265,9 +265,19 @@ function pw_blog_field_default_fields() {
               'destination' => '',
               'linked' => 0,
             ),
+            'more_link' => '0',
+            'more_text' => 'Read more',
+            'summary_handler' => 'full',
             'trim_length' => '600',
+            'trim_link' => '0',
+            'trim_options' => array(
+              'text' => 'text',
+            ),
+            'trim_preserve_tags' => '<a>',
+            'trim_suffix' => '...',
+            'trim_type' => 'chars',
           ),
-          'type' => 'text_summary_or_trimmed',
+          'type' => 'smart_trim_format',
           'weight' => '2',
         ),
         'rss' => array(

@@ -35,7 +35,7 @@ function pw_newsletter_ckeditor_profile_defaults() {
         'auto_lang' => 't',
         'language_direction' => 'default',
         'allowed_content' => 't',
-        'extraAllowedContent' => '',
+        'extraAllowedContent' => 'a[*];span[*];p[*];div[*];h2[*];h3[*];h4[*]',
         'enter_mode' => 'p',
         'shift_enter_mode' => 'br',
         'font_format' => 'p;div;h2;h3;h4',
@@ -64,7 +64,7 @@ function pw_newsletter_ckeditor_profile_defaults() {
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
         'js_conf' => 'config.templates_replaceContent = false;
-config.allowedContent = true;',
+',
         'loadPlugins' => array(
           'counter' => array(
             'name' => 'counter',

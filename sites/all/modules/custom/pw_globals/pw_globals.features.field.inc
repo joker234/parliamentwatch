@@ -641,7 +641,7 @@ function pw_globals_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '31',
         ),
       ),
       'ds_extras_field_template' => '',
