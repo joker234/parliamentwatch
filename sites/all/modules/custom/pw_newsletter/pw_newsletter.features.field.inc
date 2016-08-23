@@ -1185,7 +1185,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'module' => 'file_entity',
           'settings' => array(
             'field_delimiter' => '',
-            'file_view_mode' => 'pw_file_landscape_l',
+            'file_view_mode' => 'pw_nl_file_landscape_l',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',

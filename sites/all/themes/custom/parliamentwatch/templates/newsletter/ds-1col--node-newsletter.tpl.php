@@ -69,14 +69,14 @@
             .imageWidth {width:320px!important; padding:0;}
             .block_td {display: block;}
             .percent_td {width: 100% !important;}
-            .pic_td {width: 280px !important;}
+            .pic_td {width: 300px !important;}
             .hidden_mobile {display: none !important;}
             .visible_mobile {display: block !important;}
         }
         @media (max-width: 479px) {
             .deviceWidth {width:300px!important; padding:0;}
             .deviceWidthInner {width:250px!important; padding:0;}
-            .imageWidth {width:280px!important; padding:0;}
+            .imageWidth {width:300px!important; padding:0;}
             .hidden_mobile_small {display: none !important;}
             .visible_mobile_small { display: block !important; height: auto !important; width: 100% !important; visibility: visible !important; }
         }

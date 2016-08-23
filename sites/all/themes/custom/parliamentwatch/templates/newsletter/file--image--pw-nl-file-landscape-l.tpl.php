@@ -71,20 +71,16 @@
     <?php print render($title_prefix); ?>
     <?php print render($title_suffix); ?>
   <?php endif; ?>
-
   <?php if ($display_submitted): ?>
     <div class="submitted">
       <?php print $submitted; ?>
     </div>
   <?php endif; ?>
-
-  <div class="content"<?php print $content_attributes; ?>>
-    <?php
-      // We hide the links now so that we can render them later.
-      hide($content['links']);
-      print render($content);
-    ?>
-  </div>
+  
+  <?php
+    print theme('image_style', array('path' => $file->uri, 'style_name' => pw_landscape_l));
+  ?>
+  <p style="font-family: Arial, Helvetica, Sans-Serif; color: #999; font-size: 11px; line-height: 16px; margin: 5px 0 0 0;"><?php print $file->field_image_copyright['und'][0]['value']; ?></p>
 
   <?php print render($content['links']); ?>
 

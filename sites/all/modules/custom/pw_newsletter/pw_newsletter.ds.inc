@@ -399,13 +399,7 @@ function pw_newsletter_ds_field_settings_info() {
     'field_pg_content_img' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'file-image float-left',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
