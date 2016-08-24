@@ -415,6 +415,16 @@ function pw_dialogues_questions_and_answers_block() {
 
   if (!empty($response['results'])) {
     $block['subject'] = t('Questions to @name', array('@name' => _pw_get_fullname($account)));
+    /*
+    $nodes = node_load_multiple(array_keys($response['results']), array('type' => 'dialogue'));
+    $keys = array_keys($nodes);
+    foreach($keys as $key){
+      if((int)$nodes[$key]->field_dialogue_recipient['und'][0]['target_id'] != (int)$account->authorid){
+        unset($nodes[$key]);
+      }
+    }
+    $block['content'] = node_view_multiple($nodes, 'default');
+    */
     $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
     $block['content']['pager'] = array(
       '#theme' => 'pager',
