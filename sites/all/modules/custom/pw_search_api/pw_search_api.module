@@ -75,6 +75,7 @@ function pw_search_api_set_sort_date() {
  */
 function pw_search_api_search_api_index_items_alter(array &$items, SearchApiIndex $index) {
   if ($index->machine_name == "politician_index"){
+    // Fetch
     foreach ($items as $id => $item){
       if (in_array("Candidate",$item->roles)){
         $role = "candidate";
@@ -91,6 +92,23 @@ function pw_search_api_search_api_index_items_alter(array &$items, SearchApiInde
       $user_revision = user_revision_load($item->uid,$result[0]);
       $item->field_user_questions_get['und'][0]['value'] = $user_revision->field_user_questions_get['und'][0]['value'];
       $item->field_user_answers_give['und'][0]['value'] = $user_revision->field_user_answers_give['und'][0]['value'];
+
+      if (in_array("Premium User",$item->roles)){
+          $item->field_is_premium_user['und'][0]['value'] = "1";
+      }
+      else {
+          $item->field_is_premium_user['und'][0]['value'] = "0";
+      }
     }
   }
+}
+
+/**
+ * Implements hook_search_api_server_load().
+ * Overrides search core in the settings.
+ */
+function pw_search_api_search_api_server_load(array $servers)
+{
+    $core_path = "/solr/" . variable_get("pw_search_api_solr_core", "awdev");
+    $servers['solr']->options['path'] = $core_path;
 }
