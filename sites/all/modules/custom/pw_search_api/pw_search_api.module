@@ -12,10 +12,6 @@ function pw_search_api_search_api_views_query_alter(view &$view, SearchApiViewsQ
     // Adds filter to only show items for the current node.
     $query->where[1]['conditions'][] = array("field_vote_node", arg(1), "=");
   }
-
-  if ($view->name == "politician_search_view"){
-    echo "";
-  }
 }
 
 // Sets search term in header form
@@ -81,11 +77,6 @@ function pw_search_api_search_api_index_items_alter(array &$items, SearchApiInde
   if ($index->machine_name == "politician_index"){
     // Fetch
     foreach ($items as $id => $item){
-
-        if ($item->name == "markus-ferber"){
-        echo "";
-        }
-
       if (in_array("Candidate",$item->roles)){
         $role = "candidate";
       }
