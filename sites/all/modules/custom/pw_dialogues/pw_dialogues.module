@@ -510,7 +510,7 @@ function pw_dialogues_questions_and_answers_statistic_block() {
 
   // retrieve parties from previous parliament (if exist)
   $parties_previous_parliament = array();
-  if($field_previous_parliament = field_get_items('taxonomy_term', $parliament, 'field_parliament_previous')){
+  if($is_election && $field_previous_parliament = field_get_items('taxonomy_term', $parliament, 'field_parliament_previous')){
     $previous_parliament = taxonomy_term_load($field_previous_parliament[0]['tid']);
     if($previous_parliament){
       $q = db_select('user_archive_cache', 'uac');
