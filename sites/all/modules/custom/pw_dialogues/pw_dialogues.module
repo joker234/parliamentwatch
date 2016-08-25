@@ -53,6 +53,9 @@ function pw_dialogues_theme() {
       'template' => 'comment-placeholder',
       'render element' => 'elements',
     ),
+    'question_answer_statistic' => array(
+      'template' => 'question-answer-statistic',
+    ),
   );
 }
 
@@ -72,6 +75,10 @@ function pw_dialogues_block_info() {
     'info' => t('Questions and answers keyword search'),
     'cache' => DRUPAL_NO_CACHE,
   );
+  $blocks['qa-stat-parties'] = array(
+    'info' => t('Statistic: Questions & Answers by Party'),
+    'cache' => DRUPAL_NO_CACHE,
+  );
   return $blocks;
 }
 
@@ -86,6 +93,8 @@ function pw_dialogues_block_view($delta) {
       return pw_dialogues_questions_and_answers_filters_header_block();
     case 'qa-filters-search':
       return pw_dialogues_questions_and_answers_search_block();
+    case 'qa-stat-parties':
+      return pw_dialogues_questions_and_answers_statistic_block();
   }
 }
 
@@ -477,6 +486,99 @@ function pw_dialogues_questions_and_answers_search_block() {
   $block['content']['form'] = $form;
 
   return $block;
+}
+
+/**
+ * Displays statistic for questions and answers per party.
+ */
+function pw_dialogues_questions_and_answers_statistic_block() {
+
+  $block = array();
+
+  // retrieve current parliament
+  $parliament = _pw_get_current_parliament_term();
+  if (!$parliament) {
+    return;
+  }
+
+  // candidates or deputies
+  $field_election = field_get_items('taxonomy_term', $parliament, 'field_parliament_election');
+  if(empty($field_election)){
+    return;
+  }
+  $is_election = $field_election[0]['value'] > date('Y-m-d');
+
+  // retrieve parties from previous parliament (if exist)
+  $parties_previous_parliament = array();
+  if($field_previous_parliament = field_get_items('taxonomy_term', $parliament, 'field_parliament_previous')){
+    $previous_parliament = taxonomy_term_load($field_previous_parliament[0]['tid']);
+    if($previous_parliament){
+      $q = db_select('user_archive_cache', 'uac');
+      $q->join("field_revision_field_user_party", "f_party", "uac.vid = f_party.revision_id AND f_party.entity_type = 'user'");
+      $q->fields("f_party", array("field_user_party_tid"));
+      _pw_uac_add_conditions($q, array(
+        'parliament' => $previous_parliament->name,
+        'roles' => 'deputy',
+        'date' => date('Y-m-d'),
+      ));
+      $q->groupBy("f_party.field_user_party_tid");
+      $parties_previous_parliament = $q->execute()->fetchCol();
+    }
+  }
+
+  // fetch statistic data
+  $q = db_select('user_archive_cache', 'uac');
+  $q->fields("uac", array("number_of_questions", "number_of_answers"));
+  $q->join("field_revision_field_user_party", "f_party", "uac.vid = f_party.revision_id AND f_party.entity_type = 'user'");
+  $q->join("taxonomy_term_data", "t_data", "f_party.field_user_party_tid = t_data.tid");
+  $q->fields("t_data", array("tid", "name"));
+  _pw_uac_add_conditions($q, array(
+    'parliament' => $parliament->name,
+    'roles' => $is_election?'candidate':'deputy',
+    'date' => date('Y-m-d'),
+  ));
+  $result = $q->execute();
+
+  // populate data into array
+  $statistic = array();
+  while($row = $result->fetchObject()){
+    if(!isset($statistic[$row->tid])) {
+      $statistic[$row->tid] = array(
+        'party' => $row->name,
+        'is_top_party' => sizeof($parties_previous_parliament) == 0 || in_array($row->tid, $parties_previous_parliament),
+        'count_politcians' => 0,
+        'count_questions' => 0,
+        'count_answers' => 0,
+      );
+    }
+    $statistic[$row->tid]['count_politcians']++;
+    $statistic[$row->tid]['count_questions'] += (int)$row->number_of_questions;
+    $statistic[$row->tid]['count_answers'] += (int)$row->number_of_answers;
+  }
+
+  // calculate and sort by answer quotient
+  foreach($statistic as &$row){
+    if($row['count_questions'] > 0){
+      $row['quotient'] = round($row['count_answers'] / $row['count_questions'] * 100, 2);
+    }
+    else{
+      $row['quotient'] = 0;
+    }
+  }
+  uasort($statistic, "pw_dialogues_questions_and_answers_statistic_sort");
+
+  // theme the block
+  $block['subject'] = t('Statistic: Questions & Answers by Party');
+  foreach($statistic as $row){
+    $block['content'] .= theme('question_answer_statistic', $row);
+  }
+
+  // return content
+  return $block;
+}
+
+function pw_dialogues_questions_and_answers_statistic_sort($a, $b) {
+  return $a["quotient"] < $b["quotient"];
 }
 
 /**

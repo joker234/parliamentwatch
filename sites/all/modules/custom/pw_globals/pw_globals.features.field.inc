@@ -1927,88 +1927,6 @@ function pw_globals_field_default_fields() {
     ),
   );
 
-  // Exported field: 'taxonomy_term-parliaments-field_candidate_check_activated'.
-  $fields['taxonomy_term-parliaments-field_candidate_check_activated'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_candidate_check_activated',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => '',
-          1 => '',
-        ),
-        'allowed_values_function' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'parliaments',
-      'default_value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'list',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'list_default',
-          'weight' => '4',
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'taxonomy_term',
-      'field_name' => 'field_candidate_check_activated',
-      'label' => 'Candidate-Check activated',
-      'required' => 0,
-      'settings' => array(
-        'exclude_cv' => FALSE,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(
-          'display_label' => 1,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
-        'type' => 'options_onoff',
-        'weight' => '5',
-      ),
-    ),
-  );
-
   // Exported field: 'taxonomy_term-parliaments-field_icon_class'.
   $fields['taxonomy_term-parliaments-field_icon_class'] = array(
     'field_config' => array(
@@ -2133,7 +2051,7 @@ function pw_globals_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '42',
+        'weight' => '12',
       ),
     ),
   );
@@ -2260,7 +2178,7 @@ function pw_globals_field_default_fields() {
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '7',
+        'weight' => '8',
       ),
     ),
   );
@@ -2357,7 +2275,7 @@ function pw_globals_field_default_fields() {
           'year_range' => '2000:2100',
         ),
         'type' => 'date_select',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -2445,6 +2363,88 @@ function pw_globals_field_default_fields() {
         ),
         'type' => 'options_select',
         'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'taxonomy_term-parliaments-field_parliament_previous'.
+  $fields['taxonomy_term-parliaments-field_parliament_previous'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_parliament_previous',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(
+        'tid' => array(
+          'columns' => array(
+            'tid' => 'tid',
+          ),
+          'table' => 'taxonomy_term_data',
+        ),
+      ),
+      'indexes' => array(
+        'tid' => array(
+          0 => 'tid',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'taxonomy',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => array(
+            'vocabulary' => 'parliaments',
+            'parent' => '0',
+          ),
+        ),
+      ),
+      'translatable' => '0',
+      'type' => 'taxonomy_term_reference',
+    ),
+    'field_instance' => array(
+      'bundle' => 'parliaments',
+      'default_value' => NULL,
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'taxonomy',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'taxonomy_term_reference_link',
+          'weight' => 10,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'taxonomy_term',
+      'field_name' => 'field_parliament_previous',
+      'label' => 'Previous Parliament',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(),
+        'type' => 'options_select',
+        'weight' => '2',
       ),
     ),
   );
@@ -2570,7 +2570,7 @@ function pw_globals_field_default_fields() {
           'year_range' => '2000:2100',
         ),
         'type' => 'date_select',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -2649,7 +2649,7 @@ function pw_globals_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'number',
-        'weight' => '4',
+        'weight' => '5',
       ),
     ),
   );
@@ -2731,7 +2731,7 @@ function pw_globals_field_default_fields() {
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '43',
+        'weight' => '13',
       ),
     ),
   );
@@ -2743,7 +2743,6 @@ function pw_globals_field_default_fields() {
   t('Area Codes');
   t('Bitte im Format "Titel Vorname Nachname" eingeben.');
   t('Body');
-  t('Candidate-Check activated');
   t('Comment');
   t('Constituency Rename');
   t('Dargestellte Metriken');
@@ -2756,6 +2755,7 @@ function pw_globals_field_default_fields() {
   t('Parliament');
   t('Porträt');
   t('Premium Profile Price');
+  t('Previous Parliament');
   t('Teaser image');
   t('Valid Date');
   t('Vollständiger Name');
