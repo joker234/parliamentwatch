@@ -92,6 +92,60 @@ function pw_profiles_schema() {
   return $schema;
 }
 
+/**
+ * Profiles-Cron: Defuse emails from former cancidates
+ * Implements hook_cron().
+ */
+function pw_profiles_cron() {
+
+  // load all parliaments
+  $vocabulary = taxonomy_vocabulary_machine_name_load('parliaments');
+  $parliaments = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+  foreach($parliaments as $parliament){
+
+    // 180 days buffer to election date
+    $field_election = field_get_items('taxonomy_term', $parliament, 'field_parliament_election');
+    $election_plus_days = date("Y-m-d", strtotime($field_election[0]['value']) + 86400 * 180);
+    if($election_plus_days < date('Y-m-d')){
+
+      // query for emails from all former candidates which are not defused
+      $q = db_select('user_archive_cache', 'uac');
+      $q->join('users', 'u', 'uac.uid = u.uid');
+      $q->fields("u", array("uuid"));
+      $q->join('user_revision', 'ur', 'uac.vid = ur.vid');
+      $q->fields("ur", array("vid", "mail"));
+      $q->condition('ur.mail', '%@parliamentwatch.org', 'NOT LIKE');
+      _pw_uac_add_conditions($q, array(
+        'parliament' => $parliament->name,
+        'roles' => 'candidate',
+        'date' => date('Y-m-d'),
+      ));
+      $result = $q->execute();
+
+      // defuse emails
+      while($row = $result->fetchAssoc()){
+        db_update('user_revision')
+          ->fields(array(
+            'mail' => 'noemail+'.$row['uuid'].'@parliamentwatch.org',
+          ))
+          ->condition('vid', $row['vid'])
+          ->execute();
+        db_update('users')
+          ->fields(array(
+            'mail' => 'noemail+'.$row['uuid'].'@parliamentwatch.org',
+          ))
+          ->condition('vid', $row['vid'])
+          ->execute();
+      }
+    }
+  }
+}
+
+/**
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ */
 function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == "user_profile_form") {
     unset($form["locale"]);
