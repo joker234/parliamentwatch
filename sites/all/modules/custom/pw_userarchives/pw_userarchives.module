@@ -78,7 +78,7 @@ function pw_userarchives_cron($uid = NULL) {
     $answerQuery->condition('c.uid', $row['uid']);
     $answerQuery->condition('c.status', 1);
     $answerQuery->condition('rn.name', $row['parliament_name']);
-    //$answerQuery->condition('standard_reply.field_dialogue_is_standard_reply_value', 0);
+    $answerQuery->condition('standard_reply.field_dialogue_is_standard_reply_value', 0);
     $answerQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
     $answerResult = $answerQuery->execute()->fetchAssoc();
 
