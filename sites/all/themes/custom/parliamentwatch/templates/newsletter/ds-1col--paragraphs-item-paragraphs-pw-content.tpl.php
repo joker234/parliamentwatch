@@ -44,7 +44,7 @@
             <td colspan="3" width="100%" style="height: 10px; font-size: 1px;">&nbsp;</td>
         </tr>
         <tr>
-            <?php if (!empty($content['field_pg_content_link'])): ?>
+            <?php if (!empty($content['field_pg_content_img'])): ?>
                 <td colspan="3" width="100%">
                     <?php print render($content); ?>
                 </td>
