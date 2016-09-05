@@ -44,10 +44,12 @@
  * @ingroup themeable
  */
 ?>
-<?php if ($element['#items'][0]['value']):
-  $field_election = field_get_items('taxonomy_term', _pw_get_current_parliament_term(), 'field_parliament_election');
-  if(!empty($field_election) && $field_election[0]['value'] < date()):
-    ?>
-    <div class="dialogue-election push-bottom-s"><?php print(t('This question has been asked during an election campaign.')); ?></div>
-  <?php endif; ?>
-<?php endif; ?>
+<p class="pw-standard-reply">
+  <?php print(t('Standard-Answer.')); ?>
+  <span class="ic-info ic-right">
+    <span class="info-title"></span>
+    <span class="info-content element-hidden">
+      <?php print t('"Standard replies" are replies in which politicians declare that they won\'t respond to any questions asked through the abgeordnetenwatch.de website. These replies are counted as "no answer" in our statistics.'); ?>
+    </span>
+  </span>
+</p>

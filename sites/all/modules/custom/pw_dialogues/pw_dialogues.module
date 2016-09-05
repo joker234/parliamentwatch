@@ -93,7 +93,7 @@ function pw_dialogues_block_view($delta) {
  * Implements hook_node_view().
  */
 function pw_dialogues_node_view($node, $view_mode) {
-  if ($node->type != 'dialogue' || $view_mode != 'default') {
+  if ($node->type != 'dialogue' || $view_mode != 'default' && $view_mode != 'full') {
     return;
   }
   $node->content['comments'] = comment_node_page_additions($node);
@@ -339,6 +339,12 @@ function pw_dialogues_preprocess_node(&$variables) {
     $variables['submitted'] = format_date($node->created, 'date_only_short');
     $variables['title'] = t('Question from @name', array('@name' => $node->field_dialogue_sender_name[LANGUAGE_NONE][0]['safe_value']));
     $variables['title_attributes_array']['class'][] = 'bubble';
+    if(arg(0) == 'node'){
+      $view = views_get_view('pw_user_profile_fields_rev');
+      $view->set_display('block_1');
+      $view->execute();
+      $variables['short_profile'] = $view->render();
+    }
   }
 }
 
@@ -347,11 +353,14 @@ function pw_dialogues_preprocess_node(&$variables) {
  */
 function pw_dialogues_preprocess_comment(&$variables) {
   $node = $variables['node'];
-  $account = _pw_get_current_user();
   if ($node->type == 'dialogue') {
+    $recipient_id = $node->field_dialogue_recipient['und'][0]['target_id'];
+    $recipient_user = user_load($recipient_id);
     $variables['classes_array'][] = 'answer';
     $variables['permalink'] = url("node/$node->nid", array('absolute' => TRUE));
-    $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($account)));
+    if($recipient_user){
+      $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($recipient_user)));
+    }
     $file = file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']);
     if (!$file) {
       $info = field_info_field('field_user_picture');
@@ -415,7 +424,7 @@ function pw_dialogues_questions_and_answers_block() {
 
   if (!empty($response['results'])) {
     $block['subject'] = t('Questions to @name', array('@name' => _pw_get_fullname($account)));
-    $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'default');
+    $block['content'] = node_view_multiple(node_load_multiple(array_keys($response['results'])), 'full');
     $block['content']['pager'] = array(
       '#theme' => 'pager',
       '#element' => 10,
