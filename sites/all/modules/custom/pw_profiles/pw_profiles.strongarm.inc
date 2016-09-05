@@ -181,7 +181,7 @@ function pw_profiles_strongarm() {
           'weight' => '7',
         ),
         'xmlsitemap' => array(
-          'weight' => '20',
+          'weight' => '18',
         ),
         'masquerade' => array(
           'weight' => '17',

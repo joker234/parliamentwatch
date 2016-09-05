@@ -3,8 +3,7 @@ description = profile display
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-20160823
-project = pw_profiles
+version = 7.x-1.0-20160819
 dependencies[] = addressfield
 dependencies[] = addressfield_tokens
 dependencies[] = better_exposed_filters
@@ -61,11 +60,6 @@ dependencies[] = views_sort_null_field
 dependencies[] = views_ui
 dependencies[] = webform
 dependencies[] = webform_rules
-<<<<<<< HEAD
-mtime = 1468412335
-<<<<<<< HEAD
-version = 7.x-1.0-20160713
->>>>>>> 62b87a2... AW-3347: Fixed floating issues after bootstrap-udate
 project = pw_profiles
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
@@ -447,7 +441,6 @@ features[user_role][] = Candidate
 features[user_role][] = Deputy
 features[user_role][] = Politician
 features[user_role][] = Premium User
-features[user_role][] = administrator
 features[variable][] = comment_anonymous_calendar_entry
 features[variable][] = comment_calendar_entry
 features[variable][] = comment_default_mode_calendar_entry
@@ -486,4 +479,4 @@ features[views_view][] = polls_profile
 features[views_view][] = profile_list_rev
 features[views_view][] = pw_user_blocks
 features[views_view][] = user_tweets
-mtime = 1471941918
+mtime = 1471599970

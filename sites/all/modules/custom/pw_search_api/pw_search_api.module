@@ -93,11 +93,11 @@ function pw_search_api_search_api_index_items_alter(array &$items, SearchApiInde
       $item->field_user_questions_get['und'][0]['value'] = $user_revision->field_user_questions_get['und'][0]['value'];
       $item->field_user_answers_give['und'][0]['value'] = $user_revision->field_user_answers_give['und'][0]['value'];
 
-      if (in_array("Premium User",$item->roles)){
-          $item->field_is_premium_user['und'][0]['value'] = "1";
+      if (empty($item->field_user_picture)){
+          $item->field_has_picture['und'][0]['value'] = "0";
       }
       else {
-          $item->field_is_premium_user['und'][0]['value'] = "0";
+          $item->field_has_picture['und'][0]['value'] = "1";
       }
     }
   }
