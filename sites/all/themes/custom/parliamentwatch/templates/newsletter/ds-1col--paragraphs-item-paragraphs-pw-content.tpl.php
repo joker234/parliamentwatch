@@ -2,14 +2,6 @@
   <?php $node_url=url($field_pg_content_link[0]['url'], array('absolute' => TRUE)); ?>
 <?php endif; ?>
 <div class="<?php print render($content['field_pg_donate_targetgroup']); ?>">
-
-
-  <?php if (!empty($content['field_pg_content_link'])): ?>
-  <div class="social-media">
-    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank">facebook</a>
-    <a href="https://twitter.com/intent/tweet?text=<?php print $field_pg_content_title[0]['safe_value']; ?>&url=<?php print $node_url; ?>" class="twitter" target="_blank">twitter</a>
-  </div>
-  <?php endif; ?>
   <?php hide($content['field_pg_class']); ?>
   <?php hide($content['field_pg_content_title']); ?>
   <?php hide($content['field_pg_content_img']); ?>
@@ -31,8 +23,8 @@
                         <td width="20%" style="text-align: right;">
                             <?php if (!empty($content['field_pg_content_link'])): ?>
                                 <div class="social-media">
-                                    <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
-                                    <a href="https://twitter.com/intent/tweet?text=<?php print $field_pg_content_title[0]['safe_value']; ?>&url=<?php print $node_url; ?>" class="twitter" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
+                                  <a href="https://twitter.com/intent/tweet?text=<?php print $field_pg_content_title[0]['safe_value']; ?>&url=<?php print $node_url; ?>" class="twitter" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
+                                  <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
                                 </div>
                             <?php endif; ?>
                         </td>
