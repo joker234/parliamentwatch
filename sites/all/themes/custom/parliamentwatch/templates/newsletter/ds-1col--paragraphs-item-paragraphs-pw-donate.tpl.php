@@ -1,4 +1,5 @@
 <?php $content_link_url = $content['field_pg_content_link'][0]['#element']['url']; ?>
+
 <div class="relative entity-paragraphs-item <?php print render($content['field_pg_donate_targetgroup']); ?>">
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth" style="border-bottom: 1px solid #f63;">
         <tr>
@@ -9,8 +10,8 @@
                             <h3 style="font-family: 'Times New Roman', Times, serif; font-weight: normal; font-size: 24px; margin: 0;"><a target="_blank" href="<?php print $content_link_url; ?>" style="color: #333; text-decoration: none;"><?php print render($content['field_pg_content_title']); ?></a></h3>
                         </td>
                         <td width="20%" style="text-align: right;">
-                            <a href="https://twitter.com/intent/tweet?text=Jetzt für abgeordnetenwatch.de spenden&url=<?php print $content_link_url; ?>" class="twitter" target="_blank"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $content_link_url; ?>" class="facebook" target="_blank"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
+                            <a href="https://twitter.com/intent/tweet?text=Jetzt für abgeordnetenwatch.de spenden&url=<?php print $content_link_url; ?>" class="twitter" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $content_link_url; ?>" class="facebook" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
                         </td>
                     </tr>
                 </table>

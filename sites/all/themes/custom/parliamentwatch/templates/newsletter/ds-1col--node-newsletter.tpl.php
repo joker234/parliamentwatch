@@ -104,7 +104,7 @@
                         <tr>
                             <td width="600">
                                 <a title="zur Startseite" target="_blank" href="https://www.abgeordnetenwatch.de">
-                                    <img alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" src="/sites/all/themes/custom/parliamentwatch/images/newsletter/logo-email.png" border="0" width="491" height="57" style="display: block;" class="imageWidth">
+                                    <img alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/logo-email.png" border="0" width="491" height="57" style="display: block;" class="imageWidth">
                                 </a>
                             </td>
                         </tr>
@@ -142,7 +142,7 @@
             
             <tr>
                 <td width="100%">
-                    <img alt="Gregor Hackmack und Boris hekele" width="600" height="170" src="/sites/all/themes/custom/parliamentwatch/images/newsletter/hackmack_hekele_unterschrift.png" class="fluid-image">
+                    <img alt="Gregor Hackmack und Boris hekele" width="600" height="170" src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/hackmack_hekele_unterschrift.png" class="fluid-image">
                 </td>
             </tr>
             <tr>
@@ -159,7 +159,7 @@
                 <td style="width: 100%; background: #f7f7f7;">
                     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f7f7" width="600" align="center" class="deviceWidth">
                         <tr>
-                            <td width="600"><a title="zur Startseite" target="_blank" href="https://www.abgeordnetenwatch.de"><img alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" width="370" height="44" src="/sites/all/themes/custom/parliamentwatch/images/newsletter/logo-email.png" border="0" style="display:block;" class="imageWidth"></a></td>
+                            <td width="600"><a title="zur Startseite" target="_blank" href="https://www.abgeordnetenwatch.de"><img alt="abgeordnetenwatch.de - Weil Transparenz Vertrauen schafft" width="370" height="44" src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/logo-email.png" border="0" style="display:block;" class="imageWidth"></a></td>
                         </tr>
                         <tr><td width="100%" style="height: 25px; background: #f7f7f7;">&nbsp;</td></tr>
                         <tr>
@@ -189,19 +189,19 @@
                                 <tr>
                                     <td width="370">&nbsp;</td>
                                     <td width="50">
-                                        <a title="Facebook" target="_blank" href="https://www.facebook.com/abgeordnetenwatch.de"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_fb.png" alt="Facebook" border="0" style="display:block;"></a>
+                                        <a title="Facebook" target="_blank" href="https://www.facebook.com/abgeordnetenwatch.de"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_fb.png" alt="Facebook" border="0" style="display:block;"></a>
                                     </td>
                                     <td width="10" style="line-height: 0; font-size: 0;">&nsbp;</td>
                                     <td width="50">
-                                        <a title="Twitter" target="_blank" href="https://twitter.com/a_watch"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_twitter.png" alt="Twitter" border="0" style="display:block;"></a>
+                                        <a title="Twitter" target="_blank" href="https://twitter.com/a_watch"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_twitter.png" alt="Twitter" border="0" style="display:block;"></a>
                                     </td>
                                     <td width="10" style="line-height: 0; font-size: 0;">&nsbp;</td>
                                     <td width="50">
-                                        <a title="Google+" target="_blank" href="https://plus.google.com/101206126881536002255/"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_google.png" alt="Google+" border="0" style="display:block;"></a>
+                                        <a title="Google+" target="_blank" href="https://plus.google.com/101206126881536002255/"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_google.png" alt="Google+" border="0" style="display:block;"></a>
                                     </td>
                                     <td width="10" style="line-height: 0; font-size: 0;">&nsbp;</td>
                                     <td width="50">
-                                        <a title="RSS" target="_blank" href="about:blank"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_feed.png" alt="RSS" border="0" style="display:block;"></a>
+                                        <a title="RSS" target="_blank" href="about:blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/footer_social_feed.png" alt="RSS" border="0" style="display:block;"></a>
                                     </td>
                                 </tr>
                             </table>
@@ -213,10 +213,7 @@
         <table cellpadding="0" cellspacing="0" border="0" bgcolor="#f7f7f7" width="100%" align="center" style="background: #f7f7f7; width: 100%;">
             <tr><td width="100%" style="height: 35px;">&nbsp;</td></tr>
         </table>
-
-
     </div>
-
     
 </<?php print $ds_content_wrapper ?>>
 

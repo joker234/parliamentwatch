@@ -11,8 +11,8 @@
             <?php print render($content['field_pg_testimonial_er']); ?>
 
 	        <td width="70" style="text-align: center; vertical-align: top;" class="block_td percent_td">
-    			<a href="https://twitter.com/intent/tweet?text=Jetzt Fördermitglied von abgeordnetenwatch.de werden&url=<?php print render($content['field_pg_content_link']); ?>" target="_blank"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print render($content['field_pg_content_link']); ?>" target="_blank"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
+    			<a href="https://twitter.com/intent/tweet?text=Jetzt Fördermitglied von abgeordnetenwatch.de werden&url=<?php print render($content['field_pg_content_link']); ?>" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print render($content['field_pg_content_link']); ?>" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
 	        </td>
 	        <td width="10" class="block_td percent_td">&nbsp;</td>
 	    </tr>

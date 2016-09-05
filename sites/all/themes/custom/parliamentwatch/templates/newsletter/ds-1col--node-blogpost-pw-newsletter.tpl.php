@@ -14,8 +14,8 @@
                         <h3 style="font-family: 'Times New Roman', Times, serif; font-weight: normal; font-size: 24px; margin: 0;"><a target="_blank" href="<?php print $node_url; ?>" style="color: #333; text-decoration: none;"><?php print $title; ?></a></h3>
                     </td>
                     <td width="20%" style="text-align: right;">
-                        <a href="https://twitter.com/intent/tweet?text=<?php print $title; ?>&url=<?php print $node_url; ?>" target="_blank"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
-                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" target="_blank"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
+                        <a href="https://twitter.com/intent/tweet?text=<?php print $title; ?>&url=<?php print $node_url; ?>" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
                     </td>
                 </tr>
             </table>
@@ -35,9 +35,7 @@
         <td width="20" class="block_td pic_td" style="vertical-align: top;">&nbsp;</td>
         <td width="300" class="block_td percent_td" style="vertical-align: top;">
             <p style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 15px; line-height: 21px; margin: 0 0 10px;"><?php print render($content['body']); ?></p>
-            <a target="_blank" href="<?php print($node_url); ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold;"><img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> Weiterlesen</a>
-            
-
+            <a target="_blank" href="<?php print($node_url); ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold;"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> Weiterlesen</a>
         </td>
     </tr>
     <tr>
