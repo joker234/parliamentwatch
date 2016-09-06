@@ -17,6 +17,7 @@ dependencies[] = search_api_facetapi
 dependencies[] = search_api_multi
 dependencies[] = search_api_page
 dependencies[] = search_api_solr
+dependencies[] = search_api_solr_overrides
 dependencies[] = search_api_views
 dependencies[] = views
 dependencies[] = views_load_more
