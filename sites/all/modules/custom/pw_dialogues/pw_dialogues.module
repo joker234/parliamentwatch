@@ -361,7 +361,7 @@ function pw_dialogues_preprocess_comment(&$variables) {
     if($recipient_user){
       $variables['title'] = t('Answer by @name', array('@name' => _pw_get_fullname($recipient_user)));
     }
-    $file = file_load($account->field_user_picture[LANGUAGE_NONE][0]['fid']);
+    $file = file_load($recipient_user->field_user_picture[LANGUAGE_NONE][0]['fid']);
     if (!$file) {
       $info = field_info_field('field_user_picture');
       $file = file_load($info['settings']['default_image']);
