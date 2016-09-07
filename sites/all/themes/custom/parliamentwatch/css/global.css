@@ -4275,3 +4275,10 @@ a.external,
     margin-top:0;
     margin-bottom:0;
 }
+
+
+
+/* Icon Coloring */
+.medium .icon-icon-comment {
+    color: #8e8e8e;
+}
