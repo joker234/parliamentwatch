@@ -101,43 +101,65 @@ function pw_profiles_cron() {
   // load all parliaments
   $vocabulary = taxonomy_vocabulary_machine_name_load('parliaments');
   $parliaments = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+
+  // uid to index
+  $changed_uid = array();
+
   foreach($parliaments as $parliament){
 
     // 180 days buffer to election date
     $field_election = field_get_items('taxonomy_term', $parliament, 'field_parliament_election');
-    $election_plus_days = date("Y-m-d", strtotime($field_election[0]['value']) + 86400 * 180);
-    if($election_plus_days < date('Y-m-d')){
+    if(!empty($field_election[0]['value'])){
+      $election_plus_days = date("Y-m-d", strtotime($field_election[0]['value']) + 86400 * 180);
+      if($election_plus_days < date('Y-m-d')){
 
-      // query for emails from all former candidates which are not defused
-      $q = db_select('user_archive_cache', 'uac');
-      $q->join('users', 'u', 'uac.uid = u.uid');
-      $q->fields("u", array("uuid"));
-      $q->join('user_revision', 'ur', 'uac.vid = ur.vid');
-      $q->fields("ur", array("vid", "mail"));
-      $q->condition('ur.mail', '%@parliamentwatch.org', 'NOT LIKE');
-      _pw_uac_add_conditions($q, array(
-        'parliament' => $parliament->name,
-        'roles' => 'candidate',
-        'date' => date('Y-m-d'),
-      ));
-      $result = $q->execute();
+        // query for emails from all former candidates which are not defused
+        $q = db_select('user_archive_cache', 'uac');
+        $q->join('users', 'u', 'uac.uid = u.uid');
+        $q->fields("u", array("uuid", "uid"));
+        $q->join('user_revision', 'ur', 'uac.vid = ur.vid');
+        $q->fields("ur", array("vid", "mail"));
+        $q->condition('ur.mail', '%@parliamentwatch.org', 'NOT LIKE');
+        _pw_uac_add_conditions($q, array(
+          'parliament' => $parliament->name,
+          'roles' => 'candidate',
+        ));
+        $result = $q->execute();
 
-      // defuse emails
-      while($row = $result->fetchAssoc()){
-        db_update('user_revision')
-          ->fields(array(
-            'mail' => 'noemail+'.$row['uuid'].'@parliamentwatch.org',
-          ))
-          ->condition('vid', $row['vid'])
-          ->execute();
-        db_update('users')
-          ->fields(array(
-            'mail' => 'noemail+'.$row['uuid'].'@parliamentwatch.org',
-          ))
-          ->condition('vid', $row['vid'])
-          ->execute();
+        // defuse emails
+        while($row = $result->fetchAssoc()){
+
+          // update revision
+          $user_revision = user_revision_load($row['uid'], $row['vid']);
+          if($user_revision){
+            $edits = array();
+            $edits['mail'] = 'noemail+'.$row['uuid'].'@parliamentwatch.org';
+            _user_revision_edit_save($user_revision, $edits);
+            $changed_uid[] = $row['uid'];
+            /*
+            db_update('user_revision')
+              ->fields(array(
+                'mail' => 'noemail+'.$row['uuid'].'@parliamentwatch.org',
+              ))
+              ->condition('vid', $row['vid'])
+              ->execute();
+            db_update('users')
+              ->fields(array(
+                'mail' => 'noemail+'.$row['uuid'].'@parliamentwatch.org',
+              ))
+              ->condition('vid', $row['vid'])
+              ->execute();
+            */
+          }
+        }
       }
     }
+  }
+
+  // update politician index
+  $politician_index = search_api_index_load("politician_index");
+  if($politician_index){
+    search_api_index_specific_items($politician_index, $changed_uid);
   }
 }
 
