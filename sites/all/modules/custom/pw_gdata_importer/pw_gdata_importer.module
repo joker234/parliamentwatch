@@ -21,7 +21,7 @@ function pw_gdata_importer_feeds_processor_targets_alter(&$targets, $entity_type
       $targets[$name . ':uuid'] = array(
         'name' => t('@label (by UUID)', array('@label' => $instance['label'])),
         'callback' => 'pw_gdata_importer_feeds_set_target',
-        );
+      );
     }
   }
 
@@ -29,7 +29,7 @@ function pw_gdata_importer_feeds_processor_targets_alter(&$targets, $entity_type
     $targets['uid:uuid'] = array(
       'name' => t('uid (by UUID)', array('@label' => $instance['label'])),
       'callback' => 'pw_gdata_importer_feeds_set_target',
-      );
+    );
   }
 }
 
@@ -57,19 +57,19 @@ function pw_gdata_importer_feeds_set_target($source, $entity, $target, $value, $
   $language = isset($mapping['language']) ? $mapping['language'] : LANGUAGE_NONE;
   if($info['settings']['target_type'] == 'node'){
     $entity_ids = db_select('node', 'n')
-    ->fields('n', array('uuid', 'nid'))
-    ->condition('uuid', array_values($values), 'IN')
-    ->execute()
-    ->fetchAllKeyed();
+      ->fields('n', array('uuid', 'nid'))
+      ->condition('uuid', array_values($values), 'IN')
+      ->execute()
+      ->fetchAllKeyed();
   }
 
   // default is user
   else{
     $entity_ids = db_select('users', 'u')
-    ->fields('u', array('uuid', 'uid'))
-    ->condition('uuid', array_values($values), 'IN')
-    ->execute()
-    ->fetchAllKeyed();
+      ->fields('u', array('uuid', 'uid'))
+      ->condition('uuid', array_values($values), 'IN')
+      ->execute()
+      ->fetchAllKeyed();
   }
 
   $iterator = 0;
@@ -153,11 +153,16 @@ function pw_gdata_importer_feeds_after_parse(FeedsSource $source, FeedsParserRes
     // run through all mappings
     foreach ($processor->config['mappings'] as $key => $a_field) {
 
+      // fetch field info
       $target_mapping = $a_field['target'];
-      $target_field = field_get_items($entity_type, $target_entity, $target_mapping);
+      $target_field_info = field_info_field($target_mapping);
 
       // check if target field is of type image
-      if (isset($target_field[0]['type']) && $target_field[0]['type'] == 'image') {
+      if (isset($target_field_info['type']) && $target_field_info['type'] == 'image') {
+
+        // fetch field content if exists
+        $target_field = field_get_items($entity_type, $target_entity, $target_mapping);
+        $target_filesize = !empty($target_field)?$target_field[0]['filesize']:0;
 
         $source_mapping = $a_field['source'];
         $source_value_url = $result->items[0][$source_mapping];
@@ -165,10 +170,17 @@ function pw_gdata_importer_feeds_after_parse(FeedsSource $source, FeedsParserRes
         // check if source is a valid url
         if (check_url($source_value_url)) {
 
+          // mask as browser
+          $options = array(
+            'http' => array(
+              'header' => "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1\r\n"
+            )
+          );
+          stream_context_set_default($options);
+
           $source_headers = get_headers($source_value_url, TRUE);
           if(!empty($source_headers['Content-Length'])){
             $source_filesize = intval($source_headers['Content-Length']);
-            $target_filesize = $target_field[0]['filesize'];
 
             // don't import same file again
             if ($target_filesize == $source_filesize) {
