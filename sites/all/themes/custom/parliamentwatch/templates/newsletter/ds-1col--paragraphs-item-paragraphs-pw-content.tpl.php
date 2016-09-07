@@ -2,12 +2,10 @@
   <?php $node_url=url($field_pg_content_link[0]['url'], array('absolute' => TRUE)); ?>
 <?php endif; ?>
 <div class="<?php print render($content['field_pg_donate_targetgroup']); ?>">
-
   <?php hide($content['field_pg_class']); ?>
   <?php hide($content['field_pg_content_title']); ?>
   <?php hide($content['field_pg_content_img']); ?>
   <?php hide($content['field_pg_content_link']); ?>
-
 
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
         <tr>
