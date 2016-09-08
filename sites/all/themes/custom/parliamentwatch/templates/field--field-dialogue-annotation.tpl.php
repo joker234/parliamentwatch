@@ -44,10 +44,9 @@
  * @ingroup themeable
  */
 ?>
-<?php if ($element['#items'][0]['value']):
-  $field_election = field_get_items('taxonomy_term', _pw_get_current_parliament_term(), 'field_parliament_election');
-  if(!empty($field_election) && $field_election[0]['value'] < date()):
-    ?>
-    <div class="dialogue-election push-bottom-s"><?php print(t('This question has been asked during an election campaign.')); ?></div>
-  <?php endif; ?>
+<?php if ($element['#items'][0]['value']): ?>
+  <div class="small annotation clear">
+    <h4 class="small">Anmerkung der Redaktion</h4>
+    <?php print render($items[0]); ?>
+  </div>
 <?php endif; ?>
