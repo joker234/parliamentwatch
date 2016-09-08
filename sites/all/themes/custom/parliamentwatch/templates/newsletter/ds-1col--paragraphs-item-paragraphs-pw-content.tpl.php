@@ -26,8 +26,8 @@
                         </td>
                         <td width="20%" style="text-align: right;">
                             <?php if (!empty($field_pg_content_link)): ?>
-                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
                                 <a href="https://twitter.com/intent/tweet?text=<?php print $field_pg_content_title[0]['safe_value']; ?>&url=<?php print $node_url; ?>" class="twitter" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-twitter.png" alt="Twitter" border="0" style="display: inline-block;"></a>
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=<?php print $node_url; ?>" class="facebook" target="_blank"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/social-facebook.png" alt="Facebook" border="0" style="display: inline-block;"></a>
                             <?php endif; ?>
                         </td>
                     </tr>
@@ -43,7 +43,7 @@
                     <?php print render($content); ?>
                     <?php if (!empty($field_pg_content_link)): ?>
                         <a target="_blank" href="<?php print $field_pg_content_link[0]['url'] ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold;">
-                            <img src="http://dev-newsletter.neugebauer.aw.local/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> <?php print $field_pg_content_link[0]['title'] ?>
+                            <img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> <?php print $field_pg_content_link[0]['title'] ?>
                         </a>
                     <?php endif; ?>
                 </td>
@@ -56,7 +56,7 @@
                     <?php print render($content); ?>
                     <?php if (!empty($field_pg_content_link)): ?>
                         <a target="_blank" href="<?php print $field_pg_content_link[0]['url'] ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold;">
-                            <img src="http://dev-newsletter.neugebauer.aw.local/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> <?php print $field_pg_content_link[0]['title'] ?>
+                            <img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> <?php print $field_pg_content_link[0]['title'] ?>
                         </a>
                     <?php endif; ?>
                 </td>
