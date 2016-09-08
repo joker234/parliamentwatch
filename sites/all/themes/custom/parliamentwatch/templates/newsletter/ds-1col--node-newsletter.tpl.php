@@ -95,27 +95,6 @@
             </tr>
         </table>
     </div>
-    <!--
-         -->
-<table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
-    <tr>
-        <td width="100%" style="height: 25px;">&nbsp;</td>
-    </tr>
-    <tr>
-        <td width="100%">
-            <h3 style="font-family: 'Times New Roman', Times, serif; font-weight: normal; font-size: 24px; margin: 0 0 20px; color: #333;">Mit herzlichen Grüßen von</h3>
-        </td>
-    </tr>
-
-    <tr>
-        <td width="100%">
-            <img alt="Gregor Hackmack und Boris Hekele" width="600" height="170" src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/hackmack_hekele_unterschrift.png" class="fluid-image">
-        </td>
-    </tr>
-    <tr>
-        <td width="100%" style="height: 35px;">&nbsp;</td>
-    </tr>
-</table>
 </<?php print $ds_content_wrapper ?>>
 <?php if (!empty($drupal_render_children)): ?>
     <?php print $drupal_render_children ?>
