@@ -97,7 +97,6 @@
     </div>
     <!--
          -->
-</<?php print $ds_content_wrapper ?>>
 <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
     <tr>
         <td width="100%" style="height: 25px;">&nbsp;</td>
@@ -117,6 +116,7 @@
         <td width="100%" style="height: 35px;">&nbsp;</td>
     </tr>
 </table>
+</<?php print $ds_content_wrapper ?>>
 <?php if (!empty($drupal_render_children)): ?>
     <?php print $drupal_render_children ?>
 <?php endif; ?>
