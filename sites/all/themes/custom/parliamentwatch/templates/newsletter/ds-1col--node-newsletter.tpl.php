@@ -109,7 +109,7 @@
 
     <tr>
         <td width="100%">
-            <img alt="Gregor Hackmack und Boris hekele" width="600" height="170" src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/hackmack_hekele_unterschrift.png" class="fluid-image">
+            <img alt="Gregor Hackmack und Boris Hekele" width="600" height="170" src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/hackmack_hekele_unterschrift.png" class="fluid-image">
         </td>
     </tr>
     <tr>
