@@ -248,13 +248,12 @@ function pw_profiles_field_group_info() {
       1 => 'field_user_external_url',
       2 => 'field_user_roles_for_view_mode_s',
       3 => 'field_share_sum',
-      4 => 'field_has_picture',
-      5 => 'ckeditor',
-      6 => 'piwik',
-      7 => 'redirect',
-      8 => 'timezone',
-      9 => 'xmlsitemap',
-      10 => 'locale',
+      4 => 'ckeditor',
+      5 => 'piwik',
+      6 => 'redirect',
+      7 => 'timezone',
+      8 => 'xmlsitemap',
+      9 => 'locale',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -982,7 +981,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Profile picture',
-    'weight' => '17',
+    'weight' => '18',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(

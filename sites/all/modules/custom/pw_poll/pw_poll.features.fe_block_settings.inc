@@ -23,7 +23,6 @@ function pw_poll_default_fe_block_settings() {
     ),
     'pages' => '',
     'roles' => array(
-      'administrator' => '3',
       'Content Manager' => '51622513',
     ),
     'themes' => array(
