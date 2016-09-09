@@ -80,26 +80,25 @@
  * @ingroup themeable
  */
 ?>
+<?php
+if(isset($short_profile)){
+  print $short_profile;
+}
+?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
   <?php print render($content['sharethis']); ?>
   <?php print render($content['field_dialogue_topic']); ?>
   <?php print render($title_prefix); ?>
-  <?php if (!$page): ?>
-    <h3<?php print $title_attributes; ?>>
-      <?php print $title; ?>
-      <?php if ($display_submitted): ?>
-      <br>
-      <span class="subline"><?php print $submitted; ?></span>
-      <?php endif; ?>
-    </h3>
-  <?php endif; ?>
+  <h3<?php print $title_attributes; ?>>
+    <?php print $title; ?>
+    <?php if ($display_submitted): ?>
+    <br />
+    <span class="subline"><?php print $submitted; ?></span>
+    <?php endif; ?>
+  </h3>
   <?php print render($title_suffix); ?>
   <?php
-    $field_election = field_get_items('taxonomy_term', _pw_get_current_parliament_term(), 'field_parliament_election');
-    if(!empty($field_election) && $field_election[0]['value'] < date()){
-      print render($content['field_dialogue_before_election']);
-    }
-
+    print render($content['field_dialogue_before_election']);
     print render($content['body']);
     print render($content['comments']);
   ?>

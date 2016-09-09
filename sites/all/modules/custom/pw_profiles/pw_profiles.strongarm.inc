@@ -166,7 +166,7 @@ function pw_profiles_strongarm() {
           'weight' => '15',
         ),
         'account' => array(
-          'weight' => '6',
+          'weight' => '5',
         ),
         'timezone' => array(
           'weight' => '14',

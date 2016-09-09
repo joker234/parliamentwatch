@@ -160,7 +160,7 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['sorts']['field_user_questions_get']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['sorts']['field_user_questions_get']['field'] = 'field_user_questions_get';
   $handler->display->display_options['sorts']['field_user_questions_get']['order'] = 'DESC';
-  /* Sortierkriterien: Indexed Benutzer: Has picture */
+  /* Sortierkriterien: Indexed Benutzer: has picture */
   $handler->display->display_options['sorts']['field_has_picture']['id'] = 'field_has_picture';
   $handler->display->display_options['sorts']['field_has_picture']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['sorts']['field_has_picture']['field'] = 'field_has_picture';

@@ -98,7 +98,7 @@ function pw_search_api_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '13',
+        'weight' => '-17',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -161,10 +161,10 @@ function pw_search_api_default_fe_block_settings() {
         'weight' => '0',
       ),
       'parliamentwatch' => array(
-        'region' => 'sidebar_second',
+        'region' => 'content',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '0',
+        'weight' => '-18',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -197,7 +197,7 @@ function pw_search_api_default_fe_block_settings() {
         'region' => 'content',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '12',
+        'weight' => '-19',
       ),
       'pw_seven' => array(
         'region' => 'content',

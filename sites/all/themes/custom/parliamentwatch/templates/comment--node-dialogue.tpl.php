@@ -64,13 +64,19 @@
     </div>
     <?php print render($title_prefix); ?>
     <h3<?php print $title_attributes; ?> class="comment-title">
-      <?php print $title ?><br>
+      <?php print $title; ?><br />
       <span class="subline">
         <a href="#comment-<?php print render($comment->cid); ?>" class="medium"><?php print format_date($comment->created, 'date_only_short'); ?></a>
       </span>
     </h3>
+    <?php
+    if(!empty($content['field_dialogue_is_standard_reply']['#items'][0]['value'])){
+      print render($content['field_dialogue_is_standard_reply']);
+    }
+    ?>
     <?php print render($title_suffix); ?>
     <?php print render($content['field_dialogue_comment_body']); ?>
+    <?php print render($content['field_dialogue_annotation']); ?>
   </div>
   <fieldset class="more-info content-inner collapsible collapsed">
     <legend>
@@ -80,8 +86,8 @@
     </legend>
     <div class="fieldset-wrapper">
       <?php
-        print render($content['field_dialogue_response_time']);
-        print render($content['field_dialogue_tags']);
+      print render($content['field_dialogue_response_time']);
+      print render($content['field_dialogue_tags']);
       ?>
       <div class="icon-link permalink-wrapper">
         <?php print t('Permalink for the above question and answer'); ?>
