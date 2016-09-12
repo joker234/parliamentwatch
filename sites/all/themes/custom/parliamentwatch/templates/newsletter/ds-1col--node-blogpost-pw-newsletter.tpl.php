@@ -37,7 +37,7 @@
         <?php endif; ?>
         <td width="300" class="block_td percent_td" style="vertical-align: top;">
             <p style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 15px; line-height: 21px; margin: 0 0 10px;"><?php print render($content['body']); ?></p>
-            <a target="_blank" href="<?php print($node_url); ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold;"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> Weiterlesen</a>
+            <a target="_blank" href="<?php print($node_url); ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; font-size: 15px; line-height: 21px; text-decoration: none; font-weight: bold;"><img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: 2px;"> Weiterlesen</a>
         </td>
     </tr>
     <tr>

@@ -42,8 +42,8 @@
                 <td colspan="3" width="100%">
                     <?php print render($content); ?>
                     <?php if (!empty($field_pg_content_link)): ?>
-                        <a target="_blank" href="<?php print $field_pg_content_link[0]['url'] ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold;">
-                            <img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> <?php print $field_pg_content_link[0]['title'] ?>
+                        <a target="_blank" href="<?php print $field_pg_content_link[0]['url'] ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold; font-size: 15px; line-height: 21px;">
+                            <img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: 3px;"> <?php print $field_pg_content_link[0]['title'] ?>
                         </a>
                     <?php endif; ?>
                 </td>
@@ -55,8 +55,8 @@
                 <td width="340" class="block_td percent_td" style="vertical-align: top;">
                     <?php print render($content); ?>
                     <?php if (!empty($field_pg_content_link)): ?>
-                        <a target="_blank" href="<?php print $field_pg_content_link[0]['url'] ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold;">
-                            <img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: -1px;"> <?php print $field_pg_content_link[0]['title'] ?>
+                        <a target="_blank" href="<?php print $field_pg_content_link[0]['url'] ?>" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-size: 15px; line-height: 21px; font-weight: bold;">
+                            <img src="<?php print $GLOBALS['base_url'] ?>/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: 3px;"> <?php print $field_pg_content_link[0]['title'] ?>
                         </a>
                     <?php endif; ?>
                 </td>
