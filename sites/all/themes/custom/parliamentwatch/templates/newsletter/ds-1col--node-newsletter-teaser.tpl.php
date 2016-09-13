@@ -17,7 +17,7 @@
         <?php else: ?>
             <?php print render($content[title]); ?>
             <?php print render($content[post_date]); ?>
-            <?php print render($content[field_newsletter_paragraph][0][entity][paragraphs_item][82][field_pg_content_body]); ?>
+            <?php print render($content[field_newsletter_paragraph][0][entity][paragraphs_item][$content['field_newsletter_paragraph']['#object']->field_newsletter_paragraph['und'][0]['value']][field_pg_content_body]); ?>
             <?php print render($content[group_wrapper][node_link]); ?>
             <?php print render($content[field_blogpost_categories]); ?>
         <?php endif; ?>
