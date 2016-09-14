@@ -146,6 +146,10 @@ function parliamentwatch_theme(&$existing, $type, $theme, $path) {
 function parliamentwatch_preprocess_page(&$variables) {
   drupal_add_library('system', 'ui');
   drupal_add_library('system', 'ui.position');
+
+  if(isset($variables['node']) && $variables['node']->type == 'dialogue'){
+    drupal_set_title('');
+  }
 }
 
 /*

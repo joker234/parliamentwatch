@@ -119,12 +119,17 @@ html {
   bottom: 0;
   left: 0;
   position: fixed;
-  background: #fff;
-  border-top: 1px solid #f63;
+  border-top: 1px solid #5c96c2;
   width: 100%;
   z-index: 999;  
-  -webkit-box-shadow: 0 -2px 3px 1px #dfdfdf;
-  box-shadow: 0 -2px 3px 1px #dfdfdf;
+  -webkit-box-shadow:  0 -2px 3px 1px rgba(0,0,0,.2);
+  box-shadow:  0 -2px 3px 1px rgba(0,0,0,.2);
+
+  background: #70a8d8; /* Old browsers */
+  background: -moz-linear-gradient(top,  #70a8d8 0%, #508ec1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top,  #70a8d8 0%,#508ec1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom,  #70a8d8 0%,#508ec1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#70a8d8', endColorstr='#508ec1',GradientType=0 ); /* IE6-9 */
 }
 #newsletter-wrapper-inner {
   width: 940px;
@@ -152,14 +157,22 @@ html {
   margin-top: 4px;
   float: left;
 }
+#newsletter-wrapper .aw-brand {
+  color: #fff;
+}
+#newsletter-wrapper .form-submit {
+  box-shadow: none;
+  margin-top: 0;
+}
+
 #newsletter-trigger {
-  background: #fff none repeat scroll 0 0;
+  background: #70a8d8 none repeat scroll 0 0;
   position: absolute;
   top: -21px;
   right: 0;
   font-size: 13px;
   font-size: 1.3rem;
-  border: 1px solid #f63;
+  border: 1px solid #5c96c2;
   border-bottom: 0;
   -webkit-border-radius: 3px 3px 0 0;
   -moz-border-radius: 3px 3px 0 0;
@@ -168,7 +181,7 @@ html {
   font-weight: normal;
   -webkit-box-shadow: 0 -4px 3px -2px #dfdfdf;
   box-shadow: 0 -4px 3px -2px #dfdfdf;
-  
+  color: #fff;
 }
 #newsletter-wrapper form {
   float: right;
@@ -180,6 +193,9 @@ html {
 #webform-ajax-wrapper-10380 .webform-confirmation {
   clear: both;
   margin-left: 13px;
+}
+#webform-ajax-wrapper-10380 .webform-confirmation p {
+  color: #fff;
 }
 #newsletter-wrapper .webform-component,
 #newsletter-wrapper .form-actions {

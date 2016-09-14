@@ -899,6 +899,7 @@ function pw_globals_field_default_fields() {
             'full_html' => 'full_html',
             'html_mail' => 'html_mail',
             'managed_content' => 'managed_content',
+            'newsletter' => 0,
             'php_code' => 'php_code',
             'plain_text' => 'plain_text',
           ),
@@ -921,6 +922,9 @@ function pw_globals_field_default_fields() {
               'managed_content' => array(
                 'weight' => '-10',
               ),
+              'newsletter' => array(
+                'weight' => '0',
+              ),
               'php_code' => array(
                 'weight' => '-6',
               ),
@@ -930,7 +934,6 @@ function pw_globals_field_default_fields() {
             ),
           ),
         ),
-        'exclude_cv' => FALSE,
         'linkit' => array(
           'button_text' => 'Search',
           'enable' => 0,
@@ -943,7 +946,7 @@ function pw_globals_field_default_fields() {
         'active' => 1,
         'module' => 'text',
         'settings' => array(
-          'maxlength_js' => '200',
+          'maxlength_js' => '320',
           'maxlength_js_enforce' => 1,
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
           'maxlength_js_truncate_html' => 0,
@@ -1924,88 +1927,6 @@ function pw_globals_field_default_fields() {
     ),
   );
 
-  // Exported field: 'taxonomy_term-parliaments-field_candidate_check_activated'.
-  $fields['taxonomy_term-parliaments-field_candidate_check_activated'] = array(
-    'field_config' => array(
-      'active' => '1',
-      'cardinality' => '1',
-      'deleted' => '0',
-      'entity_types' => array(),
-      'field_name' => 'field_candidate_check_activated',
-      'field_permissions' => array(
-        'type' => '0',
-      ),
-      'foreign keys' => array(),
-      'indexes' => array(
-        'value' => array(
-          0 => 'value',
-        ),
-      ),
-      'locked' => '0',
-      'module' => 'list',
-      'settings' => array(
-        'allowed_values' => array(
-          0 => '',
-          1 => '',
-        ),
-        'allowed_values_function' => '',
-      ),
-      'translatable' => '0',
-      'type' => 'list_boolean',
-    ),
-    'field_instance' => array(
-      'bundle' => 'parliaments',
-      'default_value' => array(
-        0 => array(
-          'value' => 0,
-        ),
-      ),
-      'deleted' => '0',
-      'description' => '',
-      'display' => array(
-        'default' => array(
-          'label' => 'hidden',
-          'module' => 'list',
-          'settings' => array(
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-          ),
-          'type' => 'list_default',
-          'weight' => '4',
-        ),
-      ),
-      'ds_extras_field_template' => '',
-      'entity_type' => 'taxonomy_term',
-      'field_name' => 'field_candidate_check_activated',
-      'label' => 'Candidate-Check activated',
-      'required' => 0,
-      'settings' => array(
-        'exclude_cv' => FALSE,
-        'user_register_form' => FALSE,
-      ),
-      'widget' => array(
-        'active' => 1,
-        'module' => 'options',
-        'settings' => array(
-          'display_label' => 1,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
-        'type' => 'options_onoff',
-        'weight' => '5',
-      ),
-    ),
-  );
-
   // Exported field: 'taxonomy_term-parliaments-field_icon_class'.
   $fields['taxonomy_term-parliaments-field_icon_class'] = array(
     'field_config' => array(
@@ -2740,7 +2661,6 @@ function pw_globals_field_default_fields() {
   t('Area Codes');
   t('Bitte im Format "Titel Vorname Nachname" eingeben.');
   t('Body');
-  t('Candidate-Check activated');
   t('Comment');
   t('Constituency Rename');
   t('Dargestellte Metriken');

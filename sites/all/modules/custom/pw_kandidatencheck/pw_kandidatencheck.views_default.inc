@@ -238,10 +238,11 @@ if($parliament_name != \'eu\'){
     'field_user_picture' => 0,
     'body' => 0,
   );
-  /* Sortierkriterien: Inhalt: Beitrags-ID */
-  $handler->display->display_options['sorts']['nid']['id'] = 'nid';
-  $handler->display->display_options['sorts']['nid']['table'] = 'node';
-  $handler->display->display_options['sorts']['nid']['field'] = 'nid';
+  /* Sortierkriterien: Inhalt: Thesis Number (field_kc_thesis_number) */
+  $handler->display->display_options['sorts']['field_kc_thesis_number_value']['id'] = 'field_kc_thesis_number_value';
+  $handler->display->display_options['sorts']['field_kc_thesis_number_value']['table'] = 'field_data_field_kc_thesis_number';
+  $handler->display->display_options['sorts']['field_kc_thesis_number_value']['field'] = 'field_kc_thesis_number_value';
+  $handler->display->display_options['sorts']['field_kc_thesis_number_value']['relationship'] = 'field_pw_kc_thesis_reference_target_id';
   /* Filterkriterium: Inhalt: Veröffentlicht */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';

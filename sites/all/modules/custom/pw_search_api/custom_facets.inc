@@ -46,6 +46,9 @@ class FacetapiFilterRewriteItems1 extends FacetapiFilter {
       }
      
     }
+    if (empty($build)){
+        return "";
+    }
     $build[0]["#html"] = TRUE;
     $build[0]["#markup"] = "</a><div class='facet-notice'>Ihre Postleitzahlensuche ergab mehr als einen Treffer, bitte wählen Sie aus der Liste bitte Ihre(n) Stadt/Stadtteil bzw. Ihren Ort/Ortsteil heraus, um in Ihren Wahlkreis zu springen.</div>";
     return $build;
@@ -57,7 +60,10 @@ class FacetapiFilterRewriteParliaments extends FacetapiFilter {
     $settings = $this->settings;
     if ($settings->facet == "field_user_parliament") {
       foreach ($build as $key => $item) {
-        if ($build[$key]['#active'] == 0){
+        if (!(_pw_is_parliament_active($item['#markup']))){
+              unset($build[$key]);
+        }
+        elseif ($build[$key]['#active'] == 0){
           // Remove active parliament from link so it will show XOR behavior
           $build[$key]["#path"] = preg_replace("/\/parlament\/[\w-]+-(?!".$key.")\d+/", "", $build[$key]["#path"]);
         }
@@ -69,4 +75,3 @@ class FacetapiFilterRewriteParliaments extends FacetapiFilter {
     return $build;
   }
 }
-

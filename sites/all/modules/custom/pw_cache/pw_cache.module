@@ -72,8 +72,59 @@ function pw_cache_cron() {
   pw_cache_clearcache_nginx($expire_paths, $servers, $hosts);
 
   // clear wavecdn cache
-  pw_cache_clearcache_wavecdn($expire_paths, $hosts);
+  // pw_cache_clearcache_wavecdn($expire_paths, $hosts);
+
+  // clear permanent caches at midnight
+  if(date("H:i") == '00:00'){
+    pw_cache_clear_permanent();
+  }
+  else{
+    // set cached mega menu to permanent
+    db_update('cache_block')
+    ->fields(array(
+      'expire' => 0,
+    ))
+    ->condition('cid', 'tb_megamenu:menu-main-menu-de:parliamentwatch:%', 'LIKE')
+    ->condition('expire', 0, '<>')
+    ->execute();
+  }
 }
+
+
+/**
+ * Implements hook_menu_insert().
+ *
+ */
+function pw_cache_menu_link_insert($link){
+  if($link['menu_name'] == 'menu-main-menu-de'){
+    pw_cache_clear_permanent();
+  }
+}
+
+/**
+ * Implements hook_menu_delete().
+ *
+ */
+function pw_cache_menu_link_delete($link){
+  if($link['menu_name'] == 'menu-main-menu-de'){
+    pw_cache_clear_permanent();
+  }
+}
+
+/**
+ * Implements hook_menu_update().
+ *
+ */
+function pw_cache_menu_link_update($link){
+  if($link['menu_name'] == 'menu-main-menu-de'){
+    pw_cache_clear_permanent();
+  }
+}
+
+function pw_cache_clear_permanent(){
+  cache_clear_all('tb_megamenu:menu-main-menu-de:parliamentwatch:', 'cache_block', TRUE);
+}
+
 
 function pw_cache_clearcache_nginx($expire_paths, $servers, $hosts) {
 

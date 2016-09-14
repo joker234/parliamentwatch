@@ -701,7 +701,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'additional_links' => array(
-      'weight' => '6',
+      'weight' => '7',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -717,7 +717,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'question_form' => array(
-      'weight' => '15',
+      'weight' => '99',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -781,7 +781,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'user_calendar' => array(
-      'weight' => '7',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -893,7 +893,7 @@ function pw_profiles_ds_field_settings_info() {
       ),
     ),
     'dialogues_profle' => array(
-      'weight' => '13',
+      'weight' => '98',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -1749,8 +1749,8 @@ function pw_profiles_ds_layout_settings_info() {
         3 => 'user_image_gallery',
         4 => 'user_political_goals',
         5 => 'user_tweets',
-        6 => 'additional_links',
-        7 => 'user_calendar',
+        6 => 'user_calendar',
+        7 => 'additional_links',
         8 => 'pw_kandidatencheck',
       ),
       'right_1' => array(
@@ -1759,17 +1759,17 @@ function pw_profiles_ds_layout_settings_info() {
         11 => 'user_profile_api_link',
         12 => 'masquerade',
       ),
-      'left_2' => array(
-        13 => 'dialogues_profle',
-        14 => 'question_form',
-      ),
       'right_2' => array(
-        15 => 'dialogues_profle_filters_header',
-        16 => 'dialogues_profle_keyword_search',
+        13 => 'dialogues_profle_filters_header',
+        14 => 'dialogues_profle_keyword_search',
       ),
       'ds_hidden' => array(
-        17 => 'dialogues_profle_filters_topic',
-        18 => 'field_user_party',
+        15 => 'dialogues_profle_filters_topic',
+        16 => 'field_user_party',
+      ),
+      'left_2' => array(
+        17 => 'dialogues_profle',
+        18 => 'question_form',
       ),
     ),
     'fields' => array(
@@ -1779,19 +1779,19 @@ function pw_profiles_ds_layout_settings_info() {
       'user_image_gallery' => 'left_1',
       'user_political_goals' => 'left_1',
       'user_tweets' => 'left_1',
-      'additional_links' => 'left_1',
       'user_calendar' => 'left_1',
+      'additional_links' => 'left_1',
       'pw_kandidatencheck' => 'left_1',
       'user_revision_switch' => 'right_1',
       'user_wrong_data' => 'right_1',
       'user_profile_api_link' => 'right_1',
       'masquerade' => 'right_1',
-      'dialogues_profle' => 'left_2',
-      'question_form' => 'left_2',
       'dialogues_profle_filters_header' => 'right_2',
       'dialogues_profle_keyword_search' => 'right_2',
       'dialogues_profle_filters_topic' => 'ds_hidden',
       'field_user_party' => 'ds_hidden',
+      'dialogues_profle' => 'left_2',
+      'question_form' => 'left_2',
     ),
     'classes' => array(),
     'wrappers' => array(

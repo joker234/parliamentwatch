@@ -23,7 +23,6 @@ function pw_search_api_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Suche nach Politikern';
-  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['use_more_text'] = 'mehr';
   $handler->display->display_options['access']['type'] = 'none';
@@ -100,7 +99,82 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['fields']['field_user_first_letter_lname']['id'] = 'field_user_first_letter_lname';
   $handler->display->display_options['fields']['field_user_first_letter_lname']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['fields']['field_user_first_letter_lname']['field'] = 'field_user_first_letter_lname';
-  /* Kontextfilter: Indexed Benutzer: Benutzerrollen */
+  /* Feld: Indexed Benutzer: Retired Parliament */
+  $handler->display->display_options['fields']['field_user_retired']['id'] = 'field_user_retired';
+  $handler->display->display_options['fields']['field_user_retired']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['field_user_retired']['field'] = 'field_user_retired';
+  $handler->display->display_options['fields']['field_user_retired']['label'] = '';
+  $handler->display->display_options['fields']['field_user_retired']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_retired']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
+  /* Feld: Indexed Benutzer: Benutzerrollen */
+  $handler->display->display_options['fields']['roles']['id'] = 'roles';
+  $handler->display->display_options['fields']['roles']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['roles']['field'] = 'roles';
+  $handler->display->display_options['fields']['roles']['label'] = '';
+  $handler->display->display_options['fields']['roles']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['roles']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['roles']['format_name'] = 1;
+  /* Feld: Indexed Benutzer: Political Roles */
+  $handler->display->display_options['fields']['field_user_political_roles']['id'] = 'field_user_political_roles';
+  $handler->display->display_options['fields']['field_user_political_roles']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['field_user_political_roles']['field'] = 'field_user_political_roles';
+  $handler->display->display_options['fields']['field_user_political_roles']['label'] = '';
+  $handler->display->display_options['fields']['field_user_political_roles']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_political_roles']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_user_political_roles']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_user_political_roles']['bypass_access'] = 0;
+  /* Feld: Indexed Benutzer: Roles (revisionable) */
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['id'] = 'field_user_roles_for_view_mode_s';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['field'] = 'field_user_roles_for_view_mode_s';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['label'] = '';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['bypass_access'] = 0;
+  /* Sortierkriterien: Indexed Benutzer: Answers Give */
+  $handler->display->display_options['sorts']['field_user_answers_give']['id'] = 'field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_user_answers_give']['field'] = 'field_user_answers_give';
+  $handler->display->display_options['sorts']['field_user_answers_give']['order'] = 'DESC';
+  /* Sortierkriterien: Indexed Benutzer: Questions Get */
+  $handler->display->display_options['sorts']['field_user_questions_get']['id'] = 'field_user_questions_get';
+  $handler->display->display_options['sorts']['field_user_questions_get']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_user_questions_get']['field'] = 'field_user_questions_get';
+  $handler->display->display_options['sorts']['field_user_questions_get']['order'] = 'DESC';
+  /* Sortierkriterien: Indexed Benutzer: has picture */
+  $handler->display->display_options['sorts']['field_has_picture']['id'] = 'field_has_picture';
+  $handler->display->display_options['sorts']['field_has_picture']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_has_picture']['field'] = 'field_has_picture';
+  $handler->display->display_options['sorts']['field_has_picture']['order'] = 'DESC';
+  /* Sortierkriterien: Indexed Benutzer: Last name */
+  $handler->display->display_options['sorts']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['sorts']['field_user_lname']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_user_lname']['field'] = 'field_user_lname';
+  /* Sortierkriterien: Suche: Relevance */
+  $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
+  $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
+  /* Kontextfilter: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['arguments']['roles']['id'] = 'roles';
   $handler->display->display_options['arguments']['roles']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['arguments']['roles']['field'] = 'roles';
@@ -108,8 +182,6 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['arguments']['roles']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['roles']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['roles']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['roles']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['roles']['not'] = 0;
   /* Filterkriterium: Suche: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_politician_index';
@@ -135,6 +207,11 @@ function pw_search_api_views_default_views() {
     'field_user_fname' => 'field_user_fname',
     'field_user_lname' => 'field_user_lname',
   );
+  /* Filterkriterium: Indexed Benutzer: Retired Parliament */
+  $handler->display->display_options['filters']['field_user_retired']['id'] = 'field_user_retired';
+  $handler->display->display_options['filters']['field_user_retired']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['filters']['field_user_retired']['field'] = 'field_user_retired';
+  $handler->display->display_options['filters']['field_user_retired']['operator'] = 'empty';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -208,6 +285,12 @@ function pw_search_api_views_default_views() {
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Erweiterte Optionen',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'search_api_multi_fulltext' => array(
       'bef_format' => 'default',
@@ -218,12 +301,44 @@ function pw_search_api_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'main_index_type' => array(
       'bef_format' => 'default',
@@ -236,15 +351,54 @@ function pw_search_api_views_default_views() {
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => 'All|Ganze Plattform durchsuchen
 Alle|Ganze Plattform durchsuchen
 0|Ganze Plattform durchsuchen 0',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
@@ -389,6 +543,10 @@ Alle|Ganze Plattform durchsuchen
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
+    t('Erweiterte Optionen'),
+    t('All|Ganze Plattform durchsuchen
+Alle|Ganze Plattform durchsuchen
+0|Ganze Plattform durchsuchen 0'),
     t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
     t('Elemente pro Seite'),
     t('- Alle -'),
@@ -436,6 +594,12 @@ Alle|Ganze Plattform durchsuchen
     'general' => array(
       'allow_secondary' => 0,
       'secondary_label' => 'Erweiterte Optionen',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'search_api_views_fulltext' => array(
       'bef_format' => 'default',
@@ -446,12 +610,44 @@ Alle|Ganze Plattform durchsuchen
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_vote_user_field_user_party' => array(
       'bef_format' => 'default',
@@ -464,12 +660,44 @@ Alle|Ganze Plattform durchsuchen
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
     'field_vote' => array(
       'bef_format' => 'default',
@@ -482,16 +710,55 @@ Alle|Ganze Plattform durchsuchen
         'tokens' => array(
           'available' => array(
             0 => 'global_types',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
           ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
         ),
         'rewrite' => array(
           'filter_rewrite_values' => 'yes|dafür gestimmt
 no|dagegen gestimmt
 abstain|enthalten
 no-show|nicht beteiligt',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
         ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
       ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
     ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'managed_content';
@@ -735,6 +1002,11 @@ no-show|nicht beteiligt',
     t('Sortieren nach'),
     t('Aufsteigend'),
     t('Absteigend'),
+    t('Erweiterte Optionen'),
+    t('yes|dafür gestimmt
+no|dagegen gestimmt
+abstain|enthalten
+no-show|nicht beteiligt'),
     t('Wählen Sie eine beliebige Filter und klicken Sie auf Anwenden, um Ergebnisse zu sehen'),
     t('Elemente pro Seite'),
     t('- Alle -'),

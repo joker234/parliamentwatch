@@ -290,10 +290,8 @@ function pw_profiles_field_group_info() {
       6 => 'field_user_constituency_won',
       7 => 'field_user_list_won',
       8 => 'field_user_fraction',
-      9 => 'field_user_valid_from',
-      10 => 'field_user_valid_until',
-      11 => 'field_user_joined',
-      12 => 'field_user_retired',
+      9 => 'field_user_joined',
+      10 => 'field_user_retired',
     ),
     'format_type' => 'fieldset',
     'format_settings' => array(
@@ -983,7 +981,7 @@ function pw_profiles_field_group_info() {
   $field_group->parent_name = '';
   $field_group->data = array(
     'label' => 'Profile picture',
-    'weight' => '17',
+    'weight' => '18',
     'children' => array(),
     'format_type' => 'tab',
     'format_settings' => array(

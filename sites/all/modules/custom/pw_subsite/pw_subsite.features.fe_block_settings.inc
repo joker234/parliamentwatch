@@ -425,8 +425,8 @@ function pw_subsite_default_fe_block_settings() {
         'weight' => '-20',
       ),
       'parliamentwatch' => array(
-        'region' => 'menu',
-        'status' => '1',
+        'region' => '',
+        'status' => 0,
         'theme' => 'parliamentwatch',
         'weight' => '-20',
       ),
@@ -736,7 +736,7 @@ profile/*/deputies',
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   $export['views-pw_testimonials_header-block'] = array(

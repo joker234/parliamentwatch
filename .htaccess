@@ -44,6 +44,11 @@ DirectoryIndex index.php index.html index.htm
   php_flag mbstring.encoding_translation    off
 </IfModule>
 
+# SA-CORE-2016-003
+<IfModule mod_headers.c>
+  RequestHeader unset Proxy
+</IfModule>
+
 # Requires mod_expires to be enabled.
 <IfModule mod_expires.c>
   # Enable expirations.

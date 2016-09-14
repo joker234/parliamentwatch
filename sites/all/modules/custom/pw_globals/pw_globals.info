@@ -3,7 +3,7 @@ description = platform wide settings
 core = 7.x
 package = Features
 php = 5.2.4
-version = 7.x-1.0-20160823
+version = 7.x-1.0-20160908
 project = pw_globals
 dependencies[] = admin_views
 dependencies[] = ajax_comments
@@ -103,7 +103,6 @@ features[field][] = taxonomy_term-constituency-field_parliament
 features[field][] = taxonomy_term-election_list-field_electoral_region
 features[field][] = taxonomy_term-election_list-field_parliament
 features[field][] = taxonomy_term-electoral_region-field_parliament
-features[field][] = taxonomy_term-parliaments-field_candidate_check_activated
 features[field][] = taxonomy_term-parliaments-field_icon_class
 features[field][] = taxonomy_term-parliaments-field_parliament_constit_rename
 features[field][] = taxonomy_term-parliaments-field_parliament_election
@@ -350,4 +349,8 @@ features[variable][] = xmlsitemap_settings_taxonomy_term_electoral_region
 features[variable][] = xmlsitemap_settings_taxonomy_term_parliaments
 features[variable][] = xmlsitemap_settings_taxonomy_term_political_roles
 features[views_view][] = pw_testimonials_header
+<<<<<<< HEAD
 mtime = 1468923325
+=======
+mtime = 1471332446
+>>>>>>> origin/develop

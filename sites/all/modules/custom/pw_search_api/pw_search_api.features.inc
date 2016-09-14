@@ -336,7 +336,6 @@ function pw_search_api_default_search_api_index() {
         },
         "field_politician:field_user_constituency:description" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
         "field_politician:field_user_constituency:feed_nid" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_candidate_check_activated" : { "type" : "list\\u003Clist\\u003Cboolean\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_committee_chairman" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "user"
@@ -360,7 +359,6 @@ function pw_search_api_default_search_api_index() {
         },
         "field_politician:field_user_constituency:field_constituency_area_codes:description" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:feed_nid" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_candidate_check_activated" : { "type" : "list\\u003Clist\\u003Clist\\u003Cboolean\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_committee_chairman" : {
           "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "user"
@@ -985,9 +983,10 @@ function pw_search_api_default_search_api_index() {
     "server" : "solr",
     "item_type" : "user",
     "options" : {
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
+        "field_has_picture" : { "type" : "string" },
         "field_user_age" : { "type" : "integer" },
         "field_user_answers_give" : { "type" : "integer" },
         "field_user_commitee" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -1008,22 +1007,23 @@ function pw_search_api_default_search_api_index() {
         },
         "field_user_constituency:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_user_education" : { "type" : "text" },
-        "field_user_first_letter_lname" : { "type" : "text" },
+        "field_user_first_letter_lname" : { "type" : "string" },
         "field_user_fname" : { "type" : "text", "boost" : "3.0" },
         "field_user_fraction:name" : { "type" : "text" },
         "field_user_gender" : { "type" : "string" },
         "field_user_job_skills" : { "type" : "text" },
-        "field_user_lname" : { "type" : "text", "boost" : "8.0" },
+        "field_user_lname" : { "type" : "string", "boost" : "8.0" },
         "field_user_parliament" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_user_parliament:name" : { "type" : "list\\u003Ctext\\u003E" },
         "field_user_party" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_user_qanda_ratio" : { "type" : "integer" },
         "field_user_questions_get" : { "type" : "integer" },
+        "field_user_retired" : { "type" : "date" },
+        "field_user_roles_for_view_mode_s" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_user_title" : { "type" : "text" },
         "last_access" : { "type" : "date" },
         "last_login" : { "type" : "date" },
         "name" : { "type" : "text" },
-        "roles" : { "type" : "list\\u003Ctext\\u003E" },
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
         "status" : { "type" : "integer" },
@@ -1217,7 +1217,6 @@ function pw_search_api_default_search_api_index() {
         },
         "field_politician:field_user_constituency:description" : { "type" : "list\\u003Clist\\u003Ctext\\u003E\\u003E" },
         "field_politician:field_user_constituency:feed_nid" : { "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_candidate_check_activated" : { "type" : "list\\u003Clist\\u003Cboolean\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_committee_chairman" : {
           "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
           "entity_type" : "user"
@@ -1241,7 +1240,6 @@ function pw_search_api_default_search_api_index() {
         },
         "field_politician:field_user_constituency:field_constituency_area_codes:description" : { "type" : "list\\u003Clist\\u003Clist\\u003Ctext\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:feed_nid" : { "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E" },
-        "field_politician:field_user_constituency:field_constituency_area_codes:field_candidate_check_activated" : { "type" : "list\\u003Clist\\u003Clist\\u003Cboolean\\u003E\\u003E\\u003E" },
         "field_politician:field_user_constituency:field_constituency_area_codes:field_committee_chairman" : {
           "type" : "list\\u003Clist\\u003Clist\\u003Cinteger\\u003E\\u003E\\u003E",
           "entity_type" : "user"
