@@ -425,8 +425,8 @@ function pw_subsite_default_fe_block_settings() {
         'weight' => '-20',
       ),
       'parliamentwatch' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'user_second',
+        'status' => '1',
         'theme' => 'parliamentwatch',
         'weight' => '-20',
       ),
