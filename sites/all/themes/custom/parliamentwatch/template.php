@@ -128,6 +128,21 @@ function parliamentwatch_preprocess_node(&$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_user_profile().
+ */
+function parliamentwatch_preprocess_user_profile(&$variables) {
+  $variables['theme_hook_suggestions'][] = 'user_profile__' . $variables['elements']['#view_mode'];
+}
+
+/**
+ * Implements hook_preprocess_field().
+ */
+function parliamentwatch_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#view_mode'];
+}
+
 /*
  * custom theme functions
  */
