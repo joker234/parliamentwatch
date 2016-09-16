@@ -355,3 +355,33 @@ function pw_profiles_new($parliament, $role_name) {
 
   return $build;
 }
+
+/**
+ * Returns a query for fetching uids and vids.
+ *
+ * @param array $filters
+ *   The filters to apply to the query
+ *
+ * @param int $limit
+ *   The limit to apply to the query
+ *
+ * @return array
+ *   The render array
+ */
+function pw_profiles_user_revision_query($filters = array(), $limit = NULL) {
+  $query = db_select('user_revision', 'ur')
+    ->extend('PagerDefault')
+    ->limit($limit)
+    ->fields('ur');
+
+  $query->join('user_archive_cache', 'uac', 'ur.vid = uac.vid');
+  _pw_uac_add_conditions($query, $filters);
+  $query->join('field_revision_field_user_lname', 'ful', 'ful.revision_id = ur.vid');
+
+  $query
+    ->orderBy('uac.number_of_answers', 'DESC')
+    ->orderBy('uac.number_of_questions', 'DESC')
+    ->orderBy('ful.field_user_lname_value');
+
+  return $query;
+}
