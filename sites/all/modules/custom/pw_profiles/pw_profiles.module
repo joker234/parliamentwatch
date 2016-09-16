@@ -92,6 +92,20 @@ function pw_profiles_schema() {
   return $schema;
 }
 
+function pw_profiles_menu() {
+  $items = array();
+
+  $items['profiles/new/%taxonomy_term/%'] = array(
+    'title' => 'Profiles',
+    'page callback' => 'pw_profiles_new',
+    'page arguments' => array(2, 3),
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+  );
+
+  return $items;
+}
+
 function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
   if ($form_id == "user_profile_form") {
     unset($form["locale"]);
@@ -309,4 +323,35 @@ function pw_profiles_entity_info_alter(&$entity_info) {
     'label' => t('Teaser'),
     'custom settings' => TRUE,
   );
+}
+
+/**
+ * Page callback; displays a list of profiles.
+ *
+ * Selects user revisions based on parliament and role.
+ *
+ * @param object $parliament
+ * @param string $role_name
+ */
+function pw_profiles_new($parliament, $role_name) {
+  $users = array();
+
+  $filters = array(
+    'roles' => $role_name,
+    'parliament' => $parliament->name,
+    'date' => date('Y-m-d'),
+  ) + drupal_get_query_parameters();
+
+  $query = pw_profiles_user_revision_query($filters, 30);
+
+  foreach ($query->execute()->fetchAll() as $row) {
+    $users[$row->uid] = $row;
+  }
+
+  field_attach_load_revision('user', $users);
+
+  $build = entity_view('user', $users, 'teaser');
+  $build['pager'] = array('#theme' => 'pager', '#weight' => 5);
+
+  return $build;
 }
