@@ -300,3 +300,13 @@ function pw_profiles_user_update(&$edit, $account, $category) {
     pw_userarchives_cron($account->uid);
   }
 }
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function pw_profiles_entity_info_alter(&$entity_info) {
+  $entity_info['user']['view modes']['teaser'] = array(
+    'label' => t('Teaser'),
+    'custom settings' => TRUE,
+  );
+}
