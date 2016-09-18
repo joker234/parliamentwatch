@@ -18,6 +18,8 @@ function pw_profiles_update_7105() {
     'field_user_answers_give' => 'text_plain',
     'field_user_constituency' => 'taxonomy_term_reference_plain',
     'field_user_party' => 'taxonomy_term_reference_plain',
+    'field_user_questions_get' => 'number_integer',
+    'field_user_answerss_give' => 'number_integer',
   );
 
   foreach ($text_fields as $field_name => $type) {
