@@ -30,6 +30,16 @@ function pw_profiles_update_7105() {
     );
     field_update_instance($instance);
   }
+
+  $field_user_picture = field_info_instance('user', 'field_user_picture', 'user');
+  $field_user_picture['display']['teaser'] = array(
+    'label' => 'hidden',
+    'type' => 'image',
+    'settings' => array(
+      'image_style' => 'pw_portrait_l__normal',
+      'image_link' => 'content',
+    ),
+  );
 }
 
 /**
