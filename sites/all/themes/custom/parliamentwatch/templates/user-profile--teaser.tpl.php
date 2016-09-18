@@ -61,6 +61,6 @@
     <p><?php print render($user_profile['field_user_constituency']); ?></p>
     <p><?php print render($user_profile['field_user_questions_get']); ?></p>
     <p class="push-bottom-s"><?php print render($user_profile['field_user_answers_give']); ?></p>
-    <p class="profile-item-link"><a href="<?php print '' ?>">Profil besuchen</a></p>
+    <p class="profile-item-link"><a href="<?php print $user_url; ?>">Profil besuchen</a></p>
   </div>
 </div>

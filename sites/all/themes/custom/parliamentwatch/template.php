@@ -133,6 +133,7 @@ function parliamentwatch_preprocess_node(&$variables) {
  */
 function parliamentwatch_preprocess_user_profile(&$variables) {
   $variables['theme_hook_suggestions'][] = 'user_profile__' . $variables['elements']['#view_mode'];
+  $variables['user_url'] = url(entity_uri('user', $variables['elements']['#account'])['path']);
 }
 
 /**
