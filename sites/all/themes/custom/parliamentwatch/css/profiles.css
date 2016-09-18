@@ -38,102 +38,75 @@ div.horizontal-tabs .view-content {
     font-size: 1.2rem;
 }
 
+/* profile lists */
 
-
-
-
-.view-id-profile_list_rev .view-content ul {
-    width: 100%;
+.profile-list {
     margin-bottom: 2.6rem;
+    width: 100%;
 }
-.view-id-profile_list_rev .view-content li {
+
+.profile-list > .profile-item {
     border: 1px solid #eee;
     border-width: 0 0 1px;
+    padding: 16px 22px;
+    position: relative;
 }
+
 /* IE8 only*/
-html>/**/body .view-id-profile_list_rev .view-content li {
+html>/**/body .profile-list > .profile-item {
     height /*\**/: 260px\9;
 }
-.view-id-profile_list_rev .view-content li:nth-child(1),
-.view-id-profile_list_rev .view-content li:nth-child(2),
-.view-id-profile_list_rev .view-content li:nth-child(3) {
+
+.profile-list > .profile-item:nth-child(1),
+.profile-list > .profile-item:nth-child(2),
+.profile-list > .profile-item:nth-child(3) {
     border-top: 0;
 }
-.view-id-profile_list_rev .view-content li:nth-child(3n) {
+
+.profile-list .profile-item:nth-child(3n) {
     border-right: 0;
 }
-.view-id-profile_list_rev .view-content li:nth-child(3n+1) {
+
+.profile-list > .profile-item:nth-child(3n+1) {
     clear: both;
 }
-.view-id-profile_list_rev .view-content .profile-picture {
+
+.profile-item > .profile-item-picture {
     float: left;
     margin-right: 10px;
 }
-.view-id-profile_list_rev .profile-list-compact-info .file-image .content {
+
+.profile-item-hidden {
+  display: none;
+}
+
+.profile-item-hidden > .profile-item-picture {
+    display: inline-block;
     width: 140px;
     height: 210px;
     background: url(/sites/abgeordnetenwatch.de/files/default_images/profile-picture-default.jpg) no-repeat;
     outline: 1px solid #ccc;
 }
-.view-id-profile_list_rev .profile-list-compact-info .link-profile {
-    clear: both;
-}
-.view-id-profile_list_rev .profile-list-compact-info .profile-list-compact-info-text {
-    float: left;
-    width: 195px;
+
+.profile-item-hidden > .profile-item-link {
+  clear: both;
 }
 
-.block-views-profile-questions-answers-block .link-report {
-    width: 100%;
-    margin-left: -24px;
-    padding: 20px 24px 0;
-    border-top: 1px solid #fff;
-}
-.block-views-profile-questions-answers-block .link-report a,
-.block-views-profile-questions-answers-block a.link-report {
-    background-position: -440px -2220px;
-    font-weight: normal;
-    color: #999;
-}
-
-.user-profile .field-name-field-user-fname,
-.user-profile .field-name-field-user-lname,
-.user-profile .field-name-field-user-party {
-    display: inline;
-}
-.user-profile .field-name-field-user-fname {
-    margin-right: 0.8ex;
-}
-.user-profile .field-name-field-user-party:before {
-    content: ",\0000a0";
-}
-.page-user.context-profile #page-title,
-.page-profile.context-profile #page-title {
-    display: none;
-}
-
-.profiles-list-compact .file-image {
-    margin-bottom: 4px;
-}
-.profiles-list-compact-wrapper {
-    padding: 16px 22px;
-    position: relative;
-}
-.profiles-list-compact-wrapper .row {
-    margin-right: -12px;
+.profile-item-hidden > p {
+    margin-bottom: 0;
     padding: 0 12px;
 }
-.col-last .profiles-list-compact-wrapper h3 {
-    text-align: right;
+
+.profile-item:hover > .profile-item-hidden > .profile-item-picture,
+.profile-item:focus > .profile-item-hidden > .profile-item-picture,
+.profile-item:active > .profile-item-hidden > .profile-item-picture {
+    float: left;
+    margin: 0 14px 14px 0;
 }
-.col-last .profiles-list-compact-wrapper .row {
-    margin-left: -12px;
-    margin-right: 0;
-    text-align: right;
-}
-.responsive-layout-normal .profiles-list-compact-wrapper:hover .element-hidden,
-.responsive-layout-normal .profiles-list-compact-wrapper:focus .element-hidden,
-.responsive-layout-normal .profiles-list-compact-wrapper:active .element-hidden {
+
+.responsive-layout-normal .profile-item:hover > .profile-item-hidden,
+.responsive-layout-normal .profile-item:focus > .profile-item-hidden,
+.responsive-layout-normal .profile-item:active > .profile-item-hidden {
     display: block;
     position: absolute;
     z-index: 123;
@@ -149,25 +122,37 @@ html>/**/body .view-id-profile_list_rev .view-content li {
     border: 1px solid #dedede;
 
 }
-.col-last .profiles-list-compact-wrapper:hover .element-hidden,
-.col-last .profiles-list-compact-wrapper:focus .element-hidden,
-.col-last .profiles-list-compact-wrapper:active .element-hidden {
-    left: auto;
-    right: 17px;
-}
-.profiles-list-compact-wrapper:hover .element-hidden .profile-image,
-.profiles-list-compact-wrapper:focus .element-hidden .profile-image,
-.profiles-list-compact-wrapper:active .element-hidden .profile-image {
-    float: left;
-    margin: 0 14px 14px 0;
-}
-.col-last .profiles-list-compact-wrapper:hover .element-hidden .profile-image,
-.col-last .profiles-list-compact-wrapper:focus .element-hidden .profile-image,
-.col-last .profiles-list-compact-wrapper:active .element-hidden .profile-image {
-    float: right;
-    margin: 0 0 14px 14px;
+
+.block-views-profile-questions-answers-block .link-report {
+    width: 100%;
+    margin-left: -24px;
+    padding: 20px 24px 0;
+    border-top: 1px solid #fff;
 }
 
+.block-views-profile-questions-answers-block .link-report a,
+.block-views-profile-questions-answers-block a.link-report {
+    background-position: -440px -2220px;
+    font-weight: normal;
+    color: #999;
+}
+
+.user-profile .field-name-field-user-fname,
+.user-profile .field-name-field-user-lname,
+.user-profile .field-name-field-user-party {
+    display: inline;
+}
+
+.user-profile .field-name-field-user-fname {
+    margin-right: 0.8ex;
+}
+.user-profile .field-name-field-user-party:before {
+    content: ",\0000a0";
+}
+.page-user.context-profile #page-title,
+.page-profile.context-profile #page-title {
+    display: none;
+}
 
 /* list */
 

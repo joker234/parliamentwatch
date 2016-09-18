@@ -377,6 +377,8 @@ function pw_profiles_new($parliament, $role_name) {
   field_attach_load_revision('user', $users);
 
   $build = entity_view('user', $users, 'teaser');
+  $build['user']['#theme_wrappers'] = array('container');
+  $build['user']['#attributes']['class'] = array('profile-list', 'clearfix');
   $build['pager'] = array('#theme' => 'pager', '#weight' => 5);
 
   return $build;

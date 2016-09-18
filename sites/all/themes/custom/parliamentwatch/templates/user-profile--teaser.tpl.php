@@ -34,8 +34,8 @@
  * @ingroup themeable
  */
 ?>
-<div class="profile"<?php print $attributes; ?>>
-  <div class="profile-picture push-bottom-xs"><?php print render($user_profile['field_user_picture']); ?></div>
+<div class="profile-item clearfix"<?php print $attributes; ?>>
+  <div class="profile-item-picture push-bottom-xs"><?php print render($user_profile['field_user_picture']); ?></div>
   <h4>
     <?php
       if (!empty($user_profile['field_user_title'])) {
@@ -50,14 +50,17 @@
     <?php print render($user_profile['field_user_questions_get']); ?>,
     <?php print render($user_profile['field_user_answers_give']); ?>
   </div>
-  <div class="element-hidden profile-list-compact-info">
-    <div class="profile-image img-outline"><?php print render($user_profile['field_user_picture']); ?></div>
-    <?php if (!empty($user_profile['field_user_title'])) { print render($user_profile['field_user_title']); } ?>
-    <?php print render($user_profile['field_user_fname']); ?>
-    <?php print render($user_profile['field_user_lname']); ?>
-    <?php print render($user_profile['field_user_party']); ?>
-    <?php print render($user_profile['field_user_constituency']); ?>
-    <?php print render($user_profile['field_user_questions_get']); ?>
-    <?php print render($user_profile['field_user_answers_give']); ?>
+  <div class="profile-item-hidden">
+    <span class="profile-item-picture"><?php print render($user_profile['field_user_picture']); ?></span>
+    <h3>
+      <?php if (!empty($user_profile['field_user_title'])) { print render($user_profile['field_user_title']); } ?>
+      <?php print render($user_profile['field_user_fname']); ?>
+      <?php print render($user_profile['field_user_lname']); ?>
+    </h3>
+    <p class="push-bottom-xxs"><?php print render($user_profile['field_user_party']); ?></p>
+    <p><?php print render($user_profile['field_user_constituency']); ?></p>
+    <p><?php print render($user_profile['field_user_questions_get']); ?></p>
+    <p class="push-bottom-s"><?php print render($user_profile['field_user_answers_give']); ?></p>
+    <p class="profile-item-link"><a href="<?php print '' ?>">Profil besuchen</a></p>
   </div>
 </div>
