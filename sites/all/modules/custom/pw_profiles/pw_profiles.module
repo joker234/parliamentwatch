@@ -132,7 +132,8 @@ function pw_profiles_menu() {
   $items = array();
 
   $items['profiles/new/%taxonomy_term/%'] = array(
-    'title' => 'Profiles',
+    'title callback' => 'pw_profiles_new_title',
+    'title arguments' => array(2, 3),
     'page callback' => 'pw_profiles_new',
     'page arguments' => array(2, 3),
     'access arguments' => array('access content'),
@@ -392,6 +393,28 @@ function pw_profiles_new($parliament, $role_name) {
   $build['pager'] = array('#theme' => 'pager', '#weight' => 5);
 
   return $build;
+}
+
+/**
+ * Title callback; returns title for profile lists.
+ */
+function pw_profiles_new_title($parliament, $role_name) {
+  $role = $role_name == 'candidate' ? 'Kandidierende' : 'Abgeordnete';
+
+  if(stripos($parliament->name, 'Bundestag') > -1) {
+    $text = $role_name == 'candidate' ? '@role für den @parliament' : '@role aus dem @parliament';
+  }
+  elseif(stripos($parliament->name, 'Saarland') > -1) {
+    $text = '@role für das @parliament';
+  }
+  elseif(substr($parliament->name, 0, 2) == "EU") {
+    $text = '@role für die @parliament';
+  }
+  else{
+    $text = '@role für @parliament';
+  }
+
+  return format_string($text, array('@role' => $role, '@parliament' => $parliament->name));
 }
 
 /**
