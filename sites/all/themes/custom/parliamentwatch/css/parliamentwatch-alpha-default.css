@@ -303,7 +303,7 @@ html {
     width: 33%;
 }
 
-.profile-item .profile-item-picture {
+.profile-item > .profile-item-picture {
     float: none;
     margin-right: 0;
 }

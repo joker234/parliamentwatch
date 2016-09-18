@@ -72,8 +72,11 @@ html>/**/body .profile-list > .profile-item {
 }
 
 .profile-item > .profile-item-picture {
+    background: url(/sites/abgeordnetenwatch.de/files/default_images/profile-picture-default.jpg) no-repeat;
     float: left;
+    height: 150px;
     margin-right: 10px;
+    width: 100px;
 }
 
 .profile-item-hidden {
@@ -81,27 +84,30 @@ html>/**/body .profile-list > .profile-item {
 }
 
 .profile-item-hidden > .profile-item-picture {
-    display: inline-block;
-    width: 140px;
-    height: 210px;
     background: url(/sites/abgeordnetenwatch.de/files/default_images/profile-picture-default.jpg) no-repeat;
+    float: left;
+    height: 210px;
+    margin: 0 14px 14px 0;
     outline: 1px solid #ccc;
+    width: 140px;
 }
 
 .profile-item-hidden > .profile-item-link {
-  clear: both;
+    background-color: white;
+    clear: both;
+    margin: 0 -12px;
+    padding: 0 12px;
+}
+
+.profile-item-hidden > .profile-item-link > a {
+  background-image: url(/sites/all/themes/custom/parliamentwatch/images/sprite.png);
+  background-position: -461px -1698px;
+  background-repeat: no-repeat;
+  padding-left: 26px;
 }
 
 .profile-item-hidden > p {
     margin-bottom: 0;
-    padding: 0 12px;
-}
-
-.profile-item:hover > .profile-item-hidden > .profile-item-picture,
-.profile-item:focus > .profile-item-hidden > .profile-item-picture,
-.profile-item:active > .profile-item-hidden > .profile-item-picture {
-    float: left;
-    margin: 0 14px 14px 0;
 }
 
 .responsive-layout-normal .profile-item:hover > .profile-item-hidden,
@@ -120,7 +126,6 @@ html>/**/body .profile-list > .profile-item {
     -moz-box-shadow: 0 0 2px 2px #DEDEDE;
     box-shadow: 0 0 2px 2px #DEDEDE;
     border: 1px solid #dedede;
-
 }
 
 .block-views-profile-questions-answers-block .link-report {
@@ -169,7 +174,6 @@ html>/**/body .profile-list > .profile-item {
     bottom: 1rem;
 }
 
-
 /* search */
 
 #region-content #views-exposed-form-profile-list-solr-constituency {
@@ -180,25 +184,28 @@ html>/**/body .profile-list > .profile-item {
     padding: 0;
     margin-top: 20px;
 }
+
 #region-content #views-exposed-form-profile-list-solr-constituency .views-exposed-form .views-exposed-widget {
     float: left;
     padding: 0;
 }
+
 #views-exposed-form-profile-list-solr-constituency  .views-exposed-widget {
     margin-bottom: 0;
     clear: none;
 }
+
 #views-exposed-form-profile-list-solr-constituency {
     float: left;
     padding: 0;
 }
+
 #views-exposed-form-profile-list-solr-constituency .form-submit {
     margin-top: 0;
     width: 40px;
     height: 40px;
     text-indent: -5000rem;
 }
-
 
 /* search deprecated */
 
