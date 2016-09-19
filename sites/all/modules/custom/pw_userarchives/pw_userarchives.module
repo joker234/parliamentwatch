@@ -9,6 +9,8 @@
 
 function pw_userarchives_cron($uid = NULL) {
 
+  //$uid = 117420;
+
   $query = check_user_archives_database($uid);
   if(empty($query)){
     return;
@@ -21,7 +23,7 @@ function pw_userarchives_cron($uid = NULL) {
   }, $result);
   $result_uids = array_unique(array_values($result_uids));
   db_delete('user_archive_cache')
-    ->condition('uid', $uids)
+    ->condition('uid', $result_uids)
     ->execute();
 
   // Insert new archive entries:
@@ -76,20 +78,29 @@ function pw_userarchives_cron($uid = NULL) {
         'number_of_questions' => $questionResult['count'],
         'number_of_answers' => $count_answers_without_standard_replies,
       ))
-      ->condition('uid', $row->uid)
       ->condition('vid', $row->vid)
       ->execute();
 
+    // update fields
     $user_revision = user_revision_load($row->uid, $row->vid);
-    $revision_edit = array();
-    $revision_edit['field_user_questions_get'][LANGUAGE_NONE][0]['value'] = $questionResult['count'];
-    $revision_edit['field_user_answers_give'][LANGUAGE_NONE][0]['value'] = $count_answers_without_standard_replies;
+    if($user_revision){
+      $revision_edit = array();
+      $revision_edit['field_user_questions_get'][LANGUAGE_NONE][0]['value'] = $questionResult['count'];
+      $revision_edit['field_user_answers_give'][LANGUAGE_NONE][0]['value'] = $count_answers_without_standard_replies;
 
-    // reset pictures which have a null value
-    if(key_exists('und', $user_revision->field_user_picture) && $user_revision->field_user_picture['und'][0] === NULL){
-      $revision_edit['field_user_picture'] = array();
+      // reset pictures which have a null value
+      if(key_exists('und', $user_revision->field_user_picture) && $user_revision->field_user_picture['und'][0] === NULL){
+        $revision_edit['field_user_picture'] = array();
+      }
+      _user_revision_edit_save($user_revision, $revision_edit);
     }
-    _user_revision_edit_save($user_revision, $revision_edit);
+
+    // revision not exists, so delete it
+    else{
+      db_delete('user_archive_cache')
+        ->condition('vid', $row->vid)
+        ->execute();
+    }
   }
 
   // set actual / newest profile
