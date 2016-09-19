@@ -7,39 +7,32 @@
 include_once 'pw_profiles.features.inc';
 
 /**
- * Configures view mode teaser for user.
+ * Configure view mode teaser for user.
  */
 function pw_profiles_update_7105() {
   $text_fields = array(
     'field_user_title' => 'text_plain',
     'field_user_fname' => 'text_plain',
     'field_user_lname' => 'text_plain',
-    'field_user_questions_get' => 'text_plain',
-    'field_user_answers_give' => 'text_plain',
     'field_user_constituency' => 'taxonomy_term_reference_plain',
     'field_user_party' => 'taxonomy_term_reference_plain',
     'field_user_questions_get' => 'number_integer',
-    'field_user_answerss_give' => 'number_integer',
+    'field_user_answers_give' => 'number_integer',
   );
 
   foreach ($text_fields as $field_name => $type) {
     $instance = field_info_instance('user', $field_name, 'user');
-    $instance['display']['teaser'] = array(
-      'label' => 'hidden',
-      'type' => $type,
-    );
+    $instance['display']['teaser']['label'] = 'hidden';
+    $instance['display']['teaser']['type'] = $type;
     field_update_instance($instance);
   }
 
   $field_user_picture = field_info_instance('user', 'field_user_picture', 'user');
-  $field_user_picture['display']['teaser'] = array(
-    'label' => 'hidden',
-    'type' => 'image',
-    'settings' => array(
-      'image_style' => 'pw_portrait_l__normal',
-      'image_link' => 'content',
-    ),
-  );
+  $field_user_picture['display']['teaser']['label'] = 'hidden';
+  $field_user_picture['display']['teaser']['type'] = 'image';
+  $field_user_picture['display']['teaser']['settings']['image_style'] = 'pw_portrait_l__normal';
+  $field_user_picture['display']['teaser']['settings']['image_link'] = 'content';
+  field_update_instance($field_user_picture);
 }
 
 /**
