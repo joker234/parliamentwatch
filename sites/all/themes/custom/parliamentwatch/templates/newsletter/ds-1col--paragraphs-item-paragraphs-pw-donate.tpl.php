@@ -21,9 +21,20 @@
             <td colspan="3" width="100%" style="height: 10px;">&nbsp;</td>
         </tr>
         <tr>
-            <td colspan="3" width="100%">
-                <?php print render($content['field_pg_content_body']); ?>
-            </td>
+            <?php if (empty($content['field_pg_content_img'][0])): ?>
+                <td colspan="3" width="100%">
+                    <?php print render($content['field_pg_content_body']); ?>
+                    
+                </td>
+            <?php else: ?>
+                <td width="240" class="block_td pic_td" style="width: 240px; vertical-align: top;">
+                    <?php print render($content['field_pg_content_img']); ?>
+                </td>
+                <td width="20" class="block_td pic_td" style="vertical-align: top;">&nbsp;</td>
+                <td width="340" class="block_td percent_td" style="vertical-align: top;">
+                    <?php print render($content['field_pg_content_body']); ?>
+                </td>
+            <?php endif; ?>
         </tr>
         <tr>
             <td colspan="3" width="100%" style="height: 20px;">&nbsp;</td>

@@ -462,6 +462,13 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_pg_content_img' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
   );
   $export['paragraphs_item|paragraphs_pw_donate|default'] = $ds_fieldsetting;
 
@@ -753,6 +760,9 @@ function pw_newsletter_ds_layout_settings_info() {
         3 => 'field_pg_donate_targetgroup',
         4 => 'field_pg_content_link',
       ),
+      'ds_hidden' => array(
+        5 => 'field_pg_content_last_element',
+      ),
     ),
     'fields' => array(
       'field_pg_content_title' => 'ds_content',
@@ -760,6 +770,7 @@ function pw_newsletter_ds_layout_settings_info() {
       'field_pg_content_body' => 'ds_content',
       'field_pg_donate_targetgroup' => 'ds_content',
       'field_pg_content_link' => 'ds_content',
+      'field_pg_content_last_element' => 'ds_hidden',
     ),
     'classes' => array(),
     'wrappers' => array(
