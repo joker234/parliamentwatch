@@ -4,7 +4,7 @@
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth" style="border-bottom: 1px solid #f63;">
         <tr>
             <td colspan="3" width="100%">
-                <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="100%" align="center">
+                <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="100%" align="center" class="deviceWidth">
                     <tr>
                         <td width="80%">
                             <h3 style="font-family: 'Times New Roman', Times, serif; font-weight: normal; font-size: 24px; margin: 0;"><a target="_blank" href="<?php print $content_link_url; ?>" style="color: #333; text-decoration: none;"><?php print render($content['field_pg_content_title']); ?></a></h3>
@@ -30,7 +30,14 @@
         </tr>
     </table>
 
+    <?php if ($field_pg_content_last_element[0]['value'] = '0'): ?>
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth" style="border-bottom: 1px solid #f63;">
+    <?php endif; ?>
+
+    <?php if ($field_pg_content_last_element[0]['value'] = '1'): ?>
+    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
+    <?php endif; ?>
+
         <tr>
             <td colspan="3" width="100%" style="height: 20px;">&nbsp;</td>
         </tr>
@@ -40,11 +47,10 @@
                 <table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
                         <td>
-                            <table border="0" cellspacing="0" cellpadding="0" align="center">
+                            <table border="0" cellspacing="0" cellpadding="0" align="center" class="deviceWidth">
                                 <tr>
                                     <td>
-                                        <a href="<?php print render($content['field_pg_content_link']); ?>"   target="_blank" style="font-size: 16px; font-family:   Helvetica, Arial, sans-serif; color: #ffffff;   text-decoration: none; background-color: #f63;   border-top: 12px solid #f63; border-bottom: 12px   solid #f63; border-right: 18px solid #f63;   border-left: 18px solid #f63; display: inline-block;   white-space: nowrap;"><?php print $content['field_pg_content_link'][0]['#element']['title']; ?></a>
-
+                                        <a href="<?php print render($content['field_pg_content_link']); ?>" target="_blank" style="font-size: 16px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; background-color: #f63; border-top: 12px solid #f63; border-bottom: 12px solid #f63; border-right: 18px solid #f63;   border-left: 18px solid #f63; display: inline-block; white-space: nowrap;"><?php print $content['field_pg_content_link'][0]['#element']['title']; ?></a>
                                     </td>
                                 </tr>
                             </table>

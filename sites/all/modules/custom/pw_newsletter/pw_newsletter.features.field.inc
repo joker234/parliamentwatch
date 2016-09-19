@@ -1235,7 +1235,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '2 MB',
         'max_resolution' => '',
-        'min_resolution' => '280x184',
+        'min_resolution' => '240x100',
         'title_field' => 0,
         'user_register_form' => FALSE,
       ),
@@ -1260,10 +1260,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             'media_default--media_browser_my_files' => 'media_default--media_browser_my_files',
             'media_internet' => 0,
             'upload' => 'upload',
-            'youtube' => 0,
           ),
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-          'progress_indicator' => 'throbber',
         ),
         'type' => 'media_generic',
         'weight' => '2',
@@ -1671,7 +1668,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'text_default',
-          'weight' => '1',
+          'weight' => '2',
         ),
         'paragraphs_editor_preview' => array(
           'label' => 'above',
@@ -1747,7 +1744,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '34',
+        'weight' => '2',
       ),
     ),
   );
@@ -1814,7 +1811,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'link_absolute',
-          'weight' => '3',
+          'weight' => '4',
         ),
         'paragraphs_editor_preview' => array(
           'label' => 'above',
@@ -1862,7 +1859,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'link_field',
-        'weight' => '37',
+        'weight' => '4',
       ),
     ),
   );
@@ -2011,7 +2008,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'size' => '60',
         ),
         'type' => 'text_textfield',
-        'weight' => '32',
+        'weight' => '0',
       ),
     ),
   );
@@ -2069,7 +2066,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
             ),
           ),
           'type' => 'list_key',
-          'weight' => '2',
+          'weight' => '3',
         ),
         'paragraphs_editor_preview' => array(
           'label' => 'above',
@@ -2093,7 +2090,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_buttons',
-        'weight' => '35',
+        'weight' => '3',
       ),
     ),
   );

@@ -2409,10 +2409,7 @@ ul.icon-list:after {
   background-position: -770px -1896px;
   margin-bottom: 0.3em;
 }
-.node-newsletter .entity-paragraphs-item,
-.node-newsletter .field-name-field-pg-blog-er .field-item {
-  margin-bottom: 3em;
-}
+
 .node-newsletter .social-media {
   position: absolute;
   right: 10px;
