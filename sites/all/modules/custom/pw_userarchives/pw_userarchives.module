@@ -15,19 +15,84 @@ function pw_userarchives_cron($uid = NULL) {
   }
 
   // Delete the archive entries for the chosen users first
-  $res = $query->execute();
-  while ($row = $res->fetchAssoc()) {
-    db_delete('user_archive_cache')
-      ->condition('uid', $row['uid'])
-      ->execute();
-  }
+  $result = $query->execute()->fetchAllAssoc('vid');
+  $result_uids = array_map(function($a){
+    return $a->uid;
+  }, $result);
+  $result_uids = array_unique(array_values($result_uids));
+  db_delete('user_archive_cache')
+    ->condition('uid', $uids)
+    ->execute();
 
   // Insert new archive entries:
   $dbconnection = db_insert('user_archive_cache');
   $dbconnection->from($query)->execute(); // INSERT INTO ... FROM SELECT ...
 
+  // Calculate number of questions and answers and insert them into:
+  // (1) the revision table (for showing them in the profile view)
+  // (2) the userarchive table (for showing them in the sidebar)
+
+  foreach($result as $row) {
+
+    // flag to look for questions and answers during elections or not
+    $before_election = $row->user_role == 'candidate' ? 1 : 0;
+
+    // go for number of questions
+    $questionQuery = db_select('node', 'n');
+    $questionQuery->addExpression('IFNULL(COUNT(n.nid), 0)', 'count');
+    $questionQuery->join('field_data_field_dialogue_recipient', 'r', 'r.entity_type = \'node\' AND r.entity_id = n.nid');
+    $questionQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'node\' AND f.entity_id = n.nid');
+    $questionQuery->join('field_data_field_dialogue_before_election', 'before_election', 'before_election.entity_type = \'node\' AND before_election.entity_id=n.nid');
+    $questionQuery->join('field_revision_field_parliament', 'p', 'p.entity_type = \'node\' AND p.entity_id=n.nid');
+    $questionQuery->join('taxonomy_term_data', 'rn', 'rn.tid=p.field_parliament_tid');
+    $questionQuery->condition('r.field_dialogue_recipient_target_id', $row->uid);
+    $questionQuery->condition('n.status', 1);
+    $questionQuery->condition('rn.name', $row->parliament_name);
+    $questionQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
+    $questionResult = $questionQuery->execute()->fetchAssoc();
+
+    // go for number of answers
+    $answerQuery = db_select('comment', 'c');
+    $answerQuery->addExpression('COUNT(DISTINCT c.nid)', 'count');
+    $answerQuery->addExpression('SUM(standard_reply.field_dialogue_is_standard_reply_value)', 'count_standard_replies');
+    $answerQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'comment\' AND f.entity_id = c.cid');
+    $answerQuery->leftJoin('field_data_field_dialogue_is_standard_reply', 'standard_reply', 'standard_reply.entity_type = \'comment\' AND standard_reply.entity_id = c.cid');
+    $answerQuery->join('node', 'n', 'n.nid=c.nid');
+    $answerQuery->join('field_data_field_dialogue_before_election', 'before_election', 'before_election.entity_type = \'node\' AND before_election.entity_id=n.nid');
+    $answerQuery->join('field_revision_field_parliament', 'p', 'p.entity_type = \'node\' AND p.entity_id=n.nid');
+    $answerQuery->join('taxonomy_term_data', 'rn', 'rn.tid=p.field_parliament_tid');
+    $answerQuery->condition('c.uid', $row->uid);
+    $answerQuery->condition('c.status', 1);
+    $answerQuery->condition('rn.name', $row->parliament_name);
+    $answerQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
+    $answerResult = $answerQuery->execute()->fetchAssoc();
+
+    // subtract standard replies
+    $count_answers_without_standard_replies = $answerResult['count'] - $answerResult['count_standard_replies'];
+
+    // update all tables
+    db_update('user_archive_cache')
+      ->fields(array(
+        'number_of_questions' => $questionResult['count'],
+        'number_of_answers' => $count_answers_without_standard_replies,
+      ))
+      ->condition('uid', $row->uid)
+      ->condition('vid', $row->vid)
+      ->execute();
+
+    $user_revision = user_revision_load($row->uid, $row->vid);
+    $revision_edit = array();
+    $revision_edit['field_user_questions_get'][LANGUAGE_NONE][0]['value'] = $questionResult['count'];
+    $revision_edit['field_user_answers_give'][LANGUAGE_NONE][0]['value'] = $count_answers_without_standard_replies;
+
+    // reset pictures which have a null value
+    if(key_exists('und', $user_revision->field_user_picture) && $user_revision->field_user_picture['und'][0] === NULL){
+      $revision_edit['field_user_picture'] = array();
+    }
+    _user_revision_edit_save($user_revision, $revision_edit);
+  }
+
   // set actual / newest profile
-  $result_uids = array_unique($query->execute()->fetchAllKeyed());
   foreach ($result_uids as $uid) {
 
     // restore to newest profile, especially after importing older profiles
@@ -42,65 +107,10 @@ function pw_userarchives_cron($uid = NULL) {
       WHERE uac.uid = :uid', array(':uid' => $uid));
   }
 
-  // Calculate number of questions and answers and insert them into:
-  // (1) the revision table (for showing them in the profile view)
-  // (2) the userarchive table (for showing them in the sidebar)
-
-  $res1 = $query->execute();
-  while ($row = $res1->fetchAssoc()) {
-
-    // flag to look for questions and answers during elections or not
-    $before_election = $row['user_role'] == 'candidate' ? 1 : 0;
-
-    // go for number of questions
-    $questionQuery = db_select('node', 'n');
-    $questionQuery->addExpression('IFNULL(COUNT(n.nid), 0)', 'count');
-    $questionQuery->join('field_data_field_dialogue_recipient', 'r', 'r.entity_type = \'node\' AND r.entity_id = n.nid');
-    $questionQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'node\' AND f.entity_id = n.nid');
-    $questionQuery->join('field_data_field_dialogue_before_election', 'before_election', 'before_election.entity_type = \'node\' AND before_election.entity_id=n.nid');
-    $questionQuery->join('field_revision_field_parliament', 'p', 'p.entity_type = \'node\' AND p.entity_id=n.nid');
-    $questionQuery->join('taxonomy_term_data', 'rn', 'rn.tid=p.field_parliament_tid');
-    $questionQuery->condition('r.field_dialogue_recipient_target_id', $row['uid']);
-    $questionQuery->condition('n.status', 1);
-    $questionQuery->condition('rn.name', $row['parliament_name']);
-    $questionQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
-    $questionResult = $questionQuery->execute()->fetchAssoc();
-
-    // go for number of answers
-    $answerQuery = db_select('comment', 'c');
-    $answerQuery->addExpression('COUNT(DISTINCT c.nid)', 'count');
-    $answerQuery->addExpression('SUM(standard_reply.field_dialogue_is_standard_reply_value)', 'count_standard_replies');
-    $answerQuery->join('field_data_field_dialogue_message_type', 'f', 'f.entity_type = \'comment\' AND f.entity_id = c.cid');
-    $answerQuery->leftJoin('field_data_field_dialogue_is_standard_reply', 'standard_reply', 'standard_reply.entity_type = \'comment\' AND standard_reply.entity_id = c.cid');
-    $answerQuery->join('node', 'n', 'n.nid=c.nid');
-    $answerQuery->join('field_data_field_dialogue_before_election', 'before_election', 'before_election.entity_type = \'node\' AND before_election.entity_id=n.nid');
-    $answerQuery->join('field_revision_field_parliament', 'p', 'p.entity_type = \'node\' AND p.entity_id=n.nid');
-    $answerQuery->join('taxonomy_term_data', 'rn', 'rn.tid=p.field_parliament_tid');
-    $answerQuery->condition('c.uid', $row['uid']);
-    $answerQuery->condition('c.status', 1);
-    $answerQuery->condition('rn.name', $row['parliament_name']);
-    $answerQuery->condition('before_election.field_dialogue_before_election_value', $before_election);
-    $answerResult = $answerQuery->execute()->fetchAssoc();
-
-    // update all tables
-    db_update('user_archive_cache')
-      ->fields(array(
-        'number_of_questions' => $questionResult['count'],
-        'number_of_answers' => $answerResult['count'] - $answerResult['count_standard_replies'],
-      ))
-      ->condition('uid', $row['uid'])
-      ->condition('vid', $row['vid'])
-      ->execute();
-    db_update('field_revision_field_user_questions_get')
-      ->fields(array('field_user_questions_get_value' => $questionResult['count']))
-      ->condition('entity_id', $row['uid'])
-      ->condition('revision_id', $row['vid'])
-      ->execute();
-    db_update('field_revision_field_user_answers_give')
-      ->fields(array('field_user_answers_give_value' => $answerResult['count'] - $answerResult['count_standard_replies']))
-      ->condition('entity_id', $row['uid'])
-      ->condition('revision_id', $row['vid'])
-      ->execute();
+  // update politician index
+  $politician_index = search_api_index_load("politician_index");
+  if($politician_index){
+    search_api_index_specific_items($politician_index, $result_uids);
   }
 
   // delete old revisions - buggy
@@ -147,6 +157,7 @@ function check_user_archives_database($uid = NULL) {
   $query->condition('ur.timestamp', $request_timespan, '>');
   $query->condition('role_name.name', array('Deputy', 'Candidate'));
   $query->groupBy('ur.uid, u_parl.field_user_parliament_tid, role_tid.field_user_roles_for_view_mode_s_tid, fraction_tid.field_user_fraction_tid');
+  //$query->range(0, 10);
 
   // fetch all vids as flat array
   $vids = $query->execute()->fetchCol();

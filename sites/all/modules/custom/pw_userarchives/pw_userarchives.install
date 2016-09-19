@@ -3,7 +3,6 @@
 /*
  * Implements hook_schema().
  */
-
 function pw_userarchives_schema() {
 
   $schema['user_archive_cache'] = array(
@@ -13,64 +12,87 @@ function pw_userarchives_schema() {
         'description' => 'TODO: please describe this field!',
         'type' => 'serial',
         'not null' => TRUE,
-        ),
+      ),
       'uid' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => TRUE,
-        ),
+      ),
       'user_name' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'varchar',
         'length' => '100',
         'not null' => TRUE,
-        ),
+      ),
       'vid' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => TRUE,
-        ),
+      ),
       'parliament_name' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'varchar',
         'length' => '100',
         'not null' => TRUE,
-        ),
+      ),
       'number_of_questions' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => FALSE,
-        ),
+      ),
       'number_of_answers' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => FALSE,
-        ),
+      ),
       'number_of_sideline_jobs' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => FALSE,
-        ),
+      ),
       'number_of_speeches' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => FALSE,
-        ),
+      ),
       'number_of_missed_votings' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => FALSE,
-        ),
+      ),
+      'fraction_name' => array(
+        'description' => 'TODO: please describe this field!',
+        'type' => 'varchar',
+        'length' => 100,
+        'not null' => FALSE,
+      ),
+      'actual_profile' => array(
+        'description' => 'TODO: please describe this field!',
+        'mysql_type' => 'tinyint',
+        'length' => 4,
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'user_joined' => array(
+        'description' => 'TODO: please describe this field!',
+        'mysql_type' => 'date',
+        'not null' => FALSE,
+      ),
+      'user_retired' => array(
+        'description' => 'TODO: please describe this field!',
+        'mysql_type' => 'date',
+        'not null' => FALSE,
+      ),
       'timestamp' => array(
         'description' => 'TODO: please describe this field!',
         'type' => 'int',
         'not null' => FALSE,
-        ),
       ),
-'primary key' => array('id'),
-);
+    ),
+    'primary key' => array('id'),
+  );
 
-return $schema;
+  return $schema;
 }
 
 /**
