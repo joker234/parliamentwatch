@@ -431,10 +431,13 @@ function pw_profiles_user_revision_query($filters = array(), $limit = NULL) {
   $query->join('user_archive_cache', 'uac', 'ur.vid = uac.vid');
   _pw_uac_add_conditions($query, $filters);
   $query->join('field_revision_field_user_lname', 'ful', 'ful.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_picture', 'fup', 'fup.revision_id = ur.vid');
+  $query->addExpression('CASE WHEN fup.field_user_picture_fid IS NOT NULL THEN 1 ELSE 0 END', 'picture_uploaded');
 
   $query
     ->orderBy('uac.number_of_answers', 'DESC')
     ->orderBy('uac.number_of_questions', 'DESC')
+    ->orderBy('picture_uploaded', 'DESC')
     ->orderBy('ful.field_user_lname_value');
 
   return $query;
