@@ -76,6 +76,11 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['fields']['title']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['title']['node_in_colorbox_width'] = '600';
   $handler->display->display_options['fields']['title']['node_in_colorbox_height'] = '600';
+  /* Sortierkriterien: Inhalt: Ordinal date for search results (field_search_sort_date) */
+  $handler->display->display_options['sorts']['field_search_sort_date_value']['id'] = 'field_search_sort_date_value';
+  $handler->display->display_options['sorts']['field_search_sort_date_value']['table'] = 'field_data_field_search_sort_date';
+  $handler->display->display_options['sorts']['field_search_sort_date_value']['field'] = 'field_search_sort_date_value';
+  $handler->display->display_options['sorts']['field_search_sort_date_value']['order'] = 'DESC';
   /* Sortierkriterien: Inhalt: Signings (field_petition_signings) */
   $handler->display->display_options['sorts']['field_petition_signings_value']['id'] = 'field_petition_signings_value';
   $handler->display->display_options['sorts']['field_petition_signings_value']['table'] = 'field_data_field_petition_signings';
