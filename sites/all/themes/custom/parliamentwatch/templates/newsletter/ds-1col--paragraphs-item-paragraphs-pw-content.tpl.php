@@ -8,6 +8,8 @@
   <?php hide($content['field_pg_content_link']); ?>
 
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
+        <?php if (!empty($content['field_pg_content_title']) && !empty($field_pg_content_link)): ?>
+        
         <tr>
             <td colspan="3" width="100%" style="height: 20px;">&nbsp;</td>
         </tr>
@@ -34,11 +36,14 @@
                 </table>
             </td>
         </tr>
+
+        <?php endif; ?>
+
         <tr>
             <td colspan="3" width="100%" style="height: 10px; font-size: 1px;">&nbsp;</td>
         </tr>
         <tr>
-            <?php if (!empty($content['field_pg_content_img'])): ?>
+            <?php if (empty($content['field_pg_content_img'][0])): ?>
                 <td colspan="3" width="100%">
                     <?php print render($content); ?>
                     <?php if (!empty($field_pg_content_link)): ?>
@@ -48,7 +53,7 @@
                     <?php endif; ?>
                 </td>
             <?php else: ?>
-                <td width="240" class="block_td pic_td" style="vertical-align: top;">
+                <td width="240" class="block_td pic_td" style="width: 240px; vertical-align: top;">
                     <?php print render($content['field_pg_content_img']); ?>
                 </td>
                 <td width="20" class="block_td pic_td" style="vertical-align: top;">&nbsp;</td>
@@ -63,7 +68,7 @@
             <?php endif; ?>
         </tr>
         <tr>
-            <td colspan="3" width="100%" style="height: 25px; font-size: 1px;">&nbsp;</td>
+            <td colspan="3" width="100%" style="height: 15px; font-size: 1px;">&nbsp;</td>
         </tr>
     </table>
 </div>

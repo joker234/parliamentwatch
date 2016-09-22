@@ -20,6 +20,13 @@ if(typeof(CKEDITOR) !== 'undefined') {
       }
     },
     {
+      name : 'Paragraph (No space-after)',
+      element : 'p',
+      attributes : {
+        'style' : 'font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 15px; line-height: 21px; margin: 0;'
+      }
+    },
+    {
       name : 'Link',
       element : 'a',
       attributes : {
