@@ -153,6 +153,16 @@ function parliamentwatch_preprocess_page(&$variables) {
 }
 
 /*
+ * preprocess field
+ */
+function parliamentwatch_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if($element['#bundle'] == 'pw_petition') {
+    $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#field_name'];
+  }
+}
+
+/*
  * Implements hook_process_zone().
  */
 function parliamentwatch_alpha_process_zone(&$vars) {
