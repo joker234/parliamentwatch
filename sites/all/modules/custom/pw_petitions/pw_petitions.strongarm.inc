@@ -95,6 +95,9 @@ function pw_petitions_strongarm() {
       'revision' => array(
         'custom_settings' => FALSE,
       ),
+      'pw_newsletter' => array(
+        'custom_settings' => FALSE,
+      ),
     ),
     'extra_fields' => array(
       'form' => array(
@@ -123,8 +126,8 @@ function pw_petitions_strongarm() {
       'display' => array(
         'sharethis' => array(
           'default' => array(
-            'weight' => '-100',
-            'visible' => TRUE,
+            'weight' => '0',
+            'visible' => FALSE,
           ),
           'full' => array(
             'weight' => '2',

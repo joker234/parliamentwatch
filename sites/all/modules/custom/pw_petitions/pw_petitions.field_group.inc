@@ -45,7 +45,7 @@ function pw_petitions_field_group_info() {
       'formatter' => 'open',
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_grid_6|node|pw_petition|search_result'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -76,7 +76,7 @@ function pw_petitions_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_petition_content|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -107,7 +107,7 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_petition_donation|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -136,7 +136,7 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_petition_parliament|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -163,7 +163,7 @@ function pw_petitions_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_petition_passed|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -191,7 +191,7 @@ function pw_petitions_field_group_info() {
       ),
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_petition_recipient|node|pw_petition|form'] = $field_group;
 
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
@@ -224,7 +224,7 @@ function pw_petitions_field_group_info() {
       'formatter' => 'collapsible',
     ),
   );
-  $field_groups[''] = $field_group;
+  $field_groups['group_petition_signing|node|pw_petition|form'] = $field_group;
 
   // Translatables
   // Included for use with string extractors like potx.
