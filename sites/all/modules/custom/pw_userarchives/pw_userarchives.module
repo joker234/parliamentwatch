@@ -44,7 +44,6 @@ function pw_userarchives_cron($uid = NULL) {
   $query->condition('ur.timestamp', $request_timespan, '>');
   $query->condition('role.name', array('Deputy', 'Candidate'));
   $query->groupBy('ur.uid, u_parl.field_user_parliament_tid, role_tid.field_user_roles_for_view_mode_s_tid, fraction_tid.field_user_fraction_tid');
-  //$query->range(0, 10);
 
   // fetch all vids as flat array
   $vids = $query->execute()->fetchCol();
@@ -88,10 +87,10 @@ function pw_userarchives_cron($uid = NULL) {
   // join dialogues fields to get number of questions
   $query->leftJoin("field_data_field_dialogue_recipient", "dia_rp", "dia_rp.entity_type = 'node' AND dia_rp.field_dialogue_recipient_target_id = ur.uid");
   $query->leftJoin("field_data_field_parliament", "dia_parl", "dia_parl.entity_type = 'node' AND dia_parl.entity_id = dia_rp.entity_id AND dia_parl.field_parliament_tid = parliament.tid");
-  $query->leftJoin("field_data_field_dialogue_before_election", "dia_election", "dia_election.entity_type = 'node' AND dia_election.entity_id = dia_parl.entity_id AND 
-           CASE 
+  $query->leftJoin("field_data_field_dialogue_before_election", "dia_election", "dia_election.entity_type = 'node' AND dia_election.entity_id = dia_parl.entity_id AND
+           CASE
            WHEN role.name = 'Candidate' THEN dia_election.field_dialogue_before_election_value = 1
-           ELSE dia_election.field_dialogue_before_election_value = 0 
+           ELSE dia_election.field_dialogue_before_election_value = 0
            END");
   $query->leftJoin("node", "n", "dia_rp.entity_id = n.nid AND n.status = 1");
   $query->addExpression("IFNULL(COUNT(DISTINCT dia_election.entity_id), 0)", "number_of_questions");
@@ -108,10 +107,9 @@ function pw_userarchives_cron($uid = NULL) {
 
   // join user archive cache for comparing
   $query->leftJoin('user_archive_cache', 'uac', "ur.vid = uac.vid");
-  $query->where('(ISNULL(uac.number_of_questions) 
-          OR uac.number_of_questions != number_of_questions 
+  $query->where('(ISNULL(uac.number_of_questions)
+          OR uac.number_of_questions != number_of_questions
           OR uac.number_of_answers != number_of_answers)');
-  $query->addField('uac', 'id');
 
   // nothing to update
   if(empty($query) || $query->execute()->rowCount() == 0){
