@@ -700,7 +700,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'ds_extras_field_template' => '',
       'entity_type' => 'node',
       'field_name' => 'field_show',
-      'label' => 'Inhalt in Übersicht anzeigen',
+      'label' => 'Im Archiv anzeigen',
       'required' => 0,
       'settings' => array(
         'user_register_form' => FALSE,
@@ -710,7 +710,6 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'module' => 'options',
         'settings' => array(
           'display_label' => 1,
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_onoff',
         'weight' => '1',
@@ -1263,7 +1262,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           ),
         ),
         'type' => 'media_generic',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -1606,6 +1605,92 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         ),
         'type' => 'options_buttons',
         'weight' => '6',
+      ),
+    ),
+  );
+
+  // Exported field: 'paragraphs_item-paragraphs_pw_content-field_show'.
+  $fields['paragraphs_item-paragraphs_pw_content-field_show'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_show',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paragraphs_pw_content',
+      'default_value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 6,
+        ),
+        'paragraphs_editor_preview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'paragraphs_item',
+      'field_name' => 'field_show',
+      'label' => 'Im Archiv anzeigen',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '2',
       ),
     ),
   );
@@ -2097,6 +2182,92 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
     ),
   );
 
+  // Exported field: 'paragraphs_item-paragraphs_pw_donate-field_show'.
+  $fields['paragraphs_item-paragraphs_pw_donate-field_show'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_show',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paragraphs_pw_donate',
+      'default_value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 5,
+        ),
+        'paragraphs_editor_preview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'paragraphs_item',
+      'field_name' => 'field_show',
+      'label' => 'Im Archiv anzeigen',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '1',
+      ),
+    ),
+  );
+
   // Exported field: 'paragraphs_item-paragraphs_pw_list-field_pg_donate_targetgroup'.
   $fields['paragraphs_item-paragraphs_pw_list-field_pg_donate_targetgroup'] = array(
     'field_config' => array(
@@ -2159,7 +2330,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '3',
+        'weight' => '4',
       ),
     ),
   );
@@ -2299,7 +2470,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'rows' => '5',
         ),
         'type' => 'text_textarea',
-        'weight' => '2',
+        'weight' => '3',
       ),
     ),
   );
@@ -2525,6 +2696,92 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
     ),
   );
 
+  // Exported field: 'paragraphs_item-paragraphs_pw_list-field_show'.
+  $fields['paragraphs_item-paragraphs_pw_list-field_show'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_show',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paragraphs_pw_list',
+      'default_value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 4,
+        ),
+        'paragraphs_editor_preview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'paragraphs_item',
+      'field_name' => 'field_show',
+      'label' => 'Im Archiv anzeigen',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '2',
+      ),
+    ),
+  );
+
   // Exported field: 'paragraphs_item-paragraphs_pw_testmonial-field_pg_content_link'.
   $fields['paragraphs_item-paragraphs_pw_testmonial-field_pg_content_link'] = array(
     'field_config' => array(
@@ -2654,7 +2911,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'link_field',
-        'weight' => '35',
+        'weight' => '3',
       ),
     ),
   );
@@ -2755,7 +3012,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'module' => 'options',
         'settings' => array(),
         'type' => 'options_buttons',
-        'weight' => '33',
+        'weight' => '2',
       ),
     ),
   );
@@ -2897,7 +3154,93 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
         ),
         'type' => 'options_select',
-        'weight' => '31',
+        'weight' => '0',
+      ),
+    ),
+  );
+
+  // Exported field: 'paragraphs_item-paragraphs_pw_testmonial-field_show'.
+  $fields['paragraphs_item-paragraphs_pw_testmonial-field_show'] = array(
+    'field_config' => array(
+      'active' => '1',
+      'cardinality' => '1',
+      'deleted' => '0',
+      'entity_types' => array(),
+      'field_name' => 'field_show',
+      'field_permissions' => array(
+        'type' => '0',
+      ),
+      'foreign keys' => array(),
+      'indexes' => array(
+        'value' => array(
+          0 => 'value',
+        ),
+      ),
+      'locked' => '0',
+      'module' => 'list',
+      'settings' => array(
+        'allowed_values' => array(
+          0 => '',
+          1 => '',
+        ),
+        'allowed_values_function' => '',
+      ),
+      'translatable' => '0',
+      'type' => 'list_boolean',
+    ),
+    'field_instance' => array(
+      'bundle' => 'paragraphs_pw_testmonial',
+      'default_value' => array(
+        0 => array(
+          'value' => 1,
+        ),
+      ),
+      'deleted' => '0',
+      'description' => '',
+      'display' => array(
+        'default' => array(
+          'label' => 'above',
+          'module' => 'list',
+          'settings' => array(
+            'field_delimiter' => '',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_default',
+          'weight' => 3,
+        ),
+        'paragraphs_editor_preview' => array(
+          'label' => 'above',
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => 0,
+        ),
+      ),
+      'ds_extras_field_template' => '',
+      'entity_type' => 'paragraphs_item',
+      'field_name' => 'field_show',
+      'label' => 'Im Archiv anzeigen',
+      'required' => 0,
+      'settings' => array(
+        'user_register_form' => FALSE,
+      ),
+      'widget' => array(
+        'active' => 1,
+        'module' => 'options',
+        'settings' => array(
+          'display_label' => 1,
+        ),
+        'type' => 'options_onoff',
+        'weight' => '1',
       ),
     ),
   );
@@ -2916,7 +3259,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
   t('Diese URL erzeugt auch die Social Media Icons');
   t('Dieses Bild wird nur für die Darstellung auf der Webseite benutzt.');
   t('Geben Sie den Titel der Blogartikel ein, dessen Teaser Sie anzeigen wollen.');
-  t('Inhalt in Übersicht anzeigen');
+  t('Im Archiv anzeigen');
   t('Klasse');
   t('Link');
   t('Listen-Element');
