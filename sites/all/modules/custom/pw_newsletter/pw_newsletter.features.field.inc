@@ -1550,6 +1550,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'allowed_values' => array(
           'donator' => 'Spender',
           'sponsor' => 'Förderer',
+          'non-sponsor' => 'Nicht-Förderer',
         ),
         'allowed_values_function' => '',
       ),
@@ -2036,6 +2037,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'allowed_values' => array(
           'donator' => 'Spender',
           'sponsor' => 'Förderer',
+          'non-sponsor' => 'Nicht-Förderer',
         ),
         'allowed_values_function' => '',
       ),
@@ -2118,6 +2120,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'allowed_values' => array(
           'donator' => 'Spender',
           'sponsor' => 'Förderer',
+          'non-sponsor' => 'Nicht-Förderer',
         ),
         'allowed_values_function' => '',
       ),
@@ -2679,6 +2682,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
         'allowed_values' => array(
           'donator' => 'Spender',
           'sponsor' => 'Förderer',
+          'non-sponsor' => 'Nicht-Förderer',
         ),
         'allowed_values_function' => '',
       ),
@@ -2749,9 +2753,7 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'widget' => array(
         'active' => 1,
         'module' => 'options',
-        'settings' => array(
-          'maxlength_js_label' => 'Content limited to @limit characters, remaining: <strong>@remaining</strong>',
-        ),
+        'settings' => array(),
         'type' => 'options_buttons',
         'weight' => '33',
       ),
