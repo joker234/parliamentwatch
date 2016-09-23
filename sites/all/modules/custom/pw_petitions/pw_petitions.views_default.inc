@@ -847,6 +847,55 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_blogpost_categories_tid']['summary_options']['items_per_page'] = '25';
+
+  /* Display: Block Related Petitions */
+  $handler = $view->new_display('block', 'Block Related Petitions', 'petitions_related');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Weitere Petitionen';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sortierkriterien: Inhalt: Signings (field_petition_signings) */
+  $handler->display->display_options['sorts']['field_petition_signings_value']['id'] = 'field_petition_signings_value';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['table'] = 'field_data_field_petition_signings';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['field'] = 'field_petition_signings_value';
+  $handler->display->display_options['sorts']['field_petition_signings_value']['order'] = 'DESC';
+  /* Sortierkriterien: Inhalt: Datum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['granularity'] = 'hour';
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filterkriterium: Inhalt: Veröffentlicht */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filterkriterium: Inhalt: Typ */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'pw_petition' => 'pw_petition',
+  );
+  /* Filterkriterium: Inhalt: Petition Starter (field_petition_starter) */
+  $handler->display->display_options['filters']['field_petition_starter_value']['id'] = 'field_petition_starter_value';
+  $handler->display->display_options['filters']['field_petition_starter_value']['table'] = 'field_data_field_petition_starter';
+  $handler->display->display_options['filters']['field_petition_starter_value']['field'] = 'field_petition_starter_value';
+  $handler->display->display_options['filters']['field_petition_starter_value']['value'] = 'abgeordnetenwatch.de';
+  /* Filterkriterium: Inhalt: Inhalt UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'node';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['operator'] = '!=';
+  $handler->display->display_options['filters']['uuid']['value'] = '46c8b047-f95f-4aea-982d-bf7e205ab3b0';
+  $handler->display->display_options['block_description'] = 'AW Petition Related';
   $translatables['pw_petitions'] = array(
     t('Master'),
     t('PetitionPlus'),
@@ -885,6 +934,9 @@ function pw_petitions_views_default_views() {
     t('Bild von field_teaser_image'),
     t('Begriff aus field_blogpost_categories'),
     t('View panes'),
+    t('Block Related Petitions'),
+    t('Weitere Petitionen'),
+    t('AW Petition Related'),
   );
   $export['pw_petitions'] = $view;
 
