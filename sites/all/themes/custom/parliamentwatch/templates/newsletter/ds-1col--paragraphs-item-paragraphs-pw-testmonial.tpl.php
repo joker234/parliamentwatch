@@ -19,7 +19,7 @@
 	    <tr>
 	        <td colspan="3" width="600">
 	            <p style="font-family: Arial, Helvetica, Sans-Serif; color: #999; font-size: 15px; line-height: 21px; margin: 0; text-align: center;">
-	                <a target="_blank" href="<?php print render($content['field_pg_content_link']); ?>" style="color: #f63; text-decoration: none; font-weight: bold;">Jetzt Fördermitglied werden </a>
+	                <a target="_blank" href="<?php print render($content['field_pg_content_link']); ?>" style="color: #f63; text-decoration: none; font-weight: bold;">Jetzt Fördern</a>
 	            </p>
 	        </td>
 	        <td width="10" class="block_td percent_td">&nbsp;</td>
