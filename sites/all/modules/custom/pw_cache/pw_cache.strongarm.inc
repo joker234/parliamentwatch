@@ -138,7 +138,8 @@ profile/[comment:node:field-dialogue-recipient]';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_comment_custom_pages_pw_petition';
-  $strongarm->value = 'petitionen';
+  $strongarm->value = 'petitionen
+[node:field-parliament]/petitionen';
   $export['expire_comment_custom_pages_pw_petition'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -475,7 +476,8 @@ profile/[node:field-dialogue-recipient]';
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'expire_node_custom_pages_pw_petition';
-  $strongarm->value = 'petitionen';
+  $strongarm->value = 'petitionen
+[node:field-parliament]/petitionen';
   $export['expire_node_custom_pages_pw_petition'] = $strongarm;
 
   $strongarm = new stdClass();

@@ -14,7 +14,7 @@
 
 function pw_api_petitions($parliament) {
 
-  $votes = array();
+  $petitions = array();
 
     // translate uuid into parliament name
   if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $parliament, $uuid)){
@@ -39,25 +39,35 @@ function pw_api_petitions($parliament) {
     foreach(array_keys($result_nodes['node']) as $target_node_id){
 
       $node = node_load($target_node_id);
-      $votes['petition_'.$target_node_id] = array();
-      $votes['petition_'.$target_node_id]['title'] = $node->title;
-      $votes['petition_'.$target_node_id]['uuid'] = $node->uuid;
+      $petitions['petition_'.$target_node_id] = array();
+      $petitions['petition_'.$target_node_id]['title'] = $node->title;
+      $petitions['petition_'.$target_node_id]['uuid'] = $node->uuid;
       $date_field = field_get_items('node', $node, 'field_petition_end_date');
-      $date_petition = substr($date_field[0]['value'], 0, 10);
-      $votes['petition_'.$target_node_id]['date'] = $date_petition;
+      $petition_date = $date_field?substr($date_field[0]['value'], 0, 10):'';
+      $petitions['petition_'.$target_node_id]['date'] = $petition_date;
       $status = field_get_items('node', $node, 'field_petition_status');
-      $votes['petition_'.$target_node_id]['status'] = $status[0]['value'];
-      $votes['petition_'.$target_node_id]['url'] = url('node/'.$node->nid, array('absolute' => TRUE));
+      $petitions['petition_'.$target_node_id]['status'] = $status[0]['value'];
+      $petitions['petition_'.$target_node_id]['url'] = url('node/'.$node->nid, array('absolute' => TRUE));
       if($status[0]['value'] == 'passed_parliament'){
-        $votes['petition_'.$target_node_id]['votes'] = pw_api_add_votes($parliament_term, $target_node_id, $poll_date);
+
+        // add voting behaviour
+        $votes = pw_api_add_votes($parliament_term, $target_node_id, $petition_date);
+        $stats = array();
+        foreach($votes as $vote){
+          $key = $vote['vote'];
+          $stats[$key] = key_exists($key, $stats)?$stats[$key]+1:1;
+        }
+        ksort($stats);
+        $petitions['petition_'.$target_node_id]['stats'] = $stats;
+        $petitions['petition_'.$target_node_id]['votes'] = $votes;
       }
       else{
-        $votes['petition_'.$target_node_id]['votes'] = '';
+        $petitions['petition_'.$target_node_id]['votes'] = '';
       }
     }
   }
 
-  return array('petitions' => $votes);
+  return array('petitions' => $petitions);
 }
 
 /**
@@ -68,7 +78,7 @@ function pw_api_petitions($parliament) {
 
 function pw_api_polls($parliament) {
 
-  $votes = array();
+  $polls = array();
 
     // translate uuid into parliament name
   if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $parliament, $uuid)){
@@ -93,27 +103,37 @@ function pw_api_polls($parliament) {
     foreach(array_keys($result_nodes['node']) as $target_node_id){
 
       $node = node_load($target_node_id);
-      $votes['poll_'.$target_node_id] = array();
-      $votes['poll_'.$target_node_id]['title'] = $node->title;
-      $votes['poll_'.$target_node_id]['uuid'] = $node->uuid;
+      $polls['poll_'.$target_node_id] = array();
+      $polls['poll_'.$target_node_id]['title'] = $node->title;
+      $polls['poll_'.$target_node_id]['uuid'] = $node->uuid;
       $date_field = field_get_items('node', $node, 'field_poll_date');
       $poll_date = substr($date_field[0]['value'], 0, 10);
-      $votes['poll_'.$target_node_id]['date'] = $poll_date;
+      $polls['poll_'.$target_node_id]['date'] = $poll_date;
       $status = field_get_items('node', $node, 'field_voted');
       if($status[0]['value'] == '1'){
-        $votes['poll_'.$target_node_id]['status'] = 'abgestimmt';
-        $votes['poll_'.$target_node_id]['votes'] = pw_api_add_votes($parliament_term, $target_node_id, $poll_date);
+        $polls['poll_'.$target_node_id]['status'] = 'abgestimmt';
+
+        // add voting behaviour
+        $votes = pw_api_add_votes($parliament_term, $target_node_id, $poll_date);
+        $stats = array();
+        foreach($votes as $vote){
+          $key = $vote['vote'];
+          $stats[$key] = key_exists($key, $stats)?$stats[$key]+1:1;
+        }
+        ksort($stats);
+        $polls['poll_'.$target_node_id]['stats'] = $stats;
+        $polls['poll_'.$target_node_id]['votes'] = $votes;
       }
       else{
-        $votes['poll_'.$target_node_id]['status'] = $poll_date > date('Y-m-d')?'anstehend':'unbekannt';
-        $votes['poll_'.$target_node_id]['votes'] = '';
+        $polls['poll_'.$target_node_id]['status'] = $poll_date > date('Y-m-d')?'anstehend':'unbekannt';
+        $polls['poll_'.$target_node_id]['votes'] = '';
       }
-      $votes['poll_'.$target_node_id]['url'] = url('node/'.$node->nid, array('absolute' => TRUE));
+      $polls['poll_'.$target_node_id]['url'] = url('node/'.$node->nid, array('absolute' => TRUE));
       //@TODO: Categories, Tags
     }
   }
 
-  return array('polls' => $votes);
+  return array('polls' => $polls);
 }
 
 function pw_api_add_votes($parliament_term, $target_node_id, $vote_date){
