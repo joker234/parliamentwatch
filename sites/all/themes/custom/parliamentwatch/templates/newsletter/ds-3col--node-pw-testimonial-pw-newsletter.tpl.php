@@ -31,7 +31,7 @@
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="transparent" width="500" align="center" class="deviceWidthInner">
         <tr>
             <td width="500">
-                <p style="font-family: Arial, Helvetica, Sans-Serif; color: #999; font-size: 11px; line-height: 19px; margin: 0 0 10px;"><?php print $right; ?> ist eines von <span id="mscount">3.070</span> Fördermitgliedern von abgeordnetenwatch.de</p>
+                <p style="font-family: Arial, Helvetica, Sans-Serif; color: #999; font-size: 11px; line-height: 19px; margin: 0 0 10px;"><?php print $right; ?> ist eines von <span id="mscount">%count%</span> Fördermitgliedern von abgeordnetenwatch.de</p>
             </td>
         </tr>
     </table>
