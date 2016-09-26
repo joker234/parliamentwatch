@@ -168,6 +168,15 @@ function pw_profiles_form_alter(&$form, &$form_state, $form_id) {
   }
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function pw_profiles_form_pw_profiles_filters_form_alter(&$form, &$form_state) {
+  $form['form_build_id']['#access'] = FALSE;
+  $form['form_token']['#access'] = FALSE;
+  $form['form_id']['#access'] = FALSE;
+}
+
 function my_user_register_validate($form, &$form_state) {
   if (isset($form_state['input']['name'])) {
     $username = $form_state['input']['name'];
@@ -346,6 +355,30 @@ function pw_profiles_user_update(&$edit, $account, $category) {
 }
 
 /**
+ * Implements hook_block_info().
+ */
+function pw_profiles_block_info() {
+  $blocks = array();
+
+  $blocks['filters'] = array(
+    'info' => t('Profile filters'),
+    'cache' => DRUPAL_CACHE_PER_PAGE | DRUPAL_CACHE_PER_ROLE,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function pw_profiles_block_view($delta) {
+  switch ($delta) {
+    case 'filters':
+      return pw_profiles_filters_block();
+  }
+}
+
+/**
  * Implements hook_entity_info_alter().
  */
 function pw_profiles_entity_info_alter(&$entity_info) {
@@ -412,15 +445,19 @@ function pw_profiles_new_title($parliament, $role_name) {
 function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
   $users = array();
 
-  $query = pw_profiles_user_revision_query($filters, $limit);
-  $query->join('field_revision_field_user_lname', 'ful', 'ful.revision_id = ur.vid');
-  $query->leftJoin('field_revision_field_user_picture', 'fup', 'fup.revision_id = ur.vid');
-  $query->addExpression('CASE WHEN fup.field_user_picture_fid IS NOT NULL THEN 1 ELSE 0 END', 'picture_uploaded');
+  $query = pw_profiles_user_revision_query($filters);
+  if (empty($filters['last_name'])) {
+    $query->join('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
+  }
+  $query->leftJoin('field_revision_field_user_picture', 'fupic', 'fupic.revision_id = ur.vid');
+  $query->addExpression('CASE WHEN fupic.field_user_picture_fid IS NOT NULL THEN 1 ELSE 0 END', 'picture_uploaded');
   $query
     ->orderBy('uac.number_of_answers', 'DESC')
     ->orderBy('uac.number_of_questions', 'DESC')
     ->orderBy('picture_uploaded', 'DESC')
-    ->orderBy('ful.field_user_lname_value');
+    ->orderBy('fuln.field_user_lname_value')
+    ->extend('PagerDefault')
+    ->limit($limit);
 
   foreach ($query->execute()->fetchAll() as $row) {
     $users[$row->uid] = $row;
@@ -437,21 +474,190 @@ function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
  * @param array $filters
  *   The filters to apply to the query
  *
- * @param int $limit
- *   The limit to apply to the query
- *
  * @return SelectQueryInterface
  *   The query object
- *
  */
-function pw_profiles_user_revision_query($filters = array(), $limit = NULL) {
-  $query = db_select('user_revision', 'ur')
-    ->extend('PagerDefault')
-    ->limit($limit)
-    ->fields('ur');
-
-  $query->join('user_archive_cache', 'uac', 'ur.vid = uac.vid');
+function pw_profiles_user_revision_query($filters = array()) {
+  $query = db_select('user_revision', 'ur')->fields('ur');
+  $query->join('user_archive_cache', 'uac', 'uac.vid = ur.vid');
   _pw_uac_add_conditions($query, $filters);
 
+  if (!empty($filters['party'])) {
+    $query->join('field_revision_field_user_party', 'fup', 'fup.revision_id = ur.vid');
+    $query->condition('fup.field_user_party_tid', $filters['party'], 'IN');
+  }
+
+  if (!empty($filters['region'])) {
+    $query->join('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
+    $query->join('field_data_field_electoral_region', 'fer', 'fuc.field_user_constituency_tid = fer.entity_id');
+    $query->join('field_revision_field_user_list', 'ful', 'ful.revision_id = ur.vid');
+    $query->join('field_data_field_electoral_region', 'fer2', 'ful.field_user_list_tid = fer2.entity_id');
+    $query->condition(db_or()
+      ->condition('fer.field_electoral_region_tid', $filters['region'])
+      ->condition('fer2.field_electoral_region_tid', $filters['region']));
+  }
+
+  if (!empty($filters['constituency'])) {
+    if (empty($filters['region'])) {
+      $query->join('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
+    }
+    $query->condition('fuc.field_user_constituency_tid', $filters['constituency']);
+  }
+
+  if (!empty($filters['list'])) {
+    if (empty($filters['region'])) {
+      $query->join('field_revision_field_user_list', 'ful', 'ful.revision_id = ur.vid');
+    }
+    $query->condition('ful.field_user_list_tid', $filters['list']);
+  }
+
+  if (!empty($filters['list_position'])) {
+    $query->join('field_revision_field_user_list_position', 'fulp', 'fulp.revision_id = ur.vid');
+    $query->condition('fulp.field_user_list_position_tid', $filters['list_position']);
+  }
+
+  if (!empty($filters['last_name'])) {
+    $query->join('field_revision_field_user_last_name', 'fuln', 'fuln.revision_id = ur.vid');
+    $query->condition('fuln.field_user_last_name_value', $filters['fuln'] . '%', 'LIKE');
+  }
+
+  if (!empty($filters['gender'])) {
+    $query->join('field_revision_field_user_gender', 'fug', 'fug.revision_id = ur.vid');
+    $query->condition('fug.field_user_gender_value', $filters['fug']);
+  }
+
   return $query;
+}
+
+/**
+ * Renders a block displaying filters for refining the search.
+ *
+ * @return array
+ *   The render array
+ */
+function pw_profiles_filters_block() {
+  $block = array();
+
+  $block['subject'] = t('Filter list');
+  $block['content']['form'] = drupal_get_form('pw_profiles_filters_form');
+
+  return $block;
+}
+
+/**
+ * Form constructor for the profile filters form.
+ */
+function pw_profiles_filters_form($form, &$form_state) {
+  if (menu_get_item()['page_callback'] == 'pw_profiles_new') {
+    $filters = array(
+      'roles' => menu_get_item()['map'][3],
+      'parliament' => menu_get_item()['map'][2]->name,
+      'date' => date('Y-m-d'),
+    );
+  }
+
+  $query = pw_profiles_user_revision_query($filters);
+  $query->join('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
+  $query->addField('fuc', 'field_user_constituency_tid');
+  $query->join('field_revision_field_user_party', 'fup', 'fup.revision_id = ur.vid');
+  $query->addField('fup', 'field_user_party_tid');
+  $query->join('field_revision_field_user_list', 'ful', 'ful.revision_id = ur.vid');
+  $query->addField('ful', 'field_user_list_tid');
+  $query->join('field_revision_field_user_list_position', 'fulp', 'fulp.revision_id = ur.vid');
+  $query->addField('fulp', 'field_user_list_position_tid');
+  $query->join('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
+  $query->addField('fuln', 'field_user_lname_value');
+  $query->join('field_revision_field_user_gender', 'fug', 'fug.revision_id = ur.vid');
+  $query->addField('fug', 'field_user_gender_value');
+  $query->join('field_data_field_electoral_region', 'fer', 'fuc.field_user_constituency_tid = fer.entity_id');
+  $query->addField('fer', 'field_electoral_region_tid');
+
+  foreach ($query->execute()->fetchAll() as $row) {
+    $region_values[] = $row->field_electoral_region_tid;
+    $constituency_values[] = $row->field_user_constituency_tid;
+    $party_values[] = $row->field_user_party_tid;
+    $list_values[] = $row->field_user_list_tid;
+    $list_position_values[] = $row->field_user_list_position_tid;
+    $last_name_initial = drupal_substr($row->field_user_lname_value, 0, 1);
+    $last_name_options[$last_name_initial] = $last_name_initial;
+    $gender_options[$row->field_user_gender_value] = $row->field_user_gender_value;
+  }
+
+  $parameters = drupal_get_query_parameters();
+
+  ksort($last_name_options);
+
+  $form['#method'] = 'get';
+  $form['last_name'] = array(
+    '#type' => 'radios',
+    '#title' => t('Filter by name'),
+    '#name' => 'last_name',
+    '#options' => $last_name_options,
+    '#multiple' => FALSE,
+    '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
+  );
+  $form['region'] = array(
+    '#type' => 'select',
+    '#title' => t('Filter by region'),
+    '#name' => 'region',
+    '#options' => _pw_profiles_options($region_values),
+    '#multiple' => FALSE,
+    '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
+  );
+  $form['constituency'] = array(
+    '#type' => 'select',
+    '#title' => t('Constituency'),
+    '#name' => 'constituency',
+    '#options' => _pw_profiles_options($constituency_values),
+    '#default_value' => empty($parameters['constituency']) ? '' : $parameters['constituency'],
+  );
+  $form['list'] = array(
+    '#type' => 'select',
+    '#title' => t('List'),
+    '#name' => 'list',
+    '#options' => _pw_profiles_options($list_values),
+    '#default_value' => empty($parameters['list']) ? '' : $parameters['list'],
+  );
+  $form['list_position'] = array(
+    '#type' => 'select',
+    '#title' => t('List position'),
+    '#name' => 'list_position',
+    '#options' => _pw_profiles_options($list_position_values),
+    '#default_value' => empty($parameters['list_position']) ? '' : $parameters['list_position'],
+  );
+  $form['party'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Party'),
+    '#name' => 'party',
+    '#options' => _pw_profiles_options($party_values),
+    '#default_value' => empty($parameters['party']) ? array() : $parameters['party'],
+  );
+  $form['gender'] = array(
+    '#type' => 'checkboxes',
+    '#title' => t('Gender'),
+    '#name' => 'gender',
+    '#options' => $gender_options,
+    '#default_value' => empty($parameters['gender']) ? array() : $parameters['gender'],
+  );
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Filter profiles'),
+  );
+
+  return $form;
+}
+
+function _pw_profiles_options($values) {
+  static $terms = array();
+
+  if (empty($terms)) {
+    $terms = db_select('taxonomy_term_data', 't')
+      ->fields('t', array('tid', 'name'))
+      ->condition('vid', array(17, 19, 32, 38, 39), 'IN')
+      ->execute()
+      ->fetchAllKeyed();
+    natsort($terms);
+  }
+
+  return array('' => t('All')) + array_intersect_key($terms, array_flip($values));
 }
