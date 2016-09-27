@@ -359,6 +359,12 @@ function pw_petitions_views_default_views() {
   $handler->display->display_options['filters']['field_petition_partner_value']['table'] = 'field_data_field_petition_partner';
   $handler->display->display_options['filters']['field_petition_partner_value']['field'] = 'field_petition_partner_value';
   $handler->display->display_options['filters']['field_petition_partner_value']['operator'] = 'empty';
+  /* Filterkriterium: Inhalt: Inhalt UUID */
+  $handler->display->display_options['filters']['uuid']['id'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['table'] = 'node';
+  $handler->display->display_options['filters']['uuid']['field'] = 'uuid';
+  $handler->display->display_options['filters']['uuid']['operator'] = '!=';
+  $handler->display->display_options['filters']['uuid']['value'] = '46c8b047-f95f-4aea-982d-bf7e205ab3b0';
 
   /* Display: Petitions Sidebar */
   $handler = $view->new_display('block', 'Petitions Sidebar', 'sidebar');
