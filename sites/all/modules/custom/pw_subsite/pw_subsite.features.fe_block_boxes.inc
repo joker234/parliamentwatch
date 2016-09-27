@@ -39,7 +39,7 @@ global $user;
   $fe_block_boxes->format = 'managed_content';
   $fe_block_boxes->machine_name = 'pw_footer_abstract';
   $fe_block_boxes->body = '<p>
-	abgeordnetenwatch.de ist eine unabhängige und überparteiliche Internetplattform, auf der Bürgerinnen und Bürger die Abgeordneten im Bundestag, dem Europäischen Parlament sowie in zahlreichen Landesparlamenten öffentlich befragen können. Neben den Fragen und Antworten dokumentieren wir u.a. auch das Abstimmungsverhalten bei wichtigen Parlamentsentscheidungen. Außerdem widmen wir uns in einem Rechercheblog Themen wie Nebentätigkeiten der Abgeordneten, Parteispenden und Lobbyismus.
+	abgeordnetenwatch.de ist eine unabhängige und überparteiliche Internetplattform, auf der Bürgerinnen und Bürger die Kandidierenden und Abgeordneten im Bundestag, dem Europäischen Parlament sowie in zahlreichen Landesparlamenten öffentlich befragen können. Neben den Fragen und Antworten dokumentieren wir u.a. auch das Abstimmungsverhalten bei wichtigen Parlamentsentscheidungen. Außerdem widmen wir uns in einem Rechercheblog Themen wie Nebentätigkeiten der Abgeordneten, Parteispenden und Lobbyismus.
 </p>
 ';
 
