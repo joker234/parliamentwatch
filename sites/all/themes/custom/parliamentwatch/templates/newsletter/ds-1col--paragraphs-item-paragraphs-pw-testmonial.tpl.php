@@ -30,7 +30,7 @@
 	</table>
 	<table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
         <tr>
-            <td colspan="3" width="100%" style="height: 50px;">&nbsp;</td>
+            <td colspan="3" width="100%" style="height: 20px;">&nbsp;</td>
         </tr>
     </table>
 </div>
