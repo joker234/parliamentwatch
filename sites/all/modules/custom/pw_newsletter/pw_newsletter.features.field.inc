@@ -581,6 +581,10 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'inline',
           'module' => 'entityreference',
           'settings' => array(
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => '600',
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => '600',
             'field_delimiter' => '',
             'link' => 1,
             'linked_field' => array(
@@ -602,6 +606,10 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'inline',
           'module' => 'entityreference',
           'settings' => array(
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => '600',
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => '600',
             'field_delimiter' => '',
             'link' => 1,
             'linked_field' => array(
@@ -911,6 +919,10 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'module' => 'entityreference',
           'settings' => array(
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => '600',
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => '600',
             'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
@@ -3254,6 +3266,10 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
           'label' => 'hidden',
           'module' => 'entityreference',
           'settings' => array(
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => '600',
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => '600',
             'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(

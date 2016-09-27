@@ -288,5 +288,19 @@ function pw_calendar_entries_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_speech'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_committee_membership_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_committee_membership_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_speech_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_speech_pattern'] = $strongarm;
+
   return $export;
 }

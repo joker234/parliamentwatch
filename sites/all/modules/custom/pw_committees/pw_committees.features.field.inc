@@ -65,6 +65,11 @@ function pw_committees_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => '600',
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => '600',
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -148,6 +153,7 @@ function pw_committees_field_default_fields() {
           'label' => 'above',
           'module' => 'image',
           'settings' => array(
+            'field_delimiter' => '',
             'image_link' => 'content',
             'image_style' => '',
             'linked_field' => array(
@@ -197,11 +203,11 @@ function pw_committees_field_default_fields() {
             'public' => 'public',
           ),
           'allowed_types' => array(
-            'audio' => 0,
-            'default' => 0,
-            0 => 0,
             'image' => 'image',
             'video' => 0,
+            0 => 0,
+            'audio' => 0,
+            'default' => 0,
           ),
           'browser_plugins' => array(
             'library' => 0,
@@ -268,6 +274,11 @@ function pw_committees_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => '600',
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => '600',
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -353,6 +364,7 @@ function pw_committees_field_default_fields() {
           'label' => 'above',
           'module' => 'taxonomy',
           'settings' => array(
+            'field_delimiter' => '',
             'linked_field' => array(
               'advanced' => array(
                 'class' => '',
@@ -449,6 +461,11 @@ function pw_committees_field_default_fields() {
           'label' => 'above',
           'module' => 'entityreference',
           'settings' => array(
+            'colorbox_node_classes' => '',
+            'colorbox_node_height' => '600',
+            'colorbox_node_link' => FALSE,
+            'colorbox_node_width' => '600',
+            'field_delimiter' => '',
             'link' => FALSE,
             'linked_field' => array(
               'advanced' => array(
@@ -556,7 +573,6 @@ function pw_committees_field_default_fields() {
       'label' => 'Parliament',
       'required' => 1,
       'settings' => array(
-        'exclude_cv' => FALSE,
         'user_register_form' => FALSE,
       ),
       'widget' => array(
