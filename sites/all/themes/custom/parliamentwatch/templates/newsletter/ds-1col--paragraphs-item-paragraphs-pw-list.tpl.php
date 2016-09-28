@@ -5,13 +5,13 @@
     <?php endif; ?>
 
     <?php if (!empty($field_pg_list_title)): ?>
-        <?php if ($field_pg_list_title_small[0]['value'] = '0'): ?>
+        <?php if ($field_pg_list_title_small[0]['value'] == '0'): ?>
             <h3 style="font-family: 'Times New Roman', Times, serif; font-weight: normal; font-size: 24px; margin: 0 0 10px; color: #333;">
                 <?php print render($content['field_pg_list_title']); ?>
             </h3>
         <?php endif; ?>
 
-        <?php if ($field_pg_list_title_small[0]['value'] = '1'): ?>
+        <?php if ($field_pg_list_title_small[0]['value'] == '1'): ?>
             <p style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 15px; line-height: 21px; margin: 0 0 10px;">
                 <strong><?php print render($content['field_pg_list_title']); ?></strong>
             </p>
