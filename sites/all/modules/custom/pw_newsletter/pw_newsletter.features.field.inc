@@ -2487,8 +2487,22 @@ Der Body enthält die Einleitung des Newsletters für Mail und Webseite. Das Tex
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
+          'module' => 'list',
+          'settings' => array(
+            'field_delimiter' => ' ',
+            'linked_field' => array(
+              'advanced' => array(
+                'class' => '',
+                'rel' => '',
+                'target' => '',
+                'text' => '',
+                'title' => '',
+              ),
+              'destination' => '',
+              'linked' => 0,
+            ),
+          ),
+          'type' => 'list_key',
           'weight' => '3',
         ),
         'paragraphs_editor_preview' => array(

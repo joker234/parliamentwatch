@@ -479,6 +479,13 @@ function pw_newsletter_ds_field_settings_info() {
   $ds_fieldsetting->bundle = 'paragraphs_pw_list';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
+    'field_pg_donate_targetgroup' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
     'field_pg_list_title' => array(
       'formatter_settings' => array(
         'ft' => array(
@@ -799,12 +806,14 @@ function pw_newsletter_ds_layout_settings_info() {
         0 => 'field_pg_list_title',
         1 => 'field_pg_list_item',
         2 => 'field_pg_list_title_small',
+        3 => 'field_pg_donate_targetgroup',
       ),
     ),
     'fields' => array(
       'field_pg_list_title' => 'ds_content',
       'field_pg_list_item' => 'ds_content',
       'field_pg_list_title_small' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
     ),
     'classes' => array(),
     'wrappers' => array(
