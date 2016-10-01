@@ -46,8 +46,12 @@ function pw_search_api_node_presave($node) {
       $node->field_search_sort_date['und'][0]['value2'] = $node->field_search_sort_date['und'][0]['value'];
       break;
     case 'pw_petition':
-      $node->field_search_sort_date['und'][0]['value']  = date("Y-m-d H:i:s",$node->changed);
-      $node->field_search_sort_date['und'][0]['value2'] = $node->field_search_sort_date['und'][0]['value'];
+      // Petition dates are only updated on status change.
+      $current_node = node_load($node->nid);
+      if ($current_node->field_petition_status['und'][0]['value'] != $node->field_petition_status['und'][0]['value']){
+        $node->field_search_sort_date['und'][0]['value']  = date("Y-m-d H:i:s",$node->changed);
+        $node->field_search_sort_date['und'][0]['value2'] = $node->field_search_sort_date['und'][0]['value'];
+      }
       break;
   }
 }
@@ -58,7 +62,7 @@ function pw_search_api_node_presave($node) {
 function pw_search_api_set_sort_date() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', ['poll','blogpost','page','dialogue','pw_petition'], 'IN');//,'blogpost','page','dialogue','pw_petition'
+    ->entityCondition('bundle', ['pw_petition'], 'IN');//,'blogpost','page','dialogue','pw_petition'
   $nodes = $query->execute();
   $i = 1;
   $ct = count($nodes['node']);
@@ -75,6 +79,7 @@ function pw_search_api_set_sort_date() {
  */
 function pw_search_api_search_api_index_items_alter(array &$items, SearchApiIndex $index) {
   if ($index->machine_name == "politician_index"){
+    // Fetch
     foreach ($items as $id => $item){
       if (in_array("Candidate",$item->roles)){
         $role = "candidate";
@@ -91,6 +96,23 @@ function pw_search_api_search_api_index_items_alter(array &$items, SearchApiInde
       $user_revision = user_revision_load($item->uid,$result[0]);
       $item->field_user_questions_get['und'][0]['value'] = $user_revision->field_user_questions_get['und'][0]['value'];
       $item->field_user_answers_give['und'][0]['value'] = $user_revision->field_user_answers_give['und'][0]['value'];
+
+      if (empty($item->field_user_picture)){
+          $item->field_has_picture['und'][0]['value'] = "0";
+      }
+      else {
+          $item->field_has_picture['und'][0]['value'] = "1";
+      }
     }
   }
+}
+
+/**
+ * Implements hook_search_api_server_load().
+ * Overrides search core in the settings.
+ */
+function pw_search_api_search_api_server_load(array $servers)
+{
+    $core_path = "/solr/" . variable_get("pw_search_api_solr_core", "awdev");
+    $servers['solr']->options['path'] = $core_path;
 }

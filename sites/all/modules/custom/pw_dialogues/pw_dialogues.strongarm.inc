@@ -114,8 +114,8 @@ function pw_dialogues_strongarm() {
       'display' => array(
         'webform' => array(
           'full' => array(
-            'weight' => '29',
-            'visible' => FALSE,
+            'weight' => '11',
+            'visible' => TRUE,
           ),
           'default' => array(
             'weight' => '10',
@@ -137,7 +137,7 @@ function pw_dialogues_strongarm() {
         'sharethis' => array(
           'full' => array(
             'weight' => '0',
-            'visible' => FALSE,
+            'visible' => TRUE,
           ),
           'search_result' => array(
             'weight' => '0',

@@ -200,7 +200,7 @@ function pw_blog_strongarm() {
             'visible' => FALSE,
           ),
           'pw_newsletter' => array(
-            'weight' => '22',
+            'weight' => '0',
             'visible' => FALSE,
           ),
         ),

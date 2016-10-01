@@ -153,14 +153,16 @@ function pw_newsletter_ds_field_settings_info() {
         'ft' => array(
           'func' => 'theme_ds_field_expert',
           'lb' => 'Newsletter vom ',
+          'lb-el' => 'span',
           'lb-col' => TRUE,
           'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'medium push-bottom-s',
+          'ow-el' => 'p',
+          'ow-cl' => '',
           'ow-def-cl' => FALSE,
-          'ow-at' => '',
+          'ow-at' => 'style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 12px; margin: 0 0 10px;"',
           'ow-def-at' => FALSE,
         ),
+        'field_delimiter' => '',
         'linked_field' => array(
           'linked' => 0,
           'destination' => '',
@@ -214,11 +216,6 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
-    'field_piwik_campaign' => array(
-      'formatter_settings' => array(
-        'ft' => array(),
-      ),
-    ),
   );
   $export['node|newsletter|default'] = $ds_fieldsetting;
 
@@ -259,7 +256,7 @@ function pw_newsletter_ds_field_settings_info() {
       ),
     ),
     'node_link' => array(
-      'weight' => '5',
+      'weight' => '6',
       'label' => 'hidden',
       'format' => 'default',
       'formatter_settings' => array(
@@ -402,13 +399,7 @@ function pw_newsletter_ds_field_settings_info() {
     'field_pg_content_img' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'div',
-          'ow-cl' => 'file-image float-left',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
+          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -423,12 +414,6 @@ function pw_newsletter_ds_field_settings_info() {
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_expert',
-          'ow' => TRUE,
-          'ow-el' => 'h3',
-          'ow-cl' => '',
-          'ow-def-cl' => FALSE,
-          'ow-at' => '',
-          'ow-def-at' => FALSE,
         ),
       ),
     ),
@@ -473,7 +458,14 @@ function pw_newsletter_ds_field_settings_info() {
     'field_pg_content_link' => array(
       'formatter_settings' => array(
         'ft' => array(
-          'func' => 'theme_ds_field_expert',
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_pg_content_img' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
         ),
       ),
     ),
@@ -482,9 +474,9 @@ function pw_newsletter_ds_field_settings_info() {
 
   $ds_fieldsetting = new stdClass();
   $ds_fieldsetting->api_version = 1;
-  $ds_fieldsetting->id = 'paragraphs_item|paragraphs_pw_testmonial|default';
+  $ds_fieldsetting->id = 'paragraphs_item|paragraphs_pw_list|default';
   $ds_fieldsetting->entity_type = 'paragraphs_item';
-  $ds_fieldsetting->bundle = 'paragraphs_pw_testmonial';
+  $ds_fieldsetting->bundle = 'paragraphs_pw_list';
   $ds_fieldsetting->view_mode = 'default';
   $ds_fieldsetting->settings = array(
     'field_pg_donate_targetgroup' => array(
@@ -494,7 +486,31 @@ function pw_newsletter_ds_field_settings_info() {
         ),
       ),
     ),
+    'field_pg_list_title' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+  );
+  $export['paragraphs_item|paragraphs_pw_list|default'] = $ds_fieldsetting;
+
+  $ds_fieldsetting = new stdClass();
+  $ds_fieldsetting->api_version = 1;
+  $ds_fieldsetting->id = 'paragraphs_item|paragraphs_pw_testmonial|default';
+  $ds_fieldsetting->entity_type = 'paragraphs_item';
+  $ds_fieldsetting->bundle = 'paragraphs_pw_testmonial';
+  $ds_fieldsetting->view_mode = 'default';
+  $ds_fieldsetting->settings = array(
     'field_pg_content_link' => array(
+      'formatter_settings' => array(
+        'ft' => array(
+          'func' => 'theme_ds_field_reset',
+        ),
+      ),
+    ),
+    'field_pg_donate_targetgroup' => array(
       'formatter_settings' => array(
         'ft' => array(
           'func' => 'theme_ds_field_reset',
@@ -563,28 +579,28 @@ function pw_newsletter_ds_layout_settings_info() {
       'ds_content' => array(
         0 => 'sharethis',
         1 => 'post_date',
-        2 => 'sharebuttons',
-        3 => 'group_meta',
-        4 => 'field_blogpost_categories',
-        5 => 'field_piwik_campaign',
-        6 => 'field_politician',
-        7 => 'body',
-        8 => 'field_newsletter_paragraph',
+        3 => 'field_piwik_campaign',
+        6 => 'body',
+        7 => 'field_newsletter_paragraph',
       ),
       'ds_hidden' => array(
+        2 => 'group_meta',
+        4 => 'sharebuttons',
+        5 => 'field_blogpost_categories',
+        8 => 'field_politician',
         9 => 'title',
       ),
     ),
     'fields' => array(
       'sharethis' => 'ds_content',
       'post_date' => 'ds_content',
-      'sharebuttons' => 'ds_content',
-      'group_meta' => 'ds_content',
-      'field_blogpost_categories' => 'ds_content',
+      'group_meta' => 'ds_hidden',
       'field_piwik_campaign' => 'ds_content',
-      'field_politician' => 'ds_content',
+      'sharebuttons' => 'ds_hidden',
+      'field_blogpost_categories' => 'ds_hidden',
       'body' => 'ds_content',
       'field_newsletter_paragraph' => 'ds_content',
+      'field_politician' => 'ds_hidden',
       'title' => 'ds_hidden',
     ),
     'classes' => array(),
@@ -619,9 +635,12 @@ function pw_newsletter_ds_layout_settings_info() {
         3 => 'group_wrapper',
         4 => 'field_teaser_image',
         5 => 'field_blogpost_categories',
-        6 => 'body',
-        7 => 'node_link',
-        8 => 'field_politician',
+        6 => 'field_politician',
+        7 => 'body',
+        8 => 'node_link',
+      ),
+      'ds_hidden' => array(
+        9 => 'field_newsletter_paragraph',
       ),
     ),
     'fields' => array(
@@ -631,9 +650,10 @@ function pw_newsletter_ds_layout_settings_info() {
       'group_wrapper' => 'ds_content',
       'field_teaser_image' => 'ds_content',
       'field_blogpost_categories' => 'ds_content',
+      'field_politician' => 'ds_content',
       'body' => 'ds_content',
       'node_link' => 'ds_content',
-      'field_politician' => 'ds_content',
+      'field_newsletter_paragraph' => 'ds_hidden',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -657,23 +677,29 @@ function pw_newsletter_ds_layout_settings_info() {
   $ds_layout->entity_type = 'node';
   $ds_layout->bundle = 'pw_testimonial';
   $ds_layout->view_mode = 'pw_newsletter';
-  $ds_layout->layout = 'ds_1col';
+  $ds_layout->layout = 'ds_3col';
   $ds_layout->settings = array(
     'regions' => array(
-      'ds_content' => array(
+      'left' => array(
         0 => 'field_testimonial_portrait',
+      ),
+      'middle' => array(
         1 => 'field_testimonial_quote',
+      ),
+      'right' => array(
         2 => 'field_testimonial_fullname',
       ),
     ),
     'fields' => array(
-      'field_testimonial_portrait' => 'ds_content',
-      'field_testimonial_quote' => 'ds_content',
-      'field_testimonial_fullname' => 'ds_content',
+      'field_testimonial_portrait' => 'left',
+      'field_testimonial_quote' => 'middle',
+      'field_testimonial_fullname' => 'right',
     ),
     'classes' => array(),
     'wrappers' => array(
-      'ds_content' => 'div',
+      'left' => 'div',
+      'middle' => 'div',
+      'right' => 'div',
       'ds_hidden' => 'div',
     ),
     'layout_wrapper' => 'div',
@@ -736,16 +762,22 @@ function pw_newsletter_ds_layout_settings_info() {
     'regions' => array(
       'ds_content' => array(
         0 => 'field_pg_content_title',
-        1 => 'field_pg_content_body',
-        2 => 'field_pg_donate_targetgroup',
-        3 => 'field_pg_content_link',
+        1 => 'field_pg_content_img',
+        2 => 'field_pg_content_body',
+        3 => 'field_pg_donate_targetgroup',
+        4 => 'field_pg_content_link',
+      ),
+      'ds_hidden' => array(
+        5 => 'field_pg_content_last_element',
       ),
     ),
     'fields' => array(
       'field_pg_content_title' => 'ds_content',
+      'field_pg_content_img' => 'ds_content',
       'field_pg_content_body' => 'ds_content',
       'field_pg_donate_targetgroup' => 'ds_content',
       'field_pg_content_link' => 'ds_content',
+      'field_pg_content_last_element' => 'ds_hidden',
     ),
     'classes' => array(),
     'wrappers' => array(
@@ -760,6 +792,42 @@ function pw_newsletter_ds_layout_settings_info() {
     'hide_sidebars' => 0,
   );
   $export['paragraphs_item|paragraphs_pw_donate|default'] = $ds_layout;
+
+  $ds_layout = new stdClass();
+  $ds_layout->api_version = 1;
+  $ds_layout->id = 'paragraphs_item|paragraphs_pw_list|default';
+  $ds_layout->entity_type = 'paragraphs_item';
+  $ds_layout->bundle = 'paragraphs_pw_list';
+  $ds_layout->view_mode = 'default';
+  $ds_layout->layout = 'ds_1col';
+  $ds_layout->settings = array(
+    'regions' => array(
+      'ds_content' => array(
+        0 => 'field_pg_list_title',
+        1 => 'field_pg_list_item',
+        2 => 'field_pg_list_title_small',
+        3 => 'field_pg_donate_targetgroup',
+      ),
+    ),
+    'fields' => array(
+      'field_pg_list_title' => 'ds_content',
+      'field_pg_list_item' => 'ds_content',
+      'field_pg_list_title_small' => 'ds_content',
+      'field_pg_donate_targetgroup' => 'ds_content',
+    ),
+    'classes' => array(),
+    'wrappers' => array(
+      'ds_content' => 'div',
+      'ds_hidden' => 'div',
+    ),
+    'layout_wrapper' => 'div',
+    'layout_attributes' => '',
+    'layout_attributes_merge' => 1,
+    'layout_link_attribute' => '',
+    'layout_link_custom' => '',
+    'hide_sidebars' => 0,
+  );
+  $export['paragraphs_item|paragraphs_pw_list|default'] = $ds_layout;
 
   $ds_layout = new stdClass();
   $ds_layout->api_version = 1;

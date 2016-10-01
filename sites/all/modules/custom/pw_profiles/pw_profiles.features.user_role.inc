@@ -38,12 +38,5 @@ function pw_profiles_user_default_roles() {
     'machine_name' => 'user_premium',
   );
 
-  // Exported role: administrator.
-  $roles['administrator'] = array(
-    'name' => 'administrator',
-    'weight' => '2',
-    'machine_name' => '',
-  );
-
   return $roles;
 }

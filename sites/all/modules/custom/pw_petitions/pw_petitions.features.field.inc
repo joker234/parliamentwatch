@@ -674,7 +674,7 @@ $entity_field[0][\'value\'] = $result;',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'taxonomy',
           'settings' => array(
             'field_delimiter' => '',
@@ -690,7 +690,7 @@ $entity_field[0][\'value\'] = $result;',
               'linked' => 0,
             ),
           ),
-          'type' => 'taxonomy_term_reference_link',
+          'type' => 'taxonomy_term_reference_plain',
           'weight' => '12',
         ),
         'full' => array(
@@ -950,11 +950,11 @@ $entity_field[0][\'value\'] = $result;',
       'description' => '',
       'display' => array(
         'default' => array(
-          'label' => 'above',
+          'label' => 'hidden',
           'module' => 'date',
           'settings' => array(
             'field_delimiter' => '',
-            'format_type' => 'long',
+            'format_type' => 'date_only_short',
             'fromto' => 'both',
             'linked_field' => array(
               'advanced' => array(
@@ -970,7 +970,7 @@ $entity_field[0][\'value\'] = $result;',
             'multiple_from' => '',
             'multiple_number' => '',
             'multiple_to' => '',
-            'show_remaining_days' => FALSE,
+            'show_remaining_days' => 0,
           ),
           'type' => 'date_default',
           'weight' => '15',

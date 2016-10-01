@@ -67,7 +67,6 @@
  */
 ?>
 <div id="file-<?php print $file->fid ?>" class="<?php print $classes ?>"<?php print $attributes; ?>>
-
   <?php if (!$page): ?>
     <?php print render($title_prefix); ?>
     <?php print render($title_suffix); ?>

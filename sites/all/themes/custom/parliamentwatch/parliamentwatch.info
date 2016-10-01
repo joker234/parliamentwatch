@@ -5,7 +5,7 @@ engine = 'phptemplate'
 screenshot = 'screenshot.png'
 base theme = 'omega'
 version = '7.x-3.1'
-project = 'omega'
+;project = 'omega'
 datestamp = '1314088930'
 
 features[0] = 'logo'

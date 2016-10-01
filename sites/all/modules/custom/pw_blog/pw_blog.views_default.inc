@@ -1557,6 +1557,38 @@ print render($block[\'content\']);
   $handler->display->display_options['filters']['field_teaser_image_fid']['table'] = 'field_data_field_teaser_image';
   $handler->display->display_options['filters']['field_teaser_image_fid']['field'] = 'field_teaser_image_fid';
   $handler->display->display_options['filters']['field_teaser_image_fid']['operator'] = 'not empty';
+
+  /* Display: Block Top 5 Teaser */
+  $handler = $view->new_display('block', 'Block Top 5 Teaser', 'block_top_five');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Lesen Sie in unserem Blog weiter';
+  $handler->display->display_options['defaults']['use_more'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_always'] = FALSE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['defaults']['use_more_text'] = FALSE;
+  $handler->display->display_options['use_more_text'] = 'weitere Artikel';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'pw-list-item clearfix';
+  $handler->display->display_options['style_options']['default_row_class'] = FALSE;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'entity';
+  $handler->display->display_options['row_options']['view_mode'] = 'teaser';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sortierkriterien: Inhalt: Datum */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'node';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['created']['expose']['label'] = 'Datum';
+  $handler->display->display_options['block_description'] = 'AW Blog Top five';
   $translatables['blog'] = array(
     t('Master'),
     t('Blogartikel mit dem Schlagwort "%1"'),
@@ -1614,6 +1646,10 @@ print render($block[\'content\']);
     t('<span>geschrieben am [created_1]</span>'),
     t('Ganzen Artikel lesen'),
     t('<a href="/blog" class="read-more">Zur Startseite unseres Blogs</a>'),
+    t('Block Top 5 Teaser'),
+    t('Lesen Sie in unserem Blog weiter'),
+    t('weitere Artikel'),
+    t('AW Blog Top five'),
   );
   $export['blog'] = $view;
 

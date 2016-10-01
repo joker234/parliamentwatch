@@ -162,6 +162,20 @@ function parliamentwatch_theme(&$existing, $type, $theme, $path) {
 function parliamentwatch_preprocess_page(&$variables) {
   drupal_add_library('system', 'ui');
   drupal_add_library('system', 'ui.position');
+
+  if(isset($variables['node']) && $variables['node']->type == 'dialogue'){
+    drupal_set_title('');
+  }
+}
+
+/*
+ * preprocess field
+ */
+function parliamentwatch_preprocess_field(&$variables) {
+  $element = $variables['element'];
+  if($element['#bundle'] == 'pw_petition') {
+    $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#field_name'];
+  }
 }
 
 /*

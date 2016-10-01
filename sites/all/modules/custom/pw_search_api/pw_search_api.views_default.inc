@@ -124,6 +124,32 @@ function pw_search_api_views_default_views() {
       ),
     ),
   );
+  /* Feld: Indexed Benutzer: Benutzerrollen */
+  $handler->display->display_options['fields']['roles']['id'] = 'roles';
+  $handler->display->display_options['fields']['roles']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['roles']['field'] = 'roles';
+  $handler->display->display_options['fields']['roles']['label'] = '';
+  $handler->display->display_options['fields']['roles']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['roles']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['roles']['format_name'] = 1;
+  /* Feld: Indexed Benutzer: Political Roles */
+  $handler->display->display_options['fields']['field_user_political_roles']['id'] = 'field_user_political_roles';
+  $handler->display->display_options['fields']['field_user_political_roles']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['field_user_political_roles']['field'] = 'field_user_political_roles';
+  $handler->display->display_options['fields']['field_user_political_roles']['label'] = '';
+  $handler->display->display_options['fields']['field_user_political_roles']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_political_roles']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_user_political_roles']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_user_political_roles']['bypass_access'] = 0;
+  /* Feld: Indexed Benutzer: Roles (revisionable) */
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['id'] = 'field_user_roles_for_view_mode_s';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['field'] = 'field_user_roles_for_view_mode_s';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['label'] = '';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_user_roles_for_view_mode_s']['bypass_access'] = 0;
   /* Sortierkriterien: Indexed Benutzer: Answers Give */
   $handler->display->display_options['sorts']['field_user_answers_give']['id'] = 'field_user_answers_give';
   $handler->display->display_options['sorts']['field_user_answers_give']['table'] = 'search_api_index_politician_index';
@@ -134,12 +160,21 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['sorts']['field_user_questions_get']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['sorts']['field_user_questions_get']['field'] = 'field_user_questions_get';
   $handler->display->display_options['sorts']['field_user_questions_get']['order'] = 'DESC';
+  /* Sortierkriterien: Indexed Benutzer: has picture */
+  $handler->display->display_options['sorts']['field_has_picture']['id'] = 'field_has_picture';
+  $handler->display->display_options['sorts']['field_has_picture']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_has_picture']['field'] = 'field_has_picture';
+  $handler->display->display_options['sorts']['field_has_picture']['order'] = 'DESC';
+  /* Sortierkriterien: Indexed Benutzer: Last name */
+  $handler->display->display_options['sorts']['field_user_lname']['id'] = 'field_user_lname';
+  $handler->display->display_options['sorts']['field_user_lname']['table'] = 'search_api_index_politician_index';
+  $handler->display->display_options['sorts']['field_user_lname']['field'] = 'field_user_lname';
   /* Sortierkriterien: Suche: Relevance */
   $handler->display->display_options['sorts']['search_api_relevance']['id'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['sorts']['search_api_relevance']['field'] = 'search_api_relevance';
   $handler->display->display_options['sorts']['search_api_relevance']['order'] = 'DESC';
-  /* Kontextfilter: Indexed Benutzer: Benutzerrollen */
+  /* Kontextfilter: Beschädigte/fehlende Behandlungsroutine */
   $handler->display->display_options['arguments']['roles']['id'] = 'roles';
   $handler->display->display_options['arguments']['roles']['table'] = 'search_api_index_politician_index';
   $handler->display->display_options['arguments']['roles']['field'] = 'roles';
@@ -147,8 +182,6 @@ function pw_search_api_views_default_views() {
   $handler->display->display_options['arguments']['roles']['exception']['title'] = 'Alle';
   $handler->display->display_options['arguments']['roles']['default_argument_type'] = 'fixed';
   $handler->display->display_options['arguments']['roles']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['roles']['break_phrase'] = 0;
-  $handler->display->display_options['arguments']['roles']['not'] = 0;
   /* Filterkriterium: Suche: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_politician_index';

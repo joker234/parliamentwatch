@@ -2,12 +2,15 @@ name = Block Class
 description = Allows assigning CSS classes to blocks.
 core = 7.x
 
-files[] = block_class.install
-files[] = block_class.module
+dependencies[] = block
+files[] = block_class.test
+test_dependencies[] = context
+test_dependencies[] = features (2.x)
+test_dependencies[] = features_extra
 
-; Information added by drupal.org packaging script on 2012-10-03
-version = "7.x-1.2"
+; Information added by Drupal.org packaging script on 2015-12-18
+version = "7.x-2.3"
 core = "7.x"
 project = "block_class"
-datestamp = "1349301967"
+datestamp = "1450415951"
 
