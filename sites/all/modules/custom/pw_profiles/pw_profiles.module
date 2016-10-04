@@ -445,7 +445,7 @@ function pw_profiles_new_title($parliament, $role_name) {
 function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
   $users = array();
 
-  $query = pw_profiles_user_revision_query($filters);
+  $query = pw_profiles_user_revision_query($filters)->extend('PagerDefault')->limit($limit);
   if (empty($filters['last_name'])) {
     $query->join('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
   }
@@ -455,9 +455,7 @@ function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
     ->orderBy('uac.number_of_answers', 'DESC')
     ->orderBy('uac.number_of_questions', 'DESC')
     ->orderBy('picture_uploaded', 'DESC')
-    ->orderBy('fuln.field_user_lname_value')
-    ->extend('PagerDefault')
-    ->limit($limit);
+    ->orderBy('fuln.field_user_lname_value');
 
   foreach ($query->execute()->fetchAll() as $row) {
     $users[$row->uid] = $row;
