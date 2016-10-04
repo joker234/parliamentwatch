@@ -136,14 +136,6 @@ function parliamentwatch_preprocess_user_profile(&$variables) {
   $variables['user_url'] = url(entity_uri('user', $variables['elements']['#account'])['path']);
 }
 
-/**
- * Implements hook_preprocess_field().
- */
-function parliamentwatch_preprocess_field(&$variables) {
-  $element = $variables['element'];
-  $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#view_mode'];
-}
-
 /*
  * custom theme functions
  */
@@ -176,6 +168,7 @@ function parliamentwatch_preprocess_field(&$variables) {
   if($element['#bundle'] == 'pw_petition') {
     $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#field_name'];
   }
+  $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#view_mode'];
 }
 
 /*
