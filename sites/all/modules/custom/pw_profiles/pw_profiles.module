@@ -515,8 +515,8 @@ function pw_profiles_user_revision_query($filters = array()) {
   }
 
   if (!empty($filters['last_name'])) {
-    $query->join('field_revision_field_user_last_name', 'fuln', 'fuln.revision_id = ur.vid');
-    $query->condition('fuln.field_user_last_name_value', $filters['fuln'] . '%', 'LIKE');
+    $query->join('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
+    $query->condition('fuln.field_user_lname_value', $filters['last_name'] . '%', 'LIKE');
   }
 
   if (!empty($filters['gender'])) {
@@ -592,7 +592,7 @@ function pw_profiles_filters_form($form, &$form_state) {
     '#name' => 'last_name',
     '#options' => $last_name_options,
     '#multiple' => FALSE,
-    '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
+    '#default_value' => isset($parameters['last_name']) ? $parameters['last_name'] : '',
   );
   $form['region'] = array(
     '#type' => 'select',
