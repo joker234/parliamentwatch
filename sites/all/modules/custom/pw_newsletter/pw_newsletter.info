@@ -137,4 +137,4 @@ features[variable][] = rh_node_redirect_response_newsletter
 features[variable][] = xmlsitemap_settings_node_newsletter
 features[views_view][] = pw_newsletter
 features[weight][] = newsletter
-mtime = 1475005111
+mtime = 1475832022
