@@ -391,6 +391,22 @@ return $user->field_user_address[\'und\'][0][\'postal_code\'];',
   $feeds_tamper = new stdClass();
   $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
   $feeds_tamper->api_version = 2;
+  $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_22-explode';
+  $feeds_tamper->importer = 'gdata_profiles_importer_v2';
+  $feeds_tamper->source = 'xpathparser:22';
+  $feeds_tamper->plugin_id = 'explode';
+  $feeds_tamper->settings = array(
+    'separator' => ',',
+    'limit' => '',
+    'real_separator' => ',',
+  );
+  $feeds_tamper->weight = 0;
+  $feeds_tamper->description = 'Explode';
+  $export['gdata_profiles_importer_v2-xpathparser_22-explode'] = $feeds_tamper;
+
+  $feeds_tamper = new stdClass();
+  $feeds_tamper->disabled = FALSE; /* Edit this to true to make a default feeds_tamper disabled initially */
+  $feeds_tamper->api_version = 2;
   $feeds_tamper->id = 'gdata_profiles_importer_v2-xpathparser_24-required';
   $feeds_tamper->importer = 'gdata_profiles_importer_v2';
   $feeds_tamper->source = 'xpathparser:24';

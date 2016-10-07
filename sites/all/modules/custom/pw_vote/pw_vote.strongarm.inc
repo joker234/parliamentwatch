@@ -145,6 +145,20 @@ function pw_vote_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_vote_pattern';
+  $strongarm->value = '';
+  $export['pathauto_node_vote_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_taxonomy_term_votes_pattern';
+  $strongarm->value = '';
+  $export['pathauto_taxonomy_term_votes_pattern'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'rh_module_vote';
   $strongarm->value = 'rh_node';
   $export['rh_module_vote'] = $strongarm;
@@ -176,6 +190,16 @@ function pw_vote_strongarm() {
   $strongarm->name = 'rh_node_redirect_vote';
   $strongarm->value = 'node/[node:field-vote-node:nid]';
   $export['rh_node_redirect_vote'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'xmlsitemap_settings_node_vote';
+  $strongarm->value = array(
+    'status' => '0',
+    'priority' => '0.5',
+  );
+  $export['xmlsitemap_settings_node_vote'] = $strongarm;
 
   return $export;
 }

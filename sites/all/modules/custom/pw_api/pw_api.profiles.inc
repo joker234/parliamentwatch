@@ -68,18 +68,22 @@ function pw_api_profiles($parliament) {
   $query = db_select('user_archive_cache', 'uac');
   $query->fields('uac', array('uid', 'vid'));
   _pw_uac_add_conditions($query, array(
-    'parliament' => $parliament,
-    'roles' => $user_role,
-    'date' => date('Y-m-d'),
+      'parliament' => $parliament,
+      'roles' => $user_role,
+      'date' => date('Y-m-d'),
     )
   );
   $result = $query->execute()->fetchAll();
+
+  // query parameters
+  $parameters = drupal_get_query_parameters();
+  $activities = isset($parameters['activities'])?array($parameters['activities']):array();
 
   $profiles = array();
   foreach ($result as $row) {
     $user = user_revision_load($row->uid, $row->vid);
     if($user){
-      $profiles['profile_'.$row->uid] = pw_api_user_to_array($user);
+      $profiles['profile_'.$row->uid] = pw_api_user_to_array($user, $activities);
     }
   }
 
@@ -111,6 +115,17 @@ function pw_api_user_to_array($user, $activities = array()) {
     $profile['meta']['edited'] = date('Y-m-d H:i', $user->revision_timestamp);
     $profile['meta']['uuid'] = $w_user->uuid->value();
     $profile['meta']['username'] = $w_user->name->value();
+
+    // fetch stats into meta
+    $query = db_select('user_archive_cache', 'uac');
+    $query->fields('uac', array('number_of_questions', 'number_of_answers'));
+    _pw_uac_add_conditions($query, array(
+        'vid' => $user->vid,
+      )
+    );
+    $result = $query->execute()->fetchAssoc();
+    $profile['meta']['questions'] = (int) $result['number_of_questions'];
+    $profile['meta']['answers'] = (int) $result['number_of_answers'];
 
     // publish roles for authorized users
     if(user_access('access authorized api')){
@@ -199,11 +214,11 @@ function pw_api_user_to_array($user, $activities = array()) {
     if(in_array('votes', $activities)){
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'vote')
-      ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
-      ->fieldCondition('field_vote_user', 'target_id', $w_user->uid->value())
-      ->propertyCondition('status', NODE_PUBLISHED)
-      ->propertyOrderBy('created', 'DESC');
+        ->entityCondition('bundle', 'vote')
+        ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
+        ->fieldCondition('field_vote_user', 'target_id', $w_user->uid->value())
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->propertyOrderBy('created', 'DESC');
       $result = $query->execute();
 
       $profile['votes'] = array();
@@ -236,19 +251,19 @@ function pw_api_user_to_array($user, $activities = array()) {
             $profile['votes'][$type.'_'.$record->nid]['title'] = $record->title;
             $profile['votes'][$type.'_'.$record->nid]['uuid'] = $record->uuid;
             $profile['votes'][$type.'_'.$record->nid]['date'] = date("Y-m-d", $record->created);
-          /*
-           if(isset($w_vote->field_blogpost_categories)){
-            foreach($w_vote->field_blogpost_categories as $key => $category){
-              $profile['votes'][$type.'_'.$nid]['category_'.$key] = $category;
+            /*
+             if(isset($w_vote->field_blogpost_categories)){
+              foreach($w_vote->field_blogpost_categories as $key => $category){
+                $profile['votes'][$type.'_'.$nid]['category_'.$key] = $category;
+              }
             }
-          }
-           */
-          $profile['votes'][$type.'_'.$record->nid]['vote'] = $record->vote_label;
+             */
+            $profile['votes'][$type.'_'.$record->nid]['vote'] = $record->vote_label;
 
-          $profile['votes'][$type.'_'.$record->nid]['url'] = url('node/'.$record->nid, array('absolute' => TRUE));
+            $profile['votes'][$type.'_'.$record->nid]['url'] = url('node/'.$record->nid, array('absolute' => TRUE));
+          }
         }
       }
-    }
       /*
        foreach ($votes as $nid => $vote) {
 
@@ -283,11 +298,11 @@ function pw_api_user_to_array($user, $activities = array()) {
       // add dialogues
       $query = new EntityFieldQuery();
       $query->entityCondition('entity_type', 'node')
-      ->entityCondition('bundle', 'dialogue')
-      ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
-      ->fieldCondition('field_dialogue_recipient', 'target_id', $w_user->uid->value())
-      ->propertyCondition('status', NODE_PUBLISHED)
-      ->propertyOrderBy('created', 'DESC');
+        ->entityCondition('bundle', 'dialogue')
+        ->fieldCondition('field_parliament', 'tid', $w_user->field_user_parliament->tid->value())
+        ->fieldCondition('field_dialogue_recipient', 'target_id', $w_user->uid->value())
+        ->propertyCondition('status', NODE_PUBLISHED)
+        ->propertyOrderBy('created', 'DESC');
       $result = $query->execute();
 
       if(isset($result['node'])){

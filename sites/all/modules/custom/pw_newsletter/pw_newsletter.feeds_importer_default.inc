@@ -25,6 +25,7 @@ function pw_newsletter_feeds_importer_default() {
         'designated_hub' => '',
         'request_timeout' => NULL,
         'auto_scheme' => 'http',
+        'accept_invalid_cert' => FALSE,
       ),
     ),
     'parser' => array(
@@ -98,6 +99,9 @@ function pw_newsletter_feeds_importer_default() {
         'input_format' => 'managed_content',
         'skip_hash_check' => 1,
         'bundle' => 'newsletter',
+        'insert_new' => '1',
+        'update_non_existent' => 'skip',
+        'language' => 'und',
       ),
     ),
     'content_type' => '',

@@ -46,8 +46,12 @@ function pw_search_api_node_presave($node) {
       $node->field_search_sort_date['und'][0]['value2'] = $node->field_search_sort_date['und'][0]['value'];
       break;
     case 'pw_petition':
-      $node->field_search_sort_date['und'][0]['value']  = date("Y-m-d H:i:s",$node->changed);
-      $node->field_search_sort_date['und'][0]['value2'] = $node->field_search_sort_date['und'][0]['value'];
+      // Petition dates are only updated on status change.
+      $current_node = node_load($node->nid);
+      if ($current_node->field_petition_status['und'][0]['value'] != $node->field_petition_status['und'][0]['value']){
+        $node->field_search_sort_date['und'][0]['value']  = date("Y-m-d H:i:s",$node->changed);
+        $node->field_search_sort_date['und'][0]['value2'] = $node->field_search_sort_date['und'][0]['value'];
+      }
       break;
   }
 }
@@ -58,7 +62,7 @@ function pw_search_api_node_presave($node) {
 function pw_search_api_set_sort_date() {
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-    ->entityCondition('bundle', ['poll','blogpost','page','dialogue','pw_petition'], 'IN');//,'blogpost','page','dialogue','pw_petition'
+    ->entityCondition('bundle', ['pw_petition'], 'IN');//,'blogpost','page','dialogue','pw_petition'
   $nodes = $query->execute();
   $i = 1;
   $ct = count($nodes['node']);

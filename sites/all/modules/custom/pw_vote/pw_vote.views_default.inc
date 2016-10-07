@@ -352,12 +352,25 @@ function pw_vote_views_default_views() {
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
-  $handler->display->display_options['fields']['body']['label'] = 'Argumentation';
-  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_type'] = 'div';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['body']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['body']['element_wrapper_class'] = 'pw-expander';
   $handler->display->display_options['fields']['body']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['body']['settings'] = array(
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
+  );
   /* Feld: Excluded | Node Reference, Entity ID */
   $handler->display->display_options['fields']['field_vote_node']['id'] = 'field_vote_node';
   $handler->display->display_options['fields']['field_vote_node']['table'] = 'field_data_field_vote_node';
@@ -692,7 +705,6 @@ return $term->tid;';
     t('Stimmverhalten'),
     t('<div class="[field_vote] vote block">[field_votes_label]</div>'),
     t('<a href="#" class="toggle-details" title="Begründung und Gesamtergebnis anzeigen"><i class="icon-info"></i> Details<i class="icon-arrow-right"></i></a>'),
-    t('Argumentation'),
     t('Alle'),
     t('Petitions'),
     t('Abstimmungsverhalten bei PetitionPlus'),

@@ -394,7 +394,7 @@ function pw_newsletter_views_default_views() {
     'newsletter' => 'newsletter',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filterkriterium: Inhalt: Inhalt in Übersicht anzeigen (field_show) */
+  /* Filterkriterium: Feld: Im Archiv anzeigen (field_show) */
   $handler->display->display_options['filters']['field_show_value']['id'] = 'field_show_value';
   $handler->display->display_options['filters']['field_show_value']['table'] = 'field_data_field_show';
   $handler->display->display_options['filters']['field_show_value']['field'] = 'field_show_value';

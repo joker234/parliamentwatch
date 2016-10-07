@@ -74,6 +74,11 @@ function pw_newsletter_paragraphs_info() {
       'bundle' => 'paragraphs_pw_donate',
       'locked' => '1',
     ),
+    'paragraphs_pw_list' => array(
+      'name' => 'Liste',
+      'bundle' => 'paragraphs_pw_list',
+      'locked' => '1',
+    ),
     'paragraphs_pw_testmonial' => array(
       'name' => 'Fördermitglied Störer',
       'bundle' => 'paragraphs_pw_testmonial',

@@ -44,9 +44,9 @@ function pw_newsletter_filter_default_formats() {
         'weight' => '-46',
         'status' => '1',
         'settings' => array(
+          'settings_source' => 'global',
           'local_paths' => '',
           'protocol_style' => 'full',
-          'settings_source' => 'global',
         ),
       ),
     ),
