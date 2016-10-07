@@ -3349,9 +3349,13 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php']['php_output'] = '<?php
-$urole = $row->user_role;
-if ( !empty($urole) && $urole ==  "candidate") print t("Profil zur Wahl");
-else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
+if (!empty($row->user_role) && $row->user_role ==  "candidate"){
+  print preg_replace(\'/\\-\\d+\\s*$/\', \'\', $row->parliament_name_1);
+  print t(" (Wahlen)");
+}
+else{
+    print $row->parliament_name_1;
+}
 ?>';
   $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
@@ -3360,7 +3364,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['fieldset']['table'] = 'views';
   $handler->display->display_options['fields']['fieldset']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['fieldset']['alter']['text'] = '[php] [parliament_name_1] ';
+  $handler->display->display_options['fields']['fieldset']['alter']['text'] = '[php]';
   $handler->display->display_options['fields']['fieldset']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset']['children'] = array(
     0 => 'number_of_questions',
@@ -3462,7 +3466,7 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
     if(!isset($static) || $static != \'set\') {
-        print l(t(\'open profile\'), \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+        print l(t(\'this profile\'), \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
         $static = \'set\';
     }
     else {
@@ -3615,6 +3619,7 @@ $linktitle .= \' \'.$row->parliament_name_1;
     t(','),
     t('Zeitraumsprofil öffnen'),
     t('Alle'),
+    t('[php]'),
     t('Wählergedächtnis Dummy'),
     t('until more data is available'),
   );
