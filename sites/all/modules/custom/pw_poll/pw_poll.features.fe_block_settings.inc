@@ -36,7 +36,7 @@ function pw_poll_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '0',
+        'weight' => '28',
       ),
       'pw_seven' => array(
         'region' => '',
