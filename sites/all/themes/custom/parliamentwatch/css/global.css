@@ -2901,6 +2901,13 @@ ul.progress-icons li {
 		margin-left: 4.5em;
 	}
 }
+.node-type-pw-petition .stButton .stMainServices {
+    height: 18px;
+}
+.node-type-pw-petition #page-title {
+    padding-right: 80px;
+}  
+
 
 
 /* tribute to IE8 */
@@ -2925,6 +2932,9 @@ ul.progress-icons li {
   margin-left: 4.5em\9;
 }
 /* // tribute to IE8 */
+
+
+
 
 /* Vote - Petition search block */
 
