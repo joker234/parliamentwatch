@@ -40,12 +40,13 @@
             <td colspan="3" width="100%" style="height: 20px;">&nbsp;</td>
         </tr>
     </table>
+    
 
-    <?php if ($field_pg_content_last_element[0]['value'] = '0'): ?>
+    <?php if ($field_pg_content_last_element[0]['value'] == '0'): ?>
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth" style="border-bottom: 1px solid #f63;">
     <?php endif; ?>
 
-    <?php if ($field_pg_content_last_element[0]['value'] = '1'): ?>
+    <?php if ($field_pg_content_last_element[0]['value'] == '1'): ?>
     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
     <?php endif; ?>
 
@@ -71,6 +72,11 @@
             </td>
             <td width="180">&nbsp;</td>
         </tr>
+        <tr>
+            <td colspan="3" width="100%" style="height: 20px;">&nbsp;</td>
+        </tr>
+    </table>
+    <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="600" align="center" class="deviceWidth">
         <tr>
             <td colspan="3" width="100%" style="height: 20px;">&nbsp;</td>
         </tr>

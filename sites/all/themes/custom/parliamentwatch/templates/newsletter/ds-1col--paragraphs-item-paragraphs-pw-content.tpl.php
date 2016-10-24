@@ -57,6 +57,9 @@
 
         <?php if (empty($field_pg_content_title) && !empty($field_pg_content_link)): ?>
             <tr>
+                <td colspan="3" width="100%" style="height: 10px;">&nbsp;</td>
+            </tr>
+            <tr>
                 <td colspan="3" width="100%">
                     <table cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" width="100%" align="center">
                         <tr>
@@ -76,7 +79,6 @@
 
         <?php if (empty($field_pg_content_title) && empty($field_pg_content_link)): ?>
         <?php endif; ?>
-
 
         <tr>
             <td colspan="3" width="100%" style="height: 10px; font-size: 1px;">&nbsp;</td>
