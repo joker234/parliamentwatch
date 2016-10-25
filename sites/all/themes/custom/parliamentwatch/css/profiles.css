@@ -134,6 +134,48 @@ html>/**/body .profile-list > .profile-item {
     border: 1px solid #dedede;
 }
 
+/* profile filters */
+
+.profile-filters label {
+    display: block;
+}
+
+.profile-filters .form-checkboxes label {
+    display: inline;
+}
+
+.profile-filters input[type="checkbox"] {
+    margin-right: .75em;
+    vertical-align: middle;
+}
+
+.profile-filters .form-radios .form-item-last-name {
+    display: inline-block;
+}
+
+
+.profile-filters .form-item-last-name input {
+    display: none;
+}
+
+.profile-filters .form-item-last-name input + label {
+    background: #ccc;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    min-width: 20px;
+    line-height: 2.0rem;
+    padding: 0 5px;
+    text-align: center;
+}
+
+.profile-filters .form-item-last-name input + label:hover,
+.profile-filters .form-item-last-name input:checked + label {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* questions and answers */
 .block-views-profile-questions-answers-block .link-report {
     width: 100%;
     margin-left: -24px;

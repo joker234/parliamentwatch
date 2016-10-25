@@ -554,6 +554,8 @@ function pw_profiles_filters_form($form, &$form_state) {
     );
   }
 
+  $alphabet = range(ord('A'), ord('Z'));
+
   $query = pw_profiles_user_revision_query($filters);
   $query->join('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
   $query->addField('fuc', 'field_user_constituency_tid');
@@ -570,6 +572,8 @@ function pw_profiles_filters_form($form, &$form_state) {
   $query->join('field_data_field_electoral_region', 'fer', 'fuc.field_user_constituency_tid = fer.entity_id');
   $query->addField('fer', 'field_electoral_region_tid');
 
+  $last_name_options = array('' => t('All'));
+
   foreach ($query->execute()->fetchAll() as $row) {
     $region_values[] = $row->field_electoral_region_tid;
     $constituency_values[] = $row->field_user_constituency_tid;
@@ -577,7 +581,9 @@ function pw_profiles_filters_form($form, &$form_state) {
     $list_values[] = $row->field_user_list_tid;
     $list_position_values[] = $row->field_user_list_position_tid;
     $last_name_initial = drupal_substr($row->field_user_lname_value, 0, 1);
-    $last_name_options[$last_name_initial] = $last_name_initial;
+    if (in_array(ord($last_name_initial), $alphabet)) {
+      $last_name_options[$last_name_initial] = $last_name_initial;
+    }
     $gender_options[$row->field_user_gender_value] = $row->field_user_gender_value;
   }
 
@@ -586,6 +592,7 @@ function pw_profiles_filters_form($form, &$form_state) {
   ksort($last_name_options);
 
   $form['#method'] = 'get';
+  $form['#attributes']['class'] = 'profile-filters';
   $form['last_name'] = array(
     '#type' => 'radios',
     '#title' => t('Filter by name'),
@@ -625,7 +632,7 @@ function pw_profiles_filters_form($form, &$form_state) {
   );
   $form['party'] = array(
     '#type' => 'checkboxes',
-    '#title' => t('Party'),
+    '#title' => t('Filter by party'),
     '#name' => 'party',
     '#options' => _pw_profiles_options($party_values),
     '#default_value' => empty($parameters['party']) ? array() : $parameters['party'],
