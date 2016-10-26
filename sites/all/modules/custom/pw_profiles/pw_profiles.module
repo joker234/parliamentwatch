@@ -521,7 +521,7 @@ function pw_profiles_user_revision_query($filters = array()) {
 
   if (!empty($filters['gender'])) {
     $query->join('field_revision_field_user_gender', 'fug', 'fug.revision_id = ur.vid');
-    $query->condition('fug.field_user_gender_value', $filters['fug']);
+    $query->condition('fug.field_user_gender_value', $filters['gender']);
   }
 
   return $query;
