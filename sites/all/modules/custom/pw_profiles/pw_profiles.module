@@ -519,6 +519,11 @@ function pw_profiles_user_revision_query($filters = array()) {
     $query->condition('fuln.field_user_lname_value', $filters['last_name'] . '%', 'LIKE');
   }
 
+  if (!empty($filters['age'])) {
+    $query->join('field_revision_field_user_age', 'fua', 'fua.revision_id = ur.vid');
+    $query->condition('fua.field_user_age_value', $filters['age']);
+  }
+
   if (!empty($filters['gender'])) {
     $query->join('field_revision_field_user_gender', 'fug', 'fug.revision_id = ur.vid');
     $query->condition('fug.field_user_gender_value', $filters['gender']);
@@ -630,6 +635,12 @@ function pw_profiles_filters_form($form, &$form_state) {
     '#title' => t('Filter by party'),
     '#options' => _pw_profiles_options($party_values),
     '#default_value' => empty($parameters['party']) ? array() : $parameters['party'],
+  );
+  $form['age'] = array(
+    '#type' => 'select',
+    '#title' => t('Age'),
+    '#options' => range(18, 90),
+    '#default_value' => empty($parameters['age']) ? array() : $parameters['age'],
   );
   $form['gender'] = array(
     '#type' => 'checkboxes',
