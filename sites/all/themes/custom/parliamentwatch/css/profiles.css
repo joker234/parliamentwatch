@@ -138,6 +138,11 @@ html>/**/body .profile-list > .profile-item {
 
 .profile-filters label {
     display: block;
+    margin-bottom: .5em;
+}
+
+.profile-filters > div > .form-item {
+    margin-bottom: 1em;
 }
 
 .profile-filters .form-checkboxes label {
