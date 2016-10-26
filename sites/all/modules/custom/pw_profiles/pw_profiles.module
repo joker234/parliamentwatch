@@ -592,11 +592,10 @@ function pw_profiles_filters_form($form, &$form_state) {
   ksort($last_name_options);
 
   $form['#method'] = 'get';
-  $form['#attributes']['class'] = 'profile-filters';
+  $form['#attributes']['class'] = array('profile-filters');
   $form['last_name'] = array(
     '#type' => 'radios',
     '#title' => t('Filter by name'),
-    '#name' => 'last_name',
     '#options' => $last_name_options,
     '#multiple' => FALSE,
     '#default_value' => isset($parameters['last_name']) ? $parameters['last_name'] : '',
@@ -604,7 +603,6 @@ function pw_profiles_filters_form($form, &$form_state) {
   $form['region'] = array(
     '#type' => 'select',
     '#title' => t('Filter by region'),
-    '#name' => 'region',
     '#options' => _pw_profiles_options($region_values),
     '#multiple' => FALSE,
     '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
@@ -612,35 +610,30 @@ function pw_profiles_filters_form($form, &$form_state) {
   $form['constituency'] = array(
     '#type' => 'select',
     '#title' => t('Constituency'),
-    '#name' => 'constituency',
     '#options' => _pw_profiles_options($constituency_values),
     '#default_value' => empty($parameters['constituency']) ? '' : $parameters['constituency'],
   );
   $form['list'] = array(
     '#type' => 'select',
     '#title' => t('List'),
-    '#name' => 'list',
     '#options' => _pw_profiles_options($list_values),
     '#default_value' => empty($parameters['list']) ? '' : $parameters['list'],
   );
   $form['list_position'] = array(
     '#type' => 'select',
     '#title' => t('List position'),
-    '#name' => 'list_position',
     '#options' => _pw_profiles_options($list_position_values),
     '#default_value' => empty($parameters['list_position']) ? '' : $parameters['list_position'],
   );
   $form['party'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Filter by party'),
-    '#name' => 'party',
     '#options' => _pw_profiles_options($party_values),
     '#default_value' => empty($parameters['party']) ? array() : $parameters['party'],
   );
   $form['gender'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Gender'),
-    '#name' => 'gender',
     '#options' => $gender_options,
     '#default_value' => empty($parameters['gender']) ? array() : $parameters['gender'],
   );
