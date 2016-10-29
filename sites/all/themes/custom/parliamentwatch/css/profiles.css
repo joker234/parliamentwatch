@@ -149,6 +149,10 @@ html>/**/body .profile-list > .profile-item {
     display: inline;
 }
 
+.profile-filters .form-checkboxes .form-item:hover {
+    background-color: #eee;
+}
+
 .profile-filters input[type="checkbox"] {
     margin-right: .75em;
     vertical-align: middle;
