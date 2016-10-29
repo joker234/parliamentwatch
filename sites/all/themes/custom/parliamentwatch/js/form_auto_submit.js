@@ -1,10 +1,10 @@
 (function ($) {
     $.fn.autoSubmit = function () {
         var form = this;
-        $('input, select, textarea', this).change(function() {
-            $('[type=submit]', form).hide();
+        $('input, select, textarea', form).change(function() {
             $(form).submit();
         });
+        $('*[type=submit]', form).hide();
     };
 
     Drupal.behaviors.autoSubmit = {
