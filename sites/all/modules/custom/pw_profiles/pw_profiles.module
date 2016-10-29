@@ -689,26 +689,26 @@ function pw_profiles_filters_form($form, &$form_state) {
   $form['region'] = array(
     '#type' => 'select',
     '#title' => t('Filter by region'),
-    '#options' => _pw_profiles_options($region_values),
+    '#options' => array('' => t('All')) + _pw_profiles_options($region_values),
     '#multiple' => FALSE,
     '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
   );
   $form['constituency'] = array(
     '#type' => 'select',
     '#title' => t('Constituency'),
-    '#options' => _pw_profiles_options($constituency_values),
+    '#options' => array('' => t('All')) + _pw_profiles_options($constituency_values),
     '#default_value' => empty($parameters['constituency']) ? '' : $parameters['constituency'],
   );
   $form['list'] = array(
     '#type' => 'select',
     '#title' => t('List'),
-    '#options' => _pw_profiles_options($list_values),
+    '#options' => array('' => t('All')) + _pw_profiles_options($list_values),
     '#default_value' => empty($parameters['list']) ? '' : $parameters['list'],
   );
   $form['list_position'] = array(
     '#type' => 'select',
     '#title' => t('List position'),
-    '#options' => _pw_profiles_options($list_position_values),
+    '#options' => array('' => t('All')) + _pw_profiles_options($list_position_values),
     '#default_value' => empty($parameters['list_position']) ? '' : $parameters['list_position'],
   );
   $form['party'] = array(
@@ -749,5 +749,5 @@ function _pw_profiles_options($values) {
     natsort($terms);
   }
 
-  return array('' => t('All')) + array_intersect_key($terms, array_flip($values));
+  return array_intersect_key($terms, array_flip($values));
 }
