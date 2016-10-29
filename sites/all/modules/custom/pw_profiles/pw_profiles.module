@@ -395,6 +395,8 @@ function pw_profiles_entity_info_alter(&$entity_info) {
  *
  * @param object $parliament
  * @param string $role_name
+ *
+ * @return array
  */
 function pw_profiles_new($parliament, $role_name) {
   $filters = array(
@@ -521,7 +523,7 @@ function pw_profiles_user_revision_query($filters = array()) {
 
   if (!empty($filters['age'])) {
     $query->join('field_revision_field_user_age', 'fua', 'fua.revision_id = ur.vid');
-    $query->condition('fua.field_user_age_value', $filters['age']);
+    $query->condition('fua.field_user_age_value', $filters['age'], '>=');
   }
 
   if (!empty($filters['gender'])) {
@@ -639,7 +641,7 @@ function pw_profiles_filters_form($form, &$form_state) {
   $form['age'] = array(
     '#type' => 'select',
     '#title' => t('Age'),
-    '#options' => range(18, 90),
+    '#options' => array_combine(range(18, 90), range(18, 90)),
     '#default_value' => empty($parameters['age']) ? array() : $parameters['age'],
   );
   $form['gender'] = array(
