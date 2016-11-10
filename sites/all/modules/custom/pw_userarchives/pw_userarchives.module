@@ -7,7 +7,7 @@
 
 // -- hooks
 
-function pw_userarchives_cron($uid = NULL) {
+function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
 
   $query = check_user_archives_database($uid);
   if(empty($query)){
@@ -31,7 +31,7 @@ function pw_userarchives_cron($uid = NULL) {
   foreach ($result_uids as $uid) {
 
     // restore to newest profile, especially after importing older profiles
-    if(!isset($_REQUEST['form_id'])){
+    if($reset_actual_profile){
       pw_reset_actuale_profile($uid);
     }
 
