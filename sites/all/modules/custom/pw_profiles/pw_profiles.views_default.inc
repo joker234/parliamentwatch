@@ -3801,7 +3801,7 @@ if($record->value == 0){
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['pager']['options']['expose']['items_per_page'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_label'] = 'Profile pro Seite';
-  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '30, 60, 90';
+  $handler->display->display_options['pager']['options']['expose']['items_per_page_options'] = '30,60,90';
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all'] = TRUE;
   $handler->display->display_options['pager']['options']['expose']['items_per_page_options_all_label'] = '- Alle -';
   $handler->display->display_options['pager']['options']['tags']['first'] = '« erste Seite';
@@ -4947,15 +4947,18 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset_2']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['fieldset_2']['children'] = array(
     0 => 'field_user_picture-revision_id_1',
-    1 => 'field_image_copyright',
+    1 => 'php_2',
+    2 => 'field_image_copyright',
   );
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_2']['fieldset']['classes'] = 'profile-picture push-bottom-xs';
-  /* Feld: Benutzer (Historische Daten): Profile picture */
+  /* Feld: Excluded: profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['id'] = 'field_user_picture-revision_id_1';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['field'] = 'field_user_picture-revision_id';
+  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['ui_name'] = 'Excluded: profile picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['label'] = '';
+  $handler->display->display_options['fields']['field_user_picture-revision_id_1']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['alter']['text'] = '[field_user_picture-revision_id_1]';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['element_wrapper_type'] = 'div';
@@ -4965,7 +4968,41 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_picture-revision_id_1']['settings'] = array(
     'image_style' => 'pw_portrait_m',
     'image_link' => 'content',
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
   );
+  /* Feld: Global: PHP */
+  $handler->display->display_options['fields']['php_2']['id'] = 'php_2';
+  $handler->display->display_options['fields']['php_2']['table'] = 'views';
+  $handler->display->display_options['fields']['php_2']['field'] = 'php';
+  $handler->display->display_options['fields']['php_2']['label'] = '';
+  $handler->display->display_options['fields']['php_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_2']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_2']['element_wrapper_class'] = 'file-image';
+  $handler->display->display_options['fields']['php_2']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_2']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_2']['php_output'] = '<?php 
+  $path = \'/profile/\'.$data->users_name;
+  if($data->actual_profile == 0){
+    $path .= \'/archive/\'.$data->vid; 
+  }
+  $data_array = (array) $data;
+  $uri = $data_array[\'field_field_user_picture-revision_id\'][0][\'rendered\'][\'#item\'][\'uri\'];
+  $image = theme(\'image_style\', array(\'path\' => $uri, \'style_name\' => \'pw_portrait_m\'));
+?>
+<a href="<?php print $path; ?>"><?php print $image; ?></a>';
+  $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
   /* Feld: Datei: copyright */
   $handler->display->display_options['fields']['field_image_copyright']['id'] = 'field_image_copyright';
   $handler->display->display_options['fields']['field_image_copyright']['table'] = 'field_data_field_image_copyright';
@@ -5060,17 +5097,19 @@ return FALSE;';
   $handler->display->display_options['fields']['fieldset_1']['field'] = 'fieldset';
   $handler->display->display_options['fields']['fieldset_1']['children'] = array(
     0 => 'field_user_picture-revision_id',
-    1 => 'fieldset_3',
-    2 => 'vid',
+    1 => 'php_1',
+    2 => 'fieldset_3',
+    3 => 'php',
   );
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['type'] = 'div';
   $handler->display->display_options['fields']['fieldset_1']['fieldset']['classes'] = 'element-hidden profile-list-compact-info';
-  /* Feld: Benutzer (Historische Daten): Profile picture */
+  /* Feld: Excluded: profile picture */
   $handler->display->display_options['fields']['field_user_picture-revision_id']['id'] = 'field_user_picture-revision_id';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['table'] = 'field_revision_field_user_picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['field'] = 'field_user_picture-revision_id';
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['ui_name'] = 'Excluded: profile picture';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['label'] = '';
-  $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_user_picture-revision_id']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['path'] = 'profile/[name]';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['alter']['absolute'] = TRUE;
   $handler->display->display_options['fields']['field_user_picture-revision_id']['element_label_colon'] = FALSE;
@@ -5082,7 +5121,41 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_picture-revision_id']['settings'] = array(
     'image_style' => 'pw_portrait_l__normal',
     'image_link' => '',
+    'field_delimiter' => '',
+    'linked_field' => array(
+      'linked' => 0,
+      'destination' => '',
+      'advanced' => array(
+        'title' => '',
+        'target' => '',
+        'class' => '',
+        'rel' => '',
+        'text' => '',
+      ),
+    ),
   );
+  /* Feld: Global: PHP */
+  $handler->display->display_options['fields']['php_1']['id'] = 'php_1';
+  $handler->display->display_options['fields']['php_1']['table'] = 'views';
+  $handler->display->display_options['fields']['php_1']['field'] = 'php';
+  $handler->display->display_options['fields']['php_1']['label'] = '';
+  $handler->display->display_options['fields']['php_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php_1']['element_wrapper_class'] = 'profile-image img-outline';
+  $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php_1']['php_output'] = '<?php 
+  $path = \'/profile/\'.$data->users_name;
+  if($data->actual_profile == 0){
+    $path .= \'/archive/\'.$data->vid; 
+  }
+  $data_array = (array) $data;
+  $uri = $data_array[\'field_field_user_picture-revision_id\'][0][\'rendered\'][\'#item\'][\'uri\'];
+  $image = theme(\'image_style\', array(\'path\' => $uri, \'style_name\' => \'pw_portrait_l__normal\'));
+?>
+<a href="<?php print $path; ?>"><?php print $image; ?></a>';
+  $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php_1']['php_click_sortable'] = '';
   /* Feld: Global: Feldgruppe */
   $handler->display->display_options['fields']['fieldset_3']['id'] = 'fieldset_3';
   $handler->display->display_options['fields']['fieldset_3']['table'] = 'views';
@@ -5191,20 +5264,25 @@ return FALSE;';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['element_wrapper_type'] = 'div';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['element_wrapper_class'] = 'row push-bottom-xs';
   $handler->display->display_options['fields']['field_user_qanda_ratio-revision_id']['element_default_classes'] = FALSE;
-  /* Feld: Link to profile */
-  $handler->display->display_options['fields']['vid']['id'] = 'vid';
-  $handler->display->display_options['fields']['vid']['table'] = 'user_revision';
-  $handler->display->display_options['fields']['vid']['field'] = 'vid';
-  $handler->display->display_options['fields']['vid']['ui_name'] = 'Link to profile';
-  $handler->display->display_options['fields']['vid']['label'] = '';
-  $handler->display->display_options['fields']['vid']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['vid']['alter']['text'] = 'Profil besuchen';
-  $handler->display->display_options['fields']['vid']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['vid']['alter']['path'] = 'profile/[name]';
-  $handler->display->display_options['fields']['vid']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['vid']['element_wrapper_type'] = 'div';
-  $handler->display->display_options['fields']['vid']['element_wrapper_class'] = 'link-profile row bg-white';
-  $handler->display->display_options['fields']['vid']['element_default_classes'] = FALSE;
+  /* Feld: Global: PHP */
+  $handler->display->display_options['fields']['php']['id'] = 'php';
+  $handler->display->display_options['fields']['php']['table'] = 'views';
+  $handler->display->display_options['fields']['php']['field'] = 'php';
+  $handler->display->display_options['fields']['php']['label'] = '';
+  $handler->display->display_options['fields']['php']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['php']['element_wrapper_type'] = 'div';
+  $handler->display->display_options['fields']['php']['element_wrapper_class'] = 'link-profile row bg-white';
+  $handler->display->display_options['fields']['php']['element_default_classes'] = FALSE;
+  $handler->display->display_options['fields']['php']['use_php_setup'] = 0;
+  $handler->display->display_options['fields']['php']['php_output'] = '<?php 
+  $path = \'/profile/\'.$data->users_name;
+  if($data->actual_profile == 0){
+    $path .= \'/archive/\'.$data->vid; 
+  }
+?>
+<a href="<?php print $path; ?>">Profil besuchen</a>';
+  $handler->display->display_options['fields']['php']['use_php_click_sortable'] = '0';
+  $handler->display->display_options['fields']['php']['php_click_sortable'] = '';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',

@@ -32,7 +32,7 @@ function pw_search_api_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '0',
+        'weight' => '22',
       ),
       'pw_seven' => array(
         'region' => '',
@@ -65,7 +65,7 @@ function pw_search_api_default_fe_block_settings() {
         'region' => 'sidebar_second',
         'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '1',
+        'weight' => '31',
       ),
       'pw_seven' => array(
         'region' => '',

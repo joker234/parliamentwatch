@@ -199,11 +199,10 @@ function pw_profiles_views_query_alter(&$view, &$query) {
     // add vids as condition to views query
     $query->add_where(0, 'user_revision.vid', $result_vids);
 
-    // add the group by on the user id field to prevent duplicates caused by user revisions
-    /*
-    $query->add_field('users', 'uid', 'users_uid', array('function' => 'groupby'));
-    $query->add_groupby('users_uid');
-    */
+    $join = new views_join;
+    $join->construct('user_archive_cache', 'user_revision', 'vid', 'vid');
+    $view->query->add_relationship('user_archive_cache', $join, 'user_revision');
+    $view->query->add_field('user_archive_cache', 'actual_profile', 'actual_profile');
 
     // set custom title for overview page
     if($view->name == 'profile_list_rev' && $view->current_display == 'grid'){
