@@ -56,6 +56,6 @@ function pw_maintenance_menu() {
  */
 function pw_maintenance_watchdog(array $log_entry) {
   if($log_entry['severity'] <= WATCHDOG_ERROR){
-    _pw_send_debug_mail("watchdog error - ".$_SERVER['SERVER_NAME'], $log_entry);
+    // _pw_send_debug_mail("watchdog error - ".$_SERVER['SERVER_NAME'], $log_entry);
   }
 }
