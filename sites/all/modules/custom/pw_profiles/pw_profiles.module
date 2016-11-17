@@ -124,11 +124,11 @@ function pw_profiles_schema() {
 function pw_profiles_menu() {
   $items = array();
 
-  $items['profiles/new/%taxonomy_term/%'] = array(
-    'title callback' => 'pw_profiles_new_title',
-    'title arguments' => array(2, 3),
-    'page callback' => 'pw_profiles_new',
-    'page arguments' => array(2, 3),
+  $items['profiles/%taxonomy_term/%'] = array(
+    'title callback' => 'pw_profiles_page_title',
+    'title arguments' => array(1, 2),
+    'page callback' => 'pw_profiles_page',
+    'page arguments' => array(1, 2),
     'access arguments' => array('access content'),
     'type' => MENU_CALLBACK,
   );
@@ -398,7 +398,7 @@ function pw_profiles_entity_info_alter(&$entity_info) {
  *
  * @return array
  */
-function pw_profiles_new($parliament, $role_name) {
+function pw_profiles_page($parliament, $role_name) {
   $filters = array(
     'roles' => $role_name,
     'parliament' => $parliament->name,
@@ -416,7 +416,7 @@ function pw_profiles_new($parliament, $role_name) {
 /**
  * Title callback; returns title for profile lists.
  */
-function pw_profiles_new_title($parliament, $role_name) {
+function pw_profiles_page_title($parliament, $role_name) {
   $role = $role_name == 'candidate' ? 'Kandidierende' : 'Abgeordnete';
 
   if(stripos($parliament->name, 'Bundestag') > -1) {
@@ -553,10 +553,10 @@ function pw_profiles_filters_block() {
  * Form constructor for the profile filters form.
  */
 function pw_profiles_filters_form($form, &$form_state) {
-  if (menu_get_item()['page_callback'] == 'pw_profiles_new') {
+  if (menu_get_item()['page_callback'] == 'pw_profiles_page') {
     $filters = array(
-      'roles' => menu_get_item()['map'][3],
-      'parliament' => menu_get_item()['map'][2]->name,
+      'roles' => menu_get_item()['map'][2],
+      'parliament' => menu_get_item()['map'][1]->name,
       'date' => date('Y-m-d'),
     );
   }
