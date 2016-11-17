@@ -133,24 +133,6 @@ function pw_profiles_menu() {
     'type' => MENU_CALLBACK,
   );
 
-  $items['profiles/new/%taxonomy_term/%/party/%'] = array(
-    'title callback' => 'pw_profiles_new_title',
-    'title arguments' => array(2, 3),
-    'page callback' => 'pw_profiles_new_party',
-    'page arguments' => array(2, 3, 5),
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
-  );
-
-  $items['profiles/new/%taxonomy_term/%/region/%'] = array(
-    'title callback' => 'pw_profiles_new_title',
-    'title arguments' => array(2, 3),
-    'page callback' => 'pw_profiles_new_region',
-    'page arguments' => array(2, 3, 5),
-    'access arguments' => array('access content'),
-    'type' => MENU_CALLBACK,
-  );
-
   return $items;
 }
 
@@ -432,60 +414,6 @@ function pw_profiles_new($parliament, $role_name) {
 }
 
 /**
- * Page callback; displays a list of profiles.
- *
- * Selects user revisions based on parliament and role.
- *
- * @param object $parliament
- * @param string $role_name
- * @param int $party
- *
- * @return array
- */
-function pw_profiles_new_party($parliament, $role_name, $party) {
-  $filters = array(
-    'roles' => $role_name,
-    'parliament' => $parliament->name,
-    'date' => date('Y-m-d'),
-    'party' => array($party),
-  ) + drupal_get_query_parameters();
-
-  $build = entity_view('user', pw_profiles_user_load_multiple($filters, 30), 'teaser');
-  $build['user']['#theme_wrappers'] = array('container');
-  $build['user']['#attributes']['class'] = array('profile-list', 'clearfix');
-  $build['pager'] = array('#theme' => 'pager', '#weight' => 5);
-
-  return $build;
-}
-
-/**
- * Page callback; displays a list of profiles.
- *
- * Selects user revisions based on parliament and role.
- *
- * @param object $parliament
- * @param string $role_name
- * @param int $region
- *
- * @return array
- */
-function pw_profiles_new_region($parliament, $role_name, $region) {
-  $filters = array(
-    'roles' => $role_name,
-    'parliament' => $parliament->name,
-    'date' => date('Y-m-d'),
-    'region' => $region,
-  ) + drupal_get_query_parameters();
-
-  $build = entity_view('user', pw_profiles_user_load_multiple($filters, 30), 'teaser');
-  $build['user']['#theme_wrappers'] = array('container');
-  $build['user']['#attributes']['class'] = array('profile-list', 'clearfix');
-  $build['pager'] = array('#theme' => 'pager', '#weight' => 5);
-
-  return $build;
-}
-
-/**
  * Title callback; returns title for profile lists.
  */
 function pw_profiles_new_title($parliament, $role_name) {
@@ -625,11 +553,13 @@ function pw_profiles_filters_block() {
  * Form constructor for the profile filters form.
  */
 function pw_profiles_filters_form($form, &$form_state) {
-  $filters = array(
-    'roles' => menu_get_item()['map'][3],
-    'parliament' => menu_get_item()['map'][2]->name,
-    'date' => date('Y-m-d'),
-  );
+  if (menu_get_item()['page_callback'] == 'pw_profiles_new') {
+    $filters = array(
+      'roles' => menu_get_item()['map'][3],
+      'parliament' => menu_get_item()['map'][2]->name,
+      'date' => date('Y-m-d'),
+    );
+  }
 
   $alphabet = range(ord('A'), ord('Z'));
 
@@ -665,15 +595,6 @@ function pw_profiles_filters_form($form, &$form_state) {
   }
 
   $parameters = drupal_get_query_parameters();
-
-  switch (menu_get_item()['page_callback']) {
-    case 'pw_profiles_new_party':
-      $parameters['party'] = array(menu_get_item()['map'][5]);
-      break;
-    case 'pw_profiles_new_region':
-      $parameters['region'] = menu_get_item()['map'][5];
-      break;
-  }
 
   ksort($last_name_options);
 
