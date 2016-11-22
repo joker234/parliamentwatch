@@ -3465,12 +3465,13 @@ else{
   $handler->display->display_options['fields']['php_1']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['php_1']['use_php_setup'] = 0;
   $handler->display->display_options['fields']['php_1']['php_output'] = '<?php
+    $link_text = empty(arg(3)) && !isset($static) || arg(3) == $row->vid?t(\'this profile\'):t(\'open profile\');
     if(!isset($static) || $static != \'set\') {
-        print l(t(\'this profile\'), \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+        print l($link_text, \'profile/\'.$row->user_name, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
         $static = \'set\';
     }
     else {
-    print l(t(\'open profile\'), \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
+    print l($link_text, \'profile/\'.$row->user_name.\'/archive/\'.$row->vid, array(\'attributes\' => array(\'class\' => array(\'link-profile\'))));
     }
 ?>';
   $handler->display->display_options['fields']['php_1']['use_php_click_sortable'] = '0';
