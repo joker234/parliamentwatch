@@ -769,7 +769,7 @@ profile/*/deputies',
       ),
     ),
     'title' => '',
-    'visibility' => '0',
+    'visibility' => '1',
   );
 
   $export['views-pw_user_revision_switch-block'] = array(
