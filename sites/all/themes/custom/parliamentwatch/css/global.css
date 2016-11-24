@@ -2902,6 +2902,11 @@ ul.progress-icons li {
 	}
 }
 
+.node-type-pw-petition #page-title {
+    padding-right: 80px;
+}  
+
+
 
 /* tribute to IE8 */
 .responsive-list-image-wrapper {
@@ -2925,6 +2930,9 @@ ul.progress-icons li {
   margin-left: 4.5em\9;
 }
 /* // tribute to IE8 */
+
+
+
 
 /* Vote - Petition search block */
 
@@ -3812,6 +3820,7 @@ form .webform-component-checkboxes .description {
 .stButton .chicklets {
     padding-left: 0 !important;
 }
+
 .stButton .sharethis,
 .stMainServices.st-sharethis-counter,
 .stMainServices.st-sharethis-counter2 {
@@ -3855,7 +3864,8 @@ form .webform-component-checkboxes .description {
 
 .sharebuttons .stButton .stFb,
 .sharebuttons .stButton .stTwbutton,
-.sharebuttons .stButton .stMainServices {
+.sharebuttons .stButton .stMainServices,
+.sharethis-wrapper .stButton .stMainServices {
     height: 22px;
 }
 
@@ -3958,7 +3968,8 @@ form .webform-component-checkboxes .description {
 }
 .comment ul.links {
     border-top: 1px solid #fff;
-    padding: 1.8em 10px;
+    padding: 5px 10px !important;
+    margin: 0;
 }
 .comment ul.inline li {
     display: inline-block;

@@ -21,7 +21,7 @@ function pw_newsletter_ckeditor_profile_defaults() {
     [\'Maximize\'],
     \'/\',
     [\'Templates\',\'Format\',\'Styles\'],
-    [\'Bold\',\'Subscript\',\'Superscript\'],
+    [\'Italic\',\'Bold\',\'Subscript\',\'Superscript\'],
     [\'NumberedList\',\'BulletedList\'],
     [\'Blockquote\',\'SpecialChar\']
 ]',
@@ -64,7 +64,7 @@ function pw_newsletter_ckeditor_profile_defaults() {
         'scayt_autoStartup' => 'f',
         'theme_config_js' => 'f',
         'js_conf' => 'config.templates_replaceContent = false;
-',
+config.allowedContent=true;',
         'loadPlugins' => array(
           'counter' => array(
             'name' => 'counter',

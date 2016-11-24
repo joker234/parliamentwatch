@@ -46,33 +46,32 @@ if(typeof(CKEDITOR) !== 'undefined') {
         title: 'Image container with ©opyright',
         image: 'template_default_3.gif',
         description: 'A container with an image and a subline floating to the left.',
-        html: '<div class="file-image float-left">'
+        html: '<div style="float: left; padding-right: 20px; padding-bottom: 15px;">'
               +'<img src="/sites/all/modules/contrib/ckeditor/ckeditor/plugins/templates/templates/images/template_default_3.gif">'
-              +'<div class="copyright">©opyright</div>'
+              +'<div class="copyright" style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 10px; color: #666;">©opyright</div>'
               +'</div>'
+              +'<p style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 15px; line-height: 21px; margin: 0 0 10px;">Lorem ipsum</p>'
       },
       {
         title: 'Image container with ©opyright',
         image: 'template_default_4.gif',
         description: 'A container with an image and a subline floating to the right.',
-        html: '<div class="file-image float-right">'
+        html: '<div style="float: right; padding-left: 20px; padding-bottom: 15px;">'
               +'<img src="/sites/all/modules/contrib/ckeditor/ckeditor/plugins/templates/templates/images/template_default_4.gif">'
-              +'<div class="copyright">©opyright</div>'
+              +'<div class="copyright" style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 10px; color: #666;">©opyright</div>'
               +'</div>'
+              +'<p style="font-family: Arial, Helvetica, Sans-Serif; color: #4d4d4d; font-size: 15px; line-height: 21px; margin: 0 0 10px;">Lorem ipsum</p>'
       },
       {
-        title: 'TEST Image container with ©opyright',
-        image: 'template_default_2.gif',
-        description: 'A container with an image and a subline floating to the right.',
-        html: '<div class="file-image float-right">'
-              +'<img src="/sites/all/modules/contrib/ckeditor/ckeditor/plugins/templates/templates/images/template_default_4.gif">'
-              +'<div class="copyright">©opyright</div>'
+        title: 'Link with icon',
+        description: 'A link with an prefixed icon. ',
+        html: '<a target="_blank" href="" style="font-family: Arial, Helvetica, Sans-Serif; color: #f63; text-decoration: none; font-weight: bold; font-size: 15px; line-height: 21px;" rel="external">'
+              +'<img src="/sites/all/themes/custom/parliamentwatch/images/newsletter/link-icon.png" width="12" height="12" border="0" style="display:inline-block; margin-bottom: 3px;"> '
+              +'Link-Titel'
               +'</div>'
       }
   	]
   });
-
-
 
   // CKEDITOR.on( 'instanceReady', function( ev ) {
   //   console.log('instanceReady triggered');

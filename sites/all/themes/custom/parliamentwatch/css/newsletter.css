@@ -70,6 +70,8 @@ a:focus,
 a:active {
   color: #999;
 }
+.copyright a { color: #666; }
+
 ul {
     margin-left: 0 !important;
     margin-bottom: 1em;

@@ -77,6 +77,7 @@
     <?php print render($title_suffix); ?>
     <?php print render($content['field_dialogue_comment_body']); ?>
     <?php print render($content['field_dialogue_annotation']); ?>
+    <?php print render($content['field_dialogue_documents']); ?>
   </div>
   <fieldset class="more-info content-inner collapsible collapsed">
     <legend>

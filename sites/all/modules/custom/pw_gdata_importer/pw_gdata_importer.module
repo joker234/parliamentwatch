@@ -99,11 +99,10 @@ function pw_gdata_importer_feeds_set_target($source, $entity, $target, $value, $
 /**
  *  Implements hook_feeds_after_parse().
  *
- *  Checks if filesize of source file differs to target filesize.
  */
 function pw_gdata_importer_feeds_after_parse(FeedsSource $source, FeedsParserResult $result) {
 
-  // check for importer
+  // checks if filesize of source file differs to target filesize.
   if ($source->id == 'gdata_profiles_importer_v2' || $source->id == 'petition_updater' && !empty($source->feed_nid)) {
 
     // set reference to processor
@@ -209,6 +208,25 @@ function pw_gdata_importer_feeds_after_parse(FeedsSource $source, FeedsParserRes
         unset($new_mappings['mappings'][$key]);
       }
       $processor->addConfig($new_mappings);
+    }
+  }
+}
+
+/**
+ * Implements hook_feeds_presave().
+ */
+function pw_gdata_importer_feeds_presave(FeedsSource $source, $entity, $item, $entity_id) {
+
+  // update to deputy if list or constituency was won
+  if ($source->id == 'gdata_elected_profiles') {
+    $field_list_won = field_get_items('user', $entity, 'field_user_list_won');
+    $field_constituency_won = field_get_items('user', $entity, 'field_user_constituency_won');
+    if (!empty($field_list_won) && $field_list_won[0]['value'] == 1 || !empty($field_constituency_won) && $field_constituency_won[0]['value'] == 1) {
+      $entity->roles = array();
+      foreach (array('Politician', 'Deputy') as $role_name) {
+        $rid = user_role_load_by_name($role_name)->rid;
+        $entity->roles[$rid] = $role_name;
+      }
     }
   }
 }

@@ -339,38 +339,26 @@ function pw_gdata_importer_feeds_importer_default() {
             'language' => 'und',
           ),
           4 => array(
-            'source' => 'xpathparser:6',
-            'target' => 'roles',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          5 => array(
-            'source' => 'xpathparser:7',
-            'target' => 'field_user_roles_for_view_mode_s',
-            'unique' => FALSE,
-            'language' => 'und',
-          ),
-          6 => array(
             'source' => 'xpathparser:8',
             'target' => 'field_user_list',
             'term_search' => '1',
             'autocreate' => 0,
             'language' => 'und',
           ),
-          7 => array(
+          5 => array(
             'source' => 'xpathparser:9',
             'target' => 'field_user_list_position',
             'term_search' => '0',
             'autocreate' => 1,
             'language' => 'und',
           ),
-          8 => array(
+          6 => array(
             'source' => 'xpathparser:10',
             'target' => 'field_user_parliament',
             'unique' => FALSE,
             'language' => 'und',
           ),
-          9 => array(
+          7 => array(
             'source' => 'xpathparser:12',
             'target' => 'name',
             'unique' => 1,

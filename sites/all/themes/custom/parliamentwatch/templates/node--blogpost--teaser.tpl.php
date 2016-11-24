@@ -36,7 +36,7 @@
   </div>
 <?php endif; ?>
 <div class="clear clearfix">
-  <a href="#comments" class="medium">
+  <a href="<?php print $node_url; ?>#comments" class="medium">
     <i class="icon-icon-comment"></i>
     <?php print format_plural($comment_count, '1 Kommentar', '@count Kommentare'); ?>
   </a>
