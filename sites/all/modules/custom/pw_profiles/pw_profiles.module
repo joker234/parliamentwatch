@@ -573,30 +573,45 @@ function pw_profiles_filters_form($form, &$form_state) {
   }
 
   $query = pw_profiles_user_revision_query($filters);
-  $query->join('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
   $query->addField('fuc', 'field_user_constituency_tid');
-  $query->join('field_revision_field_user_party', 'fup', 'fup.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_party', 'fup', 'fup.revision_id = ur.vid');
   $query->addField('fup', 'field_user_party_tid');
-  $query->join('field_revision_field_user_list', 'ful', 'ful.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_list', 'ful', 'ful.revision_id = ur.vid');
   $query->addField('ful', 'field_user_list_tid');
-  $query->join('field_revision_field_user_list_position', 'fulp', 'fulp.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_list_position', 'fulp', 'fulp.revision_id = ur.vid');
   $query->addField('fulp', 'field_user_list_position_tid');
-  $query->join('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_lname', 'fuln', 'fuln.revision_id = ur.vid');
   $query->addField('fuln', 'field_user_lname_value');
-  $query->join('field_revision_field_user_gender', 'fug', 'fug.revision_id = ur.vid');
+  $query->leftJoin('field_revision_field_user_gender', 'fug', 'fug.revision_id = ur.vid');
   $query->addField('fug', 'field_user_gender_value');
-  $query->join('field_data_field_electoral_region', 'fer', 'fuc.field_user_constituency_tid = fer.entity_id');
+  $query->leftJoin('field_data_field_electoral_region', 'fer', 'fuc.field_user_constituency_tid = fer.entity_id');
   $query->addField('fer', 'field_electoral_region_tid');
 
   $last_name_options = array('' => t('All'));
   $alphabet = range(ord('A'), ord('Z'));
 
+  $region_values = array();
+  $constituency_values = array();
+  $party_values = array();
+  $list_values = array();
+  $list_position_values = array();
+  $gender_options = array();
+
   foreach ($query->execute()->fetchAll() as $row) {
-    $region_values[] = $row->field_electoral_region_tid;
-    $constituency_values[] = $row->field_user_constituency_tid;
+    if ($row->field_electoral_region_tid) {
+      $region_values[] = $row->field_electoral_region_tid;
+    }
+    if ($row->field_user_constituency_tid) {
+      $constituency_values[] = $row->field_user_constituency_tid;
+    }
+    if ($row->field_user_list_tid) {
+      $list_values[] = $row->field_user_list_tid;
+    }
+    if ($row->field_user_list_position_tid) {
+      $list_position_values[] = $row->field_user_list_position_tid;
+    }
     $party_values[] = $row->field_user_party_tid;
-    $list_values[] = $row->field_user_list_tid;
-    $list_position_values[] = $row->field_user_list_position_tid;
     $last_name_initial = drupal_substr($row->field_user_lname_value, 0, 1);
     if (in_array(ord($last_name_initial), $alphabet)) {
       $last_name_options[$last_name_initial] = $last_name_initial;
@@ -617,7 +632,7 @@ function pw_profiles_filters_form($form, &$form_state) {
     '#multiple' => FALSE,
     '#default_value' => isset($parameters['last_name']) ? $parameters['last_name'] : '',
   );
-  if (!pw_profiles_filter_disabled('field_electoral_region_tid', $parliament)) {
+  if (!empty($region_values) && !pw_profiles_filter_disabled('field_electoral_region_tid', $parliament)) {
     $form['region'] = array(
       '#type' => 'select',
       '#title' => t('Filter by region'),
@@ -626,13 +641,15 @@ function pw_profiles_filters_form($form, &$form_state) {
       '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
     );
   }
-  $form['constituency'] = array(
-    '#type' => 'select',
-    '#title' => t('Constituency'),
-    '#options' => array('' => t('All')) + _pw_profiles_options($constituency_values),
-    '#default_value' => empty($parameters['constituency']) ? '' : $parameters['constituency'],
-  );
-  if (!pw_profiles_filter_disabled('field_user_list_tid', $parliament)) {
+  if (!empty($constituency_values)) {
+    $form['constituency'] = array(
+      '#type' => 'select',
+      '#title' => t('Constituency'),
+      '#options' => array('' => t('All')) + _pw_profiles_options($constituency_values),
+      '#default_value' => empty($parameters['constituency']) ? '' : $parameters['constituency'],
+    );
+  }
+  if (!empty($list_values) && !pw_profiles_filter_disabled('field_user_list_tid', $parliament)) {
     $form['list'] = array(
       '#type' => 'select',
       '#title' => t('List'),
@@ -640,7 +657,7 @@ function pw_profiles_filters_form($form, &$form_state) {
       '#default_value' => empty($parameters['list']) ? '' : $parameters['list'],
     );
   }
-  if (!pw_profiles_filter_disabled('field_user_list_position_tid', $parliament)) {
+  if (!empty($list_position_values) && !pw_profiles_filter_disabled('field_user_list_position_tid', $parliament)) {
     $form['list_position'] = array(
       '#type' => 'select',
       '#title' => t('List position'),
@@ -697,7 +714,16 @@ function pw_profiles_filter_disabled($filter, $parliament) {
   return FALSE;
 }
 
-function _pw_profiles_options($values) {
+/**
+ * Returns taxonomy term options for the given term IDs.
+ *
+ * @param array $values
+ *   An array of taxonomy term IDs
+ *
+ * @return array
+ *   An array of taxonomy term names keyed by term ID.
+ */
+function _pw_profiles_options(array $values) {
   static $terms = array();
 
   if (empty($terms)) {
