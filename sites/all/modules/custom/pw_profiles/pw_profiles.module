@@ -385,6 +385,28 @@ function pw_profiles_entity_info_alter(&$entity_info) {
     'label' => t('Teaser'),
     'custom settings' => TRUE,
   );
+  $entity_info['user']['uri callback'] = 'pw_profiles_user_uri';
+}
+
+/**
+ * Entity URI callback; returns path to current or archived profile.
+ *
+ * @param object $user
+ *   The user object
+ *
+ * @return array
+ *   The path to a representation of the user revision
+ */
+function pw_profiles_user_uri($user) {
+  if (isset($user->actual_profile) && $user->actual_profile == 0) {
+    $path = 'user/' . $user->name . '/archive/' . $user->vid;
+  }
+  else {
+    $path = 'user/' . $user->uid;
+  }
+  return array(
+    'path' => $path,
+  );
 }
 
 /**
