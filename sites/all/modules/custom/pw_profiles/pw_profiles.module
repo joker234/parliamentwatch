@@ -415,9 +415,13 @@ function pw_profiles_user_uri($user) {
  * Selects user revisions based on parliament and role.
  *
  * @param object $parliament
+ *   The parliament taxonomy term
+ *
  * @param string $role_name
+ *   The role
  *
  * @return array
+ *   The render array
  */
 function pw_profiles_page($parliament, $role_name) {
   $filters = array(
@@ -445,6 +449,15 @@ function pw_profiles_page($parliament, $role_name) {
 
 /**
  * Title callback; returns title for profile lists.
+ *
+ * @param object $parliament
+ *   The parliament taxonomy term
+ *
+ * @param string $role_name
+ *   The role
+ *
+ * @return string
+ *   The title of the page
  */
 function pw_profiles_page_title($parliament, $role_name) {
   $role = $role_name == 'candidate' ? 'Kandidierende' : 'Abgeordnete';
@@ -469,10 +482,13 @@ function pw_profiles_page_title($parliament, $role_name) {
  * Returns user versions matching the given filters.
  *
  * @param array $filters
+ *   The filters
  *
  * @param int $limit
+ *   The maximum number of user entities to return
  *
  * @return array
+ *   The selected users
  */
 function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
   $users = array();
