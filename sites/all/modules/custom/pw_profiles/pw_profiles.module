@@ -372,9 +372,8 @@ function pw_profiles_block_info() {
  * Implements hook_block_view().
  */
 function pw_profiles_block_view($delta) {
-  switch ($delta) {
-    case 'filters':
-      return pw_profiles_filters_block();
+  if ($delta == 'filters' && menu_get_item()['page_callback'] == 'pw_profiles_page') {
+    return pw_profiles_filters_block();
   }
 }
 
@@ -553,7 +552,7 @@ function pw_profiles_filters_block() {
   $block = array();
 
   $block['subject'] = t('Filter list');
-  $block['content']['form'] = drupal_get_form('pw_profiles_filters_form');
+  $block['content']['form'] = drupal_get_form('pw_profiles_filters_form', menu_get_item()['map'][1], menu_get_item()['map'][2]);
 
   return $block;
 }
@@ -561,16 +560,12 @@ function pw_profiles_filters_block() {
 /**
  * Form constructor for the profile filters form.
  */
-function pw_profiles_filters_form($form, &$form_state) {
-  if (menu_get_item()['page_callback'] == 'pw_profiles_page') {
-    $role = menu_get_item()['map'][2];
-    $parliament = menu_get_item()['map'][1];
-    $filters = array(
-      'roles' => $role,
-      'parliament' => $parliament->name,
-      'date' => date('Y-m-d'),
-    );
-  }
+function pw_profiles_filters_form($form, &$form_state, $parliament, $role) {
+  $filters = array(
+    'roles' => $role,
+    'parliament' => $parliament->name,
+    'date' => date('Y-m-d'),
+  );
 
   $query = pw_profiles_user_revision_query($filters);
   $query->leftJoin('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
