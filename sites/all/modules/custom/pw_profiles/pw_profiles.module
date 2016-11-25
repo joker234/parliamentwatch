@@ -639,7 +639,7 @@ function pw_profiles_filters_form($form, &$form_state, $parliament, $role) {
   if (!empty($constituency_values)) {
     $form['constituency'] = array(
       '#type' => 'select',
-      '#title' => t('Constituency'),
+      '#title' => isset($parliament->field_parliament_constit_rename[LANGUAGE_NONE][0]['value']) ? $parliament->field_parliament_constit_rename[LANGUAGE_NONE][0]['value'] : t('Constituency'),
       '#options' => array('' => t('All')) + _pw_profiles_options($constituency_values),
       '#default_value' => empty($parameters['constituency']) ? '' : $parameters['constituency'],
     );
