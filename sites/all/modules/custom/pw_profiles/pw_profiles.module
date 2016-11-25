@@ -508,8 +508,9 @@ function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
  *   The query object
  */
 function pw_profiles_user_revision_query($filters = array()) {
-  $query = db_select('user_revision', 'ur')->fields('ur');
+  $query = db_select('user_revision', 'ur');
   $query->join('user_archive_cache', 'uac', 'uac.vid = ur.vid');
+  $query->fields('ur')->fields('uac');
   _pw_uac_add_conditions($query, $filters);
 
   if (!empty($filters['party'])) {
