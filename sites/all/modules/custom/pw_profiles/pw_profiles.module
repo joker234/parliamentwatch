@@ -563,14 +563,14 @@ function pw_profiles_filters_block() {
  */
 function pw_profiles_filters_form($form, &$form_state) {
   if (menu_get_item()['page_callback'] == 'pw_profiles_page') {
+    $role = menu_get_item()['map'][2];
+    $parliament = menu_get_item()['map'][1];
     $filters = array(
-      'roles' => menu_get_item()['map'][2],
-      'parliament' => menu_get_item()['map'][1]->name,
+      'roles' => $role,
+      'parliament' => $parliament->name,
       'date' => date('Y-m-d'),
     );
   }
-
-  $alphabet = range(ord('A'), ord('Z'));
 
   $query = pw_profiles_user_revision_query($filters);
   $query->join('field_revision_field_user_constituency', 'fuc', 'fuc.revision_id = ur.vid');
@@ -589,6 +589,7 @@ function pw_profiles_filters_form($form, &$form_state) {
   $query->addField('fer', 'field_electoral_region_tid');
 
   $last_name_options = array('' => t('All'));
+  $alphabet = range(ord('A'), ord('Z'));
 
   foreach ($query->execute()->fetchAll() as $row) {
     $region_values[] = $row->field_electoral_region_tid;
@@ -616,31 +617,37 @@ function pw_profiles_filters_form($form, &$form_state) {
     '#multiple' => FALSE,
     '#default_value' => isset($parameters['last_name']) ? $parameters['last_name'] : '',
   );
-  $form['region'] = array(
-    '#type' => 'select',
-    '#title' => t('Filter by region'),
-    '#options' => array('' => t('All')) + _pw_profiles_options($region_values),
-    '#multiple' => FALSE,
-    '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
-  );
+  if (!pw_profiles_filter_disabled('field_electoral_region_tid', $parliament)) {
+    $form['region'] = array(
+      '#type' => 'select',
+      '#title' => t('Filter by region'),
+      '#options' => array('' => t('All')) + _pw_profiles_options($region_values),
+      '#multiple' => FALSE,
+      '#default_value' => isset($parameters['region']) ? $parameters['region'] : '',
+    );
+  }
   $form['constituency'] = array(
     '#type' => 'select',
     '#title' => t('Constituency'),
     '#options' => array('' => t('All')) + _pw_profiles_options($constituency_values),
     '#default_value' => empty($parameters['constituency']) ? '' : $parameters['constituency'],
   );
-  $form['list'] = array(
-    '#type' => 'select',
-    '#title' => t('List'),
-    '#options' => array('' => t('All')) + _pw_profiles_options($list_values),
-    '#default_value' => empty($parameters['list']) ? '' : $parameters['list'],
-  );
-  $form['list_position'] = array(
-    '#type' => 'select',
-    '#title' => t('List position'),
-    '#options' => array('' => t('All')) + _pw_profiles_options($list_position_values),
-    '#default_value' => empty($parameters['list_position']) ? '' : $parameters['list_position'],
-  );
+  if (!pw_profiles_filter_disabled('field_user_list_tid', $parliament)) {
+    $form['list'] = array(
+      '#type' => 'select',
+      '#title' => t('List'),
+      '#options' => array('' => t('All')) + _pw_profiles_options($list_values),
+      '#default_value' => empty($parameters['list']) ? '' : $parameters['list'],
+    );
+  }
+  if (!pw_profiles_filter_disabled('field_user_list_position_tid', $parliament)) {
+    $form['list_position'] = array(
+      '#type' => 'select',
+      '#title' => t('List position'),
+      '#options' => array('' => t('All')) + _pw_profiles_options($list_position_values),
+      '#default_value' => empty($parameters['list_position']) ? '' : $parameters['list_position'],
+    );
+  }
   $form['party'] = array(
     '#type' => 'checkboxes',
     '#title' => t('Filter by party'),
@@ -665,6 +672,29 @@ function pw_profiles_filters_form($form, &$form_state) {
   );
 
   return $form;
+}
+
+/**
+ * Returns TRUE if the filter is disabled for the parliament, FALSE otherwise.
+ *
+ * @param string $filter
+ *
+ * @param object $parliament
+ *
+ * @return bool
+ */
+function pw_profiles_filter_disabled($filter, $parliament) {
+  $items = field_get_items('taxonomy_term', $parliament, 'field_parliament_filter_disabled');
+
+  if (is_array($items)) {
+    foreach ($items as $item) {
+      if ($item['value'] == $filter) {
+        return TRUE;
+      }
+    }
+  }
+
+  return FALSE;
 }
 
 function _pw_profiles_options($values) {
