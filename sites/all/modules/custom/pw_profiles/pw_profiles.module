@@ -686,7 +686,7 @@ function pw_profiles_filters_form($form, &$form_state, $parliament, $role) {
   if (!empty($list_values) && !pw_profiles_filter_disabled('field_user_list_tid', $parliament)) {
     $form['list'] = array(
       '#type' => 'select',
-      '#title' => t('List'),
+      '#title' => isset($parliament->field_parliament_list_rename[LANGUAGE_NONE][0]['value']) ? $parliament->field_parliament_list_rename[LANGUAGE_NONE][0]['value'] : t('List'),
       '#options' => array('' => t('All')) + _pw_profiles_options($list_values),
       '#default_value' => empty($parameters['list']) ? '' : $parameters['list'],
     );
