@@ -1027,24 +1027,32 @@ function pw_search_api_default_search_api_index() {
         "search_api_language" : { "type" : "string" },
         "search_api_url" : { "type" : "uri" },
         "status" : { "type" : "integer" },
-        "url" : { "type" : "uri" }
+        "url" : { "type" : "uri" },
+        "uuid" : { "type" : "text" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_role_filter" : {
           "status" : 1,
-          "weight" : "-10",
+          "weight" : "-50",
           "settings" : { "default" : "0", "roles" : { "181527986" : "181527986" } }
         },
         "search_api_alter_add_hierarchy" : {
           "status" : 1,
-          "weight" : "0",
+          "weight" : "-49",
           "settings" : { "fields" : { "field_user_parliament:field_constituency_area_codes" : "field_user_parliament:field_constituency_area_codes" } }
         },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
-        "search_api_alter_add_aggregation" : { "status" : 1, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] }
+        "search_api_alter_user_status" : { "status" : 0, "weight" : "-48", "settings" : [] },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "-47", "settings" : { "mode" : "full" } },
+        "search_api_alter_add_url" : { "status" : 1, "weight" : "-46", "settings" : [] },
+        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "-45", "settings" : [] },
+        "search_api_alter_add_aggregation" : { "status" : 1, "weight" : "-44", "settings" : [] }
       },
       "processors" : {
+        "add_leading_zero" : {
+          "status" : 1,
+          "weight" : "-1",
+          "settings" : { "fields" : { "field_user_constituency:field_constituency_area_codes:name" : true } }
+        },
         "search_api_case_ignore" : {
           "status" : 0,
           "weight" : "0",
@@ -1101,9 +1109,7 @@ function pw_search_api_default_search_api_index() {
             "fields" : {
               "field_user_fname" : true,
               "field_user_job_skills" : true,
-              "field_user_lname" : true,
               "field_user_education" : true,
-              "field_user_first_letter_lname" : true,
               "field_user_title" : true,
               "field_user_constituency:name" : true,
               "field_user_constituency:field_constituency_area_codes:field_constituency_ac_descriptor" : true

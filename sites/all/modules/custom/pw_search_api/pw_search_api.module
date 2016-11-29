@@ -116,3 +116,17 @@ function pw_search_api_search_api_server_load(array $servers)
     $core_path = "/solr/" . variable_get("pw_search_api_solr_core", "awdev");
     $servers['solr']->options['path'] = $core_path;
 }
+
+/**
+ * Implements hook_search_api_processor_info().
+ * Register preprocessor to add leading zero to 4-digit postal codes.
+ */
+function pw_search_api_search_api_processor_info() {
+    $callbacks['add_leading_zero'] = array(
+        'name' => t('Add leading zero'),
+        'description' => t('Add leading zero to 4-digit area codes.'),
+        'class' => 'SearchApiAddLeadingZero',
+        'weight' => -1,
+    );
+    return $callbacks;
+}
