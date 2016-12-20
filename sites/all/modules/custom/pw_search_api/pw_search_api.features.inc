@@ -127,9 +127,10 @@ function pw_search_api_default_search_api_index() {
         "search_api_alter_node_access" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_node_status" : { "status" : 1, "weight" : "0", "settings" : [] },
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
-        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "teaser" } },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] }
+        "search_api_metatag_alter_callback" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "teaser" } }
       },
       "processors" : {
         "search_api_case_ignore" : {
@@ -141,8 +142,8 @@ function pw_search_api_default_search_api_index() {
               "field_donation_progress" : true,
               "field_petition_partner" : true,
               "field_petition_starter" : true,
-              "field_sidejob_classification" : true,
               "field_poll_external_url" : true,
+              "field_sidejob_classification" : true,
               "field_press_article_publisher" : true,
               "field_announce_tab_title" : true
             }
@@ -158,8 +159,8 @@ function pw_search_api_default_search_api_index() {
               "field_donation_progress" : true,
               "field_petition_partner" : true,
               "field_petition_starter" : true,
-              "field_sidejob_classification" : true,
               "field_poll_external_url" : true,
+              "field_sidejob_classification" : true,
               "field_press_article_publisher" : true,
               "field_announce_tab_title" : true,
               "body:value" : true
@@ -178,8 +179,8 @@ function pw_search_api_default_search_api_index() {
               "field_donation_progress" : true,
               "field_petition_partner" : true,
               "field_petition_starter" : true,
-              "field_sidejob_classification" : true,
               "field_poll_external_url" : true,
+              "field_sidejob_classification" : true,
               "field_press_article_publisher" : true,
               "field_announce_tab_title" : true
             }
@@ -195,8 +196,8 @@ function pw_search_api_default_search_api_index() {
               "field_donation_progress" : true,
               "field_petition_partner" : true,
               "field_petition_starter" : true,
-              "field_sidejob_classification" : true,
               "field_poll_external_url" : true,
+              "field_sidejob_classification" : true,
               "field_press_article_publisher" : true,
               "field_announce_tab_title" : true,
               "body:value" : true,
@@ -216,8 +217,8 @@ function pw_search_api_default_search_api_index() {
               "field_donation_progress" : true,
               "field_petition_partner" : true,
               "field_petition_starter" : true,
-              "field_sidejob_classification" : true,
               "field_poll_external_url" : true,
+              "field_sidejob_classification" : true,
               "field_press_article_publisher" : true,
               "field_announce_tab_title" : true
             },
@@ -238,13 +239,15 @@ function pw_search_api_default_search_api_index() {
               "field_dialogue_recipient:field_user_party:name" : "field_dialogue_recipient:field_user_party:name",
               "field_dialogue_topic:description" : "field_dialogue_topic:description",
               "field_dialogue_topic:field_votes_label" : "field_dialogue_topic:field_votes_label",
+              "field_dialogue_topic:name" : "field_dialogue_topic:name",
               "field_donation_progress" : "field_donation_progress",
               "field_petition_partner" : "field_petition_partner",
               "field_petition_recipient" : "field_petition_recipient",
               "field_petition_starter" : "field_petition_starter",
               "field_poll_external_url" : "field_poll_external_url",
               "field_press_article_publisher" : "field_press_article_publisher",
-              "field_sidejob_classification" : "field_sidejob_classification"
+              "field_sidejob_classification" : "field_sidejob_classification",
+              "title" : "title"
             },
             "highlight" : "always"
           }
