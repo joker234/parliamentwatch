@@ -13,6 +13,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global.
   $config['global'] = array(
     'instance' => 'global',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [current-page:title]',
@@ -368,6 +369,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global:403.
   $config['global:403'] = array(
     'instance' => 'global:403',
+    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -399,6 +401,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global:404.
   $config['global:404'] = array(
     'instance' => 'global:404',
+    'disabled' => FALSE,
     'config' => array(
       'canonical' => array(
         'value' => '[site:url]',
@@ -430,6 +433,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: global:frontpage.
   $config['global:frontpage'] = array(
     'instance' => 'global:frontpage',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [site:slogan]',
@@ -470,6 +474,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: node.
   $config['node'] = array(
     'instance' => 'node',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [node:title]',
@@ -510,6 +515,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: node:blogpost.
   $config['node:blogpost'] = array(
     'instance' => 'node:blogpost',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [node:title]',
@@ -579,6 +585,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: node:dialogue.
   $config['node:dialogue'] = array(
     'instance' => 'node:dialogue',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | Frage an [node:field-dialogue-recipient:field_user_title] [node:field-dialogue-recipient:field_user_fname] [node:field-dialogue-recipient:field_user_lname] - [node:field_parliament]',
@@ -630,6 +637,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: node:newsletter.
   $config['node:newsletter'] = array(
     'instance' => 'node:newsletter',
+    'disabled' => FALSE,
     'config' => array(
       'robots' => array(
         'value' => array(
@@ -651,6 +659,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: node:press_release.
   $config['node:press_release'] = array(
     'instance' => 'node:press_release',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [node:title]',
@@ -687,9 +696,20 @@ function pw_seo_metatag_export_default() {
     ),
   );
 
+  // Exported Metatag config instance: node:pw_petition.
+  $config['node:pw_petition'] = array(
+    'instance' => 'node:pw_petition',
+    'config' => array(
+      'og:image' => array(
+        'value' => '[node:field_teaser_image]',
+      ),
+    ),
+  );
+
   // Exported Metatag config instance: taxonomy_term.
   $config['taxonomy_term'] = array(
     'instance' => 'taxonomy_term',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | [term:name]',
@@ -721,6 +741,7 @@ function pw_seo_metatag_export_default() {
   // Exported Metatag config instance: user.
   $config['user'] = array(
     'instance' => 'user',
+    'disabled' => FALSE,
     'config' => array(
       'title' => array(
         'value' => '[site:name] | Profil von [user:field-user-title] [user:field-user-fname] [user:field_user_lname], [user:field-user-party] - [user:field-user-parliament]',
