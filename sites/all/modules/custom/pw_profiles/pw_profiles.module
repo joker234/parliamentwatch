@@ -229,6 +229,8 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
  */
 function pw_profiles_views_query_alter(&$view, &$query) {
 
+  return;
+
   if ($view->name == 'profile_list_rev') {
 
     // combine filter on electoral regions by list AND constituency
@@ -472,7 +474,7 @@ function pw_profiles_page_title($parliament_name, $role_name) {
   $role = $role_name == 'candidates' ? 'Kandidierende' : 'Abgeordnete';
 
   if(stripos($parliament->name, 'Bundestag') > -1) {
-    $text = $role_name == 'candidate' ? '@role für den @parliament' : '@role aus dem @parliament';
+    $text = $role_name == 'candidates' ? '@role für den @parliament' : '@role aus dem @parliament';
   }
   elseif(stripos($parliament->name, 'Saarland') > -1) {
     $text = '@role für das @parliament';
