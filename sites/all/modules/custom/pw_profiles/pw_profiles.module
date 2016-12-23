@@ -124,7 +124,7 @@ function pw_profiles_schema() {
 function pw_profiles_menu() {
   $items = array();
 
-  $items['profiles/%taxonomy_term/%'] = array(
+  $items['profile/%/%'] = array(
     'title callback' => 'pw_profiles_page_title',
     'title arguments' => array(1, 2),
     'page callback' => 'pw_profiles_page',
@@ -398,7 +398,7 @@ function pw_profiles_entity_info_alter(&$entity_info) {
  */
 function pw_profiles_user_uri($user) {
   if (isset($user->actual_profile) && $user->actual_profile == 0) {
-    $path = 'user/' . $user->name . '/archive/' . $user->vid;
+    $path = 'profile/' . $user->name . '/archive/' . $user->vid;
   }
   else {
     $path = 'user/' . $user->uid;
@@ -413,8 +413,8 @@ function pw_profiles_user_uri($user) {
  *
  * Selects user revisions based on parliament and role.
  *
- * @param object $parliament
- *   The parliament taxonomy term
+ * @param string $parliament_name
+ *   The parliament name
  *
  * @param string $role_name
  *   The role
@@ -422,10 +422,13 @@ function pw_profiles_user_uri($user) {
  * @return array
  *   The render array
  */
-function pw_profiles_page($parliament, $role_name) {
+function pw_profiles_page($parliament_name, $role_name) {
+
+  $role_name = $role_name == 'candidates' ? 'candidate' : 'deputy';
+
   $filters = array(
     'roles' => $role_name,
-    'parliament' => $parliament->name,
+    'parliament' => $parliament_name,
     'date' => date('Y-m-d'),
   ) + drupal_get_query_parameters();
 
@@ -449,8 +452,8 @@ function pw_profiles_page($parliament, $role_name) {
 /**
  * Title callback; returns title for profile lists.
  *
- * @param object $parliament
- *   The parliament taxonomy term
+ * @param string $parliament_name
+ *   The parliament name
  *
  * @param string $role_name
  *   The role
@@ -458,8 +461,15 @@ function pw_profiles_page($parliament, $role_name) {
  * @return string
  *   The title of the page
  */
-function pw_profiles_page_title($parliament, $role_name) {
-  $role = $role_name == 'candidate' ? 'Kandidierende' : 'Abgeordnete';
+function pw_profiles_page_title($parliament_name, $role_name) {
+
+  $parliament = taxonomy_get_term_by_name($parliament_name, 'parliaments');
+  if(!$parliament){
+    return '';
+  }
+  $parliament = array_pop($parliament);
+
+  $role = $role_name == 'candidates' ? 'Kandidierende' : 'Abgeordnete';
 
   if(stripos($parliament->name, 'Bundestag') > -1) {
     $text = $role_name == 'candidate' ? '@role für den @parliament' : '@role aus dem @parliament';
@@ -598,10 +608,19 @@ function pw_profiles_filters_block() {
 /**
  * Form constructor for the profile filters form.
  */
-function pw_profiles_filters_form($form, &$form_state, $parliament, $role) {
+function pw_profiles_filters_form($form, &$form_state, $parliament_name, $role_name) {
+
+  $parliament = taxonomy_get_term_by_name($parliament_name, 'parliaments');
+  if(!$parliament){
+    return '';
+  }
+  $parliament = array_pop($parliament);
+
+  $role_name = $role_name == 'candidates' ? 'candidate' : 'deputy';
+
   $filters = array(
-    'roles' => $role,
-    'parliament' => $parliament->name,
+    'roles' => $role_name,
+    'parliament' => $parliament_name,
     'date' => date('Y-m-d'),
   );
 
