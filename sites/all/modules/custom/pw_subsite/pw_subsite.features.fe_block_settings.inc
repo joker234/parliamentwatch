@@ -713,7 +713,7 @@ profile/*/deputies',
     'delta' => 'pw_donations_recent-recent',
     'module' => 'views',
     'node_types' => array(),
-    'pages' => '',
+    'pages' => 'ueber-uns/spendenformular',
     'roles' => array(),
     'themes' => array(
       'blank' => array(
@@ -723,10 +723,10 @@ profile/*/deputies',
         'weight' => '0',
       ),
       'parliamentwatch' => array(
-        'region' => '',
-        'status' => 0,
+        'region' => 'sidebar_second',
+        'status' => '1',
         'theme' => 'parliamentwatch',
-        'weight' => '-74',
+        'weight' => '99',
       ),
       'pw_seven' => array(
         'region' => '',
