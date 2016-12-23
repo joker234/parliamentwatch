@@ -128,6 +128,14 @@ function parliamentwatch_preprocess_node(&$variables) {
   }
 }
 
+/**
+ * Implements hook_preprocess_user_profile().
+ */
+function parliamentwatch_preprocess_user_profile(&$variables) {
+  $variables['theme_hook_suggestions'][] = 'user_profile__' . $variables['elements']['#view_mode'];
+  $variables['user_url'] = url(entity_uri('user', $variables['elements']['#account'])['path']);
+}
+
 /*
  * custom theme functions
  */
@@ -160,6 +168,7 @@ function parliamentwatch_preprocess_field(&$variables) {
   if($element['#bundle'] == 'pw_petition') {
     $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#field_name'];
   }
+  $variables['theme_hook_suggestions'][] = 'field__' . $element['#bundle'] . '__' . $element['#view_mode'];
 }
 
 /*
