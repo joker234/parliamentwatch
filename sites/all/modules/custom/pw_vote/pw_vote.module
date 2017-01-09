@@ -817,3 +817,18 @@ function pw_vote_mark_deviant_votes($nid) {
       node_save($vote_to_mark);
   }
 }
+
+/**
+ * Implements hook_node_update().
+ */
+function pw_vote_node_update($node) {
+  if($node->type == 'vote'){
+    $field_node = field_get_items('node', $node, 'field_vote_node');
+    $target_id = $field_node[0]['target_id'];
+    $node_target = node_load($target_id);
+    if(field_info_instance('node', 'field_results', $node_target->type)){
+      $x="";
+    }
+
+  }
+}

@@ -49,6 +49,19 @@ function pw_api_menu() {
     $items[$key] = $item;
   }
 
+  foreach (array('xml', 'json') as $file_type) {
+    $key = 'api/parliament/%/constituency/%/activities.'.$file_type;
+    $item = array(
+      'page callback' => 'pw_api_constituency_activities',
+      'page arguments' => array(2, 4),
+      'access callback' => TRUE,
+      'delivery callback' => 'pw_api_deliver_'.$file_type,
+      'type' => MENU_CALLBACK,
+      'file' => 'pw_api.constituencies.inc',
+      );
+    $items[$key] = $item;
+  }
+
   // add votes hooks
   foreach (array('xml', 'json') as $file_type) {
 

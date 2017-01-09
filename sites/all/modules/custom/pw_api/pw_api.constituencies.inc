@@ -14,12 +14,12 @@
 
 function pw_api_constituencies($parliament) {
 
-    // translate uuid into parliament name
+  // translate uuid into parliament name
   if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $parliament, $uuid)){
-    $parliament_term = entity_uuid_load('taxonomy_term', $uuid);
+    $parliament_term = array_pop(entity_uuid_load('taxonomy_term', $uuid));
   }
   else{
-    $parliament_term = taxonomy_get_term_by_name($parliament, 'parliaments');
+    $parliament_term = array_pop(taxonomy_get_term_by_name($parliament, 'parliaments'));
   }
 
   $constituencies = array();
@@ -29,9 +29,9 @@ function pw_api_constituencies($parliament) {
   // query for all constituency terms
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'taxonomy_term')
-  ->propertyCondition('vid', $constituency_voc->vid)
-  ->fieldCondition('field_parliament', 'tid', key($parliament_term))
-  ->propertyOrderBy('name', 'ASC');
+    ->propertyCondition('vid', $constituency_voc->vid)
+    ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
+    ->propertyOrderBy('name', 'ASC');
   # ->fieldOrderBy('field_constituency_nr', 'value', 'ASC') bug? if field_constituency_nr is empty, EFQ is empty too.
 
   $result = $query->execute();
@@ -91,6 +91,67 @@ function pw_api_constituencies($parliament) {
   $constituencies = array('constituencies' => $constituencies);
 
   return $constituencies;
+}
+
+/**
+ *
+ * @return array $activities
+ *   Activities in constituency.
+ */
+
+function pw_api_constituency_activities($parliament, $constituencies) {
+
+  module_load_include('inc', 'pw_api', 'pw_api.votes');
+
+  $activities = array();
+
+  // translate uuid into parliament name
+  if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $parliament, $uuid)){
+    $parliament_term = array_pop(entity_uuid_load('taxonomy_term', $uuid));
+  }
+  else{
+    $parliament_term = array_pop(taxonomy_get_term_by_name($parliament, 'parliaments'));
+  }
+
+  if(!is_array($constituencies)){
+    $constituencies = array($constituencies);
+  }
+
+  foreach($constituencies as $constituency){
+
+    $activities_constituency = array();
+
+    // translate uuid into constituency name
+    if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $constituency, $uuid)){
+      $constituency_term = array_pop(entity_uuid_load('taxonomy_term', $uuid));
+    }
+    else{
+
+      // load constituency by name and parliament
+      $constituency_voc = taxonomy_vocabulary_machine_name_load('constituency');
+      $query = new EntityFieldQuery();
+      $query->entityCondition('entity_type', 'taxonomy_term')
+        ->propertyCondition('vid', $constituency_voc->vid)
+        ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
+        ->propertyCondition('name', $constituency);
+      $result = $query->execute();
+      $constituency_term = taxonomy_term_load(key($result['taxonomy_term']));
+    }
+
+    // retrieve relevant constituency users
+    $query = db_select('user_archive_cache', 'uac');
+    $query->fields('uac', array('uid', 'vid'));
+    $query->join('field_revision_field_user_constituency', 'u_const', "u_const.entity_type = 'user' AND u_const.revision_id = uac.vid AND u_const.field_user_constituency_tid = :term_id", array(':term_id' => $constituency_term->tid));
+    $result = $query->execute();
+    $voting_uids = array_unique($result->fetchCol(0));
+
+    $activities_constituency[] = pw_api_polls($parliament, $voting_uids);
+
+    $activities[] = $activities_constituency;
+
+  }
+
+  return $activities;
 }
 
 /**

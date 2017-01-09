@@ -16,7 +16,7 @@ function pw_api_petitions($parliament) {
 
   $petitions = array();
 
-    // translate uuid into parliament name
+  // translate uuid into parliament name
   if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $parliament, $uuid)){
     $parliament_term = entity_uuid_load('taxonomy_term', $uuid);
   }
@@ -25,13 +25,13 @@ function pw_api_petitions($parliament) {
   }
   $parliament_term = array_pop($parliament_term);
 
-   // query for all nodes of type petition
+  // query for all nodes of type petition
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-  ->entityCondition('bundle', 'pw_petition')
-  ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
-  ->propertyCondition('status', NODE_PUBLISHED)
-  ->propertyOrderBy('created', 'DESC');
+    ->entityCondition('bundle', 'pw_petition')
+    ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->propertyOrderBy('created', 'DESC');
   $result_nodes = $query->execute();
 
   if(isset($result_nodes['node'])){
@@ -76,67 +76,88 @@ function pw_api_petitions($parliament) {
  *   All votes to polls as array.
  */
 
-function pw_api_polls($parliament) {
+function pw_api_polls($parliament, $voting_uids = array()) {
 
   $polls = array();
 
-    // translate uuid into parliament name
+  // translate uuid into parliament name
   if(preg_match('/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/i', $parliament, $uuid)){
-    $parliament_term = entity_uuid_load('taxonomy_term', $uuid);
+    $parliament_term = array_pop(entity_uuid_load('taxonomy_term', $uuid));
   }
   else{
-    $parliament_term = taxonomy_get_term_by_name($parliament, 'parliaments');
+    $parliament_term = array_pop(taxonomy_get_term_by_name($parliament, 'parliaments'));
   }
-  $parliament_term = array_pop($parliament_term);
 
-   // query for all nodes of type poll
-  $query = new EntityFieldQuery();
-  $query->entityCondition('entity_type', 'node')
-  ->entityCondition('bundle', 'poll')
-  ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
-  ->propertyCondition('status', NODE_PUBLISHED)
-  ->propertyOrderBy('created', 'DESC');
-  $result_nodes = $query->execute();
+  if(!empty($voting_uids)){
 
-  if(isset($result_nodes['node'])){
+    // load votes to get only relevant poll node ids
+    $query = db_select('node', 'n');
+    $query->fields('v_node', array('field_vote_node_target_id'));
+    $query->join('field_data_field_vote_user', 'v_user', "v_user.entity_type = 'node' AND v_user.entity_id = n.nid");
+    $query->join('field_data_field_vote_node', 'v_node', "v_node.entity_type = 'node' AND v_node.entity_id = n.nid");
+    $query->join('node', 'n_poll', "v_node.field_vote_node_target_id = n_poll.nid");
+    $query->condition('v_user.field_vote_user_target_id', $voting_uids);
+    $query->condition('n_poll.type', 'poll');
+    $query->condition('n.status', 1);
+    $query->groupBy('v_node.field_vote_node_target_id');
+    $result = $query->execute();
+    $target_nids = $result->fetchCol();
+  }
+  else {
 
-    foreach(array_keys($result_nodes['node']) as $target_node_id){
+    // query for all nodes of type poll
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'node')
+      ->entityCondition('bundle', 'poll')
+      ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
+      ->propertyCondition('status', NODE_PUBLISHED)
+      ->propertyOrderBy('created', 'DESC');
+    $result_nodes = $query->execute();
+    $target_nids = array_keys($result_nodes['node']);
+  }
 
-      $node = node_load($target_node_id);
-      $polls['poll_'.$target_node_id] = array();
-      $polls['poll_'.$target_node_id]['title'] = $node->title;
-      $polls['poll_'.$target_node_id]['uuid'] = $node->uuid;
-      $date_field = field_get_items('node', $node, 'field_poll_date');
-      $poll_date = substr($date_field[0]['value'], 0, 10);
-      $polls['poll_'.$target_node_id]['date'] = $poll_date;
-      $status = field_get_items('node', $node, 'field_voted');
-      if($status[0]['value'] == '1'){
-        $polls['poll_'.$target_node_id]['status'] = 'abgestimmt';
+  foreach($target_nids as $target_nid){
 
-        // add voting behaviour
-        $votes = pw_api_add_votes($parliament_term, $target_node_id, $poll_date);
-        $stats = array();
-        foreach($votes as $vote){
-          $key = $vote['vote'];
-          $stats[$key] = key_exists($key, $stats)?$stats[$key]+1:1;
-        }
-        ksort($stats);
-        $polls['poll_'.$target_node_id]['stats'] = $stats;
-        $polls['poll_'.$target_node_id]['votes'] = $votes;
+    // load poll
+    $node = node_load($target_nid);
+
+    // poll data array
+    $poll = array();
+    $poll['title'] = $node->title;
+    $poll['uuid'] = $node->uuid;
+    $date_field = field_get_items('node', $node, 'field_poll_date');
+    $poll_date = substr($date_field[0]['value'], 0, 10);
+    $poll['date'] = $poll_date;
+    $status = field_get_items('node', $node, 'field_voted');
+    if($status[0]['value'] == '1'){
+      $poll['status'] = 'abgestimmt';
+
+      // add voting behaviour
+      $votes = pw_api_add_votes($parliament_term, $target_nid, $poll_date, $voting_uids);
+      $stats = array();
+      foreach($votes as $vote){
+        $key = $vote['vote'];
+        $stats[$key] = key_exists($key, $stats)?$stats[$key]+1:1;
       }
-      else{
-        $polls['poll_'.$target_node_id]['status'] = $poll_date > date('Y-m-d')?'anstehend':'unbekannt';
-        $polls['poll_'.$target_node_id]['votes'] = '';
-      }
-      $polls['poll_'.$target_node_id]['url'] = url('node/'.$node->nid, array('absolute' => TRUE));
-      //@TODO: Categories, Tags
+      ksort($stats);
+      $poll['stats'] = $stats;
+      $poll['votes'] = $votes;
     }
+    else{
+      $poll['status'] = $poll_date > date('Y-m-d')?'anstehend':'unbekannt';
+      $poll['votes'] = '';
+    }
+    $poll['url'] = url('node/'.$node->nid, array('absolute' => TRUE));
+
+    // add poll to polls array
+    $polls['poll_'.$target_nid] = $poll;
+    //@TODO: Categories, Tags
   }
 
   return array('polls' => $polls);
 }
 
-function pw_api_add_votes($parliament_term, $target_node_id, $vote_date){
+function pw_api_add_votes($parliament_term, $target_nid, $vote_date, $voting_uids){
 
   // return array
   $votes = array();
@@ -144,11 +165,14 @@ function pw_api_add_votes($parliament_term, $target_node_id, $vote_date){
   // query for all votes on target node
   $query = new EntityFieldQuery();
   $query->entityCondition('entity_type', 'node')
-  ->entityCondition('bundle', 'vote')
-  ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
-  ->fieldCondition('field_vote_node', 'target_id', $target_node_id)
-  ->propertyCondition('status', NODE_PUBLISHED)
-  ->propertyOrderBy('created', 'DESC');
+    ->entityCondition('bundle', 'vote')
+    ->fieldCondition('field_parliament', 'tid', $parliament_term->tid)
+    ->fieldCondition('field_vote_node', 'target_id', $target_nid)
+    ->propertyCondition('status', NODE_PUBLISHED)
+    ->propertyOrderBy('created', 'DESC');
+  if(!empty($voting_uids)){
+    $query->fieldCondition('field_vote_user', 'target_id', $voting_uids);
+  }
   $result_votes = $query->execute();
 
   if(isset($result_votes['node'])){
@@ -168,9 +192,9 @@ function pw_api_add_votes($parliament_term, $target_node_id, $vote_date){
     $query->addField('uac', 'vid');
     $query->addField('uac', 'fraction_name', 'fraction');
     _pw_uac_add_conditions($query, array(
-      'parliament' => $parliament_term->name,
-      'roles' => 'deputy',
-      'date' => $vote_date,
+        'parliament' => $parliament_term->name,
+        'roles' => 'deputy',
+        'date' => $vote_date,
       )
     );
 
