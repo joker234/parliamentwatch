@@ -4,6 +4,7 @@
  * Includes main hooks.
  */
 
+
 /**
  * Updates stats for users.
  *
@@ -14,7 +15,7 @@
  *
  */
 
-function pw_userarchives_cron($uid = NULL) {
+function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
 
   // timespan
   $request_timespan = time() - (20000000000 * 60 * 60);
@@ -133,7 +134,7 @@ function pw_userarchives_cron($uid = NULL) {
     ->execute();
 
   // set actual / newest profile
-  if (!isset($_REQUEST['form_id'])) {
+  if ($reset_actual_profile) {
     foreach ($uids as $uid) {
 
       // restore to newest profile, especially after importing older profiles
