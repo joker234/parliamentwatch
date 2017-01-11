@@ -766,7 +766,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -877,7 +877,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1017,7 +1017,7 @@ function pw_profiles_field_default_fields() {
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1140,7 +1140,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1254,27 +1254,9 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => '',
-          ),
-          'type' => 'number_integer',
-          'weight' => 0,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1392,7 +1374,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1504,7 +1486,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1640,7 +1622,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1788,7 +1770,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -1911,7 +1893,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -2019,7 +2001,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -2183,7 +2165,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -2344,7 +2326,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -2476,7 +2458,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -2674,7 +2656,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
           'type' => 'text_plain',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'hidden',
@@ -2889,7 +2871,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3002,7 +2984,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3110,7 +3092,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3266,7 +3248,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3440,7 +3422,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3575,7 +3557,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3727,7 +3709,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3841,7 +3823,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -3964,7 +3946,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -4120,7 +4102,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
           'type' => 'text_plain',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'hidden',
@@ -4319,7 +4301,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -4476,7 +4458,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -4649,7 +4631,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
           'type' => 'taxonomy_term_reference_plain',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'hidden',
@@ -4853,7 +4835,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -5055,7 +5037,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
             ),
           ),
           'type' => 'image',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -5222,7 +5204,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -5381,7 +5363,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -5536,7 +5518,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -5652,7 +5634,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -5810,7 +5792,7 @@ if(isset($entity->field_user_birthday[LANGUAGE_NONE][0][\'value\'])){
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -5974,7 +5956,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -6095,7 +6077,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -6252,27 +6234,9 @@ $entity_field[0][\'value\'] = $result;',
         ),
         'teaser' => array(
           'label' => 'hidden',
-          'module' => 'number',
-          'settings' => array(
-            'decimal_separator' => '.',
-            'field_delimiter' => '',
-            'linked_field' => array(
-              'advanced' => array(
-                'class' => '',
-                'rel' => '',
-                'target' => '',
-                'text' => '',
-                'title' => '',
-              ),
-              'destination' => '',
-              'linked' => 0,
-            ),
-            'prefix_suffix' => TRUE,
-            'scale' => 0,
-            'thousand_separator' => '',
-          ),
-          'type' => 'number_integer',
-          'weight' => 0,
+          'settings' => array(),
+          'type' => 'hidden',
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -6404,7 +6368,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -6530,7 +6494,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -6680,7 +6644,7 @@ $entity_field[0][\'value\'] = $result;',
             ),
           ),
           'type' => 'text_plain',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -6848,7 +6812,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',
@@ -6998,7 +6962,7 @@ $entity_field[0][\'value\'] = $result;',
           'label' => 'above',
           'settings' => array(),
           'type' => 'hidden',
-          'weight' => 0,
+          'weight' => '0',
         ),
         'user_candidate' => array(
           'label' => 'above',

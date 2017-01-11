@@ -435,6 +435,17 @@ function pw_profiles_user_uri($user) {
   );
 }
 
+function pw_profiles_preprocess_user_profile(&$variables){
+
+  // add formatted questions and answers
+  if(isset($variables['elements']['#account']->number_of_questions)){
+    $num_questions = $variables['elements']['#account']->number_of_questions;
+    $num_answers = $variables['elements']['#account']->number_of_answers;
+    $variables['questions'] = format_plural($num_questions, t('@num_questions Question'), t('@num_questions Questions'), array('@num_questions' => $num_questions));
+    $variables['answers'] = format_plural($num_answers, t('@num_answers Answer'), t('@num_answers Answers'), array('@num_answers' => $num_answers));
+  }
+}
+
 /**
  * Page callback; displays a list of profiles.
  *
@@ -543,6 +554,9 @@ function pw_profiles_user_load_multiple($filters = array(), $limit = NULL) {
 
   foreach ($query->execute()->fetchAll() as $row) {
     $users[$row->uid] = $row;
+    if($row->uid == 29050){
+      $x = $row;
+    }
   }
 
   field_attach_load_revision('user', $users);
@@ -695,7 +709,9 @@ function pw_profiles_filters_form($form, &$form_state, $parliament_name, $role_n
     if (in_array(ord($last_name_initial), $alphabet)) {
       $last_name_options[$last_name_initial] = $last_name_initial;
     }
-    $gender_options[$row->field_user_gender_value] = t($row->field_user_gender_value);
+    if($row->field_user_gender_value !== NULL){
+      $gender_options[$row->field_user_gender_value] = t($row->field_user_gender_value);
+    }
   }
 
   $parameters = drupal_get_query_parameters();
