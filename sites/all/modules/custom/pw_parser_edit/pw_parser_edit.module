@@ -92,43 +92,23 @@ function pw_parser_edit_field_form($form, &$form_state, $account, $field_name, $
   // Include user.pages.inc for user profile form handlers.
   module_load_include('inc', 'user', 'user.pages');
 
-  // Load revision id.
-  $query = db_select('user_archive_cache', 'uac')->fields('uac', array('uid', 'vid'));
-  _pw_uac_add_conditions($query, array(
-    'parliament' => $parliament_name,
-    'roles' => 'deputy',
-    'date' => date('Y-m-d'),
-    'uid' => $account->uid,
-    )
-  );
-
-  $result = $query->execute()->fetchObject();
-  if (empty($result)){
-    return MENU_NOT_FOUND;
-  }
-
-  $user_revision = user_revision_load($account->uid, $result->vid);
-  if (!$user_revision) {
-    return MENU_NOT_FOUND;
-  }
-
   // Ensure access to update this particular field is granted.
   $field = field_info_field($field_name);
-  if (!field_access('edit', $field, 'user', $user_revision)) {
+  if (!field_access('edit', $field, 'user', $account)) {
     return MENU_ACCESS_DENIED;
   }
 
   if (!isset($form_state['user'])) {
-    $form_state['user'] = $user_revision;
+    $form_state['user'] = $account;
   }
   else {
-    $user_revision = $form_state['user'];
+    $user = $form_state['user'];
   }
 
   $form['#parents'] = array();
   // @todo Legacy support. Modules are encouraged to access the entity using
   //   $form_state. Remove in Drupal 8.
-  $form['#user'] = $user_revision;
+  $form['#user'] = $user;
   $form['#user_category'] = 'account';
   $form['#validate'][] = 'user_profile_form_validate';
   $form['#submit'][] = 'user_profile_form_submit';
@@ -139,10 +119,10 @@ function pw_parser_edit_field_form($form, &$form_state, $account, $field_name, $
   );
 
   $options = array(
-    'language' => field_valid_language(entity_language('user', $user_revision)),
+    'language' => field_valid_language(entity_language('user', $user)),
     'field_name' => $field_name,
   );
-  $form += (array) _field_invoke_default('form', 'user', $user_revision, $form, $form_state, $options);
+  $form += (array) _field_invoke_default('form', 'user', $user, $form, $form_state, $options);
 
   return $form;
 }
