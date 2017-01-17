@@ -12,6 +12,8 @@ function pw_parser_edit_menu() {
 
   $items = array();
   $items['user/%user/edit/%/%'] = array(
+    'title callback' => 'user_page_title',
+    'title arguments' => array(1),
     'access callback' => array('user_edit_access'),
     'access arguments' => array(1),
     'page callback' => 'drupal_get_form',
