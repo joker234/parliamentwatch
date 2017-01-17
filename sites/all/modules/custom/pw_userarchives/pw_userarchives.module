@@ -4,6 +4,7 @@
  * Includes main hooks.
  */
 
+
 /**
  * Updates stats for users.
  *
@@ -14,7 +15,7 @@
  *
  */
 
-function pw_userarchives_cron($uid = NULL) {
+function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
 
   // timespan
   $request_timespan = time() - (20000000000 * 60 * 60);
@@ -133,7 +134,7 @@ function pw_userarchives_cron($uid = NULL) {
     ->execute();
 
   // set actual / newest profile
-  if (!isset($_REQUEST['form_id'])) {
+  if ($reset_actual_profile) {
     foreach ($uids as $uid) {
 
       // restore to newest profile, especially after importing older profiles
@@ -171,11 +172,11 @@ function pw_userarchives_cron($uid = NULL) {
       // reset pictures which have a null value
       if (key_exists('und', $user_revision->field_user_picture) && $user_revision->field_user_picture['und'][0] === NULL) {
         $revision_edit['field_user_picture'] = array();
+        _pw_send_debug_mail('field_user_picture is NULL', $user_revision);
       }
-      _user_revision_edit_save($user_revision, $revision_edit);
+      // _user_revision_edit_save($user_revision, $revision_edit);
     }
   }
-  //drupal_flush_all_caches();
 
   // update politician index
   $politician_index = search_api_index_load("politician_index");

@@ -47,8 +47,8 @@
     ?>
   </h4>
   <div>
-    <?php print render($user_profile['field_user_questions_get']); ?>,
-    <?php print render($user_profile['field_user_answers_give']); ?>
+    <?php print $questions; ?>,
+    <?php print $answers; ?>
   </div>
   <div class="profile-item-hidden">
     <span class="profile-item-picture"><?php print render($user_profile['field_user_picture']); ?></span>
