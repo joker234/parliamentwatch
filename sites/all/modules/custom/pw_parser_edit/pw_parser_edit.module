@@ -11,6 +11,14 @@
 function pw_parser_edit_menu() {
 
   $items = array();
+  $items['user/%user/edit/sidejobs/%'] = array(
+    'title callback' => 'user_page_title',
+    'title arguments' => array(1),
+    'access callback' => array('user_edit_access'),
+    'access arguments' => array(1),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('pw_parser_edit_sidejobs_form', 1, 4),
+  );
   $items['user/%user/edit/%/%'] = array(
     'title callback' => 'user_page_title',
     'title arguments' => array(1),
@@ -21,6 +29,60 @@ function pw_parser_edit_menu() {
   );
 
   return $items;
+}
+
+
+
+/**
+ * Form constructor for the user sidejobs edit form.
+ */
+function pw_parser_edit_sidejobs_form($form, &$form_state, $account, $parliament_name) {
+  global $user;
+
+  $node = (object) array('uid' => $user->uid, 'name' => (isset($user->name) ? $user->name : ''), 'type' => 'sidejob', 'language' => LANGUAGE_NONE);
+
+  if (!isset($form_state['node'])) {
+    if (!isset($node->title)) {
+      $node->title = NULL;
+    }
+    node_object_prepare($node);
+    $form_state['node'] = $node;
+  }
+  else {
+    $node = $form_state['node'];
+  }
+
+  $form['#parents'] = array();
+  // @todo D8: Remove. Modules should access the node using $form_state['node'].
+  $form['#node'] = $node;
+
+  // If no language is provided use the default site language.
+  $options['language'] = field_valid_language(entity_language('node', $node));
+  $form += (array) _field_invoke_default('form', 'node', $node, $form, $form_state, $options);
+
+  $form['field_politician'][LANGUAGE_NONE][0]['target_id']['#type'] = 'hidden';
+  $form['field_politician'][LANGUAGE_NONE][0]['target_id']['#default_value'] = $account->uid;
+
+  $form['sidejobs'] = array();
+
+  foreach (pw_sidejobs_load($account) as $sidejob) {
+    $elements = node_view($sidejob);
+    $form['sidejobs'][$sidejob->nid] = array('#type' => 'container');
+    $form['sidejobs'][$sidejob->nid]['node'] = array(
+      '#markup' => drupal_render($elements),
+    );
+    $form['sidejobs'][$sidejob->nid]['actions'] = array('#type' => 'actions');
+    $form['sidejobs'][$sidejob->nid]['actions']['delete'] = array(
+      '#markup' => l(t('Delete'), 'node/' . $sidejob->nid . '/delete'),
+    );
+    $form['sidejobs'][$sidejob->nid]['actions']['replace'] = array(
+      '#type' => 'submit',
+      '#name' => 'replace-' . $sidejob->nid,
+      '#submit' => array('pw_parser_edit_sidejobs_replace'),
+    );
+  }
+
+  return $form;
 }
 
 /**
