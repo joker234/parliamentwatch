@@ -102,13 +102,13 @@ function pw_parser_edit_field_form($form, &$form_state, $account, $field_name, $
     $form_state['user'] = $account;
   }
   else {
-    $user = $form_state['user'];
+    $account = $form_state['user'];
   }
 
   $form['#parents'] = array();
   // @todo Legacy support. Modules are encouraged to access the entity using
   //   $form_state. Remove in Drupal 8.
-  $form['#user'] = $user;
+  $form['#user'] = $account;
   $form['#user_category'] = 'account';
   $form['#validate'][] = 'user_profile_form_validate';
   $form['#submit'][] = 'user_profile_form_submit';
@@ -119,10 +119,10 @@ function pw_parser_edit_field_form($form, &$form_state, $account, $field_name, $
   );
 
   $options = array(
-    'language' => field_valid_language(entity_language('user', $user)),
+    'language' => field_valid_language(entity_language('user', $account)),
     'field_name' => $field_name,
   );
-  $form += (array) _field_invoke_default('form', 'user', $user, $form, $form_state, $options);
+  $form += (array) _field_invoke_default('form', 'user', $account, $form, $form_state, $options);
 
   return $form;
 }
