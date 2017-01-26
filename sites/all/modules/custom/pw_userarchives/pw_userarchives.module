@@ -121,12 +121,17 @@ function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
   // fetch vids and uids
   $result = $query->execute()->fetchAllAssoc('vid', PDO::FETCH_ASSOC);
   $uids = array_unique(array_column($result, 'uid'));
-  $vids = array_column($result, 'vid');
+  #$vids = array_column($result, 'vid');
 
   // delete archive cache
-  db_delete('user_archive_cache')
-    ->condition('vid', $vids)
-    ->execute();
+  foreach($result as $row){
+    db_delete('user_archive_cache')
+      ->condition('parliament_name', $row['parliament_name'])
+      ->condition('user_role', $row['user_role'])
+      ->condition('uid', $row['uid'])
+      ->condition('fraction_name', $row['fraction_name'])
+      ->execute();
+  }
 
   // insert by select query
   db_insert('user_archive_cache')
