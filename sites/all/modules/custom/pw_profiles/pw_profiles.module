@@ -248,63 +248,6 @@ function pw_profiles_user_presave(&$edit, $account, $category) {
 }
 
 /**
- * Implements hook_views_query_alter().
- * reduces views result to one user (politician) instead of many caused by user revisions
- */
-function pw_profiles_views_query_alter(&$view, &$query) {
-
-  return;
-
-  if ($view->name == 'profile_list_rev') {
-
-    // combine filter on electoral regions by list AND constituency
-    if(sizeof($query->where[2]['conditions']) > 0 && strpos($query->where[2]['conditions'][0]['field'], 'taxonomy_term_data_field_revision_field_user_constituency__field_data_field_electoral_region2') > -1) {
-      $query->add_where(2, 'taxonomy_term_data_field_revision_field_user_list.tid', $query->where[2]['conditions'][0]['value'], '=');
-    }
-
-    // query for all vids of this parliament / role and reduce result to MAX(vid) per uid
-    $parliament = _pw_get_current_parliament_term();
-    $user_role = arg(2) == 'candidates'?'candidate':'deputy';
-    $subquery = db_select('user_archive_cache', 'uac');
-    _pw_uac_add_conditions($subquery, array(
-        'parliament' => $parliament->name,
-        'roles' => $user_role,
-        'date' => date('Y-m-d'),
-      )
-    );
-    $subquery->addField('uac', 'vid');
-    $result_vids = $subquery->execute()->fetchCol();
-
-    // add vids as condition to views query
-    $query->add_where(0, 'user_revision.vid', $result_vids);
-
-    $join = new views_join;
-    $join->construct('user_archive_cache', 'user_revision', 'vid', 'vid');
-    $view->query->add_relationship('user_archive_cache', $join, 'user_revision');
-    $view->query->add_field('user_archive_cache', 'actual_profile', 'actual_profile');
-
-    // set custom title for overview page
-    if($view->name == 'profile_list_rev' && $view->current_display == 'grid'){
-      $role_name = $user_role == 'candidate'?'Kandidierende':'Abgeordnete';
-      if(stripos($parliament->name, 'Bundestag') > -1){
-        $text = $user_role == 'candidate'?'@role für den @parliament':'@role aus dem @parliament';
-      }
-      elseif(stripos($parliament->name, 'Saarland') > -1){
-        $text = '@role für das @parliament';
-      }
-      elseif(substr($parliament->name, 0, 2) == "EU"){
-        $text = '@role für die @parliament';
-      }
-      else{
-        $text = '@role für @parliament';
-      }
-      $view->build_info['title'] = format_string($text, array('@role' => $role_name, '@parliament' => $parliament->name));
-    }
-
-  }
-}
-
-/**
  *  Implements hook_views_pre_render().
  *  Overwrites label of constituency in basic infos view in specific cases like "Stimmkreis" for Bremen.
  */

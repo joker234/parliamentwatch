@@ -17,8 +17,19 @@
 
 function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
 
-  // timespan
-  $request_timespan = time() - (20000000000 * 60 * 60);
+  // check if election date or parliaments end date is reached, then delete profiles from meta table for triggering refresh
+  if($uid == NULL){
+    $vocabulary = taxonomy_vocabulary_machine_name_load('parliaments');
+    $parliaments = entity_load('taxonomy_term', FALSE, array('vid' => $vocabulary->vid));
+    foreach($parliaments as $parliament){
+
+      if(pw_userarchives_check_refresh_profiles($parliament)){
+        db_delete('user_archive_cache')
+          ->condition('parliament_name', $parliament->name)
+          ->execute();
+      }
+    }
+  }
 
   // db_select: user revision
   $query = db_select('user_revision', 'ur');
@@ -41,7 +52,6 @@ function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
   if ($uid != NULL) {
     $query->condition('ur.uid', $uid);
   }
-  $query->condition('ur.timestamp', $request_timespan, '>');
   $query->condition('role.name', array('Deputy', 'Candidate'));
   $query->groupBy('ur.uid, u_parl.field_user_parliament_tid, role_tid.field_user_roles_for_view_mode_s_tid, fraction_tid.field_user_fraction_tid');
 
@@ -78,6 +88,17 @@ function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
   $query->leftJoin('field_revision_field_parliament_election', 'pe', "pe.entity_type='taxonomy_term' AND pe.entity_id = u_parl.field_user_parliament_tid");
   $query->addExpression('UNIX_TIMESTAMP(pe.field_parliament_election_value)', 'timestamp');
 
+  // join parliament valid AND question form closed to check if the profile is open for questions or not
+  $query->leftJoin('field_revision_field_parliament_valid', 'pv', "pv.entity_type='taxonomy_term' AND pv.entity_id = u_parl.field_user_parliament_tid AND pv.field_parliament_valid_value < NOW() AND (pv.field_parliament_valid_value2 IS NULL OR pv.field_parliament_valid_value2 > NOW())");
+  $query->leftJoin('field_revision_field_user_question_form_closed', 'qf_closed', "qf_closed.entity_type='user' AND qf_closed.revision_id = ur.vid");
+  $query->addExpression("
+      COUNT(pv.field_parliament_valid_value) > 0 AND 
+      (user_joined.field_user_joined_value IS NULL OR user_joined.field_user_joined_value < NOW()) AND
+      (user_retired.field_user_retired_value IS NULL OR user_retired.field_user_retired_value > NOW()) AND 
+      (role.name = 'deputy' AND pe.field_parliament_election_value < NOW() OR role.name = 'candidate' AND pe.field_parliament_election_value > NOW()) AND
+      qf_closed.field_user_question_form_closed_value IS NULL",
+    'question_form_open');
+
   // join joined to get valid from
   $query->leftJoin('field_revision_field_user_joined', 'user_joined', "user_joined.entity_type = 'user' AND user_joined.revision_id = ur.vid");
   $query->addField('user_joined', 'field_user_joined_value', 'user_joined');
@@ -112,6 +133,8 @@ function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
   $query->where('(ISNULL(uac.number_of_questions)
           OR uac.number_of_questions != number_of_questions
           OR uac.number_of_answers != number_of_answers)');
+
+  # $result = $query->execute()->fetchAllAssoc('vid', PDO::FETCH_ASSOC);
 
   // nothing to update
   if (empty($query) || $query->execute()->rowCount() == 0) {
@@ -193,6 +216,39 @@ function pw_userarchives_cron($uid = NULL, $reset_actual_profile = TRUE) {
 }
 
 /**
+ * check if profiles needs to be refreshed based on parliament valid dates and election date.
+ */
+function pw_userarchives_check_refresh_profiles($parliament) {
+
+  $do_refresh_profiles = FALSE;
+  $timespan_close_before_election = 6 * 3600;
+
+  // first check if election date was reached
+  $field_parliament_election = field_get_items('taxonomy_term', $parliament, 'field_parliament_election');
+  if($field_parliament_election) {
+    $time_diff = time() - (strtotime($field_parliament_election[0]['value']) - $timespan_close_before_election);
+    $do_refresh_profiles = $time_diff <= 6000 && $time_diff > 0;
+  }
+  if(!$do_refresh_profiles){
+
+    // secondly check if valid end dates were reached
+    $field_parliament_valid = field_get_items('taxonomy_term', $parliament, 'field_parliament_valid');
+    if($field_parliament_valid){
+      foreach($field_parliament_valid as $valid_date) {
+        if(!empty($valid_date['value2'])){
+          $time_diff = time() - strtotime($valid_date['value2']);
+          $do_refresh_profiles = $time_diff <= 6000 && $time_diff > 0;
+          if($do_refresh_profiles){
+            break;
+          }
+        }
+      }
+    }
+  }
+  return $do_refresh_profiles;
+}
+
+/**
  * Deletes old user revisions from database.
  */
 function pw_delete_old_user_revisions($uid = NULL) {
@@ -246,10 +302,11 @@ function pw_reset_actuale_profile($uid) {
     return;
   }
 
-  // load newest profile
+  // load newest profile which is open for questions
   $query = db_select('user_archive_cache', 'uac');
   $query->addField('uac', 'vid');
   $query->condition('uac.uid', $uid);
+  $query->orderBy('uac.question_form_open', 'DESC');
   $query->orderBy('uac.timestamp', 'DESC');
   $query->orderBy('uac.user_role=\'deputy\'', 'DESC');
   $query->orderBy('uac.vid', 'DESC');
@@ -277,5 +334,11 @@ function pw_reset_actuale_profile($uid) {
     $user_revision->log = t('Copy of the revision from %date.', array('%date' => format_date($user_revision->revision_timestamp)));
     user_save($user_revision, (array) $user_revision);
     watchdog('user', 'reverted %title revision %revision.', array('%title' => $user_revision->name, '%revision' => $user_revision->vid));
+
+    // recorrect user archive cache
+    db_delete('user_archive_cache')
+      ->condition('uid', $uid)
+      ->execute();
+    pw_userarchives_cron($uid, FALSE);
   }
 }

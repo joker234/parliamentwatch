@@ -3164,21 +3164,6 @@ else if ( !empty($urole) && $urole ==  "deputy") print t("Profil");
   $handler->display->display_options['fields']['php_2']['php_output'] = '$static = \'xxx\';';
   $handler->display->display_options['fields']['php_2']['use_php_click_sortable'] = '0';
   $handler->display->display_options['fields']['php_2']['php_click_sortable'] = '';
-  /* Sortierkriterien: User archive cache: Timestamp */
-  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
-  $handler->display->display_options['sorts']['timestamp']['table'] = 'user_archive_cache';
-  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
-  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
-  /* Sortierkriterien: User archive cache: User role */
-  $handler->display->display_options['sorts']['user_role']['id'] = 'user_role';
-  $handler->display->display_options['sorts']['user_role']['table'] = 'user_archive_cache';
-  $handler->display->display_options['sorts']['user_role']['field'] = 'user_role';
-  $handler->display->display_options['sorts']['user_role']['order'] = 'DESC';
-  /* Sortierkriterien: User archive cache: Vid */
-  $handler->display->display_options['sorts']['vid']['id'] = 'vid';
-  $handler->display->display_options['sorts']['vid']['table'] = 'user_archive_cache';
-  $handler->display->display_options['sorts']['vid']['field'] = 'vid';
-  $handler->display->display_options['sorts']['vid']['order'] = 'DESC';
   /* Kontextfilter: User archive cache: Uid */
   $handler->display->display_options['arguments']['uid']['id'] = 'uid';
   $handler->display->display_options['arguments']['uid']['table'] = 'user_archive_cache';
