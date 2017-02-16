@@ -70,7 +70,6 @@ function pw_api_profiles($parliament) {
   _pw_uac_add_conditions($query, array(
       'parliament' => $parliament,
       'roles' => $user_role,
-      'date' => date('Y-m-d'),
     )
   );
   $result = $query->execute()->fetchAll();
@@ -235,6 +234,10 @@ function pw_api_user_to_array($user, $activities = array()) {
         // join target petition or poll to retrieve title, uuid and created date
         $query->join('field_data_field_vote_node', 'vote_node', "n.nid = vote_node.entity_id AND vote_node.bundle = 'vote'");
         $query->join('node', 'target_node', "vote_node.field_vote_node_target_id = target_node.nid");
+
+        //$query->join('field_data_field_blogpost_categories', '')
+
+
         $query->fields('target_node', array('title', 'uuid', 'created', 'nid', 'type'));
 
         // load only vote of current user
